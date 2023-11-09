@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# If I don't add this file, Git failed with a fatal error.
+*.opendb
