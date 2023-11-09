@@ -6,7 +6,7 @@
 
 #include "..\wblee_source\WBApplication.h"
 
-WBApplication app;
+wb::WBApplication application;
 
 #define MAX_LOADSTRING 100
 
@@ -29,8 +29,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
-	app.test();
-
 	// TODO: Place code here.
 
 	// Initialize global strings
@@ -49,12 +47,22 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	MSG msg;
 
 	// Main message loop:
-	while (GetMessage(&msg, nullptr, 0, 0))
+	while (true)
 	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
+			if (msg.message == WM_QUIT)
+				break;
+
+			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+		}
+		else
+		{
+			application.Run();
 		}
 	}
 
@@ -106,6 +114,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, 1920, 1080, nullptr, nullptr, hInstance, nullptr);
 
+	application.Initialize(hWnd);
+
 	if (!hWnd)
 	{
 		return FALSE;
@@ -152,47 +162,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
-
-		// Select a red brush
-		HBRUSH redBrush = CreateSolidBrush(RGB(255, 0, 0));
-
-		// Select a red brush in DC and return a white brush
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, redBrush);
-
-		// Draw a rectangle
-		Rectangle(hdc, 100, 100, 200, 200);
-
-		// Select the origin white brush again
-		SelectObject(hdc, oldBrush);
-
-		// Delete the red brush
-		DeleteObject(redBrush);
-
-		// Select a blue pen
-		HPEN bluePen = CreatePen(PS_SOLID, 2, RGB(0, 0, 255));
-		// Select a blue pen in DC and return a black pen
-		HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
-
-		// Draw a circle
-		Ellipse(hdc, 300, 300, 400, 400);
-
-		// Select the origin black pen again
-		SelectObject(hdc, oldPen);
-		// Delete the blue pen
-		DeleteObject(bluePen);
-
-		// Select a gray brush using StockObject
-		HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
-		// Select a gray brush in DC and return a white brush
-		oldBrush = (HBRUSH)SelectObject(hdc, grayBrush);
-
-		// Draw a circle
-		Ellipse(hdc, 500, 500, 700, 700);
-		// Draw a rectangle
-		Rectangle(hdc, 700, 700, 750, 750);
-
-		// Select the origin white brush again
-		SelectObject(hdc, oldBrush);
 
 		// TODO: Add any drawing code that uses hdc here...
 		EndPaint(hWnd, &ps);
