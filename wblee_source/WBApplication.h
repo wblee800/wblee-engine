@@ -1,5 +1,6 @@
 #pragma once
 #include "common_include.h"
+#include "WBGameObject.h"
 
 namespace wb
 {
@@ -21,7 +22,9 @@ namespace wb
 		HDC mHdc;
 
 		float mSpeed;
-		float mX;
-		float mY;
+		
+		// float mX;
+		// float mY;
+		WBGameObject mPlayer;
 	};
 }

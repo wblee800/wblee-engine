@@ -5,9 +5,7 @@ namespace wb
 	WBApplication::WBApplication()
 		:mHwnd(nullptr),
 		mHdc(nullptr),
-		mSpeed(0.f),
-		mX(0.f),
-		mY(0.f)
+		mSpeed(0.f)
 	{
 
 	}
@@ -22,6 +20,8 @@ namespace wb
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
+
+		mPlayer.SetPosition(0.f, 0.f);
 	}
 
 	// Execute update and render function
@@ -35,27 +35,7 @@ namespace wb
 	// Update a logic
 	void WBApplication::Update()
 	{
-		mSpeed += 0.01f;
-
-		if (GetAsyncKeyState(VK_LEFT) & 0x80000)
-		{
-			mX -= 0.01f;
-		}
-
-		if (GetAsyncKeyState(VK_RIGHT) & 0x80000)
-		{
-			mX += 0.01f;
-		}
-
-		if (GetAsyncKeyState(VK_UP) & 0x80000)
-		{
-			mY -= 0.01f;
-		}
-
-		if (GetAsyncKeyState(VK_DOWN) & 0x80000)
-		{
-			mY += 0.01f;
-		}
+		mPlayer.Update();
 	}
 
 	void WBApplication::LateUpdate()
@@ -66,19 +46,6 @@ namespace wb
 	// Draw a updated logic
 	void WBApplication::Render()
 	{
-		// Select a red brush
-		HBRUSH redBrush = CreateSolidBrush(RGB(255, 0, 0));
-
-		// Select a red brush in DC and return a white brush
-		HBRUSH oldBrush = (HBRUSH)SelectObject(mHdc, redBrush);
-
-		// Draw a rectangle
-		Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
-
-		// Select the origin white brush again
-		SelectObject(mHdc, oldBrush);
-
-		// Delete the red brush
-		DeleteObject(redBrush);
+		mPlayer.Render(mHdc);
 	}
 }
