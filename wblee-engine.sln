@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor_window", "editor_window\editor_window.vcxproj", "{D295A455-0B6D-4105-AB24-5945C79095F5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wblee_engine_window", "wblee_engine_window\wblee_engine_window.vcxproj", "{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wblee_source", "wblee_source\wblee_source.vcxitems", "{C3A6E5A7-A965-4AB7-B0E4-204F1906B035}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,11 +25,23 @@ Global
 		{D295A455-0B6D-4105-AB24-5945C79095F5}.Release|x64.Build.0 = Release|x64
 		{D295A455-0B6D-4105-AB24-5945C79095F5}.Release|x86.ActiveCfg = Release|Win32
 		{D295A455-0B6D-4105-AB24-5945C79095F5}.Release|x86.Build.0 = Release|Win32
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Debug|x64.ActiveCfg = Debug|x64
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Debug|x64.Build.0 = Debug|x64
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Debug|x86.Build.0 = Debug|Win32
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Release|x64.ActiveCfg = Release|x64
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Release|x64.Build.0 = Release|x64
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Release|x86.ActiveCfg = Release|Win32
+		{AC91AE52-6ED8-4B83-8B0E-A1DF503589C0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FFF79A8C-625C-491C-954B-9B196CB54560}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		wblee_source\wblee_source.vcxitems*{ac91ae52-6ed8-4b83-8b0e-a1df503589c0}*SharedItemsImports = 4
+		wblee_source\wblee_source.vcxitems*{c3a6e5a7-a965-4ab7-b0e4-204f1906b035}*SharedItemsImports = 9
 	EndGlobalSection
 EndGlobal
