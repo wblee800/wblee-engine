@@ -12,22 +12,22 @@ namespace wb
 
 	void WBGameObject::Update()
 	{
-		if (GetAsyncKeyState(VK_LEFT) & 0x80000)
+		if (WBInput::GetKey(eKeyCode::A))
 		{
 			mX -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x80000)
+		if (WBInput::GetKey(eKeyCode::D))
 		{
 			mX += 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_UP) & 0x80000)
+		if (WBInput::GetKey(eKeyCode::W))
 		{
 			mY -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x80000)
+		if (WBInput::GetKey(eKeyCode::S))
 		{
 			mY += 0.01f;
 		}
@@ -35,26 +35,23 @@ namespace wb
 
 	void WBGameObject::LateUpdate()
 	{
-
 	}
 
 	void WBGameObject::Render(HDC hdc)
 	{
 		// Select a red brush
-		HBRUSH redBrush = CreateSolidBrush(RGB(255, 0, 0));
+		HBRUSH greenBrush = CreateSolidBrush(RGB(255, 0, 0));
 
 		// Select a red brush in DC and return a white brush
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, redBrush);
+		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, greenBrush);
 
 		// Draw a rectangle
-		float x = GetPositionX();
-		float y = GetPositionY();
-		Rectangle(hdc, 100 + x, 100 + y, 200 + x, 200 + y);
+		Rectangle(hdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
 
 		// Select the origin white brush again
 		SelectObject(hdc, oldBrush);
 
 		// Delete the red brush
-		DeleteObject(redBrush);
+		DeleteObject(greenBrush);
 	}
 }

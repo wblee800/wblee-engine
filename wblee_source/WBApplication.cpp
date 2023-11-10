@@ -1,4 +1,5 @@
 #include "WBApplication.h"
+#include "wBInput.h"
 
 namespace wb
 {
@@ -22,6 +23,8 @@ namespace wb
 		mHdc = GetDC(hwnd);
 
 		mPlayer.SetPosition(0.f, 0.f);
+
+		WBInput::Initialize();
 	}
 
 	// Execute update and render function
@@ -35,6 +38,8 @@ namespace wb
 	// Update a logic
 	void WBApplication::Update()
 	{
+		WBInput::Update();
+
 		mPlayer.Update();
 	}
 
