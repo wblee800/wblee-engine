@@ -8,10 +8,21 @@ namespace wb
 	{
 		'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-		'Z', 'X', 'C', 'V', 'B', 'N', 'M',
+		'Z', 'X', 'C', 'V', 'B', 'N', 'M', 
+		VK_LEFT, VK_RIGHT, VK_DOWN, VK_UP,
 	};
 
 	void WBInput::Initialize()
+	{
+		createKeys();
+	}
+
+	void WBInput::Update()
+	{
+		updateKeys();
+	}
+
+	void WBInput::createKeys()
 	{
 		for (size_t i = 0; i < (UINT)eKeyCode::End; i++)
 		{
@@ -24,38 +35,48 @@ namespace wb
 		}
 	}
 
-	void WBInput::Update()
+	void WBInput::updateKeys()
 	{
-		for (size_t i = 0; i < mKeys.size(); i++)
+		std::for_each(mKeys.begin(), mKeys.end(),
+			[](Key& key) -> void
+			{
+				updateKey(key);
+			});
+	}
+
+	void WBInput::updateKey(WBInput::Key& key)
+	{
+		if (isKeyDown(key.keyCode))
 		{
-			if (GetAsyncKeyState(ASCII[i]) & 0x8000)
-			{
-				// If it was pressed on the previous frame,
-				if (mKeys[i].bPressed == true)
-				{
-					mKeys[i].state = eKeyState::Pressed;
-				}
-				else
-				{
-					mKeys[i].state = eKeyState::Down;
-				}
-
-				mKeys[i].bPressed = true;
-			}
-			else
-			{
-				// If it was pressed on the previous frame,
-				if (mKeys[i].bPressed == true)
-				{
-					mKeys[i].state = eKeyState::Up;
-				}
-				else
-				{
-					mKeys[i].state = eKeyState::None;
-				}
-
-				mKeys[i].bPressed = false;
-			}
+			updateKeyDown(key);
+		}
+		else
+		{
+			updateKeyUp(key);
 		}
 	}
+
+	bool WBInput::isKeyDown(eKeyCode code)
+	{
+		return GetAsyncKeyState(ASCII[(UINT)code]) & 0x8000;
+	}
+
+	void WBInput::updateKeyDown(WBInput::Key& key)
+	{
+		if (key.bPressed == true)
+			key.state = eKeyState::Pressed;
+		else
+			key.state = eKeyState::Down;
+
+		key.bPressed = true;
+	}
+	void WBInput::updateKeyUp(WBInput::Key& key)
+	{
+		if (key.bPressed == true)
+			key.state = eKeyState::Up;
+		else
+			key.state = eKeyState::None;
+
+		key.bPressed = false;
+	}	
 }
