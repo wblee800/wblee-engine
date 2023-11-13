@@ -1,6 +1,5 @@
 #pragma once
 #include "common_include.h"
-#include "WBInput.h"
 
 namespace wb
 {

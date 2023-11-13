@@ -1,4 +1,6 @@
 #include "WBGameObject.h"
+#include "WBInput.h"
+#include "WBTime.h"
 
 namespace wb
 {
@@ -12,24 +14,25 @@ namespace wb
 
 	void WBGameObject::Update()
 	{
+		const float speed = 100.0f;
 		if (WBInput::GetKey(eKeyCode::A))
 		{
-			mX -= 0.01f;
+			mX -= speed * WBTime::DeltaTime();
 		}
 
 		if (WBInput::GetKey(eKeyCode::D))
 		{
-			mX += 0.01f;
+			mX += speed * WBTime::DeltaTime();
 		}
 
 		if (WBInput::GetKey(eKeyCode::W))
 		{
-			mY -= 0.01f;
+			mY -= speed * WBTime::DeltaTime();
 		}
 
 		if (WBInput::GetKey(eKeyCode::S))
 		{
-			mY += 0.01f;
+			mY += speed * WBTime::DeltaTime();
 		}
 	}
 

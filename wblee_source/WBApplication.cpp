@@ -1,5 +1,6 @@
 #include "WBApplication.h"
 #include "wBInput.h"
+#include "wBTime.h"
 
 namespace wb
 {
@@ -25,6 +26,7 @@ namespace wb
 		mPlayer.SetPosition(0.f, 0.f);
 
 		WBInput::Initialize();
+		WBTime::Initialize();
 	}
 
 	// Execute update and render function
@@ -39,6 +41,7 @@ namespace wb
 	void WBApplication::Update()
 	{
 		WBInput::Update();
+		WBTime::Update();
 
 		mPlayer.Update();
 	}
@@ -51,6 +54,7 @@ namespace wb
 	// Draw a updated logic
 	void WBApplication::Render()
 	{
+		WBTime::Render(mHdc);
 		mPlayer.Render(mHdc);
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace wb
 {
-	std::vector<WBInput::Key> WBInput::mKeys = {};
+	std::vector<WBInput::Key> WBInput::Keys = {};
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -31,13 +31,13 @@ namespace wb
 			key.state = eKeyState::None;
 			key.keyCode = (eKeyCode)i;
 
-			mKeys.push_back(key);
+			Keys.push_back(key);
 		}
 	}
 
 	void WBInput::updateKeys()
 	{
-		std::for_each(mKeys.begin(), mKeys.end(),
+		std::for_each(Keys.begin(), Keys.end(),
 			[](Key& key) -> void
 			{
 				updateKey(key);
