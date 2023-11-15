@@ -10,7 +10,7 @@ namespace wb
 		WBApplication();
 		~WBApplication();
 
-		void Initialize(HWND hwnd);
+		void Initialize(HWND hwnd, UINT width, UINT height);
 		void Run();
 
 		void Update();
@@ -21,7 +21,12 @@ namespace wb
 		HWND mHwnd;
 		HDC mHdc;
 
+		HDC mBackHdc;
+		HBITMAP mBackBitmap;
+
 		float mSpeed;
+		UINT mWidth;
+		UINT mHeight;
 		
 		// float mX;
 		// float mY;
