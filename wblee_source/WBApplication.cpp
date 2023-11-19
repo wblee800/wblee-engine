@@ -24,12 +24,28 @@ namespace wb
 	// Save a handle's address value and DC's address value
 	void WBApplication::Initialize(HWND hwnd, UINT width, UINT height)
 	{
+		adjustWindowRect(hwnd, width, height);
+		createBuffer(width, height);
+		initializeEtc();
+
+		mPlayer.SetPosition(0.f, 0.f);
+	}
+
+	// Execute update and render function
+	void WBApplication::Run()
+	{
+		Update();
+		LateUpdate();
+		Render();
+	}
+
+	void WBApplication::adjustWindowRect(HWND hwnd, UINT width, UINT height)
+	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
 		// 사각형 크기 지정
-		RECT rect = { 0, 0, width, height };
-
+		RECT rect = {0, 0, width, height};
 		// 윈도우 작업 영역 크기 지정
 		// 1. 윈도우 크기
 		// 2. 윈도우 스타일
@@ -41,10 +57,12 @@ namespace wb
 
 		// 윈도우 오픈 위치 지정
 		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);
-
 		// 윈도우 오픈
 		ShowWindow(mHwnd, true);
+	}
 
+	void WBApplication::createBuffer(UINT width, UINT height)
+	{
 		// 윈도우 해상도에 맞는 Back Buffer 생성
 		// (그림으로 예를 들면 도화지)
 		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
@@ -54,19 +72,12 @@ namespace wb
 
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
-
-		mPlayer.SetPosition(0.f, 0.f);
-
-		WBInput::Initialize();
-		WBTime::Initialize();
 	}
 
-	// Execute update and render function
-	void WBApplication::Run()
+	void WBApplication::initializeEtc()
 	{
-		Update();
-		LateUpdate();
-		Render();
+		WBInput::Initialize();
+		WBTime::Initialize();
 	}
 
 	// Update a logic
