@@ -39,13 +39,52 @@ namespace wb
 		Render();
 	}
 
+	// Update a logic
+	void WBApplication::Update()
+	{
+		WBInput::Update();
+		WBTime::Update();
+
+		mPlayer.Update();
+	}
+
+	void WBApplication::LateUpdate()
+	{
+
+	}
+
+	// Draw a updated logic
+	void WBApplication::Render()
+	{
+		clearRenderTarget();
+
+		WBTime::Render(mBackHdc);
+		mPlayer.Render(mBackHdc);
+
+		copyRenderTarget(mBackHdc, mHdc);
+	}
+
+	void WBApplication::clearRenderTarget()
+	{
+		// clear
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
+	}
+
+	void WBApplication::copyRenderTarget(HDC source, HDC dest)
+	{
+		// Back Buffer에 있는 데이터를 원본 Buffer에 복사
+		// (즉, Back Buffer의 그림을 원본 Buffer에 옮겨 그린다.)
+		BitBlt(dest, 0, 0, mWidth, mHeight,
+			source, 0, 0, SRCCOPY);
+	}
+
 	void WBApplication::adjustWindowRect(HWND hwnd, UINT width, UINT height)
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
 		// 사각형 크기 지정
-		RECT rect = {0, 0, width, height};
+		RECT rect = { 0, 0, width, height };
 		// 윈도우 작업 영역 크기 지정
 		// 1. 윈도우 크기
 		// 2. 윈도우 스타일
@@ -78,33 +117,5 @@ namespace wb
 	{
 		WBInput::Initialize();
 		WBTime::Initialize();
-	}
-
-	// Update a logic
-	void WBApplication::Update()
-	{
-		WBInput::Update();
-		WBTime::Update();
-
-		mPlayer.Update();
-	}
-
-	void WBApplication::LateUpdate()
-	{
-
-	}
-
-	// Draw a updated logic
-	void WBApplication::Render()
-	{
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
-
-		WBTime::Render(mBackHdc);
-		mPlayer.Render(mBackHdc);
-
-		// Back Buffer에 있는 데이터를 원본 Buffer에 복사
-		// (즉, Back Buffer의 그림을 원본 Buffer에 옮겨 그린다.)
-		BitBlt(mHdc, 0, 0, mWidth, mHeight,
-			mBackHdc, 0, 0, SRCCOPY);
 	}
 }
