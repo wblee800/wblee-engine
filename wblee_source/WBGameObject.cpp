@@ -5,6 +5,7 @@
 namespace wb
 {
 	WBGameObject::WBGameObject()
+		: mX(0), mY(0)
 	{
 	}
 

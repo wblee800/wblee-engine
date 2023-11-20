@@ -1,6 +1,8 @@
 #include "WBApplication.h"
 #include "WBInput.h"
 #include "WBTime.h"
+#include "WBScene.h"
+#include "WBSceneManager.h"
 
 namespace wb
 {
@@ -28,6 +30,8 @@ namespace wb
 		createBuffer(width, height);
 		initializeEtc();
 
+		WBSceneManager::Initialize();
+
 		mPlayer.SetPosition(0.f, 0.f);
 	}
 
@@ -45,7 +49,7 @@ namespace wb
 		WBInput::Update();
 		WBTime::Update();
 
-		mPlayer.Update();
+		WBSceneManager::Update();
 	}
 
 	void WBApplication::LateUpdate()
@@ -59,7 +63,7 @@ namespace wb
 		clearRenderTarget();
 
 		WBTime::Render(mBackHdc);
-		mPlayer.Render(mBackHdc);
+		WBSceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}

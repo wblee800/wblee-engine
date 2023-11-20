@@ -4,6 +4,8 @@
 
 namespace wb
 {
+	class WBScene;
+
 	class WBApplication
 	{
 	public:
@@ -35,8 +37,9 @@ namespace wb
 		UINT mWidth;
 		UINT mHeight;
 		
-		// float mX;
-		// float mY;
 		WBGameObject mPlayer;
+
+		// std::vector<WBGameObject*> mGameObjects;
+		std::vector<WBScene*> mScenes;
 	};
 }

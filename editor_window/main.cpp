@@ -5,6 +5,7 @@
 #include "editor_window.h"
 
 #include "..\wblee_source\WBApplication.h"
+#include "..\wblee_engine_window\WBLoadScenes.h"
 
 wb::WBApplication application;
 
@@ -125,6 +126,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
+
+	// Load scenes
+	
 
 	return TRUE;
 }
