@@ -1,5 +1,5 @@
 #pragma once
-#include "WBScene.h"
+#include "..\wblee_source\WBScene.h"
 
 namespace wb
 {

@@ -2,9 +2,16 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="WBPlayScene.h" />
-    <ClInclude Include="WBLoadScenes.h" />
+    <ClInclude Include="WBLoadScenes.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBPlayScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{7b755d28-5fa6-4c72-b6e4-80b3d487aa3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

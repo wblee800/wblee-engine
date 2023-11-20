@@ -16,6 +16,8 @@ namespace wb
 			scene->Initialize();
 
 			mScene.insert(std::make_pair(name, scene));
+
+			return scene;
 		}
 
 		static void Initialize();
