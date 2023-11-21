@@ -4,6 +4,7 @@
 namespace wb
 {
 	WBScene::WBScene()
+		: mGameObjects{}
 	{
 	}
 
@@ -37,5 +38,10 @@ namespace wb
 		{
 			gameObj->Render(hdc);
 		}
+	}
+
+	void WBScene::AddGameObject(WBGameObject* gameObject)
+	{
+		mGameObjects.push_back(gameObject);
 	}
 }

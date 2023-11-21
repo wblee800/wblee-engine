@@ -128,6 +128,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	UpdateWindow(hWnd);
 
 	// Load scenes
+	wb::LoadScenes();
 	
 
 	return TRUE;
