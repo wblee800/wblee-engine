@@ -1,13 +1,13 @@
 #pragma once
-#include "..\wblee_engine_source\WBScene.h"
+#include "..\wblee_engine_source\WBGameObject.h"
 
 namespace wb
 {
-	class WBPlayScene : public WBScene
+	class WBPlayer : public WBGameObject
 	{
 	public:
-		WBPlayScene();
-		~WBPlayScene();
+		WBPlayer();
+		~WBPlayer();
 
 		virtual void Initialize() override;
 		virtual void Update() override;

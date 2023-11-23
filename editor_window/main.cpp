@@ -1,10 +1,9 @@
 // editor_window.cpp : Defines the entry point for the application.
-//
 
 #include "framework.h"
 #include "editor_window.h"
 
-#include "..\wblee_source\WBApplication.h"
+#include "..\wblee_engine_source\WBApplication.h"
 #include "..\wblee_engine_window\WBLoadScenes.h"
 
 wb::WBApplication application;

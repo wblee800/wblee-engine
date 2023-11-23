@@ -1,5 +1,8 @@
 #include "WBPlayScene.h"
-#include "WBGameObject.h"
+#include "../wblee_engine_source/WBGameObject.h"
+#include "WBPlayer.h"
+#include "../wblee_engine_source/WBTransform.h"
+#include "../wblee_engine_source/WBSpriteRenderer.h"
 
 namespace wb
 {
@@ -13,8 +16,33 @@ namespace wb
 
 	void WBPlayScene::Initialize()
 	{
-		WBGameObject* obj = new WBGameObject();
-		AddGameObject(obj);
+		{
+			WBPlayer* pl = new WBPlayer();
+			WBTransform* tr = pl->AddComponent<WBTransform>();
+			tr->SetPos(800, 450);
+
+			tr->SetName(L"Transfrom");
+
+			WBSpriteRenderer* sr
+				= pl->AddComponent<WBSpriteRenderer>();
+			sr->SetName(L"Sprite");
+
+			AddGameObject(pl);
+		}
+
+		{
+			WBPlayer* pl = new WBPlayer();
+			WBTransform* tr = pl->AddComponent<WBTransform>();
+			tr->SetPos(200, 450);
+
+			tr->SetName(L"Transfrom");
+
+			WBSpriteRenderer* sr
+				= pl->AddComponent<WBSpriteRenderer>();
+			sr->SetName(L"Sprite");
+
+			AddGameObject(pl);
+		}
 	}
 
 	void WBPlayScene::Update()
