@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp">
+      <Filter>frequently-used</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp">
+      <Filter>game-objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBScene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp">
+      <Filter>components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp">
+      <Filter>components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp">
+      <Filter>window-management</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp">
+      <Filter>helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
+      <Filter>frequently-used</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h">
+      <Filter>frequently-used</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h">
+      <Filter>game-objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h">
+      <Filter>window-management</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h">
+      <Filter>helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="frequently-used">
+      <UniqueIdentifier>{683c170b-b309-4542-a170-23f90ec4bbb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window-management">
+      <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components">
+      <UniqueIdentifier>{a8f474f9-9374-488b-99cd-9025df12f028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helpers">
+      <UniqueIdentifier>{ab81f46c-896d-4f92-9eeb-c64ee1b45fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scenes">
+      <UniqueIdentifier>{4db5d664-3afc-4cf7-b5a4-d886eff61962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game-objects">
+      <UniqueIdentifier>{86933ce3-89e8-4a41-8efd-747b53626fe4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

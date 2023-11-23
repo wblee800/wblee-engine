@@ -31,8 +31,6 @@ namespace wb
 		initializeEtc();
 
 		WBSceneManager::Initialize();
-
-		mPlayer.SetPosition(0.f, 0.f);
 	}
 
 	// Execute update and render function

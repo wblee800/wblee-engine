@@ -17,20 +17,26 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,6 @@
 namespace wb
 {
 	class WBGameObject;
-
 	class WBScene : public WBEntity
 	{
 	public:
