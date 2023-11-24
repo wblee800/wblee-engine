@@ -1,3 +1,1 @@
 ## wblee-engine
-
-### License
