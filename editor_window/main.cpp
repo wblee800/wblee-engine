@@ -8,6 +8,9 @@
 
 wb::WBApplication application;
 
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -65,6 +68,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			application.Run();
 		}
 	}
+
+	Gdiplus::GdiplusShutdown(gpToken);
 
 	return (int)msg.wParam;
 }
@@ -125,6 +130,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
+
+	Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
 	// Load scenes
 	wb::LoadScenes();

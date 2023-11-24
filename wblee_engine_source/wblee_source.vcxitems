@@ -21,6 +21,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
@@ -33,6 +34,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />

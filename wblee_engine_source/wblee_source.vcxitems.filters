@@ -28,7 +28,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp">
       <Filter>helpers</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp">
+      <Filter>components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp">
+      <Filter>frequently-used</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -61,7 +66,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h">
       <Filter>helpers</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h">
+      <Filter>frequently-used</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">

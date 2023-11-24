@@ -39,10 +39,12 @@ namespace wb
 		float fps = 1.0f / DeltaTimeValue;
 
 		wchar_t str[50] = L"";
+		// 시간
 		// swprintf_s(str, 50, L"Time : %f", time);
-		swprintf_s(str, 50, L"FPS : %d", (int)fps);
+		// 초당 프레임
+		// swprintf_s(str, 50, L"FPS : %d", (int)fps);
 		int len = wcsnlen_s(str, 50);
 
-		TextOut(hdc, 0, 0, str, len);
+		// TextOut(hdc, 0, 0, str, len);
 	}
 }

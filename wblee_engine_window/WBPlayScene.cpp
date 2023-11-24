@@ -17,31 +17,18 @@ namespace wb
 	void WBPlayScene::Initialize()
 	{
 		{
-			WBPlayer* pl = new WBPlayer();
-			WBTransform* tr = pl->AddComponent<WBTransform>();
-			tr->SetPos(800, 450);
+			WBPlayer* bg = new WBPlayer();
+			WBTransform* tr = bg->AddComponent<WBTransform>();
+			tr->SetPos(Vector2(0, 0));
 
 			tr->SetName(L"Transfrom");
 
 			WBSpriteRenderer* sr
-				= pl->AddComponent<WBSpriteRenderer>();
+				= bg->AddComponent<WBSpriteRenderer>();
 			sr->SetName(L"Sprite");
+			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\characters\\players\\Players.png");
 
-			AddGameObject(pl);
-		}
-
-		{
-			WBPlayer* pl = new WBPlayer();
-			WBTransform* tr = pl->AddComponent<WBTransform>();
-			tr->SetPos(200, 450);
-
-			tr->SetName(L"Transfrom");
-
-			WBSpriteRenderer* sr
-				= pl->AddComponent<WBSpriteRenderer>();
-			sr->SetName(L"Sprite");
-
-			AddGameObject(pl);
+			AddGameObject(bg);
 		}
 	}
 

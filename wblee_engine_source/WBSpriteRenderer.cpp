@@ -3,6 +3,9 @@
 #include "WBTransform.h"
 
 wb::WBSpriteRenderer::WBSpriteRenderer()
+	:mImage(nullptr)
+	, mWidth(0)
+	, mHeight(0)
 {
 }
 
@@ -24,20 +27,16 @@ void wb::WBSpriteRenderer::LateUpdate()
 
 void wb::WBSpriteRenderer::Render(HDC hdc)
 {
-	HBRUSH redBrush
-		= CreateSolidBrush(RGB(255, 0, 255));
-
-	HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, redBrush);
-
-	HPEN bluePen = CreatePen(PS_SOLID, 2, RGB(rand(), rand(), rand()));
-	HPEN oldPen = (HPEN)SelectObject(hdc, bluePen);
-	SelectObject(hdc, oldPen);
-
 	WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-	Ellipse(hdc, tr->GetX(), tr->GetY(),
-		100 + tr->GetX(), 100 + tr->GetY());
+	Vector2 pos = tr->GetPos();
 
-	SelectObject(hdc, oldBrush);
-	DeleteObject(redBrush);
-	DeleteObject(bluePen);
+	Gdiplus::Graphics graphics(hdc);
+	graphics.DrawImage(mImage,Gdiplus::Rect(pos.x, pos.y, 1600, 900));
+}
+
+void wb::WBSpriteRenderer::ImageLoad(const std::wstring& path)
+{
+	mImage = Gdiplus::Image::FromFile(path.c_str());
+	mWidth = mImage->GetWidth();
+	mHeight = mImage->GetHeight();
 }

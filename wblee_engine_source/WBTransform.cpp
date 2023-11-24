@@ -1,7 +1,7 @@
 #include "WBTransform.h"
 
 wb::WBTransform::WBTransform()
-	: mX(0), mY(0)
+	: mPosition()
 {
 }
 
