@@ -31,7 +31,7 @@ void wb::WBSpriteRenderer::Render(HDC hdc)
 	Vector2 pos = tr->GetPos();
 
 	Gdiplus::Graphics graphics(hdc);
-	graphics.DrawImage(mImage,Gdiplus::Rect(pos.x, pos.y, 1600, 900));
+	graphics.DrawImage(mImage,Gdiplus::Rect(pos.x, pos.y, 1600, 880));
 }
 
 void wb::WBSpriteRenderer::ImageLoad(const std::wstring& path)

@@ -24,6 +24,7 @@
     <ProjectGuid>{d295a455-0b6d-4105-ab24-5945c79095f5}</ProjectGuid>
     <RootNamespace>editorwindow</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>editor_windows</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

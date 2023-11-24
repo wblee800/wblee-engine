@@ -33,6 +33,7 @@
     <ProjectGuid>{ac91ae52-6ed8-4b83-8b0e-a1df503589c0}</ProjectGuid>
     <RootNamespace>wbleeenginewindow</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>wblee_engine_contents</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

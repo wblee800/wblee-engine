@@ -20,7 +20,7 @@
       <Filter>components</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp">
-      <Filter>window-management</Filter>
+      <Filter>window-settings</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp">
       <Filter>helpers</Filter>
@@ -58,7 +58,7 @@
       <Filter>components</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h">
-      <Filter>window-management</Filter>
+      <Filter>window-settings</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h">
       <Filter>helpers</Filter>
@@ -77,9 +77,6 @@
     <Filter Include="frequently-used">
       <UniqueIdentifier>{683c170b-b309-4542-a170-23f90ec4bbb1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="window-management">
-      <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="components">
       <UniqueIdentifier>{a8f474f9-9374-488b-99cd-9025df12f028}</UniqueIdentifier>
     </Filter>
@@ -91,6 +88,9 @@
     </Filter>
     <Filter Include="game-objects">
       <UniqueIdentifier>{86933ce3-89e8-4a41-8efd-747b53626fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window-settings">
+      <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

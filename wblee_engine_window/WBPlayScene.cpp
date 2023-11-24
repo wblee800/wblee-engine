@@ -26,7 +26,7 @@ namespace wb
 			WBSpriteRenderer* sr
 				= bg->AddComponent<WBSpriteRenderer>();
 			sr->SetName(L"Sprite");
-			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\characters\\players\\Players.png");
+			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\maps\\JojaMart.bmp");
 
 			AddGameObject(bg);
 		}
