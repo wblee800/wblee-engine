@@ -3,6 +3,8 @@
 #include "WBPlayer.h"
 #include "../wblee_engine_source/WBTransform.h"
 #include "../wblee_engine_source/WBSpriteRenderer.h"
+#include "../wblee_engine_source/WBInput.h"
+#include "../wblee_engine_source/WBSceneManager.h"
 
 namespace wb
 {
@@ -16,8 +18,10 @@ namespace wb
 
 	void WBPlayScene::Initialize()
 	{
+		WBScene::Initialize();
+
 		{
-			WBPlayer* bg = new WBPlayer();
+			bg = new WBPlayer();
 			WBTransform* tr = bg->AddComponent<WBTransform>();
 			tr->SetPos(Vector2(0, 0));
 
@@ -40,10 +44,28 @@ namespace wb
 	void WBPlayScene::LateUpdate()
 	{
 		WBScene::LateUpdate();
+
+		if (WBInput::GetKeyDown(eKeyCode::N))
+		{
+			WBSceneManager::LoadScene(L"WBTitleScene");
+		}
 	}
 
 	void WBPlayScene::Render(HDC hdc)
 	{
 		WBScene::Render(hdc);
+
+		wchar_t str[12] = L"Play Scene";
+		TextOut(hdc, 0, 0, str, 10);
+	}
+
+	void WBPlayScene::OnEnter()
+	{
+	}
+
+	void WBPlayScene::OnExit()
+	{
+		WBTransform* tr = bg->AddComponent<WBTransform>();
+		tr->SetPos(Vector2(0, 0));
 	}
 }

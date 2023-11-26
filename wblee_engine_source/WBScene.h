@@ -16,6 +16,9 @@ namespace wb
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
 
+		virtual void OnEnter();
+		virtual void OnExit();
+
 		void AddGameObject(WBGameObject* gameObject);
 
 	private:

@@ -52,7 +52,7 @@ namespace wb
 
 	void WBApplication::LateUpdate()
 	{
-
+		WBSceneManager::LateUpdate();
 	}
 
 	// Draw a updated logic

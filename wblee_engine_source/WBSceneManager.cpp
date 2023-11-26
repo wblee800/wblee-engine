@@ -6,6 +6,23 @@ namespace wb
 	std::map<const std::wstring, WBScene*> WBSceneManager::mScene = {};
 	WBScene* WBSceneManager::mActiveScene = nullptr;
 
+	WBScene* WBSceneManager::LoadScene(const std::wstring& name)
+	{
+		if (mActiveScene)
+			mActiveScene->OnExit();
+
+		std::map<const std::wstring, WBScene*>::iterator itr
+			= mScene.find(name);
+
+		if (itr == mScene.end())
+			return nullptr;
+
+		mActiveScene = itr->second;
+		mActiveScene->OnEnter();
+
+		return itr->second;
+	}
+
 	void wb::WBSceneManager::Initialize()
 	{
 	}

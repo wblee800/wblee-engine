@@ -10,6 +10,9 @@
     <ClInclude Include="WBPlayer.h">
       <Filter>contents</Filter>
     </ClInclude>
+    <ClInclude Include="WBTitleScene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="scenes">
@@ -25,6 +28,9 @@
     </ClCompile>
     <ClCompile Include="WBPlayer.cpp">
       <Filter>contents</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTitleScene.cpp">
+      <Filter>scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,8 +19,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBEnum.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h" />
@@ -34,6 +36,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp" />

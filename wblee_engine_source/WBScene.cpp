@@ -40,6 +40,16 @@ namespace wb
 		}
 	}
 
+	void WBScene::OnEnter()
+	{
+
+	}
+
+	void WBScene::OnExit()
+	{
+
+	}
+
 	void WBScene::AddGameObject(WBGameObject* gameObject)
 	{
 		mGameObjects.push_back(gameObject);

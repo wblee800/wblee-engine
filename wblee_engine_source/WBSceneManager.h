@@ -20,18 +20,7 @@ namespace wb
 			return scene;
 		}
 
-		static WBScene* LoadScene(const std::wstring& name)
-		{
-			std::map<const std::wstring, WBScene*>::iterator itr 
-				= mScene.find(name);
-
-			if (itr == mScene.end())
-				return nullptr;
-
-			mActiveScene = itr->second;
-
-			return itr->second;
-		}
+		static WBScene* LoadScene(const std::wstring& name);
 
 		static void Initialize();
 		static void Update();
@@ -42,4 +31,4 @@ namespace wb
 		static std::map<const std::wstring, WBScene*> mScene;
 		static WBScene* mActiveScene;
 	};
-} 
+}

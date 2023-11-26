@@ -34,6 +34,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp">
       <Filter>frequently-used</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBLayer.cpp">
+      <Filter>layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -72,6 +75,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h">
       <Filter>frequently-used</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBLayer.h">
+      <Filter>layers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBEnum.h">
+      <Filter>frequently-used</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -91,6 +100,9 @@
     </Filter>
     <Filter Include="window-settings">
       <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="layers">
+      <UniqueIdentifier>{238e93dc-2d24-4b63-b637-2790069e289c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

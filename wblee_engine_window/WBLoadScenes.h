@@ -1,13 +1,15 @@
 #pragma once
 #include "..\wblee_engine_source\WBSceneManager.h"
 #include "WBPlayScene.h"
+#include "WBTitleScene.h"
 
 namespace wb
 {
 	void LoadScenes()
 	{
-		WBSceneManager::CreateScene<WBPlayScene>(L"PlayScene");
+		WBSceneManager::CreateScene<WBTitleScene>(L"WBTitleScene");
+		WBSceneManager::CreateScene<WBPlayScene>(L"WBPlayScene");
 
-		WBSceneManager::LoadScene(L"PlayScene");
+		WBSceneManager::LoadScene(L"WBPlayScene");
 	}
 }

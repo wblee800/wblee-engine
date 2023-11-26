@@ -3,11 +3,11 @@
 
 namespace wb
 {
-	class WBPlayScene : public WBScene
+	class WBTitleScene : public WBScene
 	{
 	public:
-		WBPlayScene();
-		~WBPlayScene();
+		WBTitleScene();
+		~WBTitleScene();
 
 		void Initialize() override;
 		void Update() override;
@@ -18,6 +18,6 @@ namespace wb
 		void OnExit() override;
 
 	private:
-		class WBPlayer* bg;
+
 	};
 }
