@@ -44,6 +44,9 @@ namespace wb
 		}
 
 	private:
+		void initTransform();
+
+	private:
 		std::vector<WBComponent*> mComponents;
 	};
 }

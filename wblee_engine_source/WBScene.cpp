@@ -7,11 +7,7 @@ namespace wb
 	WBScene::WBScene()
 		: mLayers{}
 	{
-		mLayers.resize((UINT)eLayerType::Max);
-		for (size_t i = 0; i < (UINT)eLayerType::Max; i++)
-		{
-			mLayers[i] = new WBLayer;
-		}
+		createLayers();
 	}
 
 	WBScene::~WBScene()
@@ -65,8 +61,17 @@ namespace wb
 
 	}
 
-	void WBScene::AddGameObject(WBGameObject * gameObj, const eLayerType layerType)
+	void WBScene::AddGameObject(WBGameObject * gameObj, const enums::eLayerType layerType)
 	{
 		mLayers[(UINT)layerType]->AddGameObject(gameObj);
+	}
+
+	void WBScene::createLayers()
+	{
+		mLayers.resize((UINT)enums::eLayerType::Max);
+		for (size_t i = 0; i < (UINT)enums::eLayerType::Max; i++)
+		{
+			mLayers[i] = new WBLayer;
+		}
 	}
 }

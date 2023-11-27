@@ -2,11 +2,13 @@
 #include "WBInput.h"
 #include "WBTime.h"
 #include "WBComponent.h"
+#include "WBTransform.h"
 
 namespace wb
 {
 	WBGameObject::WBGameObject()
 	{
+		initTransform();
 	}
 
 	WBGameObject::~WBGameObject()
@@ -45,5 +47,10 @@ namespace wb
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void WBGameObject::initTransform()
+	{
+		AddComponent<WBTransform>();
 	}
 }

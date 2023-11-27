@@ -5,10 +5,12 @@
 #include "../wblee_engine_source/WBSpriteRenderer.h"
 #include "../wblee_engine_source/WBInput.h"
 #include "../wblee_engine_source/WBSceneManager.h"
+#include "../wblee_engine_source/WBObject.h"
 
 namespace wb
 {
 	WBPlayScene::WBPlayScene()
+		:bg{}
 	{
 	}
 
@@ -21,18 +23,10 @@ namespace wb
 		WBScene::Initialize();
 
 		{
-			bg = new WBPlayer();
-			WBTransform* tr = bg->AddComponent<WBTransform>();
-			tr->SetPos(Vector2(0, 0));
-
-			tr->SetName(L"Transfrom");
-
-			WBSpriteRenderer* sr
-				= bg->AddComponent<WBSpriteRenderer>();
-			sr->SetName(L"Sprite");
-			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\maps\\JojaMart.bmp");
-
-			AddGameObject(bg, eLayerType::Background);
+			bg = object::Instantiate<WBPlayer>
+				(enums::eLayerType::Background, Vector2(100.0f, 100.0f));
+			WBSpriteRenderer* sr = bg->AddComponent<WBSpriteRenderer>();
+			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\miscellaneous\\Cloudy Ocean.png");
 		}
 	}
 

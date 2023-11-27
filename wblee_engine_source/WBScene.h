@@ -20,7 +20,11 @@ namespace wb
 		virtual void OnEnter();
 		virtual void OnExit();
 
-		void AddGameObject(WBGameObject* gameObj, const eLayerType layerType);
+		void AddGameObject(WBGameObject* gameObj, const enums::eLayerType layerType);
+		WBLayer* GetLayer(enums::eLayerType layerType) { return mLayers[(UINT)layerType]; }
+
+	private:
+		void createLayers();
 
 	private:
 		std::vector<WBLayer*> mLayers;

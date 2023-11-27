@@ -81,6 +81,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEnum.h">
       <Filter>frequently-used</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBObject.h">
+      <Filter>frequently-used</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">

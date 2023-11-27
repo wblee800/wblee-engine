@@ -13,6 +13,7 @@ namespace wb
 		{
 			T* scene = new T();
 			scene->SetName(name);
+			mActiveScene = scene;
 			scene->Initialize();
 
 			mScene.insert(std::make_pair(name, scene));
@@ -21,6 +22,7 @@ namespace wb
 		}
 
 		static WBScene* LoadScene(const std::wstring& name);
+		static WBScene* GetActiveScene() { return mActiveScene; }
 
 		static void Initialize();
 		static void Update();

@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />

@@ -19,7 +19,6 @@ namespace wb
 		void AddGameObject(WBGameObject* gameObject);
 
 	private:
-		// eLayerType mLayerType;
 		std::vector<WBGameObject*> mGameObjects;
 	};
 }

@@ -2,11 +2,14 @@
 
 namespace wb
 {
-	enum class eLayerType
+	namespace enums
 	{
-		None,
-		Background,
-		Player,
-		Max = 16,
-	};
+		enum class eLayerType
+		{
+			None,
+			Background,
+			Player,
+			Max = 16,
+		};
+	}
 }
