@@ -7,6 +7,7 @@
 #include <map>
 
 #include "WBMath.h"
+#include "WBEnum.h"
 
 // Msimg32.lib : 
 // GDI와 관련된 이미지 처리와 관련된 몇 가지 확장 기능을 제공

@@ -1,11 +1,17 @@
 #include "WBScene.h"
 #include "WBGameObject.h"
+#include "WBLayer.h"
 
 namespace wb
 {
 	WBScene::WBScene()
-		: mGameObjects{}
+		: mLayers{}
 	{
+		mLayers.resize((UINT)eLayerType::Max);
+		for (size_t i = 0; i < (UINT)eLayerType::Max; i++)
+		{
+			mLayers[i] = new WBLayer;
+		}
 	}
 
 	WBScene::~WBScene()
@@ -18,25 +24,34 @@ namespace wb
 
 	void WBScene::Update()
 	{
-		for (WBGameObject* gameObj : mGameObjects)
+		for (WBLayer* layer : mLayers)
 		{
-			gameObj->Update();
+			if (layer == nullptr)
+				continue;
+
+			layer->Update();
 		}
 	}
 
 	void WBScene::LateUpdate()
 	{
-		for (WBGameObject* gameObj : mGameObjects)
+		for (WBLayer* layer : mLayers)
 		{
-			gameObj->LateUpdate();
+			if (layer == nullptr)
+				continue;
+
+			layer->LateUpdate();
 		}
 	}
 
 	void WBScene::Render(HDC hdc)
 	{
-		for (WBGameObject* gameObj : mGameObjects)
+		for (WBLayer* layer : mLayers)
 		{
-			gameObj->Render(hdc);
+			if (layer == nullptr)
+				continue;
+
+			layer->Render(hdc);
 		}
 	}
 
@@ -50,8 +65,8 @@ namespace wb
 
 	}
 
-	void WBScene::AddGameObject(WBGameObject* gameObject)
+	void WBScene::AddGameObject(WBGameObject * gameObj, const eLayerType layerType)
 	{
-		mGameObjects.push_back(gameObject);
+		mLayers[(UINT)layerType]->AddGameObject(gameObj);
 	}
 }

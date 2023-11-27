@@ -32,7 +32,7 @@ namespace wb
 			sr->SetName(L"Sprite");
 			sr->ImageLoad(L"C:\\Users\\wonbi\\source\\repos\\wblee800\\wblee-engine\\resources\\sprites\\maps\\JojaMart.bmp");
 
-			AddGameObject(bg);
+			AddGameObject(bg, eLayerType::Background);
 		}
 	}
 

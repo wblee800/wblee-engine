@@ -5,6 +5,7 @@
 namespace wb
 {
 	class WBGameObject;
+	class WBLayer;
 	class WBScene : public WBEntity
 	{
 	public:
@@ -19,9 +20,9 @@ namespace wb
 		virtual void OnEnter();
 		virtual void OnExit();
 
-		void AddGameObject(WBGameObject* gameObject);
+		void AddGameObject(WBGameObject* gameObj, const eLayerType layerType);
 
 	private:
-		std::vector<WBGameObject*> mGameObjects;
+		std::vector<WBLayer*> mLayers;
 	};
 }
