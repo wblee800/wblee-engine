@@ -2,35 +2,36 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="WBLoadScenes.h">
-      <Filter>scenes</Filter>
+      <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="WBPlayScene.h">
-      <Filter>scenes</Filter>
+      <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="WBPlayer.h">
-      <Filter>contents</Filter>
+      <Filter>content</Filter>
     </ClInclude>
     <ClInclude Include="WBTitleScene.h">
-      <Filter>scenes</Filter>
+      <Filter>scene</Filter>
     </ClInclude>
+    <ClInclude Include="WBLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="scenes">
-      <UniqueIdentifier>{7b755d28-5fa6-4c72-b6e4-80b3d487aa3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="contents">
+    <Filter Include="content">
       <UniqueIdentifier>{ad699d06-0ac1-4937-bdc9-c17d3562d692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{7b755d28-5fa6-4c72-b6e4-80b3d487aa3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBPlayScene.cpp">
-      <Filter>scenes</Filter>
+      <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="WBPlayer.cpp">
-      <Filter>contents</Filter>
+      <Filter>content</Filter>
     </ClCompile>
     <ClCompile Include="WBTitleScene.cpp">
-      <Filter>scenes</Filter>
+      <Filter>scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

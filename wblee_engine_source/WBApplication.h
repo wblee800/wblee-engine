@@ -19,6 +19,8 @@ namespace wb
 		void LateUpdate();
 		void Render();
 
+		HDC GetHDC() { return mHdc; }
+
 	private:
 		void clearRenderTarget();
 		void copyRenderTarget(HDC source, HDC dest);
@@ -36,7 +38,7 @@ namespace wb
 		float mSpeed;
 		UINT mWidth;
 		UINT mHeight;
-		
+
 		WBGameObject mPlayer;
 
 		// std::vector<WBGameObject*> mGameObjects;

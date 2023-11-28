@@ -3,38 +3,42 @@
 #include "..\wblee_engine_source\WBTransform.h"
 #include "..\wblee_engine_source\WBTime.h"
 
-wb::WBPlayer::WBPlayer()
+namespace wb
 {
-}
-
-wb::WBPlayer::~WBPlayer()
-{
-}
-
-void wb::WBPlayer::Initialize()
-{
-	WBGameObject::Initialize();
-}
-
-void wb::WBPlayer::Update()
-{
-	WBGameObject::Update();
-}
-
-void wb::WBPlayer::LateUpdate()
-{
-	WBGameObject::LateUpdate();
-
-	if (WBInput::GetKeyDown(eKeyCode::RIGHT))
+	WBPlayer::WBPlayer()
 	{
-		WBTransform* tr = GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPos();
-		pos.x += 100.0f * WBTime::DeltaTime();
-		tr->SetPos(pos);
 	}
-}
 
-void wb::WBPlayer::Render(HDC hdc)
-{
-	WBGameObject::Render(hdc);
+	WBPlayer::~WBPlayer()
+	{
+	}
+
+	void WBPlayer::Initialize()
+	{
+		WBGameObject::Initialize();
+	}
+
+	void WBPlayer::Update()
+	{
+		WBGameObject::Update();
+	}
+
+	void WBPlayer::LateUpdate()
+	{
+		WBGameObject::LateUpdate();
+
+		if (WBInput::GetKeyDown(eKeyCode::RIGHT))
+		{
+			WBTransform* tr = GetComponent<WBTransform>();
+			Vector2 pos = tr->GetPos();
+			pos.x += 100.0f * WBTime::DeltaTime();
+			tr->SetPos(pos);
+		}
+	}
+
+	void WBPlayer::Render(HDC hdc)
+	{
+		WBGameObject::Render(hdc);
+	}
+
 }

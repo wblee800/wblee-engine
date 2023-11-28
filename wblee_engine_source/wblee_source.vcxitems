@@ -25,9 +25,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h" />
   </ItemGroup>
@@ -39,9 +42,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp" />
   </ItemGroup>

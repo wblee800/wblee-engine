@@ -1,42 +1,60 @@
 #include "WBSpriteRenderer.h"
 #include "WBGameObject.h"
 #include "WBTransform.h"
+#include "WBTexture.h"
 
-wb::WBSpriteRenderer::WBSpriteRenderer()
-	:mImage(nullptr)
-	, mWidth(0)
-	, mHeight(0)
+namespace wb
 {
-}
+	WBSpriteRenderer::WBSpriteRenderer()
+		: WBComponent()
+		, mTexture(nullptr)
+		, mSize(Vector2::One)
+	{
+	}
 
-wb::WBSpriteRenderer::~WBSpriteRenderer()
-{
-}
+	WBSpriteRenderer::~WBSpriteRenderer()
+	{
+	}
 
-void wb::WBSpriteRenderer::Initialize()
-{
-}
+	void WBSpriteRenderer::Initialize()
+	{
+	}
 
-void wb::WBSpriteRenderer::Update()
-{
-}
+	void WBSpriteRenderer::Update()
+	{
+	}
 
-void wb::WBSpriteRenderer::LateUpdate()
-{
-}
+	void WBSpriteRenderer::LateUpdate()
+	{
+	}
 
-void wb::WBSpriteRenderer::Render(HDC hdc)
-{
-	WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-	Vector2 pos = tr->GetPos();
+	void WBSpriteRenderer::Render(HDC hdc)
+	{
+		// If you don't set texture, assert error.
+		if (mTexture == nullptr)
+			assert(false);
 
-	Gdiplus::Graphics graphics(hdc);
-	graphics.DrawImage(mImage,Gdiplus::Rect(pos.x, pos.y, 1600, 880));
-}
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		Vector2 pos = tr->GetPos();
 
-void wb::WBSpriteRenderer::ImageLoad(const std::wstring& path)
-{
-	mImage = Gdiplus::Image::FromFile(path.c_str());
-	mWidth = mImage->GetWidth();
-	mHeight = mImage->GetHeight();
+		if (mTexture->GetTextureType()
+			== graphics::WBTexture::eTextureType::Bmp)
+		{
+			TransparentBlt(hdc, pos.x, pos.y
+				, mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y
+				, mTexture->GetHdc(), 0, 0, mTexture->GetWidth(), mTexture->GetHeight(), RGB(255, 0, 255));
+		}
+		else if (mTexture->GetTextureType()
+			== graphics::WBTexture::eTextureType::Png)
+		{
+			Gdiplus::Graphics graphics(hdc);
+			graphics.DrawImage(mTexture->GetImage()
+				, Gdiplus::Rect(pos.x, pos.y, mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y));
+		}
+	}
+
+	void WBSpriteRenderer::SetTexture(graphics::WBTexture* texture)
+	{
+		mTexture = texture;
+	}
 }

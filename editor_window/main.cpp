@@ -4,6 +4,7 @@
 #include "editor_window.h"
 
 #include "..\wblee_engine_source\WBApplication.h"
+#include "..\wblee_engine_window\WBLoadResources.h"
 #include "..\wblee_engine_window\WBLoadScenes.h"
 
 wb::WBApplication application;
@@ -134,9 +135,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
 	// Load scenes
+	wb::LoadResources();
 	wb::LoadScenes();
 	
-
 	return TRUE;
 }
 

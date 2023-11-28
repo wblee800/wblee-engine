@@ -1,63 +1,67 @@
 #include "WBLayer.h"
 #include "WBGameObject.h"
 
-wb::WBLayer::WBLayer()
-	:mGameObjects{}
+namespace wb
 {
-}
-
-wb::WBLayer::~WBLayer()
-{
-}
-
-void wb::WBLayer::Initialize()
-{
-	for (WBGameObject* gameObj : mGameObjects)
+	WBLayer::WBLayer()
+		:mGameObjects{}
 	{
-		if (gameObj == nullptr)
-			continue;
-
-		gameObj->Initialize();
 	}
-}
 
-void wb::WBLayer::Update()
-{
-	for (WBGameObject* gameObj : mGameObjects)
+	WBLayer::~WBLayer()
 	{
-		if (gameObj == nullptr)
-			continue;
-
-		gameObj->Update();
 	}
-}
 
-void wb::WBLayer::LateUpdate()
-{
-	for (WBGameObject* gameObj : mGameObjects)
+	void WBLayer::Initialize()
 	{
-		if (gameObj == nullptr)
-			continue;
+		for (WBGameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+				continue;
 
-		gameObj->LateUpdate();
+			gameObj->Initialize();
+		}
 	}
-}
 
-void wb::WBLayer::Render(HDC hdc)
-{
-	for (WBGameObject* gameObj : mGameObjects)
+	void WBLayer::Update()
 	{
-		if (gameObj == nullptr)
-			continue;
+		for (WBGameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+				continue;
 
-		gameObj->Render(hdc);
+			gameObj->Update();
+		}
 	}
-}
 
-void wb::WBLayer::AddGameObject(WBGameObject* gameObject)
-{
-	if (gameObject == nullptr)
-		return;
+	void WBLayer::LateUpdate()
+	{
+		for (WBGameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+				continue;
 
-	mGameObjects.push_back(gameObject);
+			gameObj->LateUpdate();
+		}
+	}
+
+	void WBLayer::Render(HDC hdc)
+	{
+		for (WBGameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+				continue;
+
+			gameObj->Render(hdc);
+		}
+	}
+
+	void WBLayer::AddGameObject(WBGameObject* gameObject)
+	{
+		if (gameObject == nullptr)
+			return;
+
+		mGameObjects.push_back(gameObject);
+	}
+
 }

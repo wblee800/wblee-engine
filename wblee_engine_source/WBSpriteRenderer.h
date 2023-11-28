@@ -4,6 +4,11 @@
 
 namespace wb
 {
+	namespace graphics
+	{
+		class WBTexture;
+	}
+
 	class WBSpriteRenderer : public	WBComponent
 	{
 	public:
@@ -15,13 +20,10 @@ namespace wb
 		virtual void LateUpdate() override;
 		virtual void Render(HDC hdc) override;
 
-		void ImageLoad(const std::wstring& path);
-
+		void SetTexture(graphics::WBTexture* texture);
+		void SetSize(math::Vector2 size) { mSize = size; }
 	private:
-		/*BITMAP mBitmap;
-		HDC mHdc;*/
-		Gdiplus::Image* mImage;
-		UINT mWidth;
-		UINT mHeight;
+		graphics::WBTexture* mTexture;
+		math::Vector2 mSize;
 	};
 }
