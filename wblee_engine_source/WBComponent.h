@@ -18,7 +18,7 @@ namespace wb
 		void SetOwner(WBGameObject* owner) { mOwner = owner; }
 		WBGameObject* GetOwner() { return mOwner; }
 	private:
-		// 전방선언
+		// Forward declaration
 		WBGameObject* mOwner;
 	};
 }

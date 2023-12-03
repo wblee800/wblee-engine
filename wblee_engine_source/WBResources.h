@@ -10,7 +10,7 @@ namespace wb
 		static T* Find(const std::wstring& key)
 		{
 			auto itr = mResources.find(key);
-			if (itr == mResources.begin())
+			if (itr == mResources.end())
 				return nullptr;
 
 			return dynamic_cast<T*>(itr->second);

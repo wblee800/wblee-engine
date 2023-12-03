@@ -7,13 +7,13 @@
     <ClInclude Include="WBPlayScene.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="WBPlayer.h">
-      <Filter>content</Filter>
-    </ClInclude>
     <ClInclude Include="WBTitleScene.h">
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="WBLoadResources.h" />
+    <ClInclude Include="WBPlayer.h">
+      <Filter>scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="content">
