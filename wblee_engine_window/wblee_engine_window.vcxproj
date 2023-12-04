@@ -22,11 +22,13 @@
     <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBLoadScenes.h" />
     <ClInclude Include="WBPlayer.h" />
+    <ClInclude Include="WBPlayerScript.h" />
     <ClInclude Include="WBPlayScene.h" />
     <ClInclude Include="WBTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBPlayer.cpp" />
+    <ClCompile Include="WBPlayerScript.cpp" />
     <ClCompile Include="WBPlayScene.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
   </ItemGroup>

@@ -8,6 +8,7 @@ namespace wb
 {
 	WBGameObject::WBGameObject()
 	{
+		mComponents.resize((UINT)enums::eComponentType::End);
 		initTransform();
 	}
 
@@ -29,6 +30,9 @@ namespace wb
 	{
 		for (WBComponent* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
+
 			comp->Update();
 		}
 	}
@@ -37,6 +41,9 @@ namespace wb
 	{
 		for (WBComponent* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
+
 			comp->LateUpdate();
 		}
 	}
@@ -45,6 +52,9 @@ namespace wb
 	{
 		for (WBComponent* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
+
 			comp->Render(hdc);
 		}
 	}

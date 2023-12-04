@@ -7,7 +7,7 @@ namespace wb
 	class WBComponent : public WBEntity
 	{
 	public:
-		WBComponent();
+		WBComponent(enums::eComponentType type);
 		~WBComponent();
 
 		virtual void Initialize();
@@ -17,8 +17,10 @@ namespace wb
 
 		void SetOwner(WBGameObject* owner) { mOwner = owner; }
 		WBGameObject* GetOwner() { return mOwner; }
+		enums::eComponentType GetType() { return mType; }
 	private:
 		// Forward declaration
 		WBGameObject* mOwner;
+		enums::eComponentType mType;
 	};
 }

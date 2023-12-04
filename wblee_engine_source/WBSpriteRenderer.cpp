@@ -6,7 +6,7 @@
 namespace wb
 {
 	WBSpriteRenderer::WBSpriteRenderer()
-		: WBComponent()
+		: WBComponent(enums::eComponentType::SpriteRenderer)
 		, mTexture(nullptr)
 		, mSize(Vector2::One)
 	{

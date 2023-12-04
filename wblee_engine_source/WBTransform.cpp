@@ -1,7 +1,7 @@
 #include "WBTransform.h"
 
 wb::WBTransform::WBTransform()
-	: mPosition()
+	: WBComponent(enums::eComponentType::Transform)
 {
 }
 

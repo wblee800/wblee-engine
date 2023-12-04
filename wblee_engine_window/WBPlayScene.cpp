@@ -8,6 +8,8 @@
 #include "../wblee_engine_source/WBObject.h"
 #include "../wblee_engine_source/WBTexture.h"
 #include "../wblee_engine_source/WBResources.h"
+#include "WBPlayerScript.h"
+#include "..\wblee_engine_source\WBCamera.h"
 // #include "WBLoadResources.h"
 
 namespace wb
@@ -23,13 +25,17 @@ namespace wb
 
 	void WBPlayScene::Initialize()
 	{
+		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
+		camera->AddComponent<WBCamera>();
+		camera->AddComponent<WBPlayerScript>();
+
 		// Before loading a game object, load resources.
 		bg = object::Instantiate<WBPlayer>
 			(enums::eLayerType::Background, Vector2(0.f, 0.f));	
 		WBSpriteRenderer* sr = bg->AddComponent<WBSpriteRenderer>();
 
-		graphics::WBTexture* bg = WBResources::Find<graphics::WBTexture>(L"BG");
-		sr->SetTexture(bg);
+		graphics::WBTexture* bgtex = WBResources::Find<graphics::WBTexture>(L"BG");
+		sr->SetTexture(bgtex);
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();

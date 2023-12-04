@@ -14,6 +14,9 @@
     <ClInclude Include="WBPlayer.h">
       <Filter>scene</Filter>
     </ClInclude>
+    <ClInclude Include="WBPlayerScript.h">
+      <Filter>script</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="content">
@@ -21,6 +24,9 @@
     </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{7b755d28-5fa6-4c72-b6e4-80b3d487aa3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="script">
+      <UniqueIdentifier>{36a10379-67d4-41d0-b3e6-f2c4261aa5ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="WBTitleScene.cpp">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPlayerScript.cpp">
+      <Filter>script</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

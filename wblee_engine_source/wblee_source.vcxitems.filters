@@ -13,9 +13,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
@@ -27,9 +24,6 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp">
       <Filter>helper</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp">
-      <Filter>component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBLayer.cpp">
       <Filter>layer</Filter>
@@ -45,6 +39,18 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBMath.cpp">
       <Filter>frequently-used</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp">
+      <Filter>component\sprite-renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp">
+      <Filter>component\transform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBScript.cpp">
+      <Filter>component\script</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBCamera.cpp">
+      <Filter>component\camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,9 +69,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h">
-      <Filter>component</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h">
       <Filter>component</Filter>
     </ClInclude>
@@ -77,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h">
       <Filter>helper</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h">
-      <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBMath.h">
       <Filter>frequently-used</Filter>
@@ -102,13 +102,22 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBResources.h">
       <Filter>resource</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h">
+      <Filter>component\sprite-renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h">
+      <Filter>component\transform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBScript.h">
+      <Filter>component\script</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBCamera.h">
+      <Filter>component\camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
       <UniqueIdentifier>{683c170b-b309-4542-a170-23f90ec4bbb1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="component">
-      <UniqueIdentifier>{a8f474f9-9374-488b-99cd-9025df12f028}</UniqueIdentifier>
     </Filter>
     <Filter Include="game-object">
       <UniqueIdentifier>{86933ce3-89e8-4a41-8efd-747b53626fe4}</UniqueIdentifier>
@@ -130,6 +139,21 @@
     </Filter>
     <Filter Include="resource\texture">
       <UniqueIdentifier>{2a94effb-1655-4935-bc5b-fa80e2f9f82c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component">
+      <UniqueIdentifier>{a8f474f9-9374-488b-99cd-9025df12f028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\sprite-renderer">
+      <UniqueIdentifier>{a7107df9-bcfd-4a26-ac5b-0673b1ae0428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\transform">
+      <UniqueIdentifier>{a33f6c76-8f82-4f39-a9dc-b5a72948dc87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\script">
+      <UniqueIdentifier>{6fa6aa1b-a162-4c05-a297-202f4ef487bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\camera">
+      <UniqueIdentifier>{407699a9-33cf-4c25-a848-b11b35a4f360}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

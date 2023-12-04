@@ -1,6 +1,7 @@
 #include "WBComponent.h"
 
-wb::WBComponent::WBComponent()
+wb::WBComponent::WBComponent(enums::eComponentType type)
+	:mType(type)
 {
 
 }
