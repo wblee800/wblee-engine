@@ -6,6 +6,7 @@ namespace wb
 {
 	void LoadResources()
 	{
-		WBResources::Load<graphics::WBTexture>(L"BG", L"..\\resources\\sprites\\miscellaneous\\Cloudy Ocean.png");
+		WBResources::Load<graphics::WBTexture>(L"BG", L"..\\resources\\sprites\\maps\\JojaMart.png");
+		WBResources::Load<graphics::WBTexture>(L"Player", L"..\\resources\\sprites\\characters\\npcs\\Bouncer.png");
 	}
 }

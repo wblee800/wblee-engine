@@ -2,6 +2,7 @@
 #include "WBGameObject.h"
 #include "WBTransform.h"
 #include "WBTexture.h"
+#include "WBRenderer.h"
 
 namespace wb
 {
@@ -36,6 +37,8 @@ namespace wb
 
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
 		Vector2 pos = tr->GetPos();
+
+		pos = renderer::mainCamera->CalculatePos(pos);
 
 		if (mTexture->GetTextureType()
 			== graphics::WBTexture::eTextureType::Bmp)

@@ -4,18 +4,18 @@
     <ClInclude Include="WBLoadScenes.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="WBPlayScene.h">
-      <Filter>scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBTitleScene.h">
-      <Filter>scene</Filter>
-    </ClInclude>
     <ClInclude Include="WBLoadResources.h" />
-    <ClInclude Include="WBPlayer.h">
-      <Filter>scene</Filter>
-    </ClInclude>
     <ClInclude Include="WBPlayerScript.h">
       <Filter>script</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPlayScene.h">
+      <Filter>scene\play-scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTitleScene.h">
+      <Filter>scene\title-scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPlayer.h">
+      <Filter>content</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -28,19 +28,28 @@
     <Filter Include="script">
       <UniqueIdentifier>{36a10379-67d4-41d0-b3e6-f2c4261aa5ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene\title-scene">
+      <UniqueIdentifier>{fa08ed01-a435-4f16-bc81-6c88195bf54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene">
+      <UniqueIdentifier>{fe760042-a663-4e07-93a7-050f501bc4c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\ending-scene">
+      <UniqueIdentifier>{e3321130-c903-4116-8725-7ad048ddbdf9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WBPlayScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="WBPlayer.cpp">
       <Filter>content</Filter>
     </ClCompile>
-    <ClCompile Include="WBTitleScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="WBPlayerScript.cpp">
       <Filter>script</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPlayScene.cpp">
+      <Filter>scene\play-scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTitleScene.cpp">
+      <Filter>scene\title-scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

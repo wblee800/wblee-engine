@@ -18,6 +18,6 @@ namespace wb
 		void OnExit() override;
 
 	private:
-		class WBPlayer* bg;
+		class WBPlayer* mPlayer;
 	};
 }

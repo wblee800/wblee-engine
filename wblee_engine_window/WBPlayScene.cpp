@@ -10,12 +10,12 @@
 #include "../wblee_engine_source/WBResources.h"
 #include "WBPlayerScript.h"
 #include "..\wblee_engine_source\WBCamera.h"
-// #include "WBLoadResources.h"
+#include "..\wblee_engine_source\WBRenderer.h"
 
 namespace wb
 {
 	WBPlayScene::WBPlayScene()
-		:bg{}
+		:mPlayer{}
 	{
 	}
 
@@ -25,17 +25,29 @@ namespace wb
 
 	void WBPlayScene::Initialize()
 	{
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
-		camera->AddComponent<WBCamera>();
-		camera->AddComponent<WBPlayerScript>();
+		// Main camera
+		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(480.0f, 480.0f));
+		WBCamera* cameraComp = camera->AddComponent<WBCamera>();
+		renderer::mainCamera = cameraComp;
 
 		// Before loading a game object, load resources.
-		bg = object::Instantiate<WBPlayer>
-			(enums::eLayerType::Background, Vector2(0.f, 0.f));	
-		WBSpriteRenderer* sr = bg->AddComponent<WBSpriteRenderer>();
+		mPlayer = object::Instantiate<WBPlayer>
+			(enums::eLayerType::Player, Vector2(0.f, 0.f));
+		WBSpriteRenderer* playerSr = mPlayer->AddComponent<WBSpriteRenderer>();
+		playerSr->SetSize(Vector2(2.0f, 2.0f));
+		mPlayer->AddComponent<WBPlayerScript>();
 
-		graphics::WBTexture* bgtex = WBResources::Find<graphics::WBTexture>(L"BG");
-		sr->SetTexture(bgtex);
+		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Player");
+		playerSr->SetTexture(playerTex);
+
+		// Before loading a game object, load resources.
+		WBGameObject* bg = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Background, Vector2(0.f, 0.f));	
+		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
+		bgSr->SetSize(Vector2(2.0f, 2.0f));
+
+		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"BG");
+		bgSr->SetTexture(bgTex);
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();

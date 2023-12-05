@@ -52,6 +52,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCamera.cpp">
       <Filter>component\camera</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBRenderer.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -114,6 +117,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCamera.h">
       <Filter>component\camera</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBRenderer.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -154,6 +160,9 @@
     </Filter>
     <Filter Include="component\camera">
       <UniqueIdentifier>{407699a9-33cf-4c25-a848-b11b35a4f360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="renderer">
+      <UniqueIdentifier>{78e82d95-29b3-4df3-b2bb-0db0dd3485e8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

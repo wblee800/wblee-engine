@@ -22,7 +22,7 @@ void wb::WBPlayerScript::Update()
 
 void wb::WBPlayerScript::LateUpdate()
 {
-	if (WBInput::GetKeyDown(eKeyCode::RIGHT))
+	if (WBInput::GetKey(eKeyCode::RIGHT))
 	{
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
 		Vector2 pos = tr->GetPos();
@@ -30,11 +30,27 @@ void wb::WBPlayerScript::LateUpdate()
 		tr->SetPos(pos);
 	}
 
-	if (WBInput::GetKeyDown(eKeyCode::LEFT))
+	if (WBInput::GetKey(eKeyCode::LEFT))
 	{
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
 		Vector2 pos = tr->GetPos();
 		pos.x -= 100.0f * WBTime::DeltaTime();
+		tr->SetPos(pos);
+	}
+
+	if (WBInput::GetKey(eKeyCode::UP))
+	{
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		Vector2 pos = tr->GetPos();
+		pos.y -= 100.0f * WBTime::DeltaTime();
+		tr->SetPos(pos);
+	}
+
+	if (WBInput::GetKey(eKeyCode::DOWN))
+	{
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		Vector2 pos = tr->GetPos();
+		pos.y += 100.0f * WBTime::DeltaTime();
 		tr->SetPos(pos);
 	}
 }

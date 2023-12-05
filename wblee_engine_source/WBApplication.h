@@ -20,6 +20,8 @@ namespace wb
 		void Render();
 
 		HDC GetHDC() { return mHdc; }
+		UINT GetWidth() { return mWidth; }
+		UINT GetHeight() { return mHeight; }
 
 	private:
 		void clearRenderTarget();
