@@ -13,9 +13,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSceneManager.cpp">
       <Filter>scene</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp">
       <Filter>window-settings</Filter>
     </ClCompile>
@@ -55,6 +52,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBRenderer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp">
+      <Filter>component\component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimation.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimator.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -71,9 +77,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSceneManager.h">
       <Filter>scene</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h">
-      <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h">
       <Filter>window-settings</Filter>
@@ -120,6 +123,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBRenderer.h">
       <Filter>renderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h">
+      <Filter>component\component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimation.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimator.h">
+      <Filter>component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -163,6 +175,9 @@
     </Filter>
     <Filter Include="renderer">
       <UniqueIdentifier>{78e82d95-29b3-4df3-b2bb-0db0dd3485e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\component">
+      <UniqueIdentifier>{00614218-2b70-4477-bfc5-6f4b1d9ffe40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

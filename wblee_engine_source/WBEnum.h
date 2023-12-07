@@ -8,6 +8,7 @@ namespace wb
 		{
 			Transform,
 			SpriteRenderer,
+			Animator,
 			Script,
 			Camera,
 			End
@@ -25,6 +26,7 @@ namespace wb
 		{
 			Texture,
 			AudioClip,
+			Animation,
 			Prefab,
 			End,
 		};

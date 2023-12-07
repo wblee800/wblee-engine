@@ -11,6 +11,7 @@
 #include "WBPlayerScript.h"
 #include "..\wblee_engine_source\WBCamera.h"
 #include "..\wblee_engine_source\WBRenderer.h"
+#include "..\wblee_engine_source\WBAnimator.h"
 
 namespace wb
 {
@@ -33,12 +34,14 @@ namespace wb
 		// Before loading a game object, load resources.
 		mPlayer = object::Instantiate<WBPlayer>
 			(enums::eLayerType::Player, Vector2(0.f, 0.f));
-		WBSpriteRenderer* playerSr = mPlayer->AddComponent<WBSpriteRenderer>();
-		playerSr->SetSize(Vector2(2.0f, 2.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Player");
-		playerSr->SetTexture(playerTex);
+		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Cat");
+		WBAnimator* animator = mPlayer->AddComponent<WBAnimator>();
+		animator->CreateAnimation(L"CatFrontMove", playerTex
+			, Vector2::Zero,Vector2(32.0f, 32.0f)
+			, Vector2::Zero, 4, 0.5f);
+		animator->PlayAnimation(L"CatFrontMove");
 
 		// Before loading a game object, load resources.
 		WBGameObject* bg = object::Instantiate<WBGameObject>

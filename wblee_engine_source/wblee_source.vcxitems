@@ -16,6 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
@@ -38,6 +40,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp" />
