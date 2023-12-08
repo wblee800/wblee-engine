@@ -56,10 +56,10 @@
       <Filter>component\component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimation.cpp">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimator.cpp">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,10 +127,10 @@
       <Filter>component\component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimation.h">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimator.h">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +178,9 @@
     </Filter>
     <Filter Include="component\component">
       <UniqueIdentifier>{00614218-2b70-4477-bfc5-6f4b1d9ffe40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\animation">
+      <UniqueIdentifier>{cdfeacdd-ddb5-4b95-85ec-cb6ea6fc4a54}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

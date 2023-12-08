@@ -33,15 +33,37 @@ namespace wb
 
 		// Before loading a game object, load resources.
 		mPlayer = object::Instantiate<WBPlayer>
-			(enums::eLayerType::Player, Vector2(0.f, 0.f));
+			(enums::eLayerType::Player, Vector2(16.0f, 16.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Cat");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
+
+		// Move
 		playerAnimator->CreateAnimation(L"CatFrontMove", playerTex
 			, Vector2::Zero,Vector2(32.0f, 32.0f)
 			, Vector2::Zero, 4, 0.5f);
-		playerAnimator->PlayAnimation(L"CatFrontMove");
+		playerAnimator->CreateAnimation(L"CatRightMove", playerTex
+			, Vector2::Zero, Vector2(32.0f, 64.0f)
+			, Vector2::Zero, 4, 0.5f);
+		playerAnimator->CreateAnimation(L"CatBackMove", playerTex
+			, Vector2::Zero, Vector2(32.0f, 96.0f)
+			, Vector2::Zero, 4, 0.5f);
+		playerAnimator->CreateAnimation(L"CatLeftMove", playerTex
+			, Vector2::Zero, Vector2(32.0f, 128.0f)
+			, Vector2::Zero, 4, 0.5f);
+
+		// Sit down
+		playerAnimator->CreateAnimation(L"CatSitDown", playerTex
+			, Vector2::Zero, Vector2(32.0f, 160.0f)
+			, Vector2::Zero, 4, 0.5f);
+
+		// Groom
+		playerAnimator->CreateAnimation(L"CatGroom", playerTex
+			, Vector2::Zero, Vector2(32.0f, 192.0f)
+			, Vector2::Zero, 4, 0.5f);
+
+		// _______________________________________________________
 
 		// Before loading a game object, load resources.
 		WBGameObject* bg = object::Instantiate<WBGameObject>
@@ -51,16 +73,20 @@ namespace wb
 		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Map");
 		bgSr->SetTexture(bgTex);
 
+		// _______________________________________________________
+
 		// Before loading a game object, load resources.
 		WBGameObject* skill = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Skill, Vector2(0.f, 0.f));
+			(enums::eLayerType::Skill, Vector2(16.0f, 16.0f));
 		WBAnimator* skillAnimator = skill->AddComponent<WBAnimator>();
 
 		graphics::WBTexture* skillTex = WBResources::Find<graphics::WBTexture>(L"Fireball");
 		skillAnimator->CreateAnimation(L"ShootFireball", skillTex
 			, Vector2::Zero, Vector2(32.0f, 32.0f)
 			, Vector2::Zero, 4, 0.1f);
+
 		skillAnimator->PlayAnimation(L"ShootFireball");
+		// _______________________________________________________
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
@@ -95,7 +121,5 @@ namespace wb
 
 	void WBPlayScene::OnExit()
 	{
-		/*WBTransform* tr = bg->AddComponent<WBTransform>();
-		tr->SetPos(Vector2(0, 0));*/
 	}
 }
