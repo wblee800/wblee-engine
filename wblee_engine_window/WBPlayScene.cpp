@@ -37,20 +37,30 @@ namespace wb
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Cat");
-		WBAnimator* animator = mPlayer->AddComponent<WBAnimator>();
-		animator->CreateAnimation(L"CatFrontMove", playerTex
+		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
+		playerAnimator->CreateAnimation(L"CatFrontMove", playerTex
 			, Vector2::Zero,Vector2(32.0f, 32.0f)
 			, Vector2::Zero, 4, 0.5f);
-		animator->PlayAnimation(L"CatFrontMove");
+		playerAnimator->PlayAnimation(L"CatFrontMove");
 
 		// Before loading a game object, load resources.
 		WBGameObject* bg = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Background, Vector2(0.f, 0.f));	
+			(enums::eLayerType::Background, Vector2(240.f, 240.f));	
 		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
-		bgSr->SetSize(Vector2(2.0f, 2.0f));
 
-		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"BG");
+		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Map");
 		bgSr->SetTexture(bgTex);
+
+		// Before loading a game object, load resources.
+		WBGameObject* skill = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Skill, Vector2(0.f, 0.f));
+		WBAnimator* skillAnimator = skill->AddComponent<WBAnimator>();
+
+		graphics::WBTexture* skillTex = WBResources::Find<graphics::WBTexture>(L"Fireball");
+		skillAnimator->CreateAnimation(L"ShootFireball", skillTex
+			, Vector2::Zero, Vector2(32.0f, 32.0f)
+			, Vector2::Zero, 4, 0.1f);
+		skillAnimator->PlayAnimation(L"ShootFireball");
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();

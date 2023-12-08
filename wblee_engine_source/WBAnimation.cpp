@@ -54,30 +54,65 @@ namespace wb
 		WBTransform* tr = gameObj->GetComponent<WBTransform>();
 		Vector2 pos = tr->GetPos();
 
+		Vector2 scale = tr->GetScale();
+		float rotation = tr->GetRotation();
+
 		if (renderer::mainCamera)
 			pos = renderer::mainCamera->CalculatePos(pos);
 
-		BLENDFUNCTION func = {};
-		func.BlendOp = AC_SRC_OVER;
-		func.BlendFlags = 0;
-		func.AlphaFormat = AC_SRC_ALPHA;
-		// 0(transparent) ~ 255(Opaque)
-		func.SourceConstantAlpha = 255; 
-
 		Sprite sprite = mAnimationSheet[mIndex];
-		HDC imgHdc = mTexture->GetHdc();
+		graphics::WBTexture::eTextureType type = mTexture->GetTextureType();
+		if (type == graphics::WBTexture::eTextureType::Bmp)
+		{
+			BLENDFUNCTION func = {};
+			func.BlendOp = AC_SRC_OVER;
+			func.BlendFlags = 0;
+			func.AlphaFormat = AC_SRC_ALPHA;
+			// 0(transparent) ~ 255(Opaque)
+			func.SourceConstantAlpha = 150;
 
-		// 
-		AlphaBlend(hdc
-		, pos.x, pos.y
-		, sprite.size.x * 2.5
-		, sprite.size.y * 2.5
-		, imgHdc
-		, sprite.leftTop.x
-		, sprite.leftTop.y
-		, sprite.size.x
-		, sprite.size.y
-		, func);
+			HDC imgHdc = mTexture->GetHdc();
+
+			AlphaBlend(hdc
+				// 메인 카메라 위치
+				, pos.x - (sprite.size.x / 2.0f), pos.y - (sprite.size.y / 2.0f)
+				// 스프라이트 크기 지정
+				, sprite.size.x * scale.x
+				, sprite.size.y * scale.y
+				, imgHdc
+				// 어디서부터
+				, sprite.leftTop.x
+				, sprite.leftTop.y
+				// 얼만큼의 크기로 그릴 건지 설정
+				, sprite.size.x
+				, sprite.size.y
+				, func);
+		}
+		else if (type == graphics::WBTexture::eTextureType::Png)
+		{
+			// 내가 원하는 픽셀을 투명화 시킬 때,
+			Gdiplus::ImageAttributes imgAtt = {};
+
+			// 투명화 시킬 픽셀의 색 범위
+			imgAtt.SetColorKey(Gdiplus::Color(100, 100, 100), Gdiplus::Color(255, 255, 255));
+
+			Gdiplus::Graphics graphics(hdc);
+			graphics.DrawImage(mTexture->GetImage()
+				, Gdiplus::Rect
+				(
+					pos.x - (sprite.size.x / 2.0f), pos.y - (sprite.size.y / 2.0f), sprite.size.x * scale.x, sprite.size.y * scale.y
+				)
+				, sprite.leftTop.x
+				, sprite.leftTop.y
+				// AlphaBlend와 달리 오른쪽 아래 좌표값을 필요로 한다.
+				, sprite.size.x
+				, sprite.size.y
+				, Gdiplus::UnitPixel
+				// https://learn.microsoft.com/en-us/windows/win32/api/gdiplusgraphics/nf-gdiplusgraphics-graphics-drawimage(image_constpoint_int_int_int_int_int_unit_constimageattributes_drawimageabort_void)
+				// 기본값은 NULL, 투명화 하고 싶은 색이 있을 때, Gdiplus::ImageAttributes 사용
+				, nullptr
+			);
+		}
 	}
 
 	void WBAnimation::CreateAnimation(const std::wstring& name, graphics::WBTexture* spriteSheet, math::Vector2 leftTop, math::Vector2 size, math::Vector2 offset, UINT spriteLength, float duration)

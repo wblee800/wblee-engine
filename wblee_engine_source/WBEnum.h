@@ -19,6 +19,8 @@ namespace wb
 			None,
 			Background,
 			Player,
+			Particle,
+			Skill,
 			Max = 16,
 		};
 
