@@ -1,37 +1,51 @@
-#include "WBPlayScene.h"
-#include "../wblee_engine_source/WBGameObject.h"
+#include "WBJojaMartScene.h"
+#include "..\\wblee_engine_source\\WBGameObject.h"
 #include "WBPlayer.h"
-#include "../wblee_engine_source/WBTransform.h"
-#include "../wblee_engine_source/WBSpriteRenderer.h"
-#include "../wblee_engine_source/WBInput.h"
-#include "../wblee_engine_source/WBSceneManager.h"
-#include "../wblee_engine_source/WBObject.h"
-#include "../wblee_engine_source/WBTexture.h"
-#include "../wblee_engine_source/WBResources.h"
+#include "..\\wblee_engine_source\\WBTransform.h"
+#include "..\\wblee_engine_source\\WBSpriteRenderer.h"
+#include "..\\wblee_engine_source\\WBInput.h"
+#include "..\\wblee_engine_source\\WBSceneManager.h"
+#include "..\\wblee_engine_source\\WBObject.h"
+#include "..\\wblee_engine_source\\WBTexture.h"
+#include "..\\wblee_engine_source\\WBResources.h"
 #include "WBPlayerScript.h"
-#include "..\wblee_engine_source\WBCamera.h"
-#include "..\wblee_engine_source\WBRenderer.h"
-#include "..\wblee_engine_source\WBAnimator.h"
+#include "..\\wblee_engine_source\\WBCamera.h"
+#include "..\\wblee_engine_source\\WBRenderer.h"
+#include "..\\wblee_engine_source\\WBAnimator.h"
 
 namespace wb
 {
-	WBPlayScene::WBPlayScene()
+	WBJojaMartScene::WBJojaMartScene()
 		:mPlayer{}
 	{
 	}
 
-	WBPlayScene::~WBPlayScene()
+	WBJojaMartScene::~WBJojaMartScene()
 	{
 	}
 
-	void WBPlayScene::Initialize()
+	void WBJojaMartScene::Initialize()
 	{
 		// Main camera
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(480.0f, 480.0f));
+		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(540.0f, 360.0f));
 		WBCamera* cameraComp = camera->AddComponent<WBCamera>();
 		renderer::mainCamera = cameraComp;
 
+		// _______________________________________________________
+
 		// Before loading a game object, load resources.
+		// Background
+		WBGameObject* bg = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Background, Vector2(240.f + 510.f, 240.f + 100.f));
+		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Joja_Mart");
+		bgSr->SetTexture(bgTex);
+		bgSr->SetSize(Vector2(2.0f, 1.7f));
+
+		// _______________________________________________________
+
+		// Player
 		mPlayer = object::Instantiate<WBPlayer>
 			(enums::eLayerType::Player, Vector2(16.0f, 16.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
@@ -64,18 +78,8 @@ namespace wb
 			, Vector2::Zero, 4, 0.5f);
 
 		// _______________________________________________________
-
-		// Before loading a game object, load resources.
-		WBGameObject* bg = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Background, Vector2(240.f, 240.f));	
-		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
-
-		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Map");
-		bgSr->SetTexture(bgTex);
-
-		// _______________________________________________________
-
-		// Before loading a game object, load resources.
+				
+		// Skill
 		WBGameObject* skill = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Skill, Vector2(16.0f, 16.0f));
 		WBAnimator* skillAnimator = skill->AddComponent<WBAnimator>();
@@ -86,18 +90,17 @@ namespace wb
 			, Vector2::Zero, 4, 0.1f);
 
 		skillAnimator->PlayAnimation(L"ShootFireball");
-		// _______________________________________________________
-
+		
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
 	}
 
-	void WBPlayScene::Update()
+	void WBJojaMartScene::Update()
 	{
 		WBScene::Update();
 	}
 
-	void WBPlayScene::LateUpdate()
+	void WBJojaMartScene::LateUpdate()
 	{
 		WBScene::LateUpdate();
 
@@ -107,19 +110,26 @@ namespace wb
 		}
 	}
 
-	void WBPlayScene::Render(HDC hdc)
+	void WBJojaMartScene::Render(HDC hdc)
 	{
+		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
+		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blackBrush);
+		Rectangle(hdc, -1, -1, 1921, 1081);
+
+		SelectObject(hdc, oldBrush);
+		DeleteObject(blackBrush);
+
 		WBScene::Render(hdc);
 
-		wchar_t str[12] = L"Play Scene";
-		TextOut(hdc, 0, 0, str, 10);
+		/*wchar_t str[12] = L"Play Scene";
+		TextOut(hdc, 0, 0, str, 10);*/
 	}
 
-	void WBPlayScene::OnEnter()
+	void WBJojaMartScene::OnEnter()
 	{
 	}
 
-	void WBPlayScene::OnExit()
+	void WBJojaMartScene::OnExit()
 	{
 	}
 }

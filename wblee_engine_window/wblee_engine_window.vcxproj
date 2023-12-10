@@ -19,17 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="WBIntroScene.h" />
     <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBLoadScenes.h" />
     <ClInclude Include="WBPlayer.h" />
     <ClInclude Include="WBPlayerScript.h" />
-    <ClInclude Include="WBPlayScene.h" />
+    <ClInclude Include="WBJojaMartScene.h" />
     <ClInclude Include="WBTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="WBIntroScene.cpp" />
     <ClCompile Include="WBPlayer.cpp" />
     <ClCompile Include="WBPlayerScript.cpp" />
-    <ClCompile Include="WBPlayScene.cpp" />
+    <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

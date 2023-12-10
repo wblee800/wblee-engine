@@ -3,11 +3,11 @@
 
 namespace wb
 {
-	class WBPlayScene : public WBScene
+	class WBJojaMartScene : public WBScene
 	{
 	public:
-		WBPlayScene();
-		~WBPlayScene();
+		WBJojaMartScene();
+		~WBJojaMartScene();
 
 		void Initialize() override;
 		void Update() override;

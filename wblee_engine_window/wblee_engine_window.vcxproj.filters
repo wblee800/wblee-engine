@@ -8,14 +8,17 @@
     <ClInclude Include="WBPlayerScript.h">
       <Filter>script</Filter>
     </ClInclude>
-    <ClInclude Include="WBPlayScene.h">
-      <Filter>scene\play-scene</Filter>
-    </ClInclude>
     <ClInclude Include="WBTitleScene.h">
       <Filter>scene\title-scene</Filter>
     </ClInclude>
     <ClInclude Include="WBPlayer.h">
       <Filter>content</Filter>
+    </ClInclude>
+    <ClInclude Include="WBJojaMartScene.h">
+      <Filter>scene\play-scene\joja-mart</Filter>
+    </ClInclude>
+    <ClInclude Include="WBIntroScene.h">
+      <Filter>scene\Intro-scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -28,14 +31,44 @@
     <Filter Include="script">
       <UniqueIdentifier>{36a10379-67d4-41d0-b3e6-f2c4261aa5ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\title-scene">
-      <UniqueIdentifier>{fa08ed01-a435-4f16-bc81-6c88195bf54d}</UniqueIdentifier>
+    <Filter Include="scene\ending-scene">
+      <UniqueIdentifier>{e3321130-c903-4116-8725-7ad048ddbdf9}</UniqueIdentifier>
     </Filter>
     <Filter Include="scene\play-scene">
       <UniqueIdentifier>{fe760042-a663-4e07-93a7-050f501bc4c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\ending-scene">
-      <UniqueIdentifier>{e3321130-c903-4116-8725-7ad048ddbdf9}</UniqueIdentifier>
+    <Filter Include="scene\play-scene\farm">
+      <UniqueIdentifier>{bfda050d-dff9-4f0d-ad71-fee46eaf9dce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\bus-stop">
+      <UniqueIdentifier>{906caeee-2547-4ae2-9b92-d22eaa21c678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\sewer">
+      <UniqueIdentifier>{7dc0af97-7093-4a7d-ab7f-b68728640d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\sewer\entrance">
+      <UniqueIdentifier>{465ebbfd-14a9-4183-b5af-daec9f8f75ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\sewer\inside">
+      <UniqueIdentifier>{8a86e986-8821-4b05-aad8-5aa1afec68d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\calico-desert">
+      <UniqueIdentifier>{42b7c1e7-7d54-44b5-9dcf-b37df3b10567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\pelican-town">
+      <UniqueIdentifier>{2ba9b7f9-b87a-4901-8d46-eaff3f25f581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\beach">
+      <UniqueIdentifier>{380d3f93-6ea0-4f4f-a038-a35f61c96115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\play-scene\joja-mart">
+      <UniqueIdentifier>{b87a6eca-ab29-4ff3-9d37-56c3384d77c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\title-scene">
+      <UniqueIdentifier>{fa08ed01-a435-4f16-bc81-6c88195bf54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\Intro-scene">
+      <UniqueIdentifier>{1384eee6-4fde-40bb-a766-60f940567cc4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,11 +78,14 @@
     <ClCompile Include="WBPlayerScript.cpp">
       <Filter>script</Filter>
     </ClCompile>
-    <ClCompile Include="WBPlayScene.cpp">
-      <Filter>scene\play-scene</Filter>
-    </ClCompile>
     <ClCompile Include="WBTitleScene.cpp">
       <Filter>scene\title-scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBJojaMartScene.cpp">
+      <Filter>scene\play-scene\joja-mart</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroScene.cpp">
+      <Filter>scene\Intro-scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
