@@ -12,6 +12,8 @@
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
+#include "WBCat.h"
+#include "WBCatScript.h"
 
 namespace wb
 {
@@ -26,45 +28,49 @@ namespace wb
 
 	void WBJojaMartScene::Initialize()
 	{
-		// Main camera
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(540.0f, 360.0f));
-		WBCamera* cameraComp = camera->AddComponent<WBCamera>();
-		renderer::mainCamera = cameraComp;
-
-		// _______________________________________________________
-
 		// Before loading a game object, load resources.
-		// Background
-		WBGameObject* bg = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Background, Vector2(240.f + 510.f, 240.f + 100.f));
-		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
+		// Joja Mart Map
+		WBGameObject* map = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Map, Vector2(240.0f + 500.0f, 240.0f));
+		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
-		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Joja_Mart");
-		bgSr->SetTexture(bgTex);
-		bgSr->SetSize(Vector2(2.0f, 1.7f));
+		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Joja_Mart");
+		mapSr->SetTexture(mapTexture);
+		mapSr->SetSize(Vector2(2.0f, 1.7f));
 
 		// _______________________________________________________
 
 		// Player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(16.0f, 16.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(150.0f, 150.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Cat");
+		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
-		playerAnimator->CreateAnimation(L"CatMoveBack", playerTex,
+		playerAnimator->CreateAnimation(L"CatMoveBack", playerTexture,
 			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveRight", playerTex,
-			Vector2(32.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveFront", playerTex,
-			Vector2(64.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveLeft", playerTex,
-			Vector2(96.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatSitDown", playerTex,
-			Vector2(128.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatGroom", playerTex,
-			Vector2(160.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveRight", playerTexture,
+			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveFront", playerTexture,
+			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveLeft", playerTexture,
+			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatSitDown", playerTexture,
+			Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatGroom", playerTexture,
+			Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
 
 		playerAnimator->PlayAnimation(L"CatSitDown", false);
+
+		// _______________________________________________________
+
+		// Cat
+		WBCat* cat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
+		cat->AddComponent<WBCatScript>();
+
+		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"C");
+		
+
+		// _______________________________________________________
 
 		// Skill
 		WBGameObject* skill = object::Instantiate<WBGameObject>
@@ -91,9 +97,9 @@ namespace wb
 	{
 		WBScene::LateUpdate();
 
-		if (WBInput::GetKeyDown(eKeyCode::N))
+		if (WBInput::GetKeyDown(eKeyCode::A))
 		{
-			WBSceneManager::LoadScene(L"WBTitleScene");
+			WBSceneManager::LoadScene(L"PelicanTownScene");
 		}
 	}
 

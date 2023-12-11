@@ -69,7 +69,7 @@ namespace wb
 	void WBApplication::clearRenderTarget()
 	{
 		// clear
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
+		Rectangle(mBackHdc, -1, -1, 1921, 1081);
 	}
 
 	void WBApplication::copyRenderTarget(HDC source, HDC dest)

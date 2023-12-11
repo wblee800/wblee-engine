@@ -18,6 +18,8 @@ namespace wb
 		{
 			None,
 			Background,
+			Map,
+			Animal,
 			Player,
 			Particle,
 			Skill,

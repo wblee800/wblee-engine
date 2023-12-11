@@ -19,19 +19,55 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="WBBeachScene.h" />
+    <ClInclude Include="WBBlacksmithScene.h" />
+    <ClInclude Include="WBBusStopScene.h" />
+    <ClInclude Include="WBCalicoDesertScene.h" />
+    <ClInclude Include="WBCat.h" />
+    <ClInclude Include="WBCatScript.h" />
+    <ClInclude Include="WBCommunityCenterScene.h" />
+    <ClInclude Include="WBFarmScene.h" />
+    <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
     <ClInclude Include="WBIntroScene.h" />
     <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBLoadScenes.h" />
+    <ClInclude Include="WBPelicanTownScene.h" />
     <ClInclude Include="WBPlayer.h" />
     <ClInclude Include="WBPlayerScript.h" />
     <ClInclude Include="WBJojaMartScene.h" />
+    <ClInclude Include="WBGateSewerScene.h" />
+    <ClInclude Include="WBRanchOfMarnieScene.h" />
+    <ClInclude Include="WBSewerScene.h" />
+    <ClInclude Include="WBShopOfCarpenterScene.h" />
+    <ClInclude Include="WBSkullCavernScene.h" />
+    <ClInclude Include="WBSkullCavernEntranceScene.h" />
+    <ClInclude Include="WBTheaterBoxOfficeScene.h" />
+    <ClInclude Include="WBTheaterScreenScene.h" />
     <ClInclude Include="WBTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="WBBeachScene.cpp" />
+    <ClCompile Include="WBBlacksmithScene.cpp" />
+    <ClCompile Include="WBBusStopScene.cpp" />
+    <ClCompile Include="WBCalicoDesertScene.cpp" />
+    <ClCompile Include="WBCat.cpp" />
+    <ClCompile Include="WBCatScript.cpp" />
+    <ClCompile Include="WBCommunityCenterScene.cpp" />
+    <ClCompile Include="WBFarmScene.cpp" />
+    <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
     <ClCompile Include="WBIntroScene.cpp" />
+    <ClCompile Include="WBPelicanTownScene.cpp" />
     <ClCompile Include="WBPlayer.cpp" />
     <ClCompile Include="WBPlayerScript.cpp" />
     <ClCompile Include="WBJojaMartScene.cpp" />
+    <ClCompile Include="WBGateSewerScene.cpp" />
+    <ClCompile Include="WBRanchOfMarnieScene.cpp" />
+    <ClCompile Include="WBSewerScene.cpp" />
+    <ClCompile Include="WBShopOfCarpenterScene.cpp" />
+    <ClCompile Include="WBSkullCavernScene.cpp" />
+    <ClCompile Include="WBSkullCavernEntranceScene.cpp" />
+    <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
+    <ClCompile Include="WBTheaterScreenScene.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

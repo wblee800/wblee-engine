@@ -29,7 +29,7 @@ namespace wb
 	void WBTitleScene::Initialize()
 	{
 		// Main camera
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(540.0f, 360.0f));
+		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(960.0f, 540.0f));
 		WBCamera* cameraComp = camera->AddComponent<WBCamera>();
 		renderer::mainCamera = cameraComp;
 
@@ -38,7 +38,7 @@ namespace wb
 		// Before loading a game object, load resources.
 		// Background
 		WBGameObject* bg = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Background, Vector2(750.f, 260.f));
+			(enums::eLayerType::Background);
 		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Cloudy_Night_Ocean");
@@ -49,7 +49,7 @@ namespace wb
 
 		// Title Logo
 		WBGameObject* title = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Particle, Vector2(200.f + 630.f, 93.5f + 80.f));
+			(enums::eLayerType::Particle);
 		WBSpriteRenderer* titleSr = title->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* titleTex = WBResources::Find<graphics::WBTexture>(L"Logo");
@@ -71,7 +71,7 @@ namespace wb
 
 		if (WBInput::GetKeyDown(eKeyCode::N))
 		{
-			WBSceneManager::LoadScene(L"WBJojaMartScene");
+			WBSceneManager::LoadScene(L"FarmScene");
 		}
 	}
 

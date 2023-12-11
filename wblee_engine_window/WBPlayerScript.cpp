@@ -22,7 +22,7 @@ void wb::WBPlayerScript::Initialize()
 void wb::WBPlayerScript::Update()
 {
 	if (mAnimator == nullptr)
-		mAnimator = GetOwner()->AddComponent<WBAnimator>();
+		mAnimator = GetOwner()->GetComponent<WBAnimator>();
 
 	switch (mState)
 	{
