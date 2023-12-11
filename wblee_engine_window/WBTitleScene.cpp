@@ -49,12 +49,12 @@ namespace wb
 
 		// Title Logo
 		WBGameObject* title = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Particle, Vector2(200.f + 650.f, 93.5f + 100.f));
+			(enums::eLayerType::Particle, Vector2(200.f + 630.f, 93.5f + 80.f));
 		WBSpriteRenderer* titleSr = title->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* titleTex = WBResources::Find<graphics::WBTexture>(L"Logo");
 		titleSr->SetTexture(titleTex);
-		titleSr->SetSize(Vector2(1.7f, 1.7f));
+		titleSr->SetSize(Vector2(1.8f, 1.8f));
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();

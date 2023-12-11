@@ -54,22 +54,22 @@ void wb::WBPlayerScript::sitDown()
 	if (WBInput::GetKey(eKeyCode::W))
 	{
 		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatFrontMove");
+		mAnimator->PlayAnimation(L"CatMoveFront");
 	}
 	if (WBInput::GetKey(eKeyCode::A))
 	{
 		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatLeftMove");
+		mAnimator->PlayAnimation(L"CatMoveLeft");
 	}
 	if (WBInput::GetKey(eKeyCode::S))
 	{
 		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatBackMove");
+		mAnimator->PlayAnimation(L"CatMoveBack");
 	}
 	if (WBInput::GetKey(eKeyCode::D))
 	{
 		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatRightMove");
+		mAnimator->PlayAnimation(L"CatMoveRight");
 	}
 }
 
@@ -96,6 +96,6 @@ void wb::WBPlayerScript::move()
 		|| WBInput::GetKeyUp(eKeyCode::S) || WBInput::GetKeyUp(eKeyCode::D))
 	{
 		mState = eState::SitDown;
-		mAnimator->PlayAnimation(L"SitDown", false);
+		mAnimator->PlayAnimation(L"CatSitDown", false);
 	}
 }

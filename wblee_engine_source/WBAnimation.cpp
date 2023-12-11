@@ -69,7 +69,7 @@ namespace wb
 			func.BlendFlags = 0;
 			func.AlphaFormat = AC_SRC_ALPHA;
 			// 0(transparent) ~ 255(Opaque)
-			func.SourceConstantAlpha = 150;
+			func.SourceConstantAlpha = 255;
 
 			HDC imgHdc = mTexture->GetHdc();
 

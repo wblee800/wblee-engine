@@ -46,39 +46,26 @@ namespace wb
 		// _______________________________________________________
 
 		// Player
-		mPlayer = object::Instantiate<WBPlayer>
-			(enums::eLayerType::Player, Vector2(16.0f, 16.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(16.0f, 16.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		graphics::WBTexture* playerTex = WBResources::Find<graphics::WBTexture>(L"Cat");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
+		playerAnimator->CreateAnimation(L"CatMoveBack", playerTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveRight", playerTex,
+			Vector2(32.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveFront", playerTex,
+			Vector2(64.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatMoveLeft", playerTex,
+			Vector2(96.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatSitDown", playerTex,
+			Vector2(128.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"CatGroom", playerTex,
+			Vector2(160.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
 
-		// Move
-		playerAnimator->CreateAnimation(L"CatFrontMove", playerTex
-			, Vector2::Zero,Vector2(32.0f, 32.0f)
-			, Vector2::Zero, 4, 0.5f);
-		playerAnimator->CreateAnimation(L"CatRightMove", playerTex
-			, Vector2::Zero, Vector2(32.0f, 64.0f)
-			, Vector2::Zero, 4, 0.5f);
-		playerAnimator->CreateAnimation(L"CatBackMove", playerTex
-			, Vector2::Zero, Vector2(32.0f, 96.0f)
-			, Vector2::Zero, 4, 0.5f);
-		playerAnimator->CreateAnimation(L"CatLeftMove", playerTex
-			, Vector2::Zero, Vector2(32.0f, 128.0f)
-			, Vector2::Zero, 4, 0.5f);
+		playerAnimator->PlayAnimation(L"CatSitDown", false);
 
-		// Sit down
-		playerAnimator->CreateAnimation(L"CatSitDown", playerTex
-			, Vector2::Zero, Vector2(32.0f, 160.0f)
-			, Vector2::Zero, 4, 0.5f);
-
-		// Groom
-		playerAnimator->CreateAnimation(L"CatGroom", playerTex
-			, Vector2::Zero, Vector2(32.0f, 192.0f)
-			, Vector2::Zero, 4, 0.5f);
-
-		// _______________________________________________________
-				
 		// Skill
 		WBGameObject* skill = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Skill, Vector2(16.0f, 16.0f));
@@ -90,7 +77,7 @@ namespace wb
 			, Vector2::Zero, 4, 0.1f);
 
 		skillAnimator->PlayAnimation(L"ShootFireball");
-		
+
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
 	}
