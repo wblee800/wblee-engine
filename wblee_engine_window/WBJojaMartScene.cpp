@@ -66,9 +66,29 @@ namespace wb
 		// Cat
 		WBCat* cat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
 		cat->AddComponent<WBCatScript>();
-
-		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"C");
 		
+		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+
+
+		// _______________________________________________________
+
+		// Tool
+		WBGameObject* tool = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Equipment, Vector2(800.0f, 350.0f));
+		WBSpriteRenderer* toolSr = tool->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* toolTexture = WBResources::Find<graphics::WBTexture>(L"Tools");
+		toolSr->SetTexture(toolTexture);
+
+		// _______________________________________________________
+
+		// Weapon
+		WBGameObject* weapon = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Equipment, Vector2(600.0f, 350.0f));
+		WBSpriteRenderer* weaponSr = weapon->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* weaponTexture = WBResources::Find<graphics::WBTexture>(L"Weapons");
+		weaponSr->SetTexture(weaponTexture);
 
 		// _______________________________________________________
 

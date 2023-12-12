@@ -51,22 +51,22 @@ void wb::WBPlayerScript::Render(HDC hdc)
 
 void wb::WBPlayerScript::sitDown()
 {
-	if (WBInput::GetKey(eKeyCode::W))
+	if (WBInput::GetKey(eKeyCode::UP))
 	{
 		mState = eState::Move;
 		mAnimator->PlayAnimation(L"CatMoveFront");
 	}
-	if (WBInput::GetKey(eKeyCode::A))
+	if (WBInput::GetKey(eKeyCode::LEFT))
 	{
 		mState = eState::Move;
 		mAnimator->PlayAnimation(L"CatMoveLeft");
 	}
-	if (WBInput::GetKey(eKeyCode::S))
+	if (WBInput::GetKey(eKeyCode::DOWN))
 	{
 		mState = eState::Move;
 		mAnimator->PlayAnimation(L"CatMoveBack");
 	}
-	if (WBInput::GetKey(eKeyCode::D))
+	if (WBInput::GetKey(eKeyCode::RIGHT))
 	{
 		mState = eState::Move;
 		mAnimator->PlayAnimation(L"CatMoveRight");
@@ -78,22 +78,22 @@ void wb::WBPlayerScript::move()
 	WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
 	Vector2 pos = tr->GetPos();
 
-	if (WBInput::GetKey(eKeyCode::W))
+	if (WBInput::GetKey(eKeyCode::UP))
 		pos.y -= 100 * WBTime::DeltaTime();
 
-	if (WBInput::GetKey(eKeyCode::A))
+	if (WBInput::GetKey(eKeyCode::LEFT))
 		pos.x -= 100 * WBTime::DeltaTime();
 
-	if (WBInput::GetKey(eKeyCode::S))
+	if (WBInput::GetKey(eKeyCode::DOWN))
 		pos.y += 100 * WBTime::DeltaTime();
 
-	if (WBInput::GetKey(eKeyCode::D))
+	if (WBInput::GetKey(eKeyCode::RIGHT))
 		pos.x += 100 * WBTime::DeltaTime();
 
 	tr->SetPos(pos);
 
-	if (WBInput::GetKeyUp(eKeyCode::W) || WBInput::GetKeyUp(eKeyCode::A)
-		|| WBInput::GetKeyUp(eKeyCode::S) || WBInput::GetKeyUp(eKeyCode::D))
+	if (WBInput::GetKeyUp(eKeyCode::UP) || WBInput::GetKeyUp(eKeyCode::LEFT)
+		|| WBInput::GetKeyUp(eKeyCode::DOWN) || WBInput::GetKeyUp(eKeyCode::RIGHT))
 	{
 		mState = eState::SitDown;
 		mAnimator->PlayAnimation(L"CatSitDown", false);

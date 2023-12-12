@@ -30,6 +30,10 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");
 
+		// Equipments
+		WBResources::Load<graphics::WBTexture>(L"Tools", L"..\\resources\\sprites\\equipments\\Tools.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Weapons", L"..\\resources\\sprites\\equipments\\Weapons.bmp");
+
 		// Animals
 		WBResources::Load<graphics::WBTexture>(L"Cat", L"..\\resources\\sprites\\characters\\animals\\CatAlpha.bmp");
 

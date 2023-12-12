@@ -19,6 +19,7 @@ namespace wb
 			None,
 			Background,
 			Map,
+			Equipment,
 			Animal,
 			Player,
 			Particle,
