@@ -59,6 +59,7 @@ namespace wb
 			return;
 
 		animation = new WBAnimation();
+		animation->SetName(name);
 		animation->CreateAnimation(name, spriteSheet,
 			leftTop, size,
 			offset, spriteLength,

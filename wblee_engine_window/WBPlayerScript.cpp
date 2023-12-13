@@ -80,8 +80,6 @@ namespace wb
 			mAnimator->PlayAnimation(L"PlayerMoveRight");
 
 			Vector2 mousePos = WBInput::GetMousePosition();
-
-			int a = 0;
 		}
 	}
 
