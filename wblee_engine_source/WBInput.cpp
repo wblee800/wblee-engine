@@ -1,7 +1,7 @@
 #include "WBInput.h"
 #include "WBApplication.h"
 
-wb::WBApplication application;
+extern wb::WBApplication application;
 
 namespace wb
 {
@@ -62,6 +62,8 @@ namespace wb
 			{
 				updateKeyUp(key);
 			}
+
+			getMousePositionByClientWindow();
 		}
 		// when a client window is deactivated
 		else

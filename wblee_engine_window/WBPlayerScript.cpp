@@ -79,7 +79,8 @@ namespace wb
 			mState = eState::Move;
 			mAnimator->PlayAnimation(L"PlayerMoveRight");
 
-			Vector2 mousePos = WBInput::GetMousePos();
+			Vector2 mousePos = WBInput::GetMousePosition();
+
 			int a = 0;
 		}
 	}
