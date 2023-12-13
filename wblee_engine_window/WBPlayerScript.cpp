@@ -5,97 +5,109 @@
 #include "../wblee_engine_source/WBGameObject.h"
 #include "../wblee_engine_source/WBAnimator.h"
 
-wb::WBPlayerScript::WBPlayerScript()
-	:mState(eState::SitDown)
-	, mAnimator(nullptr)
+namespace wb
 {
-}
-
-wb::WBPlayerScript::~WBPlayerScript()
-{
-}
-
-void wb::WBPlayerScript::Initialize()
-{
-}
-
-void wb::WBPlayerScript::Update()
-{
-	if (mAnimator == nullptr)
-		mAnimator = GetOwner()->GetComponent<WBAnimator>();
-
-	switch (mState)
+	WBPlayerScript::WBPlayerScript()
+		:mState(eState::Idle)
+		, mAnimator(nullptr)
 	{
-	case eState::SitDown:
-		sitDown();
-		break;
-	case eState::Groom:
-		break;
-	case eState::Sleep:
-		break;
-	case eState::Move:
-		move();
-		break;
-	default:
-		break;
 	}
-}
 
-void wb::WBPlayerScript::LateUpdate()
-{
-}
-
-void wb::WBPlayerScript::Render(HDC hdc)
-{
-}
-
-void wb::WBPlayerScript::sitDown()
-{
-	if (WBInput::GetKey(eKeyCode::UP))
+	WBPlayerScript::~WBPlayerScript()
 	{
-		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatMoveFront");
 	}
-	if (WBInput::GetKey(eKeyCode::LEFT))
+
+	void WBPlayerScript::Initialize()
 	{
-		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatMoveLeft");
 	}
-	if (WBInput::GetKey(eKeyCode::DOWN))
+
+	void WBPlayerScript::Update()
 	{
-		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatMoveBack");
+		if (mAnimator == nullptr)
+			mAnimator = GetOwner()->GetComponent<WBAnimator>();
+
+		switch (mState)
+		{
+		case eState::Idle:
+			idle();
+			break;
+		case eState::Move:
+			move();
+			break;
+		case eState::Attack:
+			break;
+		case eState::Irrigate:
+			break;
+		default:
+			break;
+		}
 	}
-	if (WBInput::GetKey(eKeyCode::RIGHT))
+
+	void WBPlayerScript::LateUpdate()
 	{
-		mState = eState::Move;
-		mAnimator->PlayAnimation(L"CatMoveRight");
 	}
-}
 
-void wb::WBPlayerScript::move()
-{
-	WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-	Vector2 pos = tr->GetPos();
-
-	if (WBInput::GetKey(eKeyCode::UP))
-		pos.y -= 100 * WBTime::DeltaTime();
-
-	if (WBInput::GetKey(eKeyCode::LEFT))
-		pos.x -= 100 * WBTime::DeltaTime();
-
-	if (WBInput::GetKey(eKeyCode::DOWN))
-		pos.y += 100 * WBTime::DeltaTime();
-
-	if (WBInput::GetKey(eKeyCode::RIGHT))
-		pos.x += 100 * WBTime::DeltaTime();
-
-	tr->SetPos(pos);
-
-	if (WBInput::GetKeyUp(eKeyCode::UP) || WBInput::GetKeyUp(eKeyCode::LEFT)
-		|| WBInput::GetKeyUp(eKeyCode::DOWN) || WBInput::GetKeyUp(eKeyCode::RIGHT))
+	void WBPlayerScript::Render(HDC hdc)
 	{
-		mState = eState::SitDown;
-		mAnimator->PlayAnimation(L"CatSitDown", false);
+	}
+
+	void WBPlayerScript::idle()
+	{
+		if (WBInput::GetKey(eKeyCode::UP))
+		{
+			mState = eState::Move;
+			mAnimator->PlayAnimation(L"PlayerMoveFront");
+		}
+		if (WBInput::GetKey(eKeyCode::LEFT))
+		{
+			mState = eState::Move;
+			mAnimator->PlayAnimation(L"PlayerMoveLeft");
+		}
+		if (WBInput::GetKey(eKeyCode::DOWN))
+		{
+			mState = eState::Move;
+			mAnimator->PlayAnimation(L"PlayerMoveBack");
+		}
+		if (WBInput::GetKey(eKeyCode::RIGHT))
+		{
+			mState = eState::Move;
+			mAnimator->PlayAnimation(L"PlayerMoveRight");
+		}
+
+		if (WBInput::GetKeyDown(eKeyCode::LButton))
+		{
+			mState = eState::Move;
+			mAnimator->PlayAnimation(L"PlayerMoveRight");
+
+			Vector2 mousePos = WBInput::GetMousePos();
+			int a = 0;
+		}
+	}
+
+	void WBPlayerScript::move()
+	{
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		Vector2 pos = tr->GetPos();
+
+		if (WBInput::GetKey(eKeyCode::UP))
+			pos.y -= 100 * WBTime::DeltaTime();
+
+		if (WBInput::GetKey(eKeyCode::LEFT))
+			pos.x -= 100 * WBTime::DeltaTime();
+
+		if (WBInput::GetKey(eKeyCode::DOWN))
+			pos.y += 100 * WBTime::DeltaTime();
+
+		if (WBInput::GetKey(eKeyCode::RIGHT))
+			pos.x += 100 * WBTime::DeltaTime();
+
+		tr->SetPos(pos);
+
+		if (WBInput::GetKeyUp(eKeyCode::UP) || WBInput::GetKeyUp(eKeyCode::LEFT)
+			|| WBInput::GetKeyUp(eKeyCode::DOWN) || WBInput::GetKeyUp(eKeyCode::RIGHT))
+		{
+			mState = eState::Idle;
+			mAnimator->PlayAnimation(L"PlayerIdle", false);
+		}
 	}
 }

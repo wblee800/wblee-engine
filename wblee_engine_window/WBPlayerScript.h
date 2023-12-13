@@ -9,10 +9,10 @@ namespace wb
 	public:
 		enum class eState
 		{
-			SitDown,
-			Groom,
-			Sleep,
+			Idle,
 			Move,
+			Attack,
+			Irrigate,
 		};
 
 		WBPlayerScript();
@@ -24,7 +24,7 @@ namespace wb
 		void Render(HDC hdc) override;
 
 	private:
-		void sitDown();
+		void idle();
 		void move();
 
 	private:

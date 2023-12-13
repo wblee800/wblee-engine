@@ -41,25 +41,17 @@ namespace wb
 		// _______________________________________________________
 
 		// Player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(150.0f, 150.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(945.0f, 750.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
-		playerAnimator->CreateAnimation(L"CatMoveBack", playerTexture,
-			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveRight", playerTexture,
-			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveFront", playerTexture,
-			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveLeft", playerTexture,
-			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatSitDown", playerTexture,
-			Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatGroom", playerTexture,
-			Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		playerAnimator->CreateAnimation(L"PlayerIdle", playerTexture,
+			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
+			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 
-		playerAnimator->PlayAnimation(L"CatSitDown", false);
+		playerAnimator->PlayAnimation(L"PlayerIdle", false);
 
 		// _______________________________________________________
 

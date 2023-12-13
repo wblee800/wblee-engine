@@ -1,8 +1,12 @@
 #include "WBInput.h"
+#include "WBApplication.h"
+
+wb::WBApplication application;
 
 namespace wb
 {
 	std::vector<WBInput::Key> WBInput::Keys = {};
+	math::Vector2 WBInput::mMousePosition = math::Vector2::One;
 
 	int ASCII[(UINT)eKeyCode::End] =
 	{
@@ -10,6 +14,7 @@ namespace wb
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
 		'Z', 'X', 'C', 'V', 'B', 'N', 'M', 
 		VK_LEFT, VK_RIGHT, VK_DOWN, VK_UP,
+		VK_LBUTTON, VK_MBUTTON, VK_RBUTTON,
 	};
 
 	void WBInput::Initialize()
@@ -46,18 +51,28 @@ namespace wb
 
 	void WBInput::updateKey(WBInput::Key& key)
 	{
-		if (isKeyDown(key.keyCode))
+		// when a client window is activated
+		if (GetFocus())
 		{
-			updateKeyDown(key);
+			if (isKeyDown(key.keyCode))
+			{
+				updateKeyDown(key);
+			}
+			else
+			{
+				updateKeyUp(key);
+			}
 		}
+		// when a client window is deactivated
 		else
 		{
-			updateKeyUp(key);
+			clearKeys();	
 		}
 	}
 
 	bool WBInput::isKeyDown(eKeyCode code)
 	{
+		// GetAsyncKeyState() : Return 0x8000 when a key is down
 		return GetAsyncKeyState(ASCII[(UINT)code]) & 0x8000;
 	}
 
@@ -70,6 +85,7 @@ namespace wb
 
 		key.bPressed = true;
 	}
+
 	void WBInput::updateKeyUp(WBInput::Key& key)
 	{
 		if (key.bPressed == true)
@@ -78,5 +94,38 @@ namespace wb
 			key.state = eKeyState::None;
 
 		key.bPressed = false;
-	}	
+	}
+
+	void WBInput::clearKeys()
+	{
+		for (Key& key : Keys)
+		{
+			// If a key is pressed now or before
+			if (key.state == eKeyState::Down || key.state == eKeyState::Pressed)
+			{
+				// the key should not be pressed b/c the client window is closed
+				key.state == eKeyState::Up;
+			}
+			else if (key.state == eKeyState::Up)
+			{
+				key.state == eKeyState::None;
+			}
+
+			key.bPressed = false;
+		}
+	}
+
+	void WBInput::getMousePositionByClientWindow()
+	{
+		// mouse cursor position in Windows screen
+		POINT mousePosition = {};
+		// Get LPPOINT
+		// 'LP' in Windows API is a pointer
+		GetCursorPos(&mousePosition);
+		// Switch the full screen to a client program window
+		ScreenToClient(application.GetHwnd(), &mousePosition);
+
+		mMousePosition.x = mousePosition.x;
+		mMousePosition.y = mousePosition.y;
+	}
 }
