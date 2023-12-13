@@ -1,25 +1,28 @@
 #include "WBCat.h"
 
-wb::WBCat::WBCat()
+namespace wb
 {
-}
+	WBCat::WBCat()
+	{
+	}
 
-wb::WBCat::~WBCat()
-{
-}
+	WBCat::~WBCat()
+	{
+	}
 
-void wb::WBCat::Initialize()
-{
-}
+	void WBCat::Initialize()
+	{
+	}
 
-void wb::WBCat::Update()
-{
-}
+	void WBCat::Update()
+	{
+	}
 
-void wb::WBCat::LateUpdate()
-{
-}
+	void WBCat::LateUpdate()
+	{
+	}
 
-void wb::WBCat::Render(HDC hdc)
-{
+	void WBCat::Render(HDC hdc)
+	{
+	}
 }

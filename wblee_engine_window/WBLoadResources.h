@@ -39,6 +39,7 @@ namespace wb
 
 		// Players
 		WBResources::Load<graphics::WBTexture>(L"Player", L"..\\resources\\sprites\\characters\\players\\Player.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Move_Front", L"..\\resources\\sprites\\characters\\players\\Player_Move_Front.bmp");
 
 		// Skills
 		WBResources::Load<graphics::WBTexture>(L"Fireball", L"..\\resources\\sprites\\miscellaneous\\Fireball.bmp");

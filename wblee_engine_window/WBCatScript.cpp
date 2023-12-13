@@ -10,6 +10,8 @@ namespace wb
 	WBCatScript::WBCatScript()
 		:mState(eState::SitDown)
 		, mAnimator(nullptr)
+		, mDirection()
+		, mTime(0.0f)
 	{
 	}
 
@@ -31,12 +33,14 @@ namespace wb
 		case eState::SitDown:
 			sitDown();
 			break;
-		case eState::Groom:
-			break;
-		case eState::Sleep:
-			break;
 		case eState::Move:
 			move();
+			break;
+		case eState::Sleep:
+			sleep();
+			break;
+		case eState::Groom:
+			groom();
 			break;
 		default:
 			break;
@@ -53,52 +57,49 @@ namespace wb
 
 	void WBCatScript::sitDown()
 	{
-		if (WBInput::GetKey(eKeyCode::W))
+		mTime += WBTime::DeltaTime();
+		if (mTime > 3.0f)
 		{
 			mState = eState::Move;
-			mAnimator->PlayAnimation(L"CatMoveFront");
-		}
-		if (WBInput::GetKey(eKeyCode::A))
-		{
-			mState = eState::Move;
-			mAnimator->PlayAnimation(L"CatMoveLeft");
-		}
-		if (WBInput::GetKey(eKeyCode::S))
-		{
-			mState = eState::Move;
-			mAnimator->PlayAnimation(L"CatMoveBack");
-		}
-		if (WBInput::GetKey(eKeyCode::D))
-		{
-			mState = eState::Move;
-			mAnimator->PlayAnimation(L"CatMoveRight");
+			int direction = (rand() % 4);
+			mDirection = (eDirection)direction;
+
+			playMoveAnimationByDirection(mDirection);
+
+			mTime = 0.0f;
 		}
 	}
 
 	void WBCatScript::move()
 	{
-		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPos();
+	}
 
-		if (WBInput::GetKey(eKeyCode::W))
-			pos.y -= 100 * WBTime::DeltaTime();
-
-		if (WBInput::GetKey(eKeyCode::A))
-			pos.x -= 100 * WBTime::DeltaTime();
-
-		if (WBInput::GetKey(eKeyCode::S))
-			pos.y += 100 * WBTime::DeltaTime();
-
-		if (WBInput::GetKey(eKeyCode::D))
-			pos.x += 100 * WBTime::DeltaTime();
-
-		tr->SetPos(pos);
-
-		if (WBInput::GetKeyUp(eKeyCode::W) || WBInput::GetKeyUp(eKeyCode::A)
-			|| WBInput::GetKeyUp(eKeyCode::S) || WBInput::GetKeyUp(eKeyCode::D))
+	void WBCatScript::playMoveAnimationByDirection(eDirection direction)
+	{
+		switch (direction)
 		{
-			mState = eState::SitDown;
-			mAnimator->PlayAnimation(L"CatSitDown", false);
+		case eDirection::Left:
+			mAnimator->PlayAnimation(L"CatLeft");
+			break;
+		case eDirection::Right:
+			mAnimator->PlayAnimation(L"CatMoveRight");
+			break;
+		case eDirection::Up:
+			mAnimator->PlayAnimation(L"CatMoveUp");
+			break;
+		case eDirection::Down:
+			mAnimator->PlayAnimation(L"CatMoveDown");
+			break;
+		default:
+			break;
 		}
+	}
+
+	void WBCatScript::groom()
+	{
+	}
+
+	void WBCatScript::sleep()
+	{
 	}
 }

@@ -56,7 +56,7 @@ namespace wb
 		if (WBInput::GetKey(eKeyCode::UP))
 		{
 			mState = eState::Move;
-			mAnimator->PlayAnimation(L"PlayerMoveFront");
+			mAnimator->PlayAnimation(L"PlayerMoveBack");
 		}
 		if (WBInput::GetKey(eKeyCode::LEFT))
 		{
@@ -66,7 +66,7 @@ namespace wb
 		if (WBInput::GetKey(eKeyCode::DOWN))
 		{
 			mState = eState::Move;
-			mAnimator->PlayAnimation(L"PlayerMoveBack");
+			mAnimator->PlayAnimation(L"PlayerMoveFront");
 		}
 		if (WBInput::GetKey(eKeyCode::RIGHT))
 		{

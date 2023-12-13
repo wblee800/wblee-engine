@@ -65,7 +65,7 @@ namespace wb
 			offset, spriteLength,
 			duration);
 
-		// WBAnimation가 사용하는 Animator가 무엇인지 알 수 있게 설정
+		// WBAnimation이 사용하는 Animator가 무엇인지 알 수 있게 설정
 		animation->SetAnimator(this);
 
 		mAnimations.insert(make_pair(name, animation));

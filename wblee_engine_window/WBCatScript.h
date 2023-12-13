@@ -10,9 +10,18 @@ namespace wb
 		enum class eState
 		{
 			SitDown,
+			Move,
 			Groom,
 			Sleep,
-			Move,
+		};
+
+		enum class eDirection
+		{
+			Left,
+			Right,
+			Down,
+			Up,
+			End
 		};
 
 		WBCatScript();
@@ -26,9 +35,14 @@ namespace wb
 	private:
 		void sitDown();
 		void move();
+		void playMoveAnimationByDirection(eDirection direction);
+		void groom();
+		void sleep();
 
 	private:
 		eState mState;
 		WBAnimator* mAnimator;
+		eDirection mDirection;
+		float mTime;
 	};
 }

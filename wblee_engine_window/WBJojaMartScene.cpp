@@ -45,11 +45,18 @@ namespace wb
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
+		graphics::WBTexture* playerMoveFrontTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Front");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
 		playerAnimator->CreateAnimation(L"PlayerIdle", playerTexture,
 			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
 			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerMoveLeft", playerTexture,
+			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerMoveBack", playerTexture,
+			Vector2(250.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerMoveFront", playerMoveFrontTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 
 		playerAnimator->PlayAnimation(L"PlayerIdle", false);
 
@@ -60,7 +67,23 @@ namespace wb
 		cat->AddComponent<WBCatScript>();
 		
 		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+		WBAnimator* catAnimator = cat->AddComponent<WBAnimator>();
+		catAnimator->CreateAnimation(L"CatMoveFront", catTexture,
+			Vector2(0.0f, 32.0f * 0), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatMoveRight", catTexture,
+			Vector2(0.0f, 32.0f * 1), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatMoveBack", catTexture,
+			Vector2(0.0f, 32.0f * 2), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatMoveLeft", catTexture,
+			Vector2(0.0f, 32.0f * 3), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatSitDown", catTexture,
+			Vector2(0.0f, 32.0f * 4), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatGroom", catTexture,
+			Vector2(0.0f, 32.0f * 5), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
+		catAnimator->CreateAnimation(L"CatSleep", catTexture,
+			Vector2(0.0f, 32.0f * 6), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
 
+		catAnimator->PlayAnimation(L"CatSitDown");
 
 		// _______________________________________________________
 
@@ -85,7 +108,7 @@ namespace wb
 		// _______________________________________________________
 
 		// Skill
-		WBGameObject* skill = object::Instantiate<WBGameObject>
+		/*WBGameObject* skill = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Skill, Vector2(16.0f, 16.0f));
 		WBAnimator* skillAnimator = skill->AddComponent<WBAnimator>();
 
@@ -94,7 +117,7 @@ namespace wb
 			, Vector2::Zero, Vector2(32.0f, 32.0f)
 			, Vector2::Zero, 4, 0.1f);
 
-		skillAnimator->PlayAnimation(L"ShootFireball");
+		skillAnimator->PlayAnimation(L"ShootFireball");*/
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
