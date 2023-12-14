@@ -40,25 +40,115 @@ namespace wb
 
 		// _______________________________________________________
 
-		// Player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(945.0f, 750.0f));
+		// Instantiate player
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(1000.0f, 830.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
+
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.6f, 0.6f));
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveFrontTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Front");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
-		playerAnimator->CreateAnimation(L"PlayerIdle", playerTexture,
+		
+		// Player idle
+		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+		playerAnimator->CreateAnimation(L"PlayerIdleLeft", playerTexture,
+			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+		playerAnimator->CreateAnimation(L"PlayerIdleBack", playerTexture,
 			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+		playerAnimator->CreateAnimation(L"PlayerIdleFront", playerTexture,
+			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+
+		// Player move
 		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
 			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveLeft", playerTexture,
-			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveBack", playerTexture,
 			Vector2(250.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveFront", playerMoveFrontTexture,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 
-		playerAnimator->PlayAnimation(L"PlayerIdle", false);
+		// 1. Player attack
+		playerAnimator->CreateAnimation(L"PlayerAttackFront", playerTexture,
+			Vector2(0.0f, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerAttackRight", playerTexture,
+			Vector2(250.0f * 6, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerAttackLeft", playerTexture,
+			Vector2(0.0f, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerAttackBack", playerTexture,
+			Vector2(250.0f * 6, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.1f);
+
+		// 2. Player swing an axe
+		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeFront", playerTexture,
+			Vector2(250.0f * 3, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeRight", playerTexture,
+			Vector2(250.0f * 9, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeLeft", playerTexture,
+			Vector2(250.0f * 2, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeBack", playerTexture,
+			Vector2(250.0f * 7, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+
+		// 3. Player pickaxe
+		playerAnimator->CreateAnimation(L"PlayerPickaxeFront", playerTexture,
+			Vector2(0.0f, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerPickaxeBack", playerTexture,
+			Vector2(250.0f * 7, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerPickaxeRight", playerTexture,
+			Vector2(0.0f, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerPickaxeLeft", playerTexture,
+			Vector2(250.0f * 5, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+
+		// 4. Hoe
+		playerAnimator->CreateAnimation(L"PlayerHoeFront", playerTexture,
+			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
+		playerAnimator->CreateAnimation(L"PlayerHoeBack", playerTexture,
+			Vector2(250.0f * 3, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerHoeRight", playerTexture,
+			Vector2(250.0f * 7, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerHoeLeft", playerTexture,
+			Vector2(0.0f, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+
+		// 5. Scythe
+		playerAnimator->CreateAnimation(L"PlayerScytheFront", playerTexture,
+			Vector2(250.0f * 5, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerScytheRight", playerTexture,
+			Vector2(0.0f, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerScytheLeft", playerTexture,
+			Vector2(250.0f * 6, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerScytheBack", playerTexture,
+			Vector2(0.0f, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+
+		// 6. Player irrigate
+		playerAnimator->CreateAnimation(L"PlayerIrrigateRight", playerTexture,
+			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerIrrigateFront", playerTexture,
+			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2::Zero, 12, 0.05f);
+		playerAnimator->CreateAnimation(L"PlayerIrrigateLeft", playerTexture,
+			Vector2(0.0f, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerIrrigateBack", playerTexture,
+			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
+
+		// 7. Player load on his head
+		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadLeft", playerTexture,
+			Vector2(0.0f, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadRight", playerTexture,
+			Vector2(250.0f * 5, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadBack", playerTexture,
+			Vector2(0.0f, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadFront", playerTexture,
+			Vector2(250.0f * 7, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+
+		// 8. Player find a something
+		playerAnimator->CreateAnimation(L"PlayerFindASomething", playerTexture,
+			Vector2(250.0f * 8, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
+
+		// 9. Player is exhausted
+		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerTexture,
+			Vector2(250.0f * 6, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+
+		playerAnimator->PlayAnimation(L"PlayerIdleBack", false);
 
 		// _______________________________________________________
 
@@ -88,22 +178,22 @@ namespace wb
 		// _______________________________________________________
 
 		// Tool
-		WBGameObject* tool = object::Instantiate<WBGameObject>
+		/*WBGameObject* tool = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Equipment, Vector2(800.0f, 350.0f));
 		WBSpriteRenderer* toolSr = tool->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* toolTexture = WBResources::Find<graphics::WBTexture>(L"Tools");
-		toolSr->SetTexture(toolTexture);
+		toolSr->SetTexture(toolTexture);*/
 
 		// _______________________________________________________
 
 		// Weapon
-		WBGameObject* weapon = object::Instantiate<WBGameObject>
+		/*WBGameObject* weapon = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Equipment, Vector2(600.0f, 350.0f));
 		WBSpriteRenderer* weaponSr = weapon->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* weaponTexture = WBResources::Find<graphics::WBTexture>(L"Weapons");
-		weaponSr->SetTexture(weaponTexture);
+		weaponSr->SetTexture(weaponTexture);*/
 
 		// _______________________________________________________
 
@@ -149,8 +239,8 @@ namespace wb
 
 		WBScene::Render(hdc);
 
-		/*wchar_t str[12] = L"Play Scene";
-		TextOut(hdc, 0, 0, str, 10);*/
+		wchar_t str[64] = L"1.공격 2.나무 베기 3.채광 4.밭 일구기 5.풀 베기 6.물 주기 7.아이템 들기 8.무언가를 찾음 9.지침";
+		TextOut(hdc, 0, 0, str, 63);
 	}
 
 	void WBJojaMartScene::OnEnter()

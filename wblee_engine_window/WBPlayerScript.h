@@ -3,6 +3,10 @@
 
 namespace wb
 {
+	namespace graphics
+	{
+		class WBTexture;
+	}
 	class WBAnimator;
 	class WBPlayerScript : public WBScript
 	{
@@ -12,7 +16,22 @@ namespace wb
 			Idle,
 			Move,
 			Attack,
+			SwingAnAxe,
+			Pickaxe,
+			Hoe,
+			Scythe,
 			Irrigate,
+			LoadOnHisHead,
+			FindASomething,
+			BeExhausted
+		};
+
+		enum class eDirection
+		{
+			Front,
+			Right,
+			Back,
+			Left,
 		};
 
 		WBPlayerScript();
@@ -26,9 +45,19 @@ namespace wb
 	private:
 		void idle();
 		void move();
+		void attack();
+		void swingAnAxe();
+		void pickaxe();
+		void hoe();
+		void scythe();
+		void irrigate();
+		void loadOnHisHead();
+		void findASomething();
+		void beExhausted();
 
 	private:
 		eState mState;
+		eDirection mDirection;
 		WBAnimator* mAnimator;
 	};
 }

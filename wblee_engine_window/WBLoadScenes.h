@@ -46,6 +46,6 @@ namespace wb
 		WBSceneManager::CreateScene<WBRanchOfMarnieScene>(L"RanchOfMarnieScene");
 		WBSceneManager::CreateScene<WBShopOfCarpenterScene>(L"ShopOfCarpenterScene");
 
-		WBSceneManager::LoadScene(L"TitleScene");
+		WBSceneManager::LoadScene(L"JojaMartScene");
 	}
 }

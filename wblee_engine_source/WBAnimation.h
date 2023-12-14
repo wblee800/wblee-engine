@@ -49,6 +49,7 @@ namespace wb
 		bool isComplete() { return mbComplete; }
 		// 애니메이션을 처음 만들 떄, 애니메이터와 연결해주는 함수
 		void SetAnimator(WBAnimator* animator);
+
 	private:
 		WBAnimator* mAnimator;
 		graphics::WBTexture* mTexture;
