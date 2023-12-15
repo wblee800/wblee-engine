@@ -48,8 +48,12 @@ namespace wb
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveFrontTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Front");
+		graphics::WBTexture* playerSitDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Sit_Down");
+		graphics::WBTexture* playerStandUpTexture = WBResources::Find<graphics::WBTexture>(L"Player_Stand_Up");
+		graphics::WBTexture* playerSwingAnAxeRightTexture = WBResources::Find<graphics::WBTexture>(L"Player_Swing_An_Axe_Right");
+		graphics::WBTexture* playerPickaxeLeftTexture = WBResources::Find<graphics::WBTexture>(L"Player_Pickaxe_Left");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
-		
+
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
@@ -70,7 +74,7 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerMoveFront", playerMoveFrontTexture,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 
-		// 1. Player attack
+		// 1 : Player attack
 		playerAnimator->CreateAnimation(L"PlayerAttackFront", playerTexture,
 			Vector2(0.0f, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerAttackRight", playerTexture,
@@ -80,27 +84,27 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerAttackBack", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.1f);
 
-		// 2. Player swing an axe
+		// 2 : Player swing an axe
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeFront", playerTexture,
 			Vector2(250.0f * 3, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
-		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeRight", playerTexture,
-			Vector2(250.0f * 9, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeRight", playerSwingAnAxeRightTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeLeft", playerTexture,
 			Vector2(250.0f * 2, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeBack", playerTexture,
 			Vector2(250.0f * 7, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 
-		// 3. Player pickaxe
+		// 3 : Player pickaxe
 		playerAnimator->CreateAnimation(L"PlayerPickaxeFront", playerTexture,
 			Vector2(0.0f, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerPickaxeBack", playerTexture,
 			Vector2(250.0f * 7, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerPickaxeRight", playerTexture,
 			Vector2(0.0f, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
-		playerAnimator->CreateAnimation(L"PlayerPickaxeLeft", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+		playerAnimator->CreateAnimation(L"PlayerPickaxeLeft", playerPickaxeLeftTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 
-		// 4. Hoe
+		// 4 : Hoe
 		playerAnimator->CreateAnimation(L"PlayerHoeFront", playerTexture,
 			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
 		playerAnimator->CreateAnimation(L"PlayerHoeBack", playerTexture,
@@ -110,7 +114,7 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerHoeLeft", playerTexture,
 			Vector2(0.0f, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 
-		// 5. Scythe
+		// 5 : Scythe
 		playerAnimator->CreateAnimation(L"PlayerScytheFront", playerTexture,
 			Vector2(250.0f * 5, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerScytheRight", playerTexture,
@@ -120,7 +124,7 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerScytheBack", playerTexture,
 			Vector2(0.0f, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 
-		// 6. Player irrigate
+		// 6 : Player irrigate
 		playerAnimator->CreateAnimation(L"PlayerIrrigateRight", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateFront", playerTexture,
@@ -130,7 +134,7 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerIrrigateBack", playerTexture,
 			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
 
-		// 7. Player load on his head
+		// 7 : Player load on his head
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadLeft", playerTexture,
 			Vector2(0.0f, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadRight", playerTexture,
@@ -140,13 +144,37 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadFront", playerTexture,
 			Vector2(250.0f * 7, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
 
-		// 8. Player find a something
+		// 8 : Player find a something
 		playerAnimator->CreateAnimation(L"PlayerFindASomething", playerTexture,
 			Vector2(250.0f * 8, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
 
-		// 9. Player is exhausted
+		// 9 : Player is exhausted
 		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+
+		// 0 : Player has some food
+		playerAnimator->CreateAnimation(L"PlayerHasSomeFood", playerTexture,
+			Vector2(0.0f, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+
+		// f1 : Player sit down
+		playerAnimator->CreateAnimation(L"PlayerSitDown", playerSitDownTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);
+
+		// f2 : Player stand up
+		playerAnimator->CreateAnimation(L"PlayerStandUp", playerStandUpTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);
+
+		// f3 : Player ride a horse
+		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+
+		// f3 : Player play a mini harp
+		/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+
+		// f4 : Player dozes off
+		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 		playerAnimator->PlayAnimation(L"PlayerIdleBack", false);
 
@@ -155,7 +183,7 @@ namespace wb
 		// Cat
 		WBCat* cat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
 		cat->AddComponent<WBCatScript>();
-		
+
 		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
 		WBAnimator* catAnimator = cat->AddComponent<WBAnimator>();
 		catAnimator->CreateAnimation(L"CatMoveFront", catTexture,
@@ -239,8 +267,8 @@ namespace wb
 
 		WBScene::Render(hdc);
 
-		wchar_t str[64] = L"1.공격 2.나무 베기 3.채광 4.밭 일구기 5.풀 베기 6.물 주기 7.아이템 들기 8.무언가를 찾음 9.지침";
-		TextOut(hdc, 0, 0, str, 63);
+		wchar_t str[93] = L"1:공격 2:나무 베기 3:채광 4:밭 일구기 5:풀 베기 6:물 주기 7:아이템 들기 8:무언가를 찾았음 9:지침 0:먹기 f1:의자에 앉기 f2:의자에서 일어서기";
+		TextOut(hdc, 0, 0, str, 92);
 	}
 
 	void WBJojaMartScene::OnEnter()

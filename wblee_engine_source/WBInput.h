@@ -18,7 +18,8 @@ namespace wb
 		Z, X, C, V, B, N, M,
 		LEFT, RIGHT, DOWN, UP,
 		LButton, MButton, RButton,
-		ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ZERO,
+		ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO,
+		F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
 		End,
 	};
 

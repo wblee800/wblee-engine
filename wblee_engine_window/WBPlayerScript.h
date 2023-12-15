@@ -23,7 +23,13 @@ namespace wb
 			Irrigate,
 			LoadOnHisHead,
 			FindASomething,
-			BeExhausted
+			BeExhausted,
+			HasSomeFood,
+			SitDown,
+			StandUp,
+			RideAHorse,
+			PlayAMiniHarp,
+			DozesOff
 		};
 
 		enum class eDirection
@@ -54,6 +60,12 @@ namespace wb
 		void loadOnHisHead();
 		void findASomething();
 		void beExhausted();
+		void hasSomeFood();
+		void sitDown();
+		void standUp();
+		void rideAHorse();
+		void playAMiniHarp();
+		void dozesOff();
 
 	private:
 		eState mState;

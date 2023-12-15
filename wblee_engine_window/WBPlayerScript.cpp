@@ -64,6 +64,15 @@ namespace wb
 		case wb::WBPlayerScript::eState::BeExhausted:
 			beExhausted();
 			break;
+		case wb::WBPlayerScript::eState::HasSomeFood:
+			hasSomeFood();
+			break;
+		case wb::WBPlayerScript::eState::SitDown:
+			sitDown();
+			break;
+		case wb::WBPlayerScript::eState::StandUp:
+			standUp();
+			break;
 		default:
 			break;
 		}
@@ -156,6 +165,24 @@ namespace wb
 		if (WBInput::GetKeyDown(eKeyCode::NINE))
 		{
 			beExhausted();
+		}
+
+		// If you click a mouse left button,
+		if (WBInput::GetKeyDown(eKeyCode::ZERO))
+		{
+			hasSomeFood();
+		}
+
+		// If you click a mouse left button,
+		if (WBInput::GetKeyDown(eKeyCode::F1))
+		{
+			sitDown();
+		}
+		
+		// If you click a mouse left button,
+		if (WBInput::GetKeyDown(eKeyCode::F2))
+		{
+			standUp();
 		}
 	}
 
@@ -389,5 +416,41 @@ namespace wb
 	{
 		mState = eState::Idle;
 		mAnimator->PlayAnimation(L"PlayerIsExhausted");
+	}
+
+	void WBPlayerScript::hasSomeFood()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerHasSomeFood");
+	}
+
+	void WBPlayerScript::sitDown()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerSitDown", false);
+	}
+
+	void WBPlayerScript::standUp()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerStandUp", false);
+	}
+
+	void WBPlayerScript::rideAHorse()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerRideAHorse");
+	}
+
+	void WBPlayerScript::playAMiniHarp()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerPlayAMiniHarp");
+	}
+
+	void WBPlayerScript::dozesOff()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerDozesOff");
 	}
 }

@@ -40,6 +40,10 @@ namespace wb
 		// Players
 		WBResources::Load<graphics::WBTexture>(L"Player", L"..\\resources\\sprites\\characters\\players\\Player.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Move_Front", L"..\\resources\\sprites\\characters\\players\\Player_Move_Front.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Sit_Down", L"..\\resources\\sprites\\characters\\players\\Player_Sit_Down.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Stand_Up", L"..\\resources\\sprites\\characters\\players\\Player_Stand_Up.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Swing_An_Axe_Right", L"..\\resources\\sprites\\characters\\players\\Player_Swing_An_Axe_Right.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Pickaxe_Left", L"..\\resources\\sprites\\characters\\players\\Player_Pickaxe_Left.bmp");
 
 		// Skills
 		WBResources::Load<graphics::WBTexture>(L"Fireball", L"..\\resources\\sprites\\miscellaneous\\Fireball.bmp");
