@@ -36,7 +36,7 @@ namespace wb
 			assert(false);
 
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPos();
+		Vector2 pos = tr->GetPosition();
 
 		pos = renderer::mainCamera->CalculatePos(pos);
 

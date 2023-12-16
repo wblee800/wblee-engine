@@ -37,11 +37,11 @@ namespace wb
 		{
 			WBTransform* tr = mTarget->GetComponent<WBTransform>();
 			// 특정 오브젝트가 화면의 중심이 되게 설정
-			mLookPos = tr->GetPos();
+			mLookPos = tr->GetPosition();
 		}
 
 		WBTransform* cameraTr = GetOwner()->GetComponent<WBTransform>();
-		mLookPos = cameraTr->GetPos();
+		mLookPos = cameraTr->GetPosition();
 
 		// Moving distance in Windows axis
 		mDistance = mLookPos - (mResolution / 2.0f);

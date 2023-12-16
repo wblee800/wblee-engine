@@ -28,23 +28,28 @@ namespace wb
 
 	void WBJojaMartScene::Initialize()
 	{
+		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
+		camera->AddComponent<WBCamera>();
+		WBCamera* cameraComponent = camera->GetComponent<WBCamera>();
+
 		// Before loading a game object, load resources.
 		// Joja Mart Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(240.0f + 500.0f, 240.0f));
+			(enums::eLayerType::Map, Vector2(240.0f, -623.0f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Joja_Mart");
 		mapSr->SetTexture(mapTexture);
-		mapSr->SetSize(Vector2(2.0f, 1.7f));
+		mapSr->SetSize(Vector2(4.0f, 3.9f));
 
 		// _______________________________________________________
 
 		// Instantiate player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(1000.0f, 830.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.6f, 0.6f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
+		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveFrontTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Front");
@@ -52,6 +57,7 @@ namespace wb
 		graphics::WBTexture* playerStandUpTexture = WBResources::Find<graphics::WBTexture>(L"Player_Stand_Up");
 		graphics::WBTexture* playerSwingAnAxeRightTexture = WBResources::Find<graphics::WBTexture>(L"Player_Swing_An_Axe_Right");
 		graphics::WBTexture* playerPickaxeLeftTexture = WBResources::Find<graphics::WBTexture>(L"Player_Pickaxe_Left");
+		graphics::WBTexture* playerIsExhaustedTexture = WBResources::Find<graphics::WBTexture>(L"Player_Is_Exhausted");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
 
 		// Player idle
@@ -148,8 +154,8 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerFindASomething", playerTexture,
 			Vector2(250.0f * 8, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
 
-		// 9 : Player is exhausted
-		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerTexture,
+		// 9 : Player is hungry
+		playerAnimator->CreateAnimation(L"PlayerIsHungry", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 
 		// 0 : Player has some food
@@ -164,15 +170,19 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerStandUp", playerStandUpTexture,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);
 
-		// f3 : Player ride a horse
+		// f3 : Player is exhausted
+		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerIsExhaustedTexture,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
+
+		// f4 : Player ride a horse
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f3 : Player play a mini harp
+		// f5 : Player play a mini harp
 		/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f4 : Player dozes off
+		// f6 : Player dozes off
 		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
@@ -259,16 +269,16 @@ namespace wb
 	void WBJojaMartScene::Render(HDC hdc)
 	{
 		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blackBrush);
+		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, blackBrush);
 		Rectangle(hdc, -1, -1, 1921, 1081);
 
-		SelectObject(hdc, oldBrush);
+		SelectObject(hdc, originBrush);
 		DeleteObject(blackBrush);
 
 		WBScene::Render(hdc);
 
-		wchar_t str[93] = L"1:공격 2:나무 베기 3:채광 4:밭 일구기 5:풀 베기 6:물 주기 7:아이템 들기 8:무언가를 찾았음 9:지침 0:먹기 f1:의자에 앉기 f2:의자에서 일어서기";
-		TextOut(hdc, 0, 0, str, 92);
+		wchar_t str[100] = L"1:공격 2:나무 베기 3:채광 4:밭 일구기 5:풀 베기 6:물 주기 7:아이템 들기 8:무언가를 찾았음 9:배고픔 0:먹기 f1:의자에 앉기 f2:의자에서 일어서기 f3:탈진";
+		TextOut(hdc, 0, 0, str, 99);
 	}
 
 	void WBJojaMartScene::OnEnter()

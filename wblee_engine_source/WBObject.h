@@ -30,7 +30,7 @@ namespace wb
 			layer->AddGameObject(gameObject);
 
 			WBTransform* tr = gameObject->GetComponent<WBTransform>();
-			tr->SetPos(position);
+			tr->SetPosition(position);
 
 			return gameObject;
 		}

@@ -61,8 +61,8 @@ namespace wb
 		case wb::WBPlayerScript::eState::FindASomething:
 			findASomething();
 			break;
-		case wb::WBPlayerScript::eState::BeExhausted:
-			beExhausted();
+		case wb::WBPlayerScript::eState::BeHungry:
+			beHungry();
 			break;
 		case wb::WBPlayerScript::eState::HasSomeFood:
 			hasSomeFood();
@@ -72,6 +72,9 @@ namespace wb
 			break;
 		case wb::WBPlayerScript::eState::StandUp:
 			standUp();
+			break;
+		case wb::WBPlayerScript::eState::BeExhausted:
+			beExhausted();
 			break;
 		default:
 			break;
@@ -164,7 +167,7 @@ namespace wb
 		// If you click a mouse left button,
 		if (WBInput::GetKeyDown(eKeyCode::NINE))
 		{
-			beExhausted();
+			beHungry();
 		}
 
 		// If you click a mouse left button,
@@ -184,26 +187,32 @@ namespace wb
 		{
 			standUp();
 		}
+
+		// If you click a mouse left button,
+		if (WBInput::GetKeyDown(eKeyCode::F3))
+		{
+			beExhausted();
+		}
 	}
 
 	void WBPlayerScript::move()
 	{
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPos();
+		Vector2 pos = tr->GetPosition();
 
 		if (WBInput::GetKey(eKeyCode::UP))
-			pos.y -= 100 * WBTime::DeltaTime();
+			pos.y -= 170 * WBTime::DeltaTime();
 
 		if (WBInput::GetKey(eKeyCode::LEFT))
-			pos.x -= 100 * WBTime::DeltaTime();
+			pos.x -= 170 * WBTime::DeltaTime();
 
 		if (WBInput::GetKey(eKeyCode::DOWN))
-			pos.y += 100 * WBTime::DeltaTime();
+			pos.y += 170 * WBTime::DeltaTime();
 
 		if (WBInput::GetKey(eKeyCode::RIGHT))
-			pos.x += 100 * WBTime::DeltaTime();
+			pos.x += 170 * WBTime::DeltaTime();
 
-		tr->SetPos(pos);
+		tr->SetPosition(pos);
 
 		if (WBInput::GetKeyUp(eKeyCode::UP))
 		{
@@ -412,10 +421,10 @@ namespace wb
 		mAnimator->PlayAnimation(L"PlayerFindASomething");
 	}
 
-	void WBPlayerScript::beExhausted()
+	void WBPlayerScript::beHungry()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerIsExhausted");
+		mAnimator->PlayAnimation(L"PlayerIsHungry");
 	}
 
 	void WBPlayerScript::hasSomeFood()
@@ -434,6 +443,12 @@ namespace wb
 	{
 		mState = eState::Idle;
 		mAnimator->PlayAnimation(L"PlayerStandUp", false);
+	}
+
+	void WBPlayerScript::beExhausted()
+	{
+		mState = eState::Idle;
+		mAnimator->PlayAnimation(L"PlayerIsExhausted");
 	}
 
 	void WBPlayerScript::rideAHorse()

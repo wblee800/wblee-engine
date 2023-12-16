@@ -44,6 +44,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Player_Stand_Up", L"..\\resources\\sprites\\characters\\players\\Player_Stand_Up.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Swing_An_Axe_Right", L"..\\resources\\sprites\\characters\\players\\Player_Swing_An_Axe_Right.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Pickaxe_Left", L"..\\resources\\sprites\\characters\\players\\Player_Pickaxe_Left.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Player_Is_Exhausted", L"..\\resources\\sprites\\characters\\players\\Player_Is_Exhausted.bmp");
 
 		// Skills
 		WBResources::Load<graphics::WBTexture>(L"Fireball", L"..\\resources\\sprites\\miscellaneous\\Fireball.bmp");

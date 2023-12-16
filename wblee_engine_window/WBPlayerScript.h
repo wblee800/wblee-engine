@@ -23,10 +23,11 @@ namespace wb
 			Irrigate,
 			LoadOnHisHead,
 			FindASomething,
-			BeExhausted,
+			BeHungry,
 			HasSomeFood,
 			SitDown,
 			StandUp,
+			BeExhausted,
 			RideAHorse,
 			PlayAMiniHarp,
 			DozesOff
@@ -59,10 +60,11 @@ namespace wb
 		void irrigate();
 		void loadOnHisHead();
 		void findASomething();
-		void beExhausted();
+		void beHungry();
 		void hasSomeFood();
 		void sitDown();
 		void standUp();
+		void beExhausted();
 		void rideAHorse();
 		void playAMiniHarp();
 		void dozesOff();

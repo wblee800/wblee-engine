@@ -52,7 +52,7 @@ namespace wb
 
 		WBGameObject* gameObj = mAnimator->GetOwner();
 		WBTransform* tr = gameObj->GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPos();
+		Vector2 pos = tr->GetPosition();
 
 		Vector2 scale = tr->GetScale();
 		float rotation = tr->GetRotation();
