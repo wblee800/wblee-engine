@@ -12,6 +12,7 @@ namespace wb
 			SitDown,
 			Move,
 			Groom,
+			LayDown,
 			Sleep,
 		};
 
@@ -21,7 +22,6 @@ namespace wb
 			Right,
 			Down,
 			Up,
-			End
 		};
 
 		WBCatScript();
@@ -34,9 +34,9 @@ namespace wb
 
 	private:
 		void sitDown();
-		void move();
 		void playMoveAnimationByDirection(eDirection direction);
 		void groom();
+		void layDown();
 		void sleep();
 
 	private:

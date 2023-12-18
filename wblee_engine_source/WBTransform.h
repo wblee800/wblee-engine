@@ -15,7 +15,7 @@ namespace wb
 		void LateUpdate();
 		void Render();
 
-		void SetPosition(Vector2 pos) { mPosition.x = pos.x; mPosition.y = pos.y; }
+		void SetPosition(Vector2 position) { mPosition.x = position.x; mPosition.y = position.y; }
 		Vector2 GetPosition() { return mPosition; }
 
 		void SetScale(Vector2 scale) { mScale = scale; }

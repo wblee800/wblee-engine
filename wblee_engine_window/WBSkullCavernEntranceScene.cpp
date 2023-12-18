@@ -47,11 +47,11 @@ namespace wb
 
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
-		playerAnimator->CreateAnimation(L"CatMoveBack", playerTexture,
+		playerAnimator->CreateAnimation(L"CatMoveUp", playerTexture,
 			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
 		playerAnimator->CreateAnimation(L"CatMoveRight", playerTexture,
 			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
-		playerAnimator->CreateAnimation(L"CatMoveFront", playerTexture,
+		playerAnimator->CreateAnimation(L"CatMoveDown", playerTexture,
 			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);
 		playerAnimator->CreateAnimation(L"CatMoveLeft", playerTexture,
 			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.3f);

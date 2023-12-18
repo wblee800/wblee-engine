@@ -34,13 +34,16 @@ namespace wb
 			sitDown();
 			break;
 		case eState::Move:
-			move();
-			break;
-		case eState::Sleep:
-			sleep();
+			playMoveAnimationByDirection(mDirection);
 			break;
 		case eState::Groom:
 			groom();
+			break;
+		case eState::LayDown:
+			layDown();
+			break;
+		case eState::Sleep:
+			sleep();
 			break;
 		default:
 			break;
@@ -57,12 +60,12 @@ namespace wb
 
 	void WBCatScript::sitDown()
 	{
+		mState = (eState)(rand() % 4 + 1);
 		mTime += WBTime::DeltaTime();
+
 		if (mTime > 3.0f)
 		{
-			mState = eState::Move;
-			int direction = (rand() % 4);
-			mDirection = (eDirection)direction;
+			mDirection = (eDirection)(rand() % 4);
 
 			playMoveAnimationByDirection(mDirection);
 
@@ -70,16 +73,12 @@ namespace wb
 		}
 	}
 
-	void WBCatScript::move()
-	{
-	}
-
 	void WBCatScript::playMoveAnimationByDirection(eDirection direction)
 	{
 		switch (direction)
 		{
 		case eDirection::Left:
-			mAnimator->PlayAnimation(L"CatLeft");
+			mAnimator->PlayAnimation(L"CatMoveLeft");
 			break;
 		case eDirection::Right:
 			mAnimator->PlayAnimation(L"CatMoveRight");
@@ -93,13 +92,28 @@ namespace wb
 		default:
 			break;
 		}
+
+		mState = eState::SitDown;
 	}
 
 	void WBCatScript::groom()
 	{
+		mAnimator->PlayAnimation(L"CatGroom");
+
+		mState = eState::SitDown;
+	}
+
+	void WBCatScript::layDown()
+	{
+		mAnimator->PlayAnimation(L"CatLayDown");
+
+		mState = eState::SitDown;
 	}
 
 	void WBCatScript::sleep()
 	{
+		mAnimator->PlayAnimation(L"CatSleep");
+
+		mState = eState::SitDown;
 	}
 }

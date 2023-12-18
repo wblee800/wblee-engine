@@ -53,7 +53,7 @@ namespace wb
 		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(415.0f, 780.0f));
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
-		graphics::WBTexture* playerMoveFrontTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Front");
+		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
 		graphics::WBTexture* playerSitDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Sit_Down");
 		graphics::WBTexture* playerStandUpTexture = WBResources::Find<graphics::WBTexture>(L"Player_Stand_Up");
 		graphics::WBTexture* playerSwingAnAxeRightTexture = WBResources::Find<graphics::WBTexture>(L"Player_Swing_An_Axe_Right");
@@ -76,9 +76,9 @@ namespace wb
 			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveLeft", playerTexture,
 			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
-		playerAnimator->CreateAnimation(L"PlayerMoveBack", playerTexture,
+		playerAnimator->CreateAnimation(L"PlayerMoveUp", playerTexture,
 			Vector2(250.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
-		playerAnimator->CreateAnimation(L"PlayerMoveFront", playerMoveFrontTexture,
+		playerAnimator->CreateAnimation(L"PlayerMoveDown", playerMoveDownTexture,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
 
 		// 1 : Player attack

@@ -46,8 +46,9 @@ namespace wb
 
 		void Reset();
 
+		// 애니메이션이 끝났는지
 		bool isComplete() { return mbComplete; }
-		// 애니메이션을 처음 만들 떄, 애니메이터와 연결해주는 함수
+		// 애니메이션을 처음 만들 때, 애니메이터와 연결해주는 함수
 		void SetAnimator(WBAnimator* animator);
 
 	private:

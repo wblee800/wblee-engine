@@ -4,6 +4,7 @@
 namespace wb
 {
 	class WBPlayer;
+	class WBCat;
 	class WBFarmScene : public WBScene
 	{
 	public:
@@ -20,5 +21,6 @@ namespace wb
 
 	private:
 		WBPlayer* mPlayer;
+		WBCat* mCat;
 	};
 }

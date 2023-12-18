@@ -35,9 +35,9 @@ namespace wb
 
 		enum class eDirection
 		{
-			Front,
+			Down,
 			Right,
-			Back,
+			Up,
 			Left,
 		};
 

@@ -94,103 +94,91 @@ namespace wb
 		if (WBInput::GetKey(eKeyCode::UP))
 		{
 			mState = eState::Move;
-			mDirection = eDirection::Back;
-			mAnimator->PlayAnimation(L"PlayerMoveBack");
+			mDirection = eDirection::Up;
+			mAnimator->PlayAnimation(L"PlayerMoveUp");
 		}
-		if (WBInput::GetKey(eKeyCode::LEFT))
+		else if (WBInput::GetKey(eKeyCode::LEFT))
 		{
 			mState = eState::Move;
 			mDirection = eDirection::Left;
 			mAnimator->PlayAnimation(L"PlayerMoveLeft");
 		}
-		if (WBInput::GetKey(eKeyCode::DOWN))
+		else if (WBInput::GetKey(eKeyCode::DOWN))
 		{
 			mState = eState::Move;
-			mDirection = eDirection::Front;
-			mAnimator->PlayAnimation(L"PlayerMoveFront");
+			mDirection = eDirection::Down;
+			mAnimator->PlayAnimation(L"PlayerMoveDown");
 		}
-		if (WBInput::GetKey(eKeyCode::RIGHT))
+		else if (WBInput::GetKey(eKeyCode::RIGHT))
 		{
 			mState = eState::Move;
 			mDirection = eDirection::Right;
 			mAnimator->PlayAnimation(L"PlayerMoveRight");
 		}
 
-		// If you click a mouse left button,
 		if (WBInput::GetKeyDown(eKeyCode::ONE))
 		{
+			mState = eState::Attack;
 			attack();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::TWO))
+		else if (WBInput::GetKeyDown(eKeyCode::TWO))
 		{
+			mState = eState::SwingAnAxe;
 			swingAnAxe();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::THREE))
+		else if (WBInput::GetKeyDown(eKeyCode::THREE))
 		{
+			mState = eState::Pickaxe;
 			pickaxe();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::FOUR))
+		else if (WBInput::GetKeyDown(eKeyCode::FOUR))
 		{
+			mState = eState::Hoe;
 			hoe();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::FIVE))
+		else if (WBInput::GetKeyDown(eKeyCode::FIVE))
 		{
+			mState = eState::Scythe;
 			scythe();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::SIX))
+		else if (WBInput::GetKeyDown(eKeyCode::SIX))
 		{
+			mState = eState::Irrigate;
 			irrigate();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::SEVEN))
+		else if (WBInput::GetKeyDown(eKeyCode::SEVEN))
 		{
+			mState = eState::LoadOnHisHead;
 			loadOnHisHead();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::EIGHT))
+		else if (WBInput::GetKeyDown(eKeyCode::EIGHT))
 		{
+			mState = eState::FindASomething;
 			findASomething();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::NINE))
+		else if (WBInput::GetKeyDown(eKeyCode::NINE))
 		{
+			mState = eState::BeHungry;
 			beHungry();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::ZERO))
+		else if (WBInput::GetKeyDown(eKeyCode::ZERO))
 		{
+			mState = eState::HasSomeFood;
 			hasSomeFood();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::F1))
+		else if (WBInput::GetKeyDown(eKeyCode::F1))
 		{
+			mState = eState::SitDown;
 			sitDown();
 		}
-		
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::F2))
+		else if (WBInput::GetKeyDown(eKeyCode::F2))
 		{
+			mState = eState::StandUp;
 			standUp();
 		}
-
-		// If you click a mouse left button,
-		if (WBInput::GetKeyDown(eKeyCode::F3))
+		else if (WBInput::GetKeyDown(eKeyCode::F3))
 		{
+			mState = eState::BeExhausted;
 			beExhausted();
 		}
 	}
@@ -217,8 +205,8 @@ namespace wb
 		if (WBInput::GetKeyUp(eKeyCode::UP))
 		{
 			mState = eState::Idle;
-			mDirection = eDirection::Back;
-			mAnimator->PlayAnimation(L"PlayerIdleBack", false);
+			mDirection = eDirection::Up;
+			mAnimator->PlayAnimation(L"PlayerIdleUp", false);
 		}
 		else if (WBInput::GetKeyUp(eKeyCode::LEFT))
 		{
@@ -229,8 +217,8 @@ namespace wb
 		else if (WBInput::GetKeyUp(eKeyCode::DOWN))
 		{
 			mState = eState::Idle;
-			mDirection = eDirection::Front;
-			mAnimator->PlayAnimation(L"PlayerIdleFront", false);
+			mDirection = eDirection::Down;
+			mAnimator->PlayAnimation(L"PlayerIdleDown", false);
 		}
 		else if (WBInput::GetKeyUp(eKeyCode::RIGHT))
 		{
@@ -244,21 +232,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerAttackFront");
+			mAnimator->PlayAnimation(L"PlayerAttackDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerAttackRight");
+			mAnimator->PlayAnimation(L"PlayerAttackRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerAttackBack");
+			mAnimator->PlayAnimation(L"PlayerAttackUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerAttackLeft");
+			mAnimator->PlayAnimation(L"PlayerAttackLeft", false);
 			break;
 		default:
 			break;
@@ -269,21 +257,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerSwingAnAxeFront");
+			mAnimator->PlayAnimation(L"PlayerSwingAnAxeDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerSwingAnAxeRight");
+			mAnimator->PlayAnimation(L"PlayerSwingAnAxeRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerSwingAnAxeBack");
+			mAnimator->PlayAnimation(L"PlayerSwingAnAxeUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerSwingAnAxeLeft");
+			mAnimator->PlayAnimation(L"PlayerSwingAnAxeLeft", false);
 			break;
 		default:
 			break;
@@ -294,21 +282,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerPickaxeFront");
+			mAnimator->PlayAnimation(L"PlayerPickaxeDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerPickaxeRight");
+			mAnimator->PlayAnimation(L"PlayerPickaxeRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerPickaxeBack");
+			mAnimator->PlayAnimation(L"PlayerPickaxeUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerPickaxeLeft");
+			mAnimator->PlayAnimation(L"PlayerPickaxeLeft", false);
 			break;
 		default:
 			break;
@@ -319,21 +307,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerHoeFront");
+			mAnimator->PlayAnimation(L"PlayerHoeDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerHoeRight");
+			mAnimator->PlayAnimation(L"PlayerHoeRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerHoeBack");
+			mAnimator->PlayAnimation(L"PlayerHoeUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerHoeLeft");
+			mAnimator->PlayAnimation(L"PlayerHoeLeft", false);
 			break;
 		default:
 			break;
@@ -344,21 +332,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerScytheFront");
+			mAnimator->PlayAnimation(L"PlayerScytheDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerScytheRight");
+			mAnimator->PlayAnimation(L"PlayerScytheRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerScytheBack");
+			mAnimator->PlayAnimation(L"PlayerScytheUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerScytheLeft");
+			mAnimator->PlayAnimation(L"PlayerScytheLeft", false);
 			break;
 		default:
 			break;
@@ -369,21 +357,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerIrrigateFront");
+			mAnimator->PlayAnimation(L"PlayerIrrigateDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerIrrigateRight");
+			mAnimator->PlayAnimation(L"PlayerIrrigateRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerIrrigateBack");
+			mAnimator->PlayAnimation(L"PlayerIrrigateUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerIrrigateLeft");
+			mAnimator->PlayAnimation(L"PlayerIrrigateLeft", false);
 			break;
 		default:
 			break;
@@ -394,21 +382,21 @@ namespace wb
 	{
 		switch (mDirection)
 		{
-		case eDirection::Front:
+		case eDirection::Down:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadFront");
+			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadDown", false);
 			break;
 		case eDirection::Right:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadRight");
+			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadRight", false);
 			break;
-		case eDirection::Back:
+		case eDirection::Up:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadBack");
+			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadUp", false);
 			break;
 		case eDirection::Left:
 			mState = eState::Idle;
-			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadLeft");
+			mAnimator->PlayAnimation(L"PlayerLoadOnHisHeadLeft", false);
 			break;
 		default:
 			break;
@@ -418,19 +406,19 @@ namespace wb
 	void WBPlayerScript::findASomething()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerFindASomething");
+		mAnimator->PlayAnimation(L"PlayerFindASomething", false);
 	}
 
 	void WBPlayerScript::beHungry()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerIsHungry");
+		mAnimator->PlayAnimation(L"PlayerIsHungry", false);
 	}
 
 	void WBPlayerScript::hasSomeFood()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerHasSomeFood");
+		mAnimator->PlayAnimation(L"PlayerHasSomeFood", false);
 	}
 
 	void WBPlayerScript::sitDown()
@@ -448,24 +436,24 @@ namespace wb
 	void WBPlayerScript::beExhausted()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerIsExhausted");
+		mAnimator->PlayAnimation(L"PlayerIsExhausted", false);
 	}
 
 	void WBPlayerScript::rideAHorse()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerRideAHorse");
+		mAnimator->PlayAnimation(L"PlayerRideAHorse", false);
 	}
 
 	void WBPlayerScript::playAMiniHarp()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerPlayAMiniHarp");
+		mAnimator->PlayAnimation(L"PlayerPlayAMiniHarp", false);
 	}
 
 	void WBPlayerScript::dozesOff()
 	{
 		mState = eState::Idle;
-		mAnimator->PlayAnimation(L"PlayerDozesOff");
+		mAnimator->PlayAnimation(L"PlayerDozesOff", false);
 	}
 }
