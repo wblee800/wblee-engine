@@ -30,8 +30,7 @@ namespace wb
 	void WBPelicanTownScene::Initialize()
 	{
 		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
-		camera->AddComponent<WBCamera>();
-		WBCamera* cameraComponent = camera->GetComponent<WBCamera>();
+		renderer::mainCamera = camera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
 		// Pelican Town Map
@@ -58,6 +57,9 @@ namespace wb
 		graphics::WBTexture* playerPickaxeLeftTexture = WBResources::Find<graphics::WBTexture>(L"Player_Pickaxe_Left");
 		graphics::WBTexture* playerIsExhaustedTexture = WBResources::Find<graphics::WBTexture>(L"Player_Is_Exhausted");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
+
+		// Set target
+		renderer::mainCamera->SetTarget(mPlayer);
 
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
@@ -177,13 +179,13 @@ namespace wb
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f5 : Player play a mini harp
-		/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+			// f5 : Player play a mini harp
+			/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
+				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f6 : Player dozes off
-		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+				// f6 : Player dozes off
+				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
+					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 		playerAnimator->PlayAnimation(L"PlayerIdleUp", false);
 

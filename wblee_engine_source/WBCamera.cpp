@@ -7,16 +7,16 @@ extern wb::WBApplication application;
 
 namespace wb
 {
-	math::Vector2 WBCamera::CalculatePos(math::Vector2 pos)
+	math::Vector2 WBCamera::CalculatePos(math::Vector2 position)
 	{
-		return pos - mDistance;
+		return position - mDistance;
 	}
 
 	WBCamera::WBCamera()
 		:WBComponent(enums::eComponentType::Camera)
 		, mDistance(Vector2::Zero)
 		, mResolution(Vector2::Zero)
-		, mLookPos(Vector2::Zero)
+		, mLookPosition(Vector2::Zero)
 		, mTarget(nullptr)
 	{
 	}
@@ -37,14 +37,16 @@ namespace wb
 		{
 			WBTransform* tr = mTarget->GetComponent<WBTransform>();
 			// 특정 오브젝트가 화면의 중심이 되게 설정
-			mLookPos = tr->GetPosition();
+			mLookPosition = tr->GetPosition();
+		}
+		else
+		{
+			WBTransform* cameraTr = GetOwner()->GetComponent<WBTransform>();
+			mLookPosition = cameraTr->GetPosition();
 		}
 
-		WBTransform* cameraTr = GetOwner()->GetComponent<WBTransform>();
-		mLookPos = cameraTr->GetPosition();
-
 		// Moving distance in Windows axis
-		mDistance = mLookPos - (mResolution / 2.0f);
+		mDistance = mLookPosition - (mResolution / 2.0f);
 	}
 
 	void WBCamera::LateUpdate()
@@ -54,5 +56,4 @@ namespace wb
 	void WBCamera::Render(HDC hdc)
 	{
 	}
-
 }

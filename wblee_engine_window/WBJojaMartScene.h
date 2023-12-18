@@ -3,6 +3,7 @@
 
 namespace wb
 {
+	class WBPlayer;
 	class WBJojaMartScene : public WBScene
 	{
 	public:
@@ -18,6 +19,7 @@ namespace wb
 		void OnExit() override;
 
 	private:
-		class WBPlayer* mPlayer;
+		WBPlayer* mPlayer;
+		WBGameObject* mCamera;
 	};
 }

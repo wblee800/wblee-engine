@@ -7,7 +7,7 @@ namespace wb
 	class WBCamera : public WBComponent
 	{
 	public:
-		math::Vector2 CalculatePos(math::Vector2 pos);
+		math::Vector2 CalculatePos(math::Vector2 position);
 
 		WBCamera();
 		~WBCamera();
@@ -16,11 +16,13 @@ namespace wb
 		virtual void Update();
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
+
+		void SetTarget(WBGameObject* target) { mTarget = target; }
+		
 	private:
-		// std::vector<WBGameObject*> mGameObjects;
 		math::Vector2 mDistance;
 		math::Vector2 mResolution;
-		math::Vector2 mLookPos;
+		math::Vector2 mLookPosition;
 		WBGameObject* mTarget;
 	};
 }

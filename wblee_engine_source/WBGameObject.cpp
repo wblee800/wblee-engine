@@ -9,7 +9,7 @@ namespace wb
 	WBGameObject::WBGameObject()
 	{
 		mComponents.resize((UINT)enums::eComponentType::End);
-		initTransform();
+		initializeTransform();
 	}
 
 	WBGameObject::~WBGameObject()
@@ -59,7 +59,7 @@ namespace wb
 		}
 	}
 
-	void WBGameObject::initTransform()
+	void WBGameObject::initializeTransform()
 	{
 		AddComponent<WBTransform>();
 	}

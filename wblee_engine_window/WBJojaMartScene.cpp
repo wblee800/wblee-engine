@@ -18,7 +18,8 @@
 namespace wb
 {
 	WBJojaMartScene::WBJojaMartScene()
-		:mPlayer{}
+		:mPlayer(nullptr)
+		,mCamera(nullptr)
 	{
 	}
 
@@ -28,9 +29,8 @@ namespace wb
 
 	void WBJojaMartScene::Initialize()
 	{
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
-		camera->AddComponent<WBCamera>();
-		WBCamera* cameraComponent = camera->GetComponent<WBCamera>();
+		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
+		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
 		// Joja Mart Map
@@ -48,9 +48,9 @@ namespace wb
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
 		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
 
+		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
 		graphics::WBTexture* playerSitDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Sit_Down");
@@ -59,6 +59,9 @@ namespace wb
 		graphics::WBTexture* playerPickaxeLeftTexture = WBResources::Find<graphics::WBTexture>(L"Player_Pickaxe_Left");
 		graphics::WBTexture* playerIsExhaustedTexture = WBResources::Find<graphics::WBTexture>(L"Player_Is_Exhausted");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
+
+		// Set a camera target
+		renderer::mainCamera->SetTarget(mPlayer);
 
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
@@ -268,7 +271,7 @@ namespace wb
 
 	void WBJojaMartScene::Render(HDC hdc)
 	{
-		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
+		HBRUSH blackBrush = CreateSolidBrush(RGB(5, 3, 4));
 		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, blackBrush);
 		Rectangle(hdc, -1, -1, 1921, 1081);
 
@@ -283,6 +286,7 @@ namespace wb
 
 	void WBJojaMartScene::OnEnter()
 	{
+		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
 	void WBJojaMartScene::OnExit()

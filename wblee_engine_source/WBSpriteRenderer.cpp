@@ -38,7 +38,8 @@ namespace wb
 		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
 		Vector2 pos = tr->GetPosition();
 
-		pos = renderer::mainCamera->CalculatePos(pos);
+		if (renderer::mainCamera)
+			pos = renderer::mainCamera->CalculatePos(pos);
 
 		Vector2 scale = tr->GetScale();
 		float rotation = tr->GetRotation();
