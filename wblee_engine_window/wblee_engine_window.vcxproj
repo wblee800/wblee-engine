@@ -43,7 +43,9 @@
     <ClInclude Include="WBSkullCavernEntranceScene.h" />
     <ClInclude Include="WBTheaterBoxOfficeScene.h" />
     <ClInclude Include="WBTheaterScreenScene.h" />
+    <ClInclude Include="WBTile.h" />
     <ClInclude Include="WBTitleScene.h" />
+    <ClInclude Include="WBToolScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBBeachScene.cpp" />
@@ -68,7 +70,9 @@
     <ClCompile Include="WBSkullCavernEntranceScene.cpp" />
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
     <ClCompile Include="WBTheaterScreenScene.cpp" />
+    <ClCompile Include="WBTile.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
+    <ClCompile Include="WBToolScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

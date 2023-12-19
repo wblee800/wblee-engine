@@ -18,6 +18,7 @@ namespace wb
 		{
 			None,
 			Background,
+			Tile,
 			Map,
 			Equipment,
 			Animal,

@@ -56,10 +56,13 @@
       <Filter>component\component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimation.cpp">
-      <Filter>component\animation</Filter>
+      <Filter>component\animator</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimator.cpp">
-      <Filter>component\animation</Filter>
+      <Filter>component\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.cpp">
+      <Filter>component\tilemap-renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,10 +130,13 @@
       <Filter>component\component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimation.h">
-      <Filter>component\animation</Filter>
+      <Filter>component\animator</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimator.h">
-      <Filter>component\animation</Filter>
+      <Filter>component\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.h">
+      <Filter>component\tilemap-renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -179,8 +185,11 @@
     <Filter Include="component\component">
       <UniqueIdentifier>{00614218-2b70-4477-bfc5-6f4b1d9ffe40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="component\animation">
+    <Filter Include="component\animator">
       <UniqueIdentifier>{cdfeacdd-ddb5-4b95-85ec-cb6ea6fc4a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\tilemap-renderer">
+      <UniqueIdentifier>{1c06a4eb-ba5c-4bf6-9270-42bfcd176f86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

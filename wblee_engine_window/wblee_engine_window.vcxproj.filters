@@ -74,6 +74,12 @@
     <ClInclude Include="WBShopOfCarpenterScene.h">
       <Filter>scene\3.play\farm-of-player\shop-of-carpenter</Filter>
     </ClInclude>
+    <ClInclude Include="WBToolScene.h">
+      <Filter>scene\0.tool</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTile.h">
+      <Filter>content\tile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="content">
@@ -178,6 +184,12 @@
     <Filter Include="scene\3.play\farm-of-player\farm">
       <UniqueIdentifier>{56cde9c2-429c-493c-bb5e-c8a3fbbb5bae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene\0.tool">
+      <UniqueIdentifier>{9bc1ad3a-4bfe-4519-b5ec-e108250643b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\tile">
+      <UniqueIdentifier>{af67da6b-8c79-4533-b623-0c12257b23db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBTitleScene.cpp">
@@ -248,6 +260,12 @@
     </ClCompile>
     <ClCompile Include="WBShopOfCarpenterScene.cpp">
       <Filter>scene\3.play\farm-of-player\shop-of-carpenter</Filter>
+    </ClCompile>
+    <ClCompile Include="WBToolScene.cpp">
+      <Filter>scene\0.tool</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTile.cpp">
+      <Filter>content\tile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

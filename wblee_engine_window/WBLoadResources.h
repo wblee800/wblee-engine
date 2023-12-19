@@ -11,6 +11,9 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Cloudy_Night_Ocean", L"..\\resources\\sprites\\miscellaneous\\Cloudy_Night_Ocean.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Logo", L"..\\resources\\sprites\\miscellaneous\\Logo.bmp");
 
+		// Tile Maps
+		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\tilesets\\Farmhouse.bmp");
+
 		// Maps
 		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.bmp");

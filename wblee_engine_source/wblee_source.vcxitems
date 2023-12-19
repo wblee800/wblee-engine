@@ -36,6 +36,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBScript.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTransform.h" />
   </ItemGroup>
@@ -58,6 +59,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTransform.cpp" />
   </ItemGroup>

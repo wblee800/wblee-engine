@@ -19,11 +19,15 @@
 #include "WBBlacksmithScene.h"
 #include "WBRanchOfMarnieScene.h"
 #include "WBShopOfCarpenterScene.h"
+#include "WBToolScene.h"
 
 namespace wb
 {
 	void LoadScenes()
 	{
+		// Tool Scene
+		WBSceneManager::CreateScene<WBToolScene>(L"ToolScene");
+
 		// Title Scene
 		WBSceneManager::CreateScene<WBTitleScene>(L"TitleScene");
 
@@ -49,5 +53,6 @@ namespace wb
 		// WBSceneManager::LoadScene(L"JojaMartScene");
 		// WBSceneManager::LoadScene(L"FarmScene");
 		WBSceneManager::LoadScene(L"GeneralStoreOfPierreScene");
+		// WBSceneManager::LoadScene(L"ToolScene");
 	}
 }

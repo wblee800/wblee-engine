@@ -9,11 +9,11 @@ namespace wb
 		class WBTexture;
 	}
 
-	class WBSpriteRenderer : public	WBComponent
+	class WBTilemapRenderer : public WBComponent
 	{
 	public:
-		WBSpriteRenderer();
-		~WBSpriteRenderer();
+		WBTilemapRenderer();
+		~WBTilemapRenderer();
 
 		void Initialize() override;
 		void Update() override;
@@ -22,8 +22,12 @@ namespace wb
 
 		void SetTexture(graphics::WBTexture* texture);
 		void SetSize(math::Vector2 size) { mSize = size; }
+		void SetTileSize(math::Vector2 tileSize) { mTileSize = tileSize; }
+
 	private:
 		graphics::WBTexture* mTexture;
 		math::Vector2 mSize;
+		math::Vector2 mIndex;
+		math::Vector2 mTileSize;
 	};
 }
