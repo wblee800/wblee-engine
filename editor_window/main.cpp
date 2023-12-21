@@ -117,9 +117,12 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
 	hInst = hInstance; // Store instance handle in our global variable
 
-	const UINT width = 1920;
-	const UINT height = 1080;
+	const UINT width = 1280;
+	const UINT height = 720;
 	HWND hWnd = CreateWindowW(szWindowClass, L"Stardew Valley", WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
+
+	HWND toolHWnd = CreateWindowW(L"Tile Window", L"Tile Window", WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
 	application.Initialize(hWnd, width, height);

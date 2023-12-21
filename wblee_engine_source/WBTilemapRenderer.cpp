@@ -10,7 +10,7 @@ namespace wb
 		:WBComponent(enums::eComponentType::SpriteRenderer),
 		mTexture(nullptr),
 		mSize(math::Vector2::One),
-		mIndex(math::Vector2::One),
+		mIndex(0, 0),
 		mTileSize(Vector2(16.0f, 16.0f))
 	{
 	}
@@ -55,7 +55,7 @@ namespace wb
 				mTileSize.x * mSize.x * scale.x,
 				mTileSize.y * mSize.y * scale.y,
 				mTexture->GetHdc(), 
-				mIndex.x * mTileSize.x, mIndex.y * mTileSize.y,
+				mIndex.first * mTileSize.x, mIndex.second * mTileSize.y,
 				mTileSize.x, mTileSize.y,
 				RGB(255, 0, 255));
 		}

@@ -21,8 +21,9 @@
 namespace wb
 {
 	WBFarmScene::WBFarmScene()
-		:mPlayer(nullptr)
-		, mCat(nullptr)
+		:mPlayer(nullptr), 
+		mCat(nullptr),
+		mCamera(nullptr)
 	{
 	}
 
@@ -32,14 +33,19 @@ namespace wb
 
 	void WBFarmScene::Initialize()
 	{
+		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
+		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
+
 		// Before loading a game object, load resources.
 		// Bus Stop Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(121.5f, 99.5f));
+			(enums::eLayerType::Map, Vector2(-950.f, -720.f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm");
 		mapSr->SetTexture(mapTexture);
+		// ¡Ø ÁÖÀÇ : »ç¿ëÇÏ¸é, frame rate ¶³¾îÁü
+		mapSr->SetSize(Vector2(1.5f, 1.5f));
 
 		// _______________________________________________________
 
@@ -47,7 +53,9 @@ namespace wb
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.7f, 0.7f));
+
+		renderer::mainCamera->SetTarget(mPlayer);
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
@@ -263,6 +271,7 @@ namespace wb
 
 	void WBFarmScene::OnEnter()
 	{
+		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
 	void WBFarmScene::OnExit()

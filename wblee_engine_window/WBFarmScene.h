@@ -22,5 +22,6 @@ namespace wb
 	private:
 		WBPlayer* mPlayer;
 		WBCat* mCat;
+		WBGameObject* mCamera;
 	};
 }

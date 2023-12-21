@@ -19,7 +19,8 @@
 namespace wb
 {
 	WBPelicanTownScene::WBPelicanTownScene()
-		:mPlayer(nullptr)
+		:mPlayer(nullptr),
+		mCamera(nullptr)
 	{
 	}
 
@@ -29,8 +30,8 @@ namespace wb
 
 	void WBPelicanTownScene::Initialize()
 	{
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
-		renderer::mainCamera = camera->AddComponent<WBCamera>();
+		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
+		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
 		// Pelican Town Map
@@ -40,13 +41,13 @@ namespace wb
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Pelican_Town");
 		mapSr->SetTexture(mapTexture);
-		mapSr->SetSize(Vector2(2.0f, 2.0f));
+		// mapSr->SetSize(Vector2(1.5f, 1.5f));
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.7f, 0.7f));
 		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
@@ -244,6 +245,7 @@ namespace wb
 
 	void WBPelicanTownScene::OnEnter()
 	{
+		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
 	void WBPelicanTownScene::OnExit()

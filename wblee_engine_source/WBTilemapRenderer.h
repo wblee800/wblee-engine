@@ -27,7 +27,7 @@ namespace wb
 	private:
 		graphics::WBTexture* mTexture;
 		math::Vector2 mSize;
-		math::Vector2 mIndex;
+		std::pair<int, int> mIndex;
 		math::Vector2 mTileSize;
 	};
 }
