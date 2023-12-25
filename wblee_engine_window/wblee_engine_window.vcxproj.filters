@@ -80,6 +80,12 @@
     <ClInclude Include="WBTile.h">
       <Filter>content\tile</Filter>
     </ClInclude>
+    <ClInclude Include="WBStardropSaloonScene.h">
+      <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSecretWoodsScene.h">
+      <Filter>scene\3.play\farm-of-player\secret-woods</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="content">
@@ -190,6 +196,12 @@
     <Filter Include="content\tile">
       <UniqueIdentifier>{af67da6b-8c79-4533-b623-0c12257b23db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene\3.play\pelican-town\stardrop-saloon">
+      <UniqueIdentifier>{006e17f5-eaec-475a-9ac3-3bd8b80716bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm-of-player\secret-woods">
+      <UniqueIdentifier>{16e0ba09-4459-4157-98a7-099c3aa9e552}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBTitleScene.cpp">
@@ -266,6 +278,12 @@
     </ClCompile>
     <ClCompile Include="WBTile.cpp">
       <Filter>content\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="WBStardropSaloonScene.cpp">
+      <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSecretWoodsScene.cpp">
+      <Filter>scene\3.play\farm-of-player\secret-woods</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

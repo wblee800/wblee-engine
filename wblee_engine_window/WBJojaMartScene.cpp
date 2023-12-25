@@ -29,6 +29,7 @@ namespace wb
 
 	void WBJojaMartScene::Initialize()
 	{
+		// Camera
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
@@ -48,7 +49,7 @@ namespace wb
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
+		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(1135.0f, 1170.0f));
 
 		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
@@ -263,7 +264,7 @@ namespace wb
 	{
 		WBScene::LateUpdate();
 
-		if (WBInput::GetKeyDown(eKeyCode::A))
+		if (WBInput::GetKeyDown(eKeyCode::S))
 		{
 			WBSceneManager::LoadScene(L"PelicanTownScene");
 		}

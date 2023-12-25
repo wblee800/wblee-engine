@@ -37,10 +37,12 @@
     <ClInclude Include="WBJojaMartScene.h" />
     <ClInclude Include="WBGateSewerScene.h" />
     <ClInclude Include="WBRanchOfMarnieScene.h" />
+    <ClInclude Include="WBSecretWoodsScene.h" />
     <ClInclude Include="WBSewerScene.h" />
     <ClInclude Include="WBShopOfCarpenterScene.h" />
     <ClInclude Include="WBSkullCavernScene.h" />
     <ClInclude Include="WBSkullCavernEntranceScene.h" />
+    <ClInclude Include="WBStardropSaloonScene.h" />
     <ClInclude Include="WBTheaterBoxOfficeScene.h" />
     <ClInclude Include="WBTheaterScreenScene.h" />
     <ClInclude Include="WBTile.h" />
@@ -64,10 +66,12 @@
     <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBGateSewerScene.cpp" />
     <ClCompile Include="WBRanchOfMarnieScene.cpp" />
+    <ClCompile Include="WBSecretWoodsScene.cpp" />
     <ClCompile Include="WBSewerScene.cpp" />
     <ClCompile Include="WBShopOfCarpenterScene.cpp" />
     <ClCompile Include="WBSkullCavernScene.cpp" />
     <ClCompile Include="WBSkullCavernEntranceScene.cpp" />
+    <ClCompile Include="WBStardropSaloonScene.cpp" />
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
     <ClCompile Include="WBTheaterScreenScene.cpp" />
     <ClCompile Include="WBTile.cpp" />

@@ -6,41 +6,57 @@ namespace wb
 {
 	void LoadResources()
 	{
-		// Title
+		// ----Title----
 		WBResources::Load<graphics::WBTexture>(L"Title", L"..\\resources\\sprites\\miscellaneous\\Title_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Cloudy_Night_Ocean", L"..\\resources\\sprites\\miscellaneous\\Cloudy_Night_Ocean.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Logo", L"..\\resources\\sprites\\miscellaneous\\Logo.bmp");
 
-		// Tile Maps
+		// ----Tile Maps----
 		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\tilesets\\Farmhouse.bmp");
 
-		// Maps
-		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Standard_Farm", L"..\\resources\\sprites\\maps\\Standard_Farm.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Pelican_Town", L"..\\resources\\sprites\\maps\\Pelican_Town.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Calico_Desert", L"..\\resources\\sprites\\maps\\Calico_Desert.bmp");
+		// ----Maps----
+		// Farm
+		WBResources::Load<graphics::WBTexture>(L"Standard_Farm", L"..\\resources\\sprites\\maps\\Standard_Farm.png");
+		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Secret_Woods", L"..\\resources\\sprites\\maps\\Secret_Woods.bmp");
+
+		// Sewer
 		WBResources::Load<graphics::WBTexture>(L"Gate_Sewer", L"..\\resources\\sprites\\maps\\Gate_Sewer.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Sewer", L"..\\resources\\sprites\\maps\\Sewer.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Beach", L"..\\resources\\sprites\\maps\\Beach.bmp");
+
+		// Bus Stop
+		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.bmp");
+
+		// Calico Desert
+		WBResources::Load<graphics::WBTexture>(L"Calico_Desert", L"..\\resources\\sprites\\maps\\Calico_Desert.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Skull_Cavern_Entrance", L"..\\resources\\sprites\\maps\\Skull_Cavern_Entrance.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Skull_Cavern", L"..\\resources\\sprites\\maps\\Skull_Cavern.bmp");
+
+		// Pelican Town
+		WBResources::Load<graphics::WBTexture>(L"Pelican_Town", L"..\\resources\\sprites\\maps\\Pelican_Town.png");
+		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
 		WBResources::Load<graphics::WBTexture>(L"General_Store_Of_Pierre", L"..\\resources\\sprites\\maps\\General_Store_Of_Pierre.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Community_Center", L"..\\resources\\sprites\\maps\\Community_Center.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Box_Office", L"..\\resources\\sprites\\maps\\Theater_Box_Office.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Screen", L"..\\resources\\sprites\\maps\\Theater_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Blacksmith", L"..\\resources\\sprites\\maps\\Blacksmith.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Stardrop_Saloon", L"..\\resources\\sprites\\maps\\Stardrop_Saloon.bmp");
 
-		// Equipments
+		// Beach
+		WBResources::Load<graphics::WBTexture>(L"Beach", L"..\\resources\\sprites\\maps\\Beach.bmp");
+
+		// ----Buildings----
+		WBResources::Load<graphics::WBTexture>(L"Restored_Community_Center", L"..\\resources\\sprites\\buildings\\Restored_Community_Center.bmp");
+
+		// ----Equipments----
 		WBResources::Load<graphics::WBTexture>(L"Tools", L"..\\resources\\sprites\\equipments\\Tools.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Weapons", L"..\\resources\\sprites\\equipments\\Weapons.bmp");
 
-		// Animals
+		// ----Animals----
 		WBResources::Load<graphics::WBTexture>(L"Cat", L"..\\resources\\sprites\\characters\\animals\\CatAlpha.bmp");
 
-		// Players
+		// ----Player----
 		WBResources::Load<graphics::WBTexture>(L"Player", L"..\\resources\\sprites\\characters\\players\\Player.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Move_Down", L"..\\resources\\sprites\\characters\\players\\Player_Move_Down.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Sit_Down", L"..\\resources\\sprites\\characters\\players\\Player_Sit_Down.bmp");
@@ -49,7 +65,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Player_Pickaxe_Left", L"..\\resources\\sprites\\characters\\players\\Player_Pickaxe_Left.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Player_Is_Exhausted", L"..\\resources\\sprites\\characters\\players\\Player_Is_Exhausted.bmp");
 
-		// Skills
+		// ----Skills----
 		WBResources::Load<graphics::WBTexture>(L"Fireball", L"..\\resources\\sprites\\miscellaneous\\Fireball.bmp");
 	}
 }

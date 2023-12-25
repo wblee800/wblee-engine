@@ -20,40 +20,51 @@
 #include "WBRanchOfMarnieScene.h"
 #include "WBShopOfCarpenterScene.h"
 #include "WBToolScene.h"
+#include "WBStardropSaloonScene.h"
+#include "WBSecretWoodsScene.h"
 
 namespace wb
 {
 	void LoadScenes()
 	{
-		// Tool Scene
+		// ----Tool Scene----
 		WBSceneManager::CreateScene<WBToolScene>(L"ToolScene");
 
-		// Title Scene
+		// ----Title Scene----
 		WBSceneManager::CreateScene<WBTitleScene>(L"TitleScene");
 
-		// Play Scene
-		WBSceneManager::CreateScene<WBJojaMartScene>(L"JojaMartScene");
-		WBSceneManager::CreateScene<WBBusStopScene>(L"BusStopScene");
+		// ----Play Scene----
+		// Farm
 		WBSceneManager::CreateScene<WBFarmScene>(L"FarmScene");
-		WBSceneManager::CreateScene<WBPelicanTownScene>(L"PelicanTownScene");
-		WBSceneManager::CreateScene<WBCalicoDesertScene>(L"CalicoDesertScene");
+		WBSceneManager::CreateScene<WBShopOfCarpenterScene>(L"ShopOfCarpenterScene");
+		WBSceneManager::CreateScene<WBRanchOfMarnieScene>(L"RanchOfMarnieScene");
+		WBSceneManager::CreateScene<WBSecretWoodsScene>(L"SecretWoodsScene");
+
+		// Sewer
 		WBSceneManager::CreateScene<WBGateSewerScene>(L"GateSewerScene");
 		WBSceneManager::CreateScene<WBSewerScene>(L"SewerScene");
-		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
+
+		// Bus Stop
+		WBSceneManager::CreateScene<WBBusStopScene>(L"BusStopScene");
+
+		// Calico Desert
+		WBSceneManager::CreateScene<WBCalicoDesertScene>(L"CalicoDesertScene");
 		WBSceneManager::CreateScene<WBSkullCavernEntranceScene>(L"SkullCavernEntranceScene");
 		WBSceneManager::CreateScene<WBSkullCavernScene>(L"SkullCavernScene");
+
+		// Pelican Town
+		WBSceneManager::CreateScene<WBPelicanTownScene>(L"PelicanTownScene");
+		WBSceneManager::CreateScene<WBJojaMartScene>(L"JojaMartScene");
 		WBSceneManager::CreateScene<WBGeneralStoreOfPierreScene>(L"GeneralStoreOfPierreScene");
+		WBSceneManager::CreateScene<WBBlacksmithScene>(L"BlacksmithScene");
 		WBSceneManager::CreateScene<WBCommunityCenterScene>(L"CommunityCenterScene");
 		WBSceneManager::CreateScene<WBTheaterBoxOfficeScene>(L"TheaterBoxOfficeScene");
 		WBSceneManager::CreateScene<WBTheaterScreenScene>(L"TheaterScreenScene");
-		WBSceneManager::CreateScene<WBBlacksmithScene>(L"BlacksmithScene");
-		WBSceneManager::CreateScene<WBRanchOfMarnieScene>(L"RanchOfMarnieScene");
-		WBSceneManager::CreateScene<WBShopOfCarpenterScene>(L"ShopOfCarpenterScene");
+		WBSceneManager::CreateScene<WBStardropSaloonScene>(L"StardropSaloonScene");
+		
+		// ----Ending Scene----
+		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
 
-		// WBSceneManager::LoadScene(L"JojaMartScene");
-		WBSceneManager::LoadScene(L"FarmScene");
-		// WBSceneManager::LoadScene(L"GeneralStoreOfPierreScene");
-		// WBSceneManager::LoadScene(L"ToolScene");
-		// WBSceneManager::LoadScene(L"PelicanTownScene");
+		WBSceneManager::LoadScene(L"BusStopScene");
 	}
 }

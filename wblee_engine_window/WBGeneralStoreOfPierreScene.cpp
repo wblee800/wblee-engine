@@ -30,8 +30,11 @@ namespace wb
 
 	void WBGeneralStoreOfPierreScene::Initialize()
 	{
+		// Camera
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
+
+		// _______________________________________________________
 
 		// Before loading a game object, load resources.
 		// Bus Stop Map
@@ -50,7 +53,7 @@ namespace wb
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
-		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(415.0f, 780.0f));
+		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(752.0f, 1040.0f));
 
 		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");

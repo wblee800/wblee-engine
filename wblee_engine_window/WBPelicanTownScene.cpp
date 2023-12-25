@@ -30,24 +30,32 @@ namespace wb
 
 	void WBPelicanTownScene::Initialize()
 	{
+		// Camera
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
-		// Pelican Town Map
+		// Pelican Town map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(121.5f, 99.5f));
+			(enums::eLayerType::Map, Vector2(721.5f, 699.5f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Pelican_Town");
 		mapSr->SetTexture(mapTexture);
-		// mapSr->SetSize(Vector2(1.5f, 1.5f));
+
+		// Restored Community Center
+		WBGameObject* restoredCommunityCenter = object::Instantiate<WBGameObject>(enums::eLayerType::Building, Vector2(458.0f, 83.0f));
+		graphics::WBTexture* restoredCommunityCenterTexture = WBResources::Find<graphics::WBTexture>(L"Restored_Community_Center");
+		WBSpriteRenderer* restoredCommunityCenterSr = restoredCommunityCenter->AddComponent<WBSpriteRenderer>();
+
+		restoredCommunityCenterSr->SetTexture(restoredCommunityCenterTexture);
+		restoredCommunityCenterSr->SetSize(Vector2(0.5f, 0.5f));
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.7f, 0.7f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
 		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(895.0f, 940.0f));
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
@@ -188,7 +196,7 @@ namespace wb
 				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
 					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		playerAnimator->PlayAnimation(L"PlayerIdleUp", false);
+		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
 
 		// _______________________________________________________
 
@@ -213,10 +221,6 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"JojaMartScene");
 		}
-		else if (WBInput::GetKeyDown(eKeyCode::S))
-		{
-			WBSceneManager::LoadScene(L"BeachScene");
-		}
 		else if (WBInput::GetKeyDown(eKeyCode::P))
 		{
 			WBSceneManager::LoadScene(L"GeneralStoreOfPierreScene");
@@ -229,9 +233,13 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"TheaterBoxOfficeScene");
 		}
-		else if (WBInput::GetKeyDown(eKeyCode::D))
+		else if (WBInput::GetKeyDown(eKeyCode::B))
 		{
 			WBSceneManager::LoadScene(L"BlacksmithScene");
+		}
+		else if (WBInput::GetKeyDown(eKeyCode::S))
+		{
+			WBSceneManager::LoadScene(L"StardropSaloonScene");
 		}
 	}
 

@@ -37,15 +37,15 @@ namespace wb
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
-		// Bus Stop Map
+		// Farm Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-950.f, -720.f));
+			(enums::eLayerType::Map, Vector2(-8.f, 0.f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm");
 		mapSr->SetTexture(mapTexture);
-		// ¡Ø ÁÖÀÇ : »ç¿ëÇÏ¸é, frame rate ¶³¾îÁü
-		mapSr->SetSize(Vector2(1.5f, 1.5f));
+		// ¡Ø ÁÖÀÇ : »ç¿ëÇÏ¸é, frame rate ¶³¾îÁü.
+		// mapSr->SetSize(Vector2(1.5f, 1.5f));
 
 		// _______________________________________________________
 
@@ -53,7 +53,7 @@ namespace wb
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
-		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.7f, 0.7f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
 
 		renderer::mainCamera->SetTarget(mPlayer);
 
@@ -192,7 +192,7 @@ namespace wb
 		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		playerAnimator->PlayAnimation(L"PlayerIdleUp", false);
+		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
 
 		// _______________________________________________________
 
@@ -246,7 +246,11 @@ namespace wb
 	{
 		WBScene::LateUpdate();
 
-		if (WBInput::GetKeyDown(eKeyCode::D))
+		if (WBInput::GetKeyDown(eKeyCode::W))
+		{
+			WBSceneManager::LoadScene(L"SecretWoodsScene");
+		}
+		else if (WBInput::GetKeyDown(eKeyCode::D))
 		{
 			WBSceneManager::LoadScene(L"BusStopScene");
 		}
@@ -266,6 +270,13 @@ namespace wb
 
 	void WBFarmScene::Render(HDC hdc)
 	{
+		HBRUSH backgroundColorBrush = CreateSolidBrush(RGB(111, 198, 37));
+		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, backgroundColorBrush);
+		Rectangle(hdc, -1, -1, 1920, 1080);
+
+		SelectObject(hdc, originBrush);
+		DeleteObject(backgroundColorBrush);
+
 		WBScene::Render(hdc);
 	}
 

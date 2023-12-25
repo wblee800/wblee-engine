@@ -20,6 +20,7 @@ namespace wb
 			Background,
 			Tile,
 			Map,
+			Building,
 			Equipment,
 			Animal,
 			Player,
