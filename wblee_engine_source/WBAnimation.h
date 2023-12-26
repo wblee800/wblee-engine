@@ -60,5 +60,6 @@ namespace wb
 		// 다음 장면으로 넘어가는 데까지 걸리는 시간
 		float mTime;
 		bool mbComplete;
+		math::Vector2 mOffset;
 	};
 }

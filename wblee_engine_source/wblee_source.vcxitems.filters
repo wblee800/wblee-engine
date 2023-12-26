@@ -64,6 +64,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.cpp">
       <Filter>component\tilemap-renderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBCollider.cpp">
+      <Filter>component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.cpp">
+      <Filter>component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBCircleCollider2D.cpp">
+      <Filter>component\collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -138,6 +147,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBTilemapRenderer.h">
       <Filter>component\tilemap-renderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBCollider.h">
+      <Filter>component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBCircleCollider2D.h">
+      <Filter>component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.h">
+      <Filter>component\collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -190,6 +208,9 @@
     </Filter>
     <Filter Include="component\tilemap-renderer">
       <UniqueIdentifier>{1c06a4eb-ba5c-4bf6-9270-42bfcd176f86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\collider">
+      <UniqueIdentifier>{4e62b856-4c29-445a-bff9-1d0e683dde25}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

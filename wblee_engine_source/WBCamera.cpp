@@ -33,6 +33,7 @@ namespace wb
 
 	void WBCamera::Update()
 	{
+		// If a target exists,
 		if (mTarget)
 		{
 			WBTransform* tr = mTarget->GetComponent<WBTransform>();

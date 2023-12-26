@@ -48,8 +48,8 @@ namespace wb
 			== graphics::WBTexture::eTextureType::Bmp)
 		{
 			TransparentBlt(hdc, 
-				pos.x, 
-				pos.y, 
+				pos.x,
+				pos.y,
 				mTexture->GetWidth() * mSize.x * scale.x, 
 				mTexture->GetHeight() * mSize.y * scale.y, 
 				mTexture->GetHdc(), 
@@ -70,7 +70,7 @@ namespace wb
 			graphics.DrawImage(mTexture->GetImage()
 				, Gdiplus::Rect
 				(
-					pos.x - (mTexture->GetWidth() / 2.0f), pos.y - (mTexture->GetHeight() / 2.0f)
+					pos.x, pos.y
 					, mTexture->GetWidth() * mSize.x * scale.x
 					, mTexture->GetHeight() * mSize.y * scale.y
 				)

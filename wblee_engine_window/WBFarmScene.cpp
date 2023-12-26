@@ -68,117 +68,117 @@ namespace wb
 
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleLeft", playerTexture,
-			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleUp", playerTexture,
-			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleDown", playerTexture,
-			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.3f);
+			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 
 		// Player move
 		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
-			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(250.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveLeft", playerTexture,
-			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(250.0f * 7, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveUp", playerTexture,
-			Vector2(250.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
+			Vector2(250.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 7, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerMoveDown", playerMoveDownTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 
 		// 1 : Player attack
 		playerAnimator->CreateAnimation(L"PlayerAttackDown", playerTexture,
-			Vector2(0.0f, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(0.0f, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerAttackRight", playerTexture,
-			Vector2(250.0f * 6, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(250.0f * 6, 250.0f * 12), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerAttackLeft", playerTexture,
-			Vector2(0.0f, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerAttackUp", playerTexture,
-			Vector2(250.0f * 6, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.1f);
+			Vector2(250.0f * 6, 250.0f * 13), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 0.1f);
 
 		// 2 : Player swing an axe
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeDown", playerTexture,
-			Vector2(250.0f * 3, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(250.0f * 3, 250.0f * 2), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeRight", playerSwingAnAxeRightTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeLeft", playerTexture,
-			Vector2(250.0f * 2, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 2, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerSwingAnAxeUp", playerTexture,
-			Vector2(250.0f * 7, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(250.0f * 7, 250.0f * 3), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 
 		// 3 : Player pickaxe
 		playerAnimator->CreateAnimation(L"PlayerPickaxeDown", playerTexture,
-			Vector2(0.0f, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 7, 0.1f);
+			Vector2(0.0f, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 7, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerPickaxeUp", playerTexture,
-			Vector2(250.0f * 7, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 7, 250.0f * 14), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerPickaxeRight", playerTexture,
-			Vector2(0.0f, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 250.0f * 15), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerPickaxeLeft", playerPickaxeLeftTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 
 		// 4 : Hoe
 		playerAnimator->CreateAnimation(L"PlayerHoeDown", playerTexture,
-			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
+			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 0.15f);
 		playerAnimator->CreateAnimation(L"PlayerHoeUp", playerTexture,
-			Vector2(250.0f * 3, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(250.0f * 3, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerHoeRight", playerTexture,
-			Vector2(250.0f * 7, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 7, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerHoeLeft", playerTexture,
-			Vector2(0.0f, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 
 		// 5 : Scythe
 		playerAnimator->CreateAnimation(L"PlayerScytheDown", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(250.0f * 5, 250.0f * 5), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerScytheRight", playerTexture,
-			Vector2(0.0f, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerScytheLeft", playerTexture,
-			Vector2(250.0f * 6, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(250.0f * 6, 250.0f * 6), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerScytheUp", playerTexture,
-			Vector2(0.0f, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 
 		// 6 : Player irrigate
 		playerAnimator->CreateAnimation(L"PlayerIrrigateRight", playerTexture,
-			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateDown", playerTexture,
-			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2::Zero, 12, 0.05f);
+			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 12, 0.05f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateLeft", playerTexture,
-			Vector2(0.0f, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateUp", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 3, 0.15f);
+			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 0.15f);
 
 		// 7 : Player load on his head
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadLeft", playerTexture,
-			Vector2(0.0f, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(0.0f, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadRight", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 5, 250.0f * 10), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadUp", playerTexture,
-			Vector2(0.0f, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadDown", playerTexture,
-			Vector2(250.0f * 7, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f);
+			Vector2(250.0f * 7, 250.0f * 11), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 
 		// 8 : Player find a something
 		playerAnimator->CreateAnimation(L"PlayerFindASomething", playerTexture,
-			Vector2(250.0f * 8, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
+			Vector2(250.0f * 8, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
 
 		// 9 : Player is hungry
 		playerAnimator->CreateAnimation(L"PlayerIsHungry", playerTexture,
-			Vector2(250.0f * 6, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
+			Vector2(250.0f * 6, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 
 		// 0 : Player has some food
 		playerAnimator->CreateAnimation(L"PlayerHasSomeFood", playerTexture,
-			Vector2(0.0f, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2::Zero, 6, 0.1f);
+			Vector2(0.0f, 250.0f * 16), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 6, 0.1f);
 
 		// f1 : Player sit down
 		playerAnimator->CreateAnimation(L"PlayerSitDown", playerSitDownTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.05f);
 
 		// f2 : Player stand up
 		playerAnimator->CreateAnimation(L"PlayerStandUp", playerStandUpTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.05f);
 
 		// f3 : Player is exhausted
 		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerIsExhaustedTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
 
 		// f4 : Player ride a horse
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,

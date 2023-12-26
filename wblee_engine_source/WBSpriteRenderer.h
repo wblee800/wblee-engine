@@ -22,6 +22,7 @@ namespace wb
 
 		void SetTexture(graphics::WBTexture* texture);
 		void SetSize(math::Vector2 size) { mSize = size; }
+
 	private:
 		graphics::WBTexture* mTexture;
 		math::Vector2 mSize;

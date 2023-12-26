@@ -75,7 +75,8 @@ namespace wb
 
 			AlphaBlend(hdc
 				// 메인 카메라 위치
-				, pos.x - (sprite.size.x / 2.0f), pos.y - (sprite.size.y / 2.0f)
+				, pos.x + sprite.offset.x
+				, pos.y + sprite.offset.y
 				// 스프라이트 크기 지정
 				, sprite.size.x * scale.x
 				, sprite.size.y * scale.y
@@ -100,7 +101,10 @@ namespace wb
 			graphics.DrawImage(mTexture->GetImage()
 				, Gdiplus::Rect
 				(
-					pos.x - (sprite.size.x / 2.0f), pos.y - (sprite.size.y / 2.0f), sprite.size.x * scale.x, sprite.size.y * scale.y
+					pos.x + sprite.offset.x,
+					pos.y + sprite.offset.y,
+					sprite.size.x * scale.x,
+					sprite.size.y * scale.y
 				)
 				, sprite.leftTop.x
 				, sprite.leftTop.y
@@ -113,6 +117,13 @@ namespace wb
 				, nullptr
 			);
 		}
+
+		HBRUSH whiteColorBrush = CreateSolidBrush(RGB(255, 255, 255));
+		HBRUSH originalBrush = (HBRUSH)SelectObject(hdc, whiteColorBrush);
+		Rectangle(hdc, pos.x, pos.y, pos.x + 10, pos.y + 10);
+
+		SelectObject(hdc, originalBrush);
+		DeleteObject(whiteColorBrush);
 	}
 
 	void WBAnimation::CreateAnimation(const std::wstring& name, graphics::WBTexture* spriteSheet, math::Vector2 leftTop, math::Vector2 size, math::Vector2 offset, UINT spriteLength, float duration)

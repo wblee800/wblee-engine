@@ -122,8 +122,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	HWND hWnd = CreateWindowW(szWindowClass, L"Stardew Valley", WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
-	HWND toolHWnd = CreateWindowW(L"Tile Window", L"Tile Window", WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
+	/*HWND toolHWnd = CreateWindowW(L"TILEWINDOW", L"Tile Window", WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);*/
 
 	application.Initialize(hWnd, width, height);
 

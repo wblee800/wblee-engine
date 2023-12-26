@@ -48,7 +48,7 @@
       <Filter>scene\3.play\calico-desert\skull-cavern\inside</Filter>
     </ClInclude>
     <ClInclude Include="WBPelicanTownScene.h">
-      <Filter>scene\3.play\pelican-town\town</Filter>
+      <Filter>scene\3.play\pelican-town\pelican-town</Filter>
     </ClInclude>
     <ClInclude Include="WBGeneralStoreOfPierreScene.h">
       <Filter>scene\3.play\pelican-town\general-store-of-pierre</Filter>
@@ -157,9 +157,6 @@
     <Filter Include="scene\3.play\calico-desert\skull-cavern\inside">
       <UniqueIdentifier>{bf345d9c-7b29-4f56-a07d-375aa2c4031c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\3.play\pelican-town\town">
-      <UniqueIdentifier>{49e728fa-ced9-408a-9327-c3c536e53d52}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\3.play\pelican-town\general-store-of-pierre">
       <UniqueIdentifier>{a28bc811-9e06-4672-be01-bfd89fbb59f5}</UniqueIdentifier>
     </Filter>
@@ -201,6 +198,9 @@
     </Filter>
     <Filter Include="scene\3.play\farm-of-player\secret-woods">
       <UniqueIdentifier>{16e0ba09-4459-4157-98a7-099c3aa9e552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\pelican-town\pelican-town">
+      <UniqueIdentifier>{49e728fa-ced9-408a-9327-c3c536e53d52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +247,7 @@
       <Filter>scene\3.play\calico-desert\skull-cavern\inside</Filter>
     </ClCompile>
     <ClCompile Include="WBPelicanTownScene.cpp">
-      <Filter>scene\3.play\pelican-town\town</Filter>
+      <Filter>scene\3.play\pelican-town\pelican-town</Filter>
     </ClCompile>
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp">
       <Filter>scene\3.play\pelican-town\general-store-of-pierre</Filter>
