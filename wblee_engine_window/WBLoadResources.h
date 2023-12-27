@@ -28,7 +28,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Sewer", L"..\\resources\\sprites\\maps\\Sewer.bmp");
 
 		// Bus Stop
-		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.png");
 
 		// Calico Desert
 		WBResources::Load<graphics::WBTexture>(L"Calico_Desert", L"..\\resources\\sprites\\maps\\Calico_Desert.bmp");
@@ -40,6 +40,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
 		WBResources::Load<graphics::WBTexture>(L"General_Store_Of_Pierre", L"..\\resources\\sprites\\maps\\General_Store_Of_Pierre.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Community_Center", L"..\\resources\\sprites\\maps\\Community_Center.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Restored_Community_Center_Indoor", L"..\\resources\\sprites\\maps\\Restored_Community_Center_Indoor.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Box_Office", L"..\\resources\\sprites\\maps\\Theater_Box_Office.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Screen", L"..\\resources\\sprites\\maps\\Theater_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Blacksmith", L"..\\resources\\sprites\\maps\\Blacksmith.bmp");

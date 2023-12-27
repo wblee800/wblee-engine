@@ -36,16 +36,18 @@ namespace wb
 		// Before loading a game object, load resources.
 		// Farmhouse Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-300.0f, -380.5f));
+			(enums::eLayerType::Map, Vector2(-300.0f, -365.0f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Farmhouse");
 		mapSr->SetTexture(mapTexture);
+		mapSr->SetSize(Vector2(0.9f, 0.9f));
 
 		// A bed in the farmhouse
 		WBGameObject* bed = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Particle, Vector2(248.0f, 170.0f));
+			(enums::eLayerType::Particle, Vector2(193.0f, 130.0f));
 		WBSpriteRenderer* bedSr = bed->AddComponent<WBSpriteRenderer>();
+		bedSr->SetSize(Vector2(0.9f, 0.9f));
 
 		graphics::WBTexture* bedTexture = WBResources::Find<graphics::WBTexture>(L"Bed_In_Farmhouse");
 		bedSr->SetTexture(bedTexture);

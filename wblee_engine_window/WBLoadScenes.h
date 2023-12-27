@@ -23,6 +23,7 @@
 #include "WBStardropSaloonScene.h"
 #include "WBSecretWoodsScene.h"
 #include "WBFarmhouseScene.h"
+#include "WBRestoredCommunityCenterScene.h"
 
 namespace wb
 {
@@ -56,6 +57,7 @@ namespace wb
 
 		// Pelican Town
 		WBSceneManager::CreateScene<WBPelicanTownScene>(L"PelicanTownScene");
+		WBSceneManager::CreateScene<WBRestoredCommunityCenterScene>(L"RestoredCommunityCenterScene");
 		WBSceneManager::CreateScene<WBJojaMartScene>(L"JojaMartScene");
 		WBSceneManager::CreateScene<WBGeneralStoreOfPierreScene>(L"GeneralStoreOfPierreScene");
 		WBSceneManager::CreateScene<WBBlacksmithScene>(L"BlacksmithScene");

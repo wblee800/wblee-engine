@@ -38,6 +38,7 @@
     <ClInclude Include="WBJojaMartScene.h" />
     <ClInclude Include="WBGateSewerScene.h" />
     <ClInclude Include="WBRanchOfMarnieScene.h" />
+    <ClInclude Include="WBRestoredCommunityCenterScene.h" />
     <ClInclude Include="WBSecretWoodsScene.h" />
     <ClInclude Include="WBSewerScene.h" />
     <ClInclude Include="WBShopOfCarpenterScene.h" />
@@ -68,6 +69,7 @@
     <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBGateSewerScene.cpp" />
     <ClCompile Include="WBRanchOfMarnieScene.cpp" />
+    <ClCompile Include="WBRestoredCommunityCenterScene.cpp" />
     <ClCompile Include="WBSecretWoodsScene.cpp" />
     <ClCompile Include="WBSewerScene.cpp" />
     <ClCompile Include="WBShopOfCarpenterScene.cpp" />

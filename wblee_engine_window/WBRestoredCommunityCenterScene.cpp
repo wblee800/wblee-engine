@@ -1,4 +1,4 @@
-#include "WBGateSewerScene.h"
+#include "WBRestoredCommunityCenterScene.h"
 #include "..\wblee_engine_source\WBInput.h"
 #include "..\wblee_engine_source\WBSceneManager.h"
 
@@ -18,36 +18,39 @@
 
 namespace wb
 {
-	WBGateSewerScene::WBGateSewerScene()
+	WBRestoredCommunityCenterScene::WBRestoredCommunityCenterScene()
 		:mPlayer(nullptr),
 		mCamera(nullptr)
 	{
 	}
 
-	WBGateSewerScene::~WBGateSewerScene()
+	WBRestoredCommunityCenterScene::~WBRestoredCommunityCenterScene()
 	{
 	}
 
-	void WBGateSewerScene::Initialize()
+	void WBRestoredCommunityCenterScene::Initialize()
 	{
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
-		// Gate Sewer Map
+		// Restored Community Center Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-648.f, -380.f));
+			(enums::eLayerType::Map);
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
-		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Gate_Sewer");
+		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Restored_Community_Center_Indoor");
 		mapSr->SetTexture(mapTexture);
+		mapSr->SetSize(Vector2(2.5f, 2.5f));
 
 		// Instantiate player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(180.0f, -370.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
+		// mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(2950.0f, 820.0f));
 
+		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
 		graphics::WBTexture* playerSitDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Sit_Down");
@@ -57,15 +60,18 @@ namespace wb
 		graphics::WBTexture* playerIsExhaustedTexture = WBResources::Find<graphics::WBTexture>(L"Player_Is_Exhausted");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
 
+		// Set a camera target
+		renderer::mainCamera->SetTarget(mPlayer);
+
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.3f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIdleLeft", playerTexture,
-			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.3f);
+			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIdleUp", playerTexture,
-			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.3f);
+			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIdleDown", playerTexture,
-			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.3f);
+			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 1, 0.1f);
 
 		// Player move
 		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
@@ -109,7 +115,7 @@ namespace wb
 
 		// 4 : Hoe
 		playerAnimator->CreateAnimation(L"PlayerHoeDown", playerTexture,
-			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 3, 0.15f);
+			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 3, 00.1f);
 		playerAnimator->CreateAnimation(L"PlayerHoeUp", playerTexture,
 			Vector2(250.0f * 3, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerHoeRight", playerTexture,
@@ -131,11 +137,11 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerIrrigateRight", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateDown", playerTexture,
-			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 12, 0.05f);
+			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 12, 00.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateLeft", playerTexture,
 			Vector2(0.0f, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateUp", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 3, 0.15f);
+			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-94.0f, -64.0f), 3, 00.1f);
 
 		// 7 : Player load on his head
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadLeft", playerTexture,
@@ -173,57 +179,55 @@ namespace wb
 
 		// f4 : Player ride a horse
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
 			// f5 : Player play a mini harp
 			/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
-				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
 				// f6 : Player dozes off
 				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
-					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
-		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
-
-		// _______________________________________________________
+		playerAnimator->PlayAnimation(L"PlayerIdleLeft", false);
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
 	}
 
-	void WBGateSewerScene::Update()
+	void WBRestoredCommunityCenterScene::Update()
 	{
 		WBScene::Update();
 	}
 
-	void WBGateSewerScene::LateUpdate()
+	void WBRestoredCommunityCenterScene::LateUpdate()
 	{
 		WBScene::LateUpdate();
 
-		if (WBInput::GetKeyDown(eKeyCode::W))
+		if (WBInput::GetKeyDown(eKeyCode::S))
 		{
-			WBSceneManager::LoadScene(L"FarmScene");
-		}
-		else if (WBInput::GetKeyDown(eKeyCode::S))
-		{
-			WBSceneManager::LoadScene(L"SewerScene");
+			WBSceneManager::LoadScene(L"PelicanTownScene");
 		}
 	}
 
-	void WBGateSewerScene::Render(HDC hdc)
+	void WBRestoredCommunityCenterScene::Render(HDC hdc)
 	{
-		WBScene::Render(hdc);
+		HBRUSH backgroundColorBrush = CreateSolidBrush(RGB(5, 3, 4));
+		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, backgroundColorBrush);
+		Rectangle(hdc, -1, -1, 1920, 1080);
 
-		/*wchar_t str[12] = L"Title Scene";
-		TextOut(hdc, 0, 0, str, 11);*/
+		SelectObject(hdc, originBrush);
+		DeleteObject(backgroundColorBrush);
+
+		WBScene::Render(hdc);
 	}
 
-	void WBGateSewerScene::OnEnter()
+	void WBRestoredCommunityCenterScene::OnEnter()
 	{
 		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
-	void WBGateSewerScene::OnExit()
+	void WBRestoredCommunityCenterScene::OnExit()
 	{
 	}
 }

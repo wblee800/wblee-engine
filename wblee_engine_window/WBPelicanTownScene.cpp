@@ -229,6 +229,10 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"CommunityCenterScene");
 		}
+		else if (WBInput::GetKeyDown(eKeyCode::R))
+		{
+			WBSceneManager::LoadScene(L"RestoredCommunityCenterScene");
+		}
 		else if (WBInput::GetKeyDown(eKeyCode::M))
 		{
 			WBSceneManager::LoadScene(L"TheaterBoxOfficeScene");
