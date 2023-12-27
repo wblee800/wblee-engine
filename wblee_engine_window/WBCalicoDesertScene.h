@@ -20,5 +20,6 @@ namespace wb
 
 	private:
 		WBPlayer* mPlayer;
+		WBGameObject* mCamera;
 	};
 }

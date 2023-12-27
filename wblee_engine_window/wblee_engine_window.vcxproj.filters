@@ -53,9 +53,6 @@
     <ClInclude Include="WBGeneralStoreOfPierreScene.h">
       <Filter>scene\3.play\pelican-town\general-store-of-pierre</Filter>
     </ClInclude>
-    <ClInclude Include="WBCommunityCenterScene.h">
-      <Filter>scene\3.play\pelican-town\community-center</Filter>
-    </ClInclude>
     <ClInclude Include="WBTheaterBoxOfficeScene.h">
       <Filter>scene\3.play\pelican-town\movie-theater\box-office</Filter>
     </ClInclude>
@@ -64,9 +61,6 @@
     </ClInclude>
     <ClInclude Include="WBBlacksmithScene.h">
       <Filter>scene\3.play\pelican-town\blacksmith</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFarmScene.h">
-      <Filter>scene\3.play\farm\farm</Filter>
     </ClInclude>
     <ClInclude Include="WBRanchOfMarnieScene.h">
       <Filter>scene\3.play\farm\ranch-of-marnie</Filter>
@@ -88,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="WBFarmhouseScene.h">
       <Filter>scene\3.play\farm\farmhouse</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmDownScene.h">
+      <Filter>scene\3.play\farm\farm</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmUpScene.h">
+      <Filter>scene\3.play\farm\farm</Filter>
+    </ClInclude>
+    <ClInclude Include="WBRestoredCommunityCenterScene.h">
+      <Filter>scene\3.play\pelican-town\community-center</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -258,9 +261,6 @@
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp">
       <Filter>scene\3.play\pelican-town\general-store-of-pierre</Filter>
     </ClCompile>
-    <ClCompile Include="WBCommunityCenterScene.cpp">
-      <Filter>scene\3.play\pelican-town\community-center</Filter>
-    </ClCompile>
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp">
       <Filter>scene\3.play\pelican-town\movie-theater\box-office</Filter>
     </ClCompile>
@@ -269,9 +269,6 @@
     </ClCompile>
     <ClCompile Include="WBBlacksmithScene.cpp">
       <Filter>scene\3.play\pelican-town\blacksmith</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFarmScene.cpp">
-      <Filter>scene\3.play\farm\farm</Filter>
     </ClCompile>
     <ClCompile Include="WBRanchOfMarnieScene.cpp">
       <Filter>scene\3.play\farm\ranch-of-marnie</Filter>
@@ -293,6 +290,15 @@
     </ClCompile>
     <ClCompile Include="WBFarmhouseScene.cpp">
       <Filter>scene\3.play\farm\farmhouse</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmDownScene.cpp">
+      <Filter>scene\3.play\farm\farm</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmUpScene.cpp">
+      <Filter>scene\3.play\farm\farm</Filter>
+    </ClCompile>
+    <ClCompile Include="WBRestoredCommunityCenterScene.cpp">
+      <Filter>scene\3.play\pelican-town\community-center</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

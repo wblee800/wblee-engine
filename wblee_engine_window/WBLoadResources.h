@@ -32,8 +32,8 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Bus_Stop", L"..\\resources\\sprites\\maps\\Bus_Stop.png");
 
 		// Calico Desert
-		WBResources::Load<graphics::WBTexture>(L"Calico_Desert", L"..\\resources\\sprites\\maps\\Calico_Desert.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Skull_Cavern_Entrance", L"..\\resources\\sprites\\maps\\Skull_Cavern_Entrance.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Calico_Desert", L"..\\resources\\sprites\\maps\\Calico_Desert.png");
+		WBResources::Load<graphics::WBTexture>(L"Skull_Cavern_Entrance", L"..\\resources\\sprites\\maps\\Skull_Cavern_Entrance.png");
 		WBResources::Load<graphics::WBTexture>(L"Skull_Cavern", L"..\\resources\\sprites\\maps\\Skull_Cavern.bmp");
 
 		// Pelican Town
