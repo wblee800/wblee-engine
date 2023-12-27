@@ -93,7 +93,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 	wcex.cbWndExtra = 0;
 	wcex.hInstance = hInstance;
 	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_EDITORWINDOW));
-	wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+	wcex.hCursor = LoadCursor(hInstance, MAKEINTRESOURCE(IDC_CURSOR3));
 	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	// Hide menu bar
 	wcex.lpszMenuName = NULL; // MAKEINTRESOURCEW(IDC_EDITORWINDOW);

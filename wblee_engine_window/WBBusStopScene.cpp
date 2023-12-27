@@ -54,7 +54,7 @@ namespace wb
 
 		WBTransform* mPlayerTr = mPlayer->GetComponent<WBTransform>();
 		mPlayerTr->SetScale(Vector2(0.5f, 0.5f));
-		mPlayerTr->SetPosition(Vector2(-330.0f, 225.0f));
+		mPlayerTr->SetPosition(Vector2(-420.0f, 140.0f));
 
 		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");

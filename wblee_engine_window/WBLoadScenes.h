@@ -14,7 +14,6 @@
 #include "WBSkullCavernEntranceScene.h"
 #include "WBSkullCavernScene.h"
 #include "WBGeneralStoreOfPierreScene.h"
-#include "WBCommunityCenterScene.h"
 #include "WBTheaterBoxOfficeScene.h"
 #include "WBTheaterScreenScene.h"
 #include "WBBlacksmithScene.h"
@@ -63,7 +62,6 @@ namespace wb
 		WBSceneManager::CreateScene<WBJojaMartScene>(L"JojaMartScene");
 		WBSceneManager::CreateScene<WBGeneralStoreOfPierreScene>(L"GeneralStoreOfPierreScene");
 		WBSceneManager::CreateScene<WBBlacksmithScene>(L"BlacksmithScene");
-		WBSceneManager::CreateScene<WBCommunityCenterScene>(L"CommunityCenterScene");
 		WBSceneManager::CreateScene<WBTheaterBoxOfficeScene>(L"TheaterBoxOfficeScene");
 		WBSceneManager::CreateScene<WBTheaterScreenScene>(L"TheaterScreenScene");
 		WBSceneManager::CreateScene<WBStardropSaloonScene>(L"StardropSaloonScene");

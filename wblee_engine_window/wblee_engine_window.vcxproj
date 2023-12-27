@@ -25,7 +25,6 @@
     <ClInclude Include="WBCalicoDesertScene.h" />
     <ClInclude Include="WBCat.h" />
     <ClInclude Include="WBCatScript.h" />
-    <ClInclude Include="WBCommunityCenterScene.h" />
     <ClInclude Include="WBFarmDownScene.h" />
     <ClInclude Include="WBFarmhouseScene.h" />
     <ClInclude Include="WBFarmUpScene.h" />
@@ -59,7 +58,6 @@
     <ClCompile Include="WBCalicoDesertScene.cpp" />
     <ClCompile Include="WBCat.cpp" />
     <ClCompile Include="WBCatScript.cpp" />
-    <ClCompile Include="WBCommunityCenterScene.cpp" />
     <ClCompile Include="WBFarmDownScene.cpp" />
     <ClCompile Include="WBFarmhouseScene.cpp" />
     <ClCompile Include="WBFarmUpScene.cpp" />

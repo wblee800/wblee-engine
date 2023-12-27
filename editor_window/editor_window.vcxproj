@@ -143,12 +143,16 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="editor_window.ico" />
+    <Image Include="icon.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\wblee_engine_window\wblee_engine_window.vcxproj">
       <Project>{ac91ae52-6ed8-4b83-8b0e-a1df503589c0}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor3.cur" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -225,10 +225,6 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"GeneralStoreOfPierreScene");
 		}
-		else if (WBInput::GetKeyDown(eKeyCode::C))
-		{
-			WBSceneManager::LoadScene(L"CommunityCenterScene");
-		}
 		else if (WBInput::GetKeyDown(eKeyCode::R))
 		{
 			WBSceneManager::LoadScene(L"RestoredCommunityCenterScene");

@@ -30,6 +30,7 @@ namespace wb
 			Equipment,
 			Animal,
 			Player,
+			ObjectOnPlayer,
 			Particle,
 			Skill,
 			Max = 16,

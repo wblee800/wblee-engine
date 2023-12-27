@@ -45,7 +45,7 @@ namespace wb
 
 		// A bed in the farmhouse
 		WBGameObject* bed = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Particle, Vector2(193.0f, 130.0f));
+			(enums::eLayerType::ObjectOnPlayer, Vector2(193.0f, 130.0f));
 		WBSpriteRenderer* bedSr = bed->AddComponent<WBSpriteRenderer>();
 		bedSr->SetSize(Vector2(0.9f, 0.9f));
 
