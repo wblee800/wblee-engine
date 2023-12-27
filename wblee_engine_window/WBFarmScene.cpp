@@ -262,9 +262,13 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"ShopOfCarpenterScene");
 		}
-		else if (WBInput::GetKeyDown(eKeyCode::M))
+		else if (WBInput::GetKeyDown(eKeyCode::R))
 		{
 			WBSceneManager::LoadScene(L"RanchOfMarnieScene");
+		}
+		else if (WBInput::GetKeyDown(eKeyCode::F))
+		{
+			WBSceneManager::LoadScene(L"FarmhouseScene");
 		}
 	}
 

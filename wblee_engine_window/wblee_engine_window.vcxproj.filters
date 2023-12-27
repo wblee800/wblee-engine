@@ -66,13 +66,13 @@
       <Filter>scene\3.play\pelican-town\blacksmith</Filter>
     </ClInclude>
     <ClInclude Include="WBFarmScene.h">
-      <Filter>scene\3.play\farm-of-player\farm</Filter>
+      <Filter>scene\3.play\farm\farm</Filter>
     </ClInclude>
     <ClInclude Include="WBRanchOfMarnieScene.h">
-      <Filter>scene\3.play\farm-of-player\ranch-of-marnie</Filter>
+      <Filter>scene\3.play\farm\ranch-of-marnie</Filter>
     </ClInclude>
     <ClInclude Include="WBShopOfCarpenterScene.h">
-      <Filter>scene\3.play\farm-of-player\shop-of-carpenter</Filter>
+      <Filter>scene\3.play\farm\shop-of-carpenter</Filter>
     </ClInclude>
     <ClInclude Include="WBToolScene.h">
       <Filter>scene\0.tool</Filter>
@@ -84,7 +84,10 @@
       <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>
     </ClInclude>
     <ClInclude Include="WBSecretWoodsScene.h">
-      <Filter>scene\3.play\farm-of-player\secret-woods</Filter>
+      <Filter>scene\3.play\farm\secret-woods</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmhouseScene.h">
+      <Filter>scene\3.play\farm\farmhouse</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -175,18 +178,6 @@
     <Filter Include="scene\3.play\pelican-town\movie-theater\theater-screen">
       <UniqueIdentifier>{40a7373c-06a7-4aa6-ac39-442008ab0456}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\3.play\farm-of-player">
-      <UniqueIdentifier>{bfda050d-dff9-4f0d-ad71-fee46eaf9dce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\3.play\farm-of-player\shop-of-carpenter">
-      <UniqueIdentifier>{075301e9-38d3-4b5c-8897-0e4f871dd5cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\3.play\farm-of-player\ranch-of-marnie">
-      <UniqueIdentifier>{6e03768d-fe3a-4b4d-abad-671fc7f951dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\3.play\farm-of-player\farm">
-      <UniqueIdentifier>{56cde9c2-429c-493c-bb5e-c8a3fbbb5bae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\0.tool">
       <UniqueIdentifier>{9bc1ad3a-4bfe-4519-b5ec-e108250643b6}</UniqueIdentifier>
     </Filter>
@@ -196,11 +187,26 @@
     <Filter Include="scene\3.play\pelican-town\stardrop-saloon">
       <UniqueIdentifier>{006e17f5-eaec-475a-9ac3-3bd8b80716bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\3.play\farm-of-player\secret-woods">
-      <UniqueIdentifier>{16e0ba09-4459-4157-98a7-099c3aa9e552}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\3.play\pelican-town\pelican-town">
       <UniqueIdentifier>{49e728fa-ced9-408a-9327-c3c536e53d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm">
+      <UniqueIdentifier>{bfda050d-dff9-4f0d-ad71-fee46eaf9dce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm\shop-of-carpenter">
+      <UniqueIdentifier>{075301e9-38d3-4b5c-8897-0e4f871dd5cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm\ranch-of-marnie">
+      <UniqueIdentifier>{6e03768d-fe3a-4b4d-abad-671fc7f951dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm\farm">
+      <UniqueIdentifier>{56cde9c2-429c-493c-bb5e-c8a3fbbb5bae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm\secret-woods">
+      <UniqueIdentifier>{16e0ba09-4459-4157-98a7-099c3aa9e552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\3.play\farm\farmhouse">
+      <UniqueIdentifier>{4bc4501e-3439-4abf-91c0-0ac270f3e0c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -265,13 +271,13 @@
       <Filter>scene\3.play\pelican-town\blacksmith</Filter>
     </ClCompile>
     <ClCompile Include="WBFarmScene.cpp">
-      <Filter>scene\3.play\farm-of-player\farm</Filter>
+      <Filter>scene\3.play\farm\farm</Filter>
     </ClCompile>
     <ClCompile Include="WBRanchOfMarnieScene.cpp">
-      <Filter>scene\3.play\farm-of-player\ranch-of-marnie</Filter>
+      <Filter>scene\3.play\farm\ranch-of-marnie</Filter>
     </ClCompile>
     <ClCompile Include="WBShopOfCarpenterScene.cpp">
-      <Filter>scene\3.play\farm-of-player\shop-of-carpenter</Filter>
+      <Filter>scene\3.play\farm\shop-of-carpenter</Filter>
     </ClCompile>
     <ClCompile Include="WBToolScene.cpp">
       <Filter>scene\0.tool</Filter>
@@ -283,7 +289,10 @@
       <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>
     </ClCompile>
     <ClCompile Include="WBSecretWoodsScene.cpp">
-      <Filter>scene\3.play\farm-of-player\secret-woods</Filter>
+      <Filter>scene\3.play\farm\secret-woods</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmhouseScene.cpp">
+      <Filter>scene\3.play\farm\farmhouse</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -12,17 +12,19 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Logo", L"..\\resources\\sprites\\miscellaneous\\Logo.bmp");
 
 		// ----Tile Maps----
-		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\tilesets\\Farmhouse.bmp");
+		
 
 		// ----Maps----
 		// Farm
 		WBResources::Load<graphics::WBTexture>(L"Standard_Farm", L"..\\resources\\sprites\\maps\\Standard_Farm.png");
+		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\maps\\Farmhouse.png");
+		WBResources::Load<graphics::WBTexture>(L"Bed_In_Farmhouse", L"..\\resources\\sprites\\maps\\Bed_In_Farmhouse.png");
 		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Secret_Woods", L"..\\resources\\sprites\\maps\\Secret_Woods.bmp");
 
 		// Sewer
-		WBResources::Load<graphics::WBTexture>(L"Gate_Sewer", L"..\\resources\\sprites\\maps\\Gate_Sewer.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Gate_Sewer", L"..\\resources\\sprites\\maps\\Gate_Sewer.png");
 		WBResources::Load<graphics::WBTexture>(L"Sewer", L"..\\resources\\sprites\\maps\\Sewer.bmp");
 
 		// Bus Stop

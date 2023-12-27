@@ -26,6 +26,7 @@
     <ClInclude Include="WBCat.h" />
     <ClInclude Include="WBCatScript.h" />
     <ClInclude Include="WBCommunityCenterScene.h" />
+    <ClInclude Include="WBFarmhouseScene.h" />
     <ClInclude Include="WBFarmScene.h" />
     <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
     <ClInclude Include="WBIntroScene.h" />
@@ -57,6 +58,7 @@
     <ClCompile Include="WBCat.cpp" />
     <ClCompile Include="WBCatScript.cpp" />
     <ClCompile Include="WBCommunityCenterScene.cpp" />
+    <ClCompile Include="WBFarmhouseScene.cpp" />
     <ClCompile Include="WBFarmScene.cpp" />
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
     <ClCompile Include="WBIntroScene.cpp" />

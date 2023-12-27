@@ -22,6 +22,7 @@
 #include "WBToolScene.h"
 #include "WBStardropSaloonScene.h"
 #include "WBSecretWoodsScene.h"
+#include "WBFarmhouseScene.h"
 
 namespace wb
 {
@@ -36,6 +37,7 @@ namespace wb
 		// ----Play Scene----
 		// Farm
 		WBSceneManager::CreateScene<WBFarmScene>(L"FarmScene");
+		WBSceneManager::CreateScene<WBFarmhouseScene>(L"FarmhouseScene");
 		WBSceneManager::CreateScene<WBShopOfCarpenterScene>(L"ShopOfCarpenterScene");
 		WBSceneManager::CreateScene<WBRanchOfMarnieScene>(L"RanchOfMarnieScene");
 		WBSceneManager::CreateScene<WBSecretWoodsScene>(L"SecretWoodsScene");

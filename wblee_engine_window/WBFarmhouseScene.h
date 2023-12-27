@@ -4,11 +4,11 @@
 namespace wb
 {
 	class WBPlayer;
-	class WBGateSewerScene : public WBScene
+	class WBFarmhouseScene : public WBScene
 	{
 	public:
-		WBGateSewerScene();
-		~WBGateSewerScene();
+		WBFarmhouseScene();
+		~WBFarmhouseScene();
 
 		void Initialize() override;
 		void Update() override;
