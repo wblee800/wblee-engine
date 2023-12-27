@@ -41,7 +41,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
 		WBResources::Load<graphics::WBTexture>(L"General_Store_Of_Pierre", L"..\\resources\\sprites\\maps\\General_Store_Of_Pierre.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Restored_Community_Center_Indoor", L"..\\resources\\sprites\\maps\\Restored_Community_Center_Indoor.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Theater_Box_Office", L"..\\resources\\sprites\\maps\\Theater_Box_Office.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Theater_Box_Office", L"..\\resources\\sprites\\maps\\Theater_Box_Office.png");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Screen", L"..\\resources\\sprites\\maps\\Theater_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Blacksmith", L"..\\resources\\sprites\\maps\\Blacksmith.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Stardrop_Saloon", L"..\\resources\\sprites\\maps\\Stardrop_Saloon.bmp");
