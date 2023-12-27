@@ -5,11 +5,11 @@ namespace wb
 {
 	class WBPlayer;
 	class WBCat;
-	class WBFarmScene : public WBScene
+	class WBFarmUpScene : public WBScene
 	{
 	public:
-		WBFarmScene();
-		~WBFarmScene();
+		WBFarmUpScene();
+		~WBFarmUpScene();
 
 		void Initialize() override;
 		void Update() override;

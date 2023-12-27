@@ -4,11 +4,12 @@
 namespace wb
 {
 	class WBPlayer;
-	class WBSewerScene : public WBScene
+	class WBCat;
+	class WBFarmDownScene : public WBScene
 	{
 	public:
-		WBSewerScene();
-		~WBSewerScene();
+		WBFarmDownScene();
+		~WBFarmDownScene();
 
 		void Initialize() override;
 		void Update() override;
@@ -20,6 +21,8 @@ namespace wb
 
 	private:
 		WBPlayer* mPlayer;
+		WBCat* mCat;
 		WBGameObject* mCamera;
 	};
 }
+

@@ -26,8 +26,9 @@
     <ClInclude Include="WBCat.h" />
     <ClInclude Include="WBCatScript.h" />
     <ClInclude Include="WBCommunityCenterScene.h" />
+    <ClInclude Include="WBFarmDownScene.h" />
     <ClInclude Include="WBFarmhouseScene.h" />
-    <ClInclude Include="WBFarmScene.h" />
+    <ClInclude Include="WBFarmUpScene.h" />
     <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
     <ClInclude Include="WBIntroScene.h" />
     <ClInclude Include="WBLoadResources.h" />
@@ -59,8 +60,9 @@
     <ClCompile Include="WBCat.cpp" />
     <ClCompile Include="WBCatScript.cpp" />
     <ClCompile Include="WBCommunityCenterScene.cpp" />
+    <ClCompile Include="WBFarmDownScene.cpp" />
     <ClCompile Include="WBFarmhouseScene.cpp" />
-    <ClCompile Include="WBFarmScene.cpp" />
+    <ClCompile Include="WBFarmUpScene.cpp" />
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
     <ClCompile Include="WBIntroScene.cpp" />
     <ClCompile Include="WBPelicanTownScene.cpp" />

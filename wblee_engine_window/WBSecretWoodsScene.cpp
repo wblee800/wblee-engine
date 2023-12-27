@@ -206,7 +206,7 @@ namespace wb
 
 		if (WBInput::GetKeyDown(eKeyCode::D))
 		{
-			WBSceneManager::LoadScene(L"FarmScene");
+			WBSceneManager::LoadScene(L"FarmUpScene");
 		}
 	}
 

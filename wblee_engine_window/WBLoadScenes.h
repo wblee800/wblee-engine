@@ -4,7 +4,8 @@
 #include "WBTitleScene.h"
 #include "WBIntroScene.h"
 #include "WBBusStopScene.h"
-#include "WBFarmScene.h"
+#include "WBFarmUpScene.h"
+#include "WBFarmDownScene.h"
 #include "WBPelicanTownScene.h"
 #include "WBCalicoDesertScene.h"
 #include "WBGateSewerScene.h"
@@ -37,7 +38,8 @@ namespace wb
 
 		// ----Play Scene----
 		// Farm
-		WBSceneManager::CreateScene<WBFarmScene>(L"FarmScene");
+		WBSceneManager::CreateScene<WBFarmUpScene>(L"FarmUpScene");
+		WBSceneManager::CreateScene<WBFarmDownScene>(L"FarmDownScene");
 		WBSceneManager::CreateScene<WBFarmhouseScene>(L"FarmhouseScene");
 		WBSceneManager::CreateScene<WBShopOfCarpenterScene>(L"ShopOfCarpenterScene");
 		WBSceneManager::CreateScene<WBRanchOfMarnieScene>(L"RanchOfMarnieScene");

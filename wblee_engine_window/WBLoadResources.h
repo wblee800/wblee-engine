@@ -16,7 +16,8 @@ namespace wb
 
 		// ----Maps----
 		// Farm
-		WBResources::Load<graphics::WBTexture>(L"Standard_Farm", L"..\\resources\\sprites\\maps\\Standard_Farm.png");
+		WBResources::Load<graphics::WBTexture>(L"Standard_Farm_Up", L"..\\resources\\sprites\\maps\\Standard_Farm_Up.png");
+		WBResources::Load<graphics::WBTexture>(L"Standard_Farm_Down", L"..\\resources\\sprites\\maps\\Standard_Farm_Down.png");
 		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\maps\\Farmhouse.png");
 		WBResources::Load<graphics::WBTexture>(L"Bed_In_Farmhouse", L"..\\resources\\sprites\\maps\\Bed_In_Farmhouse.png");
 		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");

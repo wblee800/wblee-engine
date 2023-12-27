@@ -1,4 +1,4 @@
-#include "WBFarmScene.h"
+#include "WBFarmDownScene.h"
 #include "..\wblee_engine_source\WBInput.h"
 #include "..\wblee_engine_source\WBSceneManager.h"
 
@@ -20,18 +20,18 @@
 
 namespace wb
 {
-	WBFarmScene::WBFarmScene()
-		:mPlayer(nullptr), 
+	WBFarmDownScene::WBFarmDownScene()
+		:mPlayer(nullptr),
 		mCat(nullptr),
 		mCamera(nullptr)
 	{
 	}
 
-	WBFarmScene::~WBFarmScene()
+	WBFarmDownScene::~WBFarmDownScene()
 	{
 	}
 
-	void WBFarmScene::Initialize()
+	void WBFarmDownScene::Initialize()
 	{
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
@@ -39,13 +39,11 @@ namespace wb
 		// Before loading a game object, load resources.
 		// Farm Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-8.f, 0.f));
+			(enums::eLayerType::Map, Vector2(-648.f, -380.f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
-		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm");
+		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm_Down");
 		mapSr->SetTexture(mapTexture);
-		// ¡Ø ÁÖÀÇ : »ç¿ëÇÏ¸é, frame rate ¶³¾îÁü.
-		// mapSr->SetSize(Vector2(1.5f, 1.5f));
 
 		// _______________________________________________________
 
@@ -55,7 +53,7 @@ namespace wb
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
 
-		renderer::mainCamera->SetTarget(mPlayer);
+		// renderer::mainCamera->SetTarget(mPlayer);
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
@@ -184,13 +182,13 @@ namespace wb
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f5 : Player play a mini harp
-		/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+			// f5 : Player play a mini harp
+			/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
+				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		// f6 : Player dozes off
-		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
+				// f6 : Player dozes off
+				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
+					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
 
@@ -237,26 +235,18 @@ namespace wb
 		WBScene::Initialize();
 	}
 
-	void WBFarmScene::Update()
+	void WBFarmDownScene::Update()
 	{
 		WBScene::Update();
 	}
 
-	void WBFarmScene::LateUpdate()
+	void WBFarmDownScene::LateUpdate()
 	{
 		WBScene::LateUpdate();
 
 		if (WBInput::GetKeyDown(eKeyCode::W))
 		{
-			WBSceneManager::LoadScene(L"SecretWoodsScene");
-		}
-		else if (WBInput::GetKeyDown(eKeyCode::D))
-		{
-			WBSceneManager::LoadScene(L"BusStopScene");
-		}
-		else if (WBInput::GetKeyDown(eKeyCode::S))
-		{
-			WBSceneManager::LoadScene(L"GateSewerScene");
+			WBSceneManager::LoadScene(L"FarmUpScene");
 		}
 		else if (WBInput::GetKeyDown(eKeyCode::C))
 		{
@@ -266,13 +256,13 @@ namespace wb
 		{
 			WBSceneManager::LoadScene(L"RanchOfMarnieScene");
 		}
-		else if (WBInput::GetKeyDown(eKeyCode::F))
+		else if (WBInput::GetKeyDown(eKeyCode::S))
 		{
-			WBSceneManager::LoadScene(L"FarmhouseScene");
+			WBSceneManager::LoadScene(L"GateSewerScene");
 		}
 	}
 
-	void WBFarmScene::Render(HDC hdc)
+	void WBFarmDownScene::Render(HDC hdc)
 	{
 		HBRUSH backgroundColorBrush = CreateSolidBrush(RGB(111, 198, 37));
 		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, backgroundColorBrush);
@@ -284,12 +274,12 @@ namespace wb
 		WBScene::Render(hdc);
 	}
 
-	void WBFarmScene::OnEnter()
+	void WBFarmDownScene::OnEnter()
 	{
 		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
-	void WBFarmScene::OnExit()
+	void WBFarmDownScene::OnExit()
 	{
 	}
 }

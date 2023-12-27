@@ -1,9 +1,10 @@
-#include "WBBusStopScene.h"
+#include "WBFarmUpScene.h"
 #include "..\wblee_engine_source\WBInput.h"
 #include "..\wblee_engine_source\WBSceneManager.h"
 
 #include "..\\wblee_engine_source\\WBGameObject.h"
 #include "WBPlayer.h"
+#include "WBCat.h"
 #include "..\\wblee_engine_source\\WBTransform.h"
 #include "..\\wblee_engine_source\\WBSpriteRenderer.h"
 #include "..\\wblee_engine_source\\WBInput.h"
@@ -12,51 +13,48 @@
 #include "..\\wblee_engine_source\\WBTexture.h"
 #include "..\\wblee_engine_source\\WBResources.h"
 #include "WBPlayerScript.h"
+#include "WBCatScript.h"
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
-#include "..\\wblee_engine_source\\WBBoxCollider2D.h"
 
 namespace wb
 {
-	WBBusStopScene::WBBusStopScene()
+	WBFarmUpScene::WBFarmUpScene()
 		:mPlayer(nullptr),
+		mCat(nullptr),
 		mCamera(nullptr)
 	{
 	}
 
-	WBBusStopScene::~WBBusStopScene()
+	WBFarmUpScene::~WBFarmUpScene()
 	{
 	}
 
-	void WBBusStopScene::Initialize()
+	void WBFarmUpScene::Initialize()
 	{
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
-		// Bus Stop Map
+		// Farm Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-430.0f, -380.0f));
+			(enums::eLayerType::Map, Vector2(-648.f, -380.f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
-		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Bus_Stop");
+		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm_Up");
 		mapSr->SetTexture(mapTexture);
+
+		// _______________________________________________________
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
-
-		// Add components
 		mPlayer->AddComponent<WBPlayerScript>();
-		WBBoxCollider2D* mPlayerBoxCollider2D = mPlayer->AddComponent<WBBoxCollider2D>();
-		
-		mPlayerBoxCollider2D->SetSize(Vector2(30.0f, 60.0f));
 
-		WBTransform* mPlayerTr = mPlayer->GetComponent<WBTransform>();
-		mPlayerTr->SetScale(Vector2(0.5f, 0.5f));
-		mPlayerTr->SetPosition(Vector2(-330.0f, 225.0f));
+		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
 
-		// Set textures of player
+		// renderer::mainCamera->SetTarget(mPlayer);
+
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
 		graphics::WBTexture* playerSitDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Sit_Down");
@@ -68,13 +66,13 @@ namespace wb
 
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleLeft", playerTexture,
-			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
+			Vector2(250.0f * 6, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleUp", playerTexture,
-			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
+			Vector2(0.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 		playerAnimator->CreateAnimation(L"PlayerIdleDown", playerTexture,
-			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.1f);
+			Vector2(250.0f * 11, 250.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 1, 0.3f);
 
 		// Player move
 		playerAnimator->CreateAnimation(L"PlayerMoveRight", playerTexture,
@@ -118,7 +116,7 @@ namespace wb
 
 		// 4 : Hoe
 		playerAnimator->CreateAnimation(L"PlayerHoeDown", playerTexture,
-			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 00.1f);
+			Vector2(0.0f, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 0.15f);
 		playerAnimator->CreateAnimation(L"PlayerHoeUp", playerTexture,
 			Vector2(250.0f * 3, 250.0f * 4), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 4, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerHoeRight", playerTexture,
@@ -140,11 +138,11 @@ namespace wb
 		playerAnimator->CreateAnimation(L"PlayerIrrigateRight", playerTexture,
 			Vector2(250.0f * 6, 250.0f * 7), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateDown", playerTexture,
-			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 12, 00.1f);
+			Vector2(0.0f, 250.0f * 8), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 12, 0.05f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateLeft", playerTexture,
 			Vector2(0.0f, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
 		playerAnimator->CreateAnimation(L"PlayerIrrigateUp", playerTexture,
-			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 00.1f);
+			Vector2(250.0f * 5, 250.0f * 9), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 3, 0.15f);
 
 		// 7 : Player load on his head
 		playerAnimator->CreateAnimation(L"PlayerLoadOnHisHeadLeft", playerTexture,
@@ -170,11 +168,11 @@ namespace wb
 
 		// f1 : Player sit down
 		playerAnimator->CreateAnimation(L"PlayerSitDown", playerSitDownTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.05f);
 
 		// f2 : Player stand up
 		playerAnimator->CreateAnimation(L"PlayerStandUp", playerStandUpTexture,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.1f);
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(-47.0f, -32.0f), 5, 0.05f);
 
 		// f3 : Player is exhausted
 		playerAnimator->CreateAnimation(L"PlayerIsExhausted", playerIsExhaustedTexture,
@@ -182,63 +180,106 @@ namespace wb
 
 		// f4 : Player ride a horse
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
-			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f*/
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 			// f5 : Player play a mini harp
 			/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
-				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f*/
+				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 				// f6 : Player dozes off
 				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
-					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.1f*/
+					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
-		playerAnimator->PlayAnimation(L"PlayerIdleRight", false);
+		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
+
+		// _______________________________________________________
+
+		// Cat
+		mCat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
+
+		mCat->AddComponent<WBCatScript>();
+		WBAnimator* catAnimator = mCat->AddComponent<WBAnimator>();
+		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+
+		// Cat move
+		catAnimator->CreateAnimation(L"CatMoveDown", catTexture,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveRight", catTexture,
+			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveUp", catTexture,
+			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveLeft", catTexture,
+			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat sit down
+		catAnimator->CreateAnimation(L"CatSitDown", catTexture,
+			Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat groom
+		catAnimator->CreateAnimation(L"CatGroom", catTexture,
+			Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat lay down
+		catAnimator->CreateAnimation(L"CatLayDown", catTexture,
+			Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat sleep
+		catAnimator->CreateAnimation(L"CatSleep", catTexture,
+			Vector2(0.0f, 224.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		catAnimator->PlayAnimation(L"CatSitDown", false);
+
+		// _______________________________________________________
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
 	}
 
-	void WBBusStopScene::Update()
+	void WBFarmUpScene::Update()
 	{
 		WBScene::Update();
 	}
 
-	void WBBusStopScene::LateUpdate()
+	void WBFarmUpScene::LateUpdate()
 	{
 		WBScene::LateUpdate();
 
-		if (WBInput::GetKeyDown(eKeyCode::A))
+		if (WBInput::GetKeyDown(eKeyCode::W))
 		{
-			WBSceneManager::LoadScene(L"FarmUpScene");
-		}
-		else if (WBInput::GetKeyDown(eKeyCode::W))
-		{
-			WBSceneManager::LoadScene(L"CalicoDesertScene");
+			WBSceneManager::LoadScene(L"SecretWoodsScene");
 		}
 		else if (WBInput::GetKeyDown(eKeyCode::D))
 		{
-			WBSceneManager::LoadScene(L"PelicanTownScene");
+			WBSceneManager::LoadScene(L"BusStopScene");
+		}
+		else if (WBInput::GetKeyDown(eKeyCode::F))
+		{
+			WBSceneManager::LoadScene(L"FarmhouseScene");
+		}
+		else if (WBInput::GetKeyDown(eKeyCode::S))
+		{
+			WBSceneManager::LoadScene(L"FarmDownScene");
 		}
 	}
 
-	void WBBusStopScene::Render(HDC hdc)
+	void WBFarmUpScene::Render(HDC hdc)
 	{
-		HBRUSH backgroundColorBrush = CreateSolidBrush(RGB(5, 3, 4));
-		HBRUSH originalBrush = (HBRUSH)SelectObject(hdc, backgroundColorBrush);
+		HBRUSH backgroundColorBrush = CreateSolidBrush(RGB(111, 198, 37));
+		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, backgroundColorBrush);
 		Rectangle(hdc, -1, -1, 1920, 1080);
 
-		SelectObject(hdc, originalBrush);
+		SelectObject(hdc, originBrush);
 		DeleteObject(backgroundColorBrush);
 
 		WBScene::Render(hdc);
 	}
 
-	void WBBusStopScene::OnEnter()
+	void WBFarmUpScene::OnEnter()
 	{
 		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
-	void WBBusStopScene::OnExit()
+	void WBFarmUpScene::OnExit()
 	{
 	}
 }
