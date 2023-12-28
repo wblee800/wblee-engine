@@ -34,10 +34,8 @@ namespace wb
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None);
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
-		// _______________________________________________________
-
 		// Before loading a game object, load resources.
-		// Bus Stop Map
+		// General Store of Pierre Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
 			(enums::eLayerType::Map, Vector2(335.0f, -790.0f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
@@ -46,7 +44,13 @@ namespace wb
 		mapSr->SetTexture(mapTexture);
 		mapSr->SetSize(Vector2(4.0f, 4.0f));
 
-		// _______________________________________________________
+		// Owner
+		WBGameObject* owner = object::Instantiate<WBGameObject>
+			(enums::eLayerType::NPC, Vector2(553.0f, 244.0f));
+		WBSpriteRenderer* ownerSr = owner->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* ownerTexture = WBResources::Find<graphics::WBTexture>(L"Owner_Of_General_Store_Of_Pierre");
+		ownerSr->SetTexture(ownerTexture);
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);

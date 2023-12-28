@@ -9,6 +9,7 @@ namespace wb
 		// ----Title----
 		WBResources::Load<graphics::WBTexture>(L"Title", L"..\\resources\\sprites\\miscellaneous\\Title_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Cloudy_Night_Ocean", L"..\\resources\\sprites\\miscellaneous\\Cloudy_Night_Ocean.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Sea_Monster", L"..\\resources\\sprites\\characters\\monsters\\Sea_Monster.png");
 		WBResources::Load<graphics::WBTexture>(L"Logo", L"..\\resources\\sprites\\miscellaneous\\Logo.bmp");
 
 		// ----Tile Maps----
@@ -40,7 +41,10 @@ namespace wb
 		// Pelican Town
 		WBResources::Load<graphics::WBTexture>(L"Pelican_Town", L"..\\resources\\sprites\\maps\\Pelican_Town.png");
 		WBResources::Load<graphics::WBTexture>(L"Joja_Mart", L"..\\resources\\sprites\\maps\\Joja_Mart.bmp");
+		WBResources::Load<graphics::WBTexture>(L"CEO_Of_Joja_Mart", L"..\\resources\\sprites\\characters\\npcs\\CEO_Of_Joja_Mart.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Employee_Of_Joja_Mart", L"..\\resources\\sprites\\characters\\npcs\\Employee_Of_Joja_Mart.bmp");
 		WBResources::Load<graphics::WBTexture>(L"General_Store_Of_Pierre", L"..\\resources\\sprites\\maps\\General_Store_Of_Pierre.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Owner_Of_General_Store_Of_Pierre", L"..\\resources\\sprites\\characters\\npcs\\Owner_Of_General_Store_Of_Pierre.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Restored_Community_Center_Indoor", L"..\\resources\\sprites\\maps\\Restored_Community_Center_Indoor.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Box_Office", L"..\\resources\\sprites\\maps\\Theater_Box_Office.png");
 		WBResources::Load<graphics::WBTexture>(L"Theater_Screen", L"..\\resources\\sprites\\maps\\Theater_Screen.bmp");

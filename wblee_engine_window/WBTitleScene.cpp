@@ -19,6 +19,7 @@
 namespace wb
 {
 	WBTitleScene::WBTitleScene()
+		: mCamera(nullptr)
 	{
 	}
 
@@ -29,32 +30,48 @@ namespace wb
 	void WBTitleScene::Initialize()
 	{
 		// Main camera
-		WBGameObject* camera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(960.0f, 540.0f));
-		WBCamera* cameraComp = camera->AddComponent<WBCamera>();
+		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(960.0f, 540.0f));
+		WBCamera* cameraComp = mCamera->AddComponent<WBCamera>();
 		renderer::mainCamera = cameraComp;
-
-		// _______________________________________________________
 
 		// Before loading a game object, load resources.
 		// Background
 		WBGameObject* bg = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Background);
+			(enums::eLayerType::Background, Vector2(300.0f, 150.0f));
 		WBSpriteRenderer* bgSr = bg->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* bgTex = WBResources::Find<graphics::WBTexture>(L"Cloudy_Night_Ocean");
 		bgSr->SetTexture(bgTex);
-		bgSr->SetSize(Vector2(1.5f, 1.9f));
-
-		// _______________________________________________________
+		bgSr->SetSize(Vector2(1.0f, 1.5f));
 
 		// Title Logo
 		WBGameObject* title = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Particle);
+			(enums::eLayerType::Tile, Vector2(600.0f, 200.0f));
 		WBSpriteRenderer* titleSr = title->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* titleTex = WBResources::Find<graphics::WBTexture>(L"Logo");
 		titleSr->SetTexture(titleTex);
 		titleSr->SetSize(Vector2(1.8f, 1.8f));
+
+		// Sea Monster 1
+		WBGameObject* seaMonster1 = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Monster, Vector2(600.0f, 700.0f));
+		WBAnimator* seaMonster1Animator = seaMonster1->AddComponent<WBAnimator>();
+		graphics::WBTexture* seaMonster1Texture = WBResources::Find<graphics::WBTexture>(L"Sea_Monster");
+		seaMonster1->GetComponent<WBTransform>()->SetScale(Vector2(1.5f, 1.5f));
+
+		seaMonster1Animator->CreateAnimation(L"Sea_Monster_Swim", seaMonster1Texture, Vector2::Zero, Vector2(32.0f, 32.0f), Vector2::Zero, 16, 0.3f);
+		seaMonster1Animator->PlayAnimation(L"Sea_Monster_Swim");
+
+		// Sea Monster 1
+		WBGameObject* seaMonster2 = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Monster, Vector2(1100.0f, 800.0f));
+		WBAnimator* seaMonster2Animator = seaMonster2->AddComponent<WBAnimator>();
+		graphics::WBTexture* seaMonster2Texture = WBResources::Find<graphics::WBTexture>(L"Sea_Monster");
+		seaMonster2->GetComponent<WBTransform>()->SetScale(Vector2(1.5f, 1.5f));
+
+		seaMonster2Animator->CreateAnimation(L"Sea_Monster_Swim", seaMonster2Texture, Vector2::Zero, Vector2(32.0f, 32.0f), Vector2::Zero, 16, 0.4f);
+		seaMonster2Animator->PlayAnimation(L"Sea_Monster_Swim");
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
@@ -71,7 +88,7 @@ namespace wb
 
 		if (WBInput::GetKeyDown(eKeyCode::N))
 		{
-			WBSceneManager::LoadScene(L"FarmScene");
+			WBSceneManager::LoadScene(L"FarmUpScene");
 		}
 	}
 
@@ -85,6 +102,7 @@ namespace wb
 
 	void WBTitleScene::OnEnter()
 	{
+		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
 	void WBTitleScene::OnExit()

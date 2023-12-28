@@ -9,7 +9,7 @@
       <Filter>scene\1.title</Filter>
     </ClInclude>
     <ClInclude Include="WBJojaMartScene.h">
-      <Filter>scene\3.play\joja-mart</Filter>
+      <Filter>scene\3.play\pelican-town\joja-mart</Filter>
     </ClInclude>
     <ClInclude Include="WBIntroScene.h">
       <Filter>scene\2.Intro</Filter>
@@ -139,9 +139,6 @@
     <Filter Include="scene\3.play\beach">
       <UniqueIdentifier>{380d3f93-6ea0-4f4f-a038-a35f61c96115}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\3.play\joja-mart">
-      <UniqueIdentifier>{b87a6eca-ab29-4ff3-9d37-56c3384d77c1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\4.ending">
       <UniqueIdentifier>{e3321130-c903-4116-8725-7ad048ddbdf9}</UniqueIdentifier>
     </Filter>
@@ -211,13 +208,16 @@
     <Filter Include="scene\3.play\farm\farmhouse">
       <UniqueIdentifier>{4bc4501e-3439-4abf-91c0-0ac270f3e0c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene\3.play\pelican-town\joja-mart">
+      <UniqueIdentifier>{b87a6eca-ab29-4ff3-9d37-56c3384d77c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBTitleScene.cpp">
       <Filter>scene\1.title</Filter>
     </ClCompile>
     <ClCompile Include="WBJojaMartScene.cpp">
-      <Filter>scene\3.play\joja-mart</Filter>
+      <Filter>scene\3.play\pelican-town\joja-mart</Filter>
     </ClCompile>
     <ClCompile Include="WBIntroScene.cpp">
       <Filter>scene\2.Intro</Filter>

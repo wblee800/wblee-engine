@@ -30,6 +30,7 @@ namespace wb
 			Equipment,
 			Animal,
 			NPC,
+			Monster,
 			Player,
 			ObjectOnPlayer,
 			Particle,

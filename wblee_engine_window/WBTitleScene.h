@@ -3,6 +3,7 @@
 
 namespace wb
 {
+	class WBGameObject;
 	class WBTitleScene : public WBScene
 	{
 	public:
@@ -18,6 +19,6 @@ namespace wb
 		void OnExit() override;
 
 	private:
-
+		WBGameObject* mCamera;
 	};
 }

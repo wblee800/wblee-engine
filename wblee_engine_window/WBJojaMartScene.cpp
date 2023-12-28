@@ -43,7 +43,21 @@ namespace wb
 		mapSr->SetTexture(mapTexture);
 		mapSr->SetSize(Vector2(4.0f, 3.9f));
 
-		// _______________________________________________________
+		// CEO of Joja Mart
+		WBGameObject* ceo = object::Instantiate<WBGameObject>
+			(enums::eLayerType::NPC, Vector2(1458.0f, 813.0f));
+		WBSpriteRenderer* ceoSr = ceo->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* ceoTexture = WBResources::Find<graphics::WBTexture>(L"CEO_Of_Joja_Mart");
+		ceoSr->SetTexture(ceoTexture);
+
+		// Employee of Joja Mart
+		WBGameObject* employee = object::Instantiate<WBGameObject>
+			(enums::eLayerType::NPC, Vector2(757.0f, 767.0f));
+		WBSpriteRenderer* employeeSr = employee->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* employeeTexture = WBResources::Find<graphics::WBTexture>(L"Employee_Of_Joja_Mart");
+		employeeSr->SetTexture(employeeTexture);
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
