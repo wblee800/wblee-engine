@@ -29,6 +29,7 @@ namespace wb
 			Building,
 			Equipment,
 			Animal,
+			NPC,
 			Player,
 			ObjectOnPlayer,
 			Particle,

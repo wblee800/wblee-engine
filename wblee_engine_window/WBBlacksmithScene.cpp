@@ -36,19 +36,19 @@ namespace wb
 		// Before loading a game object, load resources.
 		// BlacksmithScene Map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(121.5f, 99.5f));
+			(enums::eLayerType::Map, Vector2(-660.0f, -380.0f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Blacksmith");
 		mapSr->SetTexture(mapTexture);
-		mapSr->SetSize(Vector2(1.5f, 1.5f));
+		// mapSr->SetSize(Vector2(1.5f, 1.5f));
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(1.0f, 1.0f));
-		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(395.0f, 970.0f));
+		mPlayer->GetComponent<WBTransform>()->SetPosition(Vector2(0.0, 0.0f));
 
 		// Set textures of player
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
@@ -59,9 +59,6 @@ namespace wb
 		graphics::WBTexture* playerPickaxeLeftTexture = WBResources::Find<graphics::WBTexture>(L"Player_Pickaxe_Left");
 		graphics::WBTexture* playerIsExhaustedTexture = WBResources::Find<graphics::WBTexture>(L"Player_Is_Exhausted");
 		WBAnimator* playerAnimator = mPlayer->AddComponent<WBAnimator>();
-
-		// Set a camera target
-		renderer::mainCamera->SetTarget(mPlayer);
 
 		// Player idle
 		playerAnimator->CreateAnimation(L"PlayerIdleRight", playerTexture,

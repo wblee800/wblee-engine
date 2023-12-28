@@ -20,6 +20,7 @@ namespace wb
 {
 	WBSkullCavernEntranceScene::WBSkullCavernEntranceScene()
 		:mPlayer(nullptr)
+		, mCamera(nullptr)
 	{
 	}
 
@@ -34,13 +35,21 @@ namespace wb
 		renderer::mainCamera = mCamera->AddComponent<WBCamera>();
 
 		// Before loading a game object, load resources.
-		// Pelican Town map
+		// Skull Cavern Entrance map
 		WBGameObject* map = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Map, Vector2(-648.f, -380.5f));
+			(enums::eLayerType::Map, Vector2(-648.f, -378.5f));
 		WBSpriteRenderer* mapSr = map->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Skull_Cavern_Entrance");
 		mapSr->SetTexture(mapTexture);
+
+		// Skull Cavern Entrance map
+		WBGameObject* ceiling = object::Instantiate<WBGameObject>
+			(enums::eLayerType::ObjectOnPlayer, Vector2(67.0f, 155.0f));
+		WBSpriteRenderer* ceilingSr = ceiling->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* ceilingTexture = WBResources::Find<graphics::WBTexture>(L"Skull_Cavern_Entrance_Ceiling");
+		ceilingSr->SetTexture(ceilingTexture);
 
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
@@ -215,6 +224,13 @@ namespace wb
 
 	void WBSkullCavernEntranceScene::Render(HDC hdc)
 	{
+		HBRUSH blackBrush = CreateSolidBrush(RGB(3, 1, 3));
+		HBRUSH originBrush = (HBRUSH)SelectObject(hdc, blackBrush);
+		Rectangle(hdc, -1, -1, 1281, 721);
+
+		SelectObject(hdc, originBrush);
+		DeleteObject(blackBrush);
+
 		WBScene::Render(hdc);
 
 		/*wchar_t str[12] = L"Title Scene";
@@ -223,6 +239,7 @@ namespace wb
 
 	void WBSkullCavernEntranceScene::OnEnter()
 	{
+		renderer::mainCamera = mCamera->GetComponent<WBCamera>();
 	}
 
 	void WBSkullCavernEntranceScene::OnExit()
