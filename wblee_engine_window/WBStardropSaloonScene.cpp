@@ -37,6 +37,18 @@ namespace wb
 		mapSr->SetTexture(mapTexture);
 		mapSr->SetSize(Vector2(4.0f, 4.0f));
 
+		// Owner of Stardrop Saloon
+		WBGameObject* owner = object::Instantiate<WBGameObject>(enums::eLayerType::NPC, Vector2(850.0f, 294.0f));
+
+		graphics::WBTexture* ownerTexture = WBResources::Find<graphics::WBTexture>(L"Owner_Of_Stardrop_Saloon");
+		WBAnimator* ownerAnimator = owner->AddComponent<WBAnimator>();
+
+		// Owner of Stardrop Saloon dry a cup
+		ownerAnimator->CreateAnimation(L"OwnerDryACup", ownerTexture,
+			Vector2(0.0f, 0.0f), Vector2(60.0f, 108.0f), Vector2::Zero, 3, 0.5f);
+
+		ownerAnimator->PlayAnimation(L"OwnerDryACup");
+
 		// Player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(929.0f, 760.0f));
 		mPlayer->AddComponent<WBPlayerScript>();

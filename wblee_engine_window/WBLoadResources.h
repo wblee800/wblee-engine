@@ -21,8 +21,8 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Standard_Farm_Down", L"..\\resources\\sprites\\maps\\Standard_Farm_Down.png");
 		WBResources::Load<graphics::WBTexture>(L"Farmhouse", L"..\\resources\\sprites\\maps\\Farmhouse.png");
 		WBResources::Load<graphics::WBTexture>(L"Bed_In_Farmhouse", L"..\\resources\\sprites\\maps\\Bed_In_Farmhouse.png");
-		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.bmp");
-		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Shop_Of_Carpenter", L"..\\resources\\sprites\\maps\\Shop_Of_Carpenter.png");
+		WBResources::Load<graphics::WBTexture>(L"Ranch_Of_Marnie", L"..\\resources\\sprites\\maps\\Ranch_Of_Marnie.png");
 		WBResources::Load<graphics::WBTexture>(L"Secret_Woods", L"..\\resources\\sprites\\maps\\Secret_Woods.bmp");
 
 		// Sewer
@@ -50,6 +50,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Theater_Screen", L"..\\resources\\sprites\\maps\\Theater_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Blacksmith", L"..\\resources\\sprites\\maps\\Blacksmith.png");
 		WBResources::Load<graphics::WBTexture>(L"Stardrop_Saloon", L"..\\resources\\sprites\\maps\\Stardrop_Saloon.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Owner_Of_Stardrop_Saloon", L"..\\resources\\sprites\\characters\\npcs\\Owner_Of_Stardrop_Saloon.png");
 
 		// Beach
 		WBResources::Load<graphics::WBTexture>(L"Beach", L"..\\resources\\sprites\\maps\\Beach.bmp");

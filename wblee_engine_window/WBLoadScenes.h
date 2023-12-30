@@ -24,6 +24,7 @@
 #include "WBSecretWoodsScene.h"
 #include "WBFarmhouseScene.h"
 #include "WBRestoredCommunityCenterScene.h"
+#include "WBIntroScene.h"
 
 namespace wb
 {
@@ -34,6 +35,9 @@ namespace wb
 
 		// ----Title Scene----
 		WBSceneManager::CreateScene<WBTitleScene>(L"TitleScene");
+
+		// ----Intro Scene----
+		WBSceneManager::CreateScene<WBIntroScene>(L"IntroScene");
 
 		// ----Play Scene----
 		// Farm
