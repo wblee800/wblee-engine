@@ -4,7 +4,6 @@
     <ClInclude Include="WBLoadScenes.h">
       <Filter>scene</Filter>
     </ClInclude>
-    <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBTitleScene.h">
       <Filter>scene\1.title</Filter>
     </ClInclude>
@@ -92,6 +91,10 @@
     <ClInclude Include="WBRestoredCommunityCenterScene.h">
       <Filter>scene\3.play\pelican-town\community-center</Filter>
     </ClInclude>
+    <ClInclude Include="WBLoadingTitleScene.h">
+      <Filter>scene\1.title</Filter>
+    </ClInclude>
+    <ClInclude Include="WBLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="content">
@@ -299,6 +302,9 @@
     </ClCompile>
     <ClCompile Include="WBRestoredCommunityCenterScene.cpp">
       <Filter>scene\3.play\pelican-town\community-center</Filter>
+    </ClCompile>
+    <ClCompile Include="WBLoadingTitleScene.cpp">
+      <Filter>scene\1.title</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

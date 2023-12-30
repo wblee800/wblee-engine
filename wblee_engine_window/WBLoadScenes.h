@@ -25,6 +25,7 @@
 #include "WBFarmhouseScene.h"
 #include "WBRestoredCommunityCenterScene.h"
 #include "WBIntroScene.h"
+#include "WBLoadingTitleScene.h"
 
 namespace wb
 {
@@ -32,6 +33,9 @@ namespace wb
 	{
 		// ----Tool Scene----
 		WBSceneManager::CreateScene<WBToolScene>(L"ToolScene");
+
+		// ----Loading Title Scene----
+		WBSceneManager::CreateScene<WBLoadingTitleScene>(L"LoadingTitleScene");
 
 		// ----Title Scene----
 		WBSceneManager::CreateScene<WBTitleScene>(L"TitleScene");
@@ -73,6 +77,6 @@ namespace wb
 		// ----Ending Scene----
 		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
 
-		WBSceneManager::LoadScene(L"TitleScene");
+		WBSceneManager::LoadScene(L"LoadingTitleScene");
 	}
 }

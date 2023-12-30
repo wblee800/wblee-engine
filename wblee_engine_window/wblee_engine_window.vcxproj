@@ -30,6 +30,7 @@
     <ClInclude Include="WBFarmUpScene.h" />
     <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
     <ClInclude Include="WBIntroScene.h" />
+    <ClInclude Include="WBLoadingTitleScene.h" />
     <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBLoadScenes.h" />
     <ClInclude Include="WBPelicanTownScene.h" />
@@ -63,6 +64,7 @@
     <ClCompile Include="WBFarmUpScene.cpp" />
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
     <ClCompile Include="WBIntroScene.cpp" />
+    <ClCompile Include="WBLoadingTitleScene.cpp" />
     <ClCompile Include="WBPelicanTownScene.cpp" />
     <ClCompile Include="WBPlayer.cpp" />
     <ClCompile Include="WBPlayerScript.cpp" />

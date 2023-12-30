@@ -6,11 +6,25 @@ namespace wb
 {
 	void LoadResources()
 	{
+		// ____Loading Title----
+		WBResources::Load<graphics::WBTexture>(L"Emoji_Of_Creator", L"..\\resources\\sprites\\miscellaneous\\Emoji_Of_Creator.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Nickname_Of_Creator", L"..\\resources\\sprites\\miscellaneous\\Nickname_Of_Creator.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Emoji_Of_Modifier", L"..\\resources\\sprites\\miscellaneous\\Emoji_Of_Modifier.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Name_Of_Modifier", L"..\\resources\\sprites\\miscellaneous\\Name_Of_Modifier.bmp");
+
 		// ----Title----
 		WBResources::Load<graphics::WBTexture>(L"Title", L"..\\resources\\sprites\\miscellaneous\\Title_Screen.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Cloudy_Night_Ocean", L"..\\resources\\sprites\\miscellaneous\\Cloudy_Night_Ocean.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Sea_Monster", L"..\\resources\\sprites\\characters\\monsters\\Sea_Monster.png");
 		WBResources::Load<graphics::WBTexture>(L"Logo", L"..\\resources\\sprites\\miscellaneous\\Logo.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_New", L"..\\resources\\sprites\\miscellaneous\\Title_Button_New.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_New_On_Click", L"..\\resources\\sprites\\miscellaneous\\Title_Button_New_On_Click.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_Load", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Load.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_Load_On_Click", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Load_On_Click.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_Exit", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Exit.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_Exit_On_Click", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Exit_On_Click.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Button_Back", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Back.bmp");
+		WBResources::Load<graphics::WBTexture>(L"Title_Buttons_Back_On_Click", L"..\\resources\\sprites\\miscellaneous\\Title_Buttons_Back_On_Click.bmp");
 
 		// ----Tile Maps----
 		

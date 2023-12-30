@@ -24,6 +24,7 @@ namespace wb
 		{
 			None,
 			Background,
+			Title,
 			Tile,
 			Map,
 			Building,

@@ -46,12 +46,39 @@ namespace wb
 
 		// Title Logo
 		WBGameObject* title = object::Instantiate<WBGameObject>
-			(enums::eLayerType::Tile, Vector2(600.0f, 200.0f));
+			(enums::eLayerType::Title, Vector2(600.0f, 200.0f));
 		WBSpriteRenderer* titleSr = title->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* titleTex = WBResources::Find<graphics::WBTexture>(L"Logo");
 		titleSr->SetTexture(titleTex);
 		titleSr->SetSize(Vector2(1.8f, 1.8f));
+
+		// New button
+		WBGameObject* newBtn = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Title, Vector2(660.0f, 560.0f));
+		WBSpriteRenderer* newBtnSr = newBtn->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* newBtnTex = WBResources::Find<graphics::WBTexture>(L"Title_Button_New");
+		newBtnSr->SetTexture(newBtnTex);
+		newBtnSr->SetSize(Vector2(2.5f, 2.5f));
+
+		// Load button
+		WBGameObject* loadBtn = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Title, Vector2(870.0f, 560.0f));
+		WBSpriteRenderer* loadBtnSr = loadBtn->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* loadBtnTex = WBResources::Find<graphics::WBTexture>(L"Title_Button_Load");
+		loadBtnSr->SetTexture(loadBtnTex);
+		loadBtnSr->SetSize(Vector2(2.5f, 2.5f));
+
+		// Exit button
+		WBGameObject* exitBtn = object::Instantiate<WBGameObject>
+			(enums::eLayerType::Title, Vector2(1080.0f, 560.0f));
+		WBSpriteRenderer* exitBtnSr = exitBtn->AddComponent<WBSpriteRenderer>();
+
+		graphics::WBTexture* exitBtnTex = WBResources::Find<graphics::WBTexture>(L"Title_Button_Exit");
+		exitBtnSr->SetTexture(exitBtnTex);
+		exitBtnSr->SetSize(Vector2(2.5f, 2.5f));
 
 		// Sea Monster 1
 		WBGameObject* seaMonster1 = object::Instantiate<WBGameObject>
