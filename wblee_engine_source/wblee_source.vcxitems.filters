@@ -73,6 +73,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCircleCollider2D.cpp">
       <Filter>component\collider</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp">
+      <Filter>component\collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -154,6 +157,9 @@
       <Filter>component\collider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.h">
+      <Filter>component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBCollisionManager.h">
       <Filter>component\collider</Filter>
     </ClInclude>
   </ItemGroup>

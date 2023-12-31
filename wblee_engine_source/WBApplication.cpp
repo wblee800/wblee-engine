@@ -3,6 +3,7 @@
 #include "WBTime.h"
 #include "WBScene.h"
 #include "WBSceneManager.h"
+#include "WBCollisionManager.h"
 
 namespace wb
 {
@@ -30,6 +31,7 @@ namespace wb
 		createBuffer(width, height);
 		initializeEtc();
 
+		WBCollisionManager::Initialize();
 		WBSceneManager::Initialize();
 	}
 
@@ -47,11 +49,13 @@ namespace wb
 		WBInput::Update();
 		WBTime::Update();
 
+		WBCollisionManager::Update();
 		WBSceneManager::Update();
 	}
 
 	void WBApplication::LateUpdate()
 	{
+		WBCollisionManager::LateUpdate();
 		WBSceneManager::LateUpdate();
 	}
 
@@ -61,6 +65,7 @@ namespace wb
 		clearRenderTarget();
 
 		WBTime::Render(mBackHdc);
+		WBCollisionManager::Render(mBackHdc);
 		WBSceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);

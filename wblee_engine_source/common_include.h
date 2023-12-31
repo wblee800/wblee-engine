@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <string>
 #include <map>
+#include <bitset>
 
 #include "WBMath.h"
 #include "WBEnum.h"
@@ -15,8 +16,7 @@
 #pragma comment(lib, "Msimg32.lib")
 
 // winmm.lib :
-// 오디오 및 비디오와 같은 멀티미디어 기능을 사용하기 위한 
-// 함수와 리소스를 제공
+// 오디오 및 비디오와 같은 멀티미디어 기능을 사용하기 위한 함수와 리소스를 제공
 #pragma comment(lib, "winmm.lib")
 
 #include <objidl.h>

@@ -68,7 +68,7 @@ namespace wb
 		WBSpriteRenderer* loadBtnSr = loadBtn->AddComponent<WBSpriteRenderer>();
 
 		graphics::WBTexture* loadBtnTex = WBResources::Find<graphics::WBTexture>(L"Title_Button_Load");
-		loadBtnSr->SetTexture(loadBtnTex);
+		   loadBtnSr->SetTexture(loadBtnTex);
 		loadBtnSr->SetSize(Vector2(2.5f, 2.5f));
 
 		// Exit button
