@@ -4,7 +4,7 @@
 namespace wb
 {
 	class WBScene;
-
+	class WBGameObject;
 	class WBSceneManager
 	{
 	public:
@@ -23,6 +23,7 @@ namespace wb
 
 		static WBScene* LoadScene(const std::wstring& name);
 		static WBScene* GetActiveScene() { return mActiveScene; }
+		static std::vector<WBGameObject*> GetGameObjects(enums::eLayerType layer);
 
 		static void Initialize();
 		static void Update();

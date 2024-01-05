@@ -17,6 +17,7 @@ namespace wb
 		virtual void Render(HDC hdc);
 
 		void AddGameObject(WBGameObject* gameObject);
+		const std::vector<WBGameObject*> GetGameObjects() { return mGameObjects; }
 
 	private:
 		std::vector<WBGameObject*> mGameObjects;

@@ -9,6 +9,14 @@ namespace wb
 	class WBGameObject
 	{
 	public:
+		enum class eState
+		{
+			Active,
+			Paused,
+			Dead,
+			End
+		};
+
 		WBGameObject();
 		~WBGameObject();
 
@@ -45,10 +53,14 @@ namespace wb
 			return component;
 		}
 
+		eState GetState() { return mState; }
+		bool IsActive() { return mState == eState::Active;  }
+
 	private:
 		void initializeTransform();
 
 	private:
+		eState mState;
 		std::vector<WBComponent*> mComponents;
 	};
 }

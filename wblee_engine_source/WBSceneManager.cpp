@@ -1,5 +1,6 @@
 #include "WBSceneManager.h"
 #include "WBScene.h"
+#include "WBLayer.h"
 
 namespace wb
 {
@@ -21,6 +22,14 @@ namespace wb
 		mActiveScene->OnEnter();
 
 		return itr->second;
+	}
+
+	std::vector<WBGameObject*> WBSceneManager::GetGameObjects(enums::eLayerType layer)
+	{
+		std::vector<WBGameObject*> gameObjects
+			= mActiveScene->GetLayer(layer)->GetGameObjects();
+
+		return gameObjects;
 	}
 
 	void wb::WBSceneManager::Initialize()

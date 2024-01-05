@@ -4,7 +4,8 @@ namespace wb
 {
 	WBCollider::WBCollider()
 		: WBComponent(enums::eComponentType::Collider),
-		mOffset(math::Vector2::Zero)
+		mOffset(math::Vector2::Zero),
+		mID(CollisionID++)
 	{
 	}
 
