@@ -1,44 +1,78 @@
 #include "WBSceneManager.h"
-#include "WBScene.h"
+#include "WBDontDestroyOnLoad.h"
+#include "WBLayer.h"
 
 namespace wb
 {
 	std::map<const std::wstring, WBScene*> WBSceneManager::mScene = {};
 	WBScene* WBSceneManager::mActiveScene = nullptr;
+	WBScene* WBSceneManager::mDontDestroyOnLoad = nullptr;
 
 	WBScene* WBSceneManager::LoadScene(const std::wstring& name)
 	{
 		if (mActiveScene)
 			mActiveScene->OnExit();
 
-		std::map<const std::wstring, WBScene*>::iterator itr
+		std::map<std::wstring, WBScene*>::iterator iter
 			= mScene.find(name);
 
-		if (itr == mScene.end())
+		if (iter == mScene.end())
 			return nullptr;
 
-		mActiveScene = itr->second;
+		mActiveScene = iter->second;
 		mActiveScene->OnEnter();
 
-		return itr->second;
+		return iter->second;
 	}
 
-	void wb::WBSceneManager::Initialize()
+	std::vector<WBGameObject*> WBSceneManager::GetGameObjects(enums::eLayerType layer)
 	{
+		std::vector<WBGameObject*> gameObjects
+			= mActiveScene->GetLayer(layer)->GetGameObjects();
+		std::vector<WBGameObject*> dontDestroyOnLoad
+			= mDontDestroyOnLoad->GetLayer(layer)->GetGameObjects();
+
+		gameObjects.insert(gameObjects.end()
+			, dontDestroyOnLoad.begin(), dontDestroyOnLoad.end());
+
+		return gameObjects;
 	}
 
-	void wb::WBSceneManager::Update()
+	void WBSceneManager::Initialize()
+	{
+		mDontDestroyOnLoad = CreateScene<WBDontDestroyOnLoad>(L"DontDestroyOnLoad");
+	}
+
+	void WBSceneManager::Update()
 	{
 		mActiveScene->Update();
+		mDontDestroyOnLoad->Update();
 	}
 
-	void wb::WBSceneManager::LateUpdate()
+	void WBSceneManager::LateUpdate()
 	{
 		mActiveScene->LateUpdate();
+		mDontDestroyOnLoad->LateUpdate();
 	}
 
-	void wb::WBSceneManager::Render(HDC hdc)
+	void WBSceneManager::Render(HDC hdc)
 	{
 		mActiveScene->Render(hdc);
+		mDontDestroyOnLoad->Render(hdc);
+	}
+
+	void WBSceneManager::Destroy()
+	{
+		mActiveScene->Destroy();
+		mDontDestroyOnLoad->Destroy();
+	}
+
+	void WBSceneManager::Release()
+	{
+		for (auto& iter : mScene)
+		{
+			delete iter.second;
+			iter.second = nullptr;
+		}
 	}
 }

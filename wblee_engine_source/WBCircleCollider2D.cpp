@@ -3,7 +3,8 @@
 namespace wb
 {
 	WBCircleCollider2D::WBCircleCollider2D()
-		:mSize(math::Vector2::One)
+		: WBCollider(enums::eColliderType::Circle2D)
+		, mSize(math::Vector2::One)
 	{
 	}
 	WBCircleCollider2D::~WBCircleCollider2D()

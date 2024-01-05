@@ -16,11 +16,13 @@ namespace wb
 		virtual void Update();
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
+		virtual void Destroy();
 
 		virtual void OnEnter();
 		virtual void OnExit();
 
 		void AddGameObject(WBGameObject* gameObj, const enums::eLayerType layerType);
+		void EraseGameObject(WBGameObject* gameObj);
 		WBLayer* GetLayer(enums::eLayerType layerType) { return mLayers[(UINT)layerType]; }
 
 	private:

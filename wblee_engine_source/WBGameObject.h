@@ -9,6 +9,14 @@ namespace wb
 	class WBGameObject
 	{
 	public:
+		enum class eState
+		{
+			Active,
+			Paused,
+			Dead,
+			End
+		};
+
 		WBGameObject();
 		~WBGameObject();
 
@@ -45,10 +53,23 @@ namespace wb
 			return component;
 		}
 
+		eState GetState() { return mState; }
+		void SetActive(bool power)
+		{
+			if (power == true) mState = eState::Active;
+			if (power == false) mState = eState::Paused;
+		}
+		bool IsActive() { return mState == eState::Active; }
+		bool IsDead() { return mState == eState::Dead; }
+		void SetLayerType(enums::eLayerType layerType) { mLayerType = layerType; }
+		enums::eLayerType GetLayerType() { return mLayerType; }
+
 	private:
 		void initializeTransform();
 
 	private:
+		eState mState;
 		std::vector<WBComponent*> mComponents;
+		enums::eLayerType mLayerType;
 	};
 }

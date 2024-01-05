@@ -7,7 +7,8 @@
 namespace wb
 {
 	WBBoxCollider2D::WBBoxCollider2D()
-		:mSize(math::Vector2::One)
+		: WBCollider(enums::eColliderType::Rect2D)
+		, mSize(math::Vector2::One)
 	{
 	}
 

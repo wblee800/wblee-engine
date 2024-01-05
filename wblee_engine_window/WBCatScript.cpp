@@ -73,6 +73,28 @@ namespace wb
 		}
 	}
 
+	void WBCatScript::move()
+	{
+		mTime += WBTime::DeltaTime();
+		if (mTime > 2.0f)
+		{
+			int isLayDown = rand() % 2;
+			if (isLayDown)
+			{
+				mState = eState::LayDown;
+				mAnimator->PlayAnimation(L"LayDown", false);
+			}
+			else
+			{
+				mState = eState::SitDown;
+				mAnimator->PlayAnimation(L"SitDown", false);
+			}
+		}
+
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		translate(tr);
+	}
+
 	void WBCatScript::playMoveAnimationByDirection(eDirection direction)
 	{
 		switch (direction)
@@ -94,6 +116,30 @@ namespace wb
 		}
 
 		mState = eState::SitDown;
+	}
+
+	void WBCatScript::translate(WBTransform* tr)
+	{
+		Vector2 pos = tr->GetPosition();
+		switch (mDirection)
+		{
+		case eDirection::Left:
+			pos.x -= 100.0f * WBTime::DeltaTime();
+			break;
+		case eDirection::Right:
+			pos.x += 100.0f * WBTime::DeltaTime();
+			break;
+		case eDirection::Down:
+			pos.y += 100.0f * WBTime::DeltaTime();
+			break;
+		case eDirection::Up:
+			pos.y -= 100.0f * WBTime::DeltaTime();
+			break;
+		default:
+			assert(false);
+			break;
+		}
+		tr->SetPosition(pos);
 	}
 
 	void WBCatScript::groom()
