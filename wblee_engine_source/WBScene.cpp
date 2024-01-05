@@ -1,7 +1,6 @@
 #include "WBScene.h"
 #include "WBGameObject.h"
 #include "WBLayer.h"
-#include "WBCollisionManager.h"
 
 namespace wb
 {
@@ -52,26 +51,19 @@ namespace wb
 		}
 	}
 
-	void WBScene::Destroy()
+	void WBScene::OnEnter()
 	{
-		for (WBLayer* layer : mLayers)
-		{
-			if (layer == nullptr)
-				continue;
 
-			layer->Destroy();
-		}
+	}
+
+	void WBScene::OnExit()
+	{
+
 	}
 
 	void WBScene::AddGameObject(WBGameObject * gameObj, const enums::eLayerType layerType)
 	{
 		mLayers[(UINT)layerType]->AddGameObject(gameObj);
-	}
-
-	void WBScene::EraseGameObject(WBGameObject* gameObj)
-	{
-		enums::eLayerType layerType = gameObj->GetLayerType();
-		mLayers[(UINT)layerType]->EraseGameObject(gameObj);
 	}
 
 	void WBScene::createLayers()
@@ -81,15 +73,5 @@ namespace wb
 		{
 			mLayers[i] = new WBLayer;
 		}
-	}
-
-	void WBScene::OnEnter()
-	{
-
-	}
-
-	void WBScene::OnExit()
-	{
-		WBCollisionManager::Clear();
 	}
 }

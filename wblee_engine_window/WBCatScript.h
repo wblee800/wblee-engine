@@ -4,7 +4,6 @@
 namespace wb
 {
 	class WBAnimator;
-	class WBTransform;
 	class WBCatScript : public WBScript
 	{
 	public:
@@ -35,9 +34,6 @@ namespace wb
 
 	private:
 		void sitDown();
-		void move();
-		void translate(WBTransform* tr);
-
 		void playMoveAnimationByDirection(eDirection direction);
 		void groom();
 		void layDown();

@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <string>
 #include <map>
-#include <unordered_map>
 #include <bitset>
 
 #include "WBMath.h"

@@ -14,7 +14,7 @@
       <Filter>scene</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp">
-      <Filter>scene\window-settings</Filter>
+      <Filter>window-settings</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp">
       <Filter>helper</Filter>
@@ -76,9 +76,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp">
       <Filter>component\collider</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBDontDestroyOnLoad.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -97,7 +94,7 @@
       <Filter>scene</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h">
-      <Filter>scene\window-settings</Filter>
+      <Filter>window-settings</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h">
       <Filter>helper</Filter>
@@ -165,9 +162,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollisionManager.h">
       <Filter>component\collider</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBDontDestroyOnLoad.h">
-      <Filter>scene</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -184,6 +178,9 @@
     </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{4db5d664-3afc-4cf7-b5a4-d886eff61962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window-settings">
+      <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{f2ebb5a7-52af-4ba0-a60b-b5584a88d756}</UniqueIdentifier>
@@ -220,9 +217,6 @@
     </Filter>
     <Filter Include="component\collider">
       <UniqueIdentifier>{4e62b856-4c29-445a-bff9-1d0e683dde25}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\window-settings">
-      <UniqueIdentifier>{775d9d51-9427-43fa-a474-b4863f3817e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

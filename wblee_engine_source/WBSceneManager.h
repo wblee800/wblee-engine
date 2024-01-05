@@ -5,7 +5,6 @@ namespace wb
 {
 	class WBScene;
 
-	class WBGameObject;
 	class WBSceneManager
 	{
 	public:
@@ -24,19 +23,14 @@ namespace wb
 
 		static WBScene* LoadScene(const std::wstring& name);
 		static WBScene* GetActiveScene() { return mActiveScene; }
-		static std::vector<WBGameObject*> GetGameObjects(enums::eLayerType layer);
 
 		static void Initialize();
 		static void Update();
 		static void LateUpdate();
 		static void Render(HDC hdc);
 
-		static void Destroy();
-		static void Release();
-
 	private:
 		static std::map<const std::wstring, WBScene*> mScene;
 		static WBScene* mActiveScene;
-		static WBScene* mDontDestroyOnLoad;
 	};
 }

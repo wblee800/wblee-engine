@@ -17,7 +17,6 @@
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
-#include "..\\wblee_engine_source\\WBBoxCollider2D.h"
 
 namespace wb
 {
@@ -45,32 +44,10 @@ namespace wb
 
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm_Up");
 		mapSr->SetTexture(mapTexture);
-				
-		// Instantiate a cat
-		mCat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
-		mCat->AddComponent<WBCatScript>();
-		WBBoxCollider2D* catBoxCollider2D = mCat->AddComponent<WBBoxCollider2D>();
-		WBAnimator* catAnimator = mCat->AddComponent<WBAnimator>();
 
-		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
-		catAnimator->CreateAnimation(L"CatMoveDown", catTexture, 
-			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatMoveRight", catTexture, 
-			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatMoveUp", catTexture, 
-			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatMoveLeft", catTexture, 
-			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatSitDown", catTexture, 
-			Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatGroom", catTexture, 
-			Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
-		catAnimator->CreateAnimation(L"CatSleep", catTexture, 
-			Vector2(0.0f, 224.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 1.0f);
+		// _______________________________________________________
 
-		catAnimator->PlayAnimation(L"CatSitDown", false);
-
-		// Instantiate a player
+		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
 
@@ -214,6 +191,43 @@ namespace wb
 					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 5, 0.05f);*/
 
 		playerAnimator->PlayAnimation(L"PlayerIdleDown", false);
+
+		// _______________________________________________________
+
+		// Cat
+		mCat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
+
+		mCat->AddComponent<WBCatScript>();
+		WBAnimator* catAnimator = mCat->AddComponent<WBAnimator>();
+		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+
+		// Cat move
+		catAnimator->CreateAnimation(L"CatMoveDown", catTexture,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveRight", catTexture,
+			Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveUp", catTexture,
+			Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"CatMoveLeft", catTexture,
+			Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat sit down
+		catAnimator->CreateAnimation(L"CatSitDown", catTexture,
+			Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat groom
+		catAnimator->CreateAnimation(L"CatGroom", catTexture,
+			Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat lay down
+		catAnimator->CreateAnimation(L"CatLayDown", catTexture,
+			Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		// Cat sleep
+		catAnimator->CreateAnimation(L"CatSleep", catTexture,
+			Vector2(0.0f, 224.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		catAnimator->PlayAnimation(L"CatSitDown", false);
 
 		// _______________________________________________________
 

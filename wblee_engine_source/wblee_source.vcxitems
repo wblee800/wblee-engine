@@ -25,7 +25,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEnum.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h" />
@@ -55,7 +54,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
