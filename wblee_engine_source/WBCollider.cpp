@@ -2,10 +2,13 @@
 
 namespace wb
 {
+	UINT32 WBCollider::CollisionID = 1;
+
 	WBCollider::WBCollider()
 		: WBComponent(enums::eComponentType::Collider),
 		mOffset(math::Vector2::Zero),
-		mID(CollisionID++)
+		mID(CollisionID++),
+		mSize(math::Vector2::One)
 	{
 	}
 
@@ -26,6 +29,18 @@ namespace wb
 	}
 
 	void WBCollider::Render(HDC hdc)
+	{
+	}
+
+	void WBCollider::OnCollisionEnter(WBCollider* other)
+	{
+	}
+
+	void WBCollider::OnCollisionStay(WBCollider* other)
+	{
+	}
+
+	void WBCollider::OnCollisionExit(WBCollider* other)
 	{
 	}
 }

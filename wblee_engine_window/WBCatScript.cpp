@@ -1,119 +1,146 @@
 #include "WBCatScript.h"
-#include "../wblee_engine_source/WBInput.h"
-#include "../wblee_engine_source/WBTransform.h"
-#include "../wblee_engine_source/WBTime.h"
-#include "../wblee_engine_source/WBGameObject.h"
-#include "../wblee_engine_source/WBAnimator.h"
+#include "WBInput.h"
+#include "WBTransform.h"
+#include "WBTime.h"
+#include "WBGameObject.h"
+#include "WBAnimator.h"
+#include "WBObject.h"
 
 namespace wb
 {
 	WBCatScript::WBCatScript()
-		:mState(eState::SitDown)
+		: mState(WBCatScript::eState::SitDown)
 		, mAnimator(nullptr)
-		, mDirection()
 		, mTime(0.0f)
 	{
 	}
-
 	WBCatScript::~WBCatScript()
 	{
 	}
-
 	void WBCatScript::Initialize()
 	{
-	}
 
+
+	}
 	void WBCatScript::Update()
 	{
 		if (mAnimator == nullptr)
-			mAnimator = GetOwner()->AddComponent<WBAnimator>();
-
+			mAnimator = GetOwner()->GetComponent<WBAnimator>();
+		
 		switch (mState)
 		{
-		case eState::SitDown:
+		case wb::WBCatScript::eState::SitDown:
 			sitDown();
 			break;
-		case eState::Move:
-			playMoveAnimationByDirection(mDirection);
+		case wb::WBCatScript::eState::Move:
+			move();
 			break;
-		case eState::Groom:
+		case wb::WBCatScript::eState::Groom:
 			groom();
 			break;
-		case eState::LayDown:
-			layDown();
+		case wb::WBCatScript::eState::LayDown:
 			break;
-		case eState::Sleep:
-			sleep();
+		case wb::WBCatScript::eState::Sleep:
 			break;
 		default:
 			break;
 		}
-	}
 
+	}
 	void WBCatScript::LateUpdate()
 	{
 	}
-
 	void WBCatScript::Render(HDC hdc)
 	{
 	}
 
 	void WBCatScript::sitDown()
 	{
-		mState = (eState)(rand() % 4 + 1);
 		mTime += WBTime::DeltaTime();
 
-		if (mTime > 3.0f)
-		{
-			mDirection = (eDirection)(rand() % 4);
-
-			playMoveAnimationByDirection(mDirection);
-
-			mTime = 0.0f;
-		}
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		Vector2 pos = tr->GetPosition();
 	}
 
-	void WBCatScript::playMoveAnimationByDirection(eDirection direction)
+	void WBCatScript::move()
 	{
-		switch (direction)
+		mTime += WBTime::DeltaTime();
+		if (mTime > 2.0f)
 		{
-		case eDirection::Left:
-			mAnimator->PlayAnimation(L"CatMoveLeft");
-			break;
-		case eDirection::Right:
-			mAnimator->PlayAnimation(L"CatMoveRight");
-			break;
-		case eDirection::Up:
-			mAnimator->PlayAnimation(L"CatMoveUp");
-			break;
-		case eDirection::Down:
-			mAnimator->PlayAnimation(L"CatMoveDown");
-			break;
-		default:
-			break;
+			int isLayDown = rand() % 2;
+			if (isLayDown)
+			{
+				mState = eState::LayDown;
+				mAnimator->PlayAnimation(L"LayDown", false);
+			}
+			else
+			{
+				mState = eState::SitDown;
+				mAnimator->PlayAnimation(L"SitDown", false);
+			}
 		}
 
-		mState = eState::SitDown;
-	}
-
-	void WBCatScript::groom()
-	{
-		mAnimator->PlayAnimation(L"CatGroom");
-
-		mState = eState::SitDown;
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		translate(tr);
 	}
 
 	void WBCatScript::layDown()
 	{
-		mAnimator->PlayAnimation(L"CatLayDown");
 
-		mState = eState::SitDown;
 	}
 
 	void WBCatScript::sleep()
 	{
-		mAnimator->PlayAnimation(L"CatSleep");
+	}
 
-		mState = eState::SitDown;
+	void WBCatScript::playMoveAnimationByDirection(eDirection dir)
+	{
+		switch (dir)
+		{
+		case wb::WBCatScript::eDirection::Left:
+			mAnimator->PlayAnimation(L"CatMoveLeft", true);
+			break;
+		case wb::WBCatScript::eDirection::Right:
+			mAnimator->PlayAnimation(L"CatMoveRight", true);
+			break;
+		case wb::WBCatScript::eDirection::Down:
+			mAnimator->PlayAnimation(L"CatMoveDown", true);
+			break;
+		case wb::WBCatScript::eDirection::Up:
+			mAnimator->PlayAnimation(L"CatMoveUp", true);
+			break;
+		default:
+			assert(false);
+			break;
+		}
+	}
+
+	void WBCatScript::translate(WBTransform* tr)
+	{
+		Vector2 pos = tr->GetPosition();
+		switch (mDirection)
+		{
+		case wb::WBCatScript::eDirection::Left:
+			pos.x -= 100.0f * WBTime::DeltaTime();
+			break;
+		case wb::WBCatScript::eDirection::Right:
+			pos.x += 100.0f * WBTime::DeltaTime();
+			break;
+		case wb::WBCatScript::eDirection::Down:
+			pos.y += 100.0f * WBTime::DeltaTime();
+			break;
+		case wb::WBCatScript::eDirection::Up:
+			pos.y -= 100.0f * WBTime::DeltaTime();
+			break;
+		default:
+			assert(false);
+			break;
+		}
+
+		tr->SetPosition(pos);
+	}
+
+	void WBCatScript::groom()
+	{
 	}
 }

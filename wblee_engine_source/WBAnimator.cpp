@@ -53,6 +53,7 @@ namespace wb
 	{
 		WBAnimation* animation = nullptr;
 		
+		// 현재 만들려는 애니메이션이 이미 존재하는지 확인
 		animation = FindAnimation(name);
 		// 이미 존재하는 애니메이션을 또 만드려고 한다면,
 		if (animation != nullptr)

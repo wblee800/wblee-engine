@@ -12,17 +12,21 @@ namespace wb
 
 	void WBCat::Initialize()
 	{
+		WBGameObject::Initialize();
 	}
 
 	void WBCat::Update()
 	{
+		WBGameObject::Update();
 	}
 
 	void WBCat::LateUpdate()
 	{
+		WBGameObject::LateUpdate();
 	}
 
 	void WBCat::Render(HDC hdc)
 	{
+		WBGameObject::Render(hdc);
 	}
 }

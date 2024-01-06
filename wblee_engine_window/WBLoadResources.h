@@ -77,7 +77,7 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Weapons", L"..\\resources\\sprites\\equipments\\Weapons.bmp");
 
 		// ----Animals----
-		WBResources::Load<graphics::WBTexture>(L"Cat", L"..\\resources\\sprites\\characters\\animals\\CatAlpha.bmp");
+		WBResources::Load<graphics::WBTexture>(L"CatAlpha", L"..\\resources\\sprites\\characters\\animals\\CatAlpha.bmp");
 
 		// ----Player----
 		WBResources::Load<graphics::WBTexture>(L"Player", L"..\\resources\\sprites\\characters\\players\\Player.bmp");

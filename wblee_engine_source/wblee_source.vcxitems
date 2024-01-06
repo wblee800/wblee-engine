@@ -21,7 +21,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCamera.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)WBCircleCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
@@ -50,7 +49,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCamera.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)WBCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp" />

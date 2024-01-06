@@ -14,7 +14,7 @@
       <Filter>scene\2.Intro</Filter>
     </ClInclude>
     <ClInclude Include="WBPlayer.h">
-      <Filter>content\player</Filter>
+      <Filter>character\player</Filter>
     </ClInclude>
     <ClInclude Include="WBPlayerScript.h">
       <Filter>script\player</Filter>
@@ -23,7 +23,7 @@
       <Filter>script\animal</Filter>
     </ClInclude>
     <ClInclude Include="WBCat.h">
-      <Filter>content\animal</Filter>
+      <Filter>character\animal</Filter>
     </ClInclude>
     <ClInclude Include="WBBusStopScene.h">
       <Filter>scene\3.play\bus-stop</Filter>
@@ -71,7 +71,7 @@
       <Filter>scene\0.tool</Filter>
     </ClInclude>
     <ClInclude Include="WBTile.h">
-      <Filter>content\tile</Filter>
+      <Filter>character\tile</Filter>
     </ClInclude>
     <ClInclude Include="WBStardropSaloonScene.h">
       <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>
@@ -97,26 +97,17 @@
     <ClInclude Include="WBLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="content">
-      <UniqueIdentifier>{ad699d06-0ac1-4937-bdc9-c17d3562d692}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{7b755d28-5fa6-4c72-b6e4-80b3d487aa3d}</UniqueIdentifier>
     </Filter>
     <Filter Include="script">
       <UniqueIdentifier>{36a10379-67d4-41d0-b3e6-f2c4261aa5ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="content\player">
-      <UniqueIdentifier>{e93e99cd-c5a8-48c8-ac9e-aa22d25f9bee}</UniqueIdentifier>
-    </Filter>
     <Filter Include="script\player">
       <UniqueIdentifier>{f5e202c6-a47d-46d5-9ec0-8c9eb4292e1d}</UniqueIdentifier>
     </Filter>
     <Filter Include="scene\1.title">
       <UniqueIdentifier>{fa08ed01-a435-4f16-bc81-6c88195bf54d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\2.Intro">
-      <UniqueIdentifier>{1384eee6-4fde-40bb-a766-60f940567cc4}</UniqueIdentifier>
     </Filter>
     <Filter Include="scene\3.play">
       <UniqueIdentifier>{fe760042-a663-4e07-93a7-050f501bc4c5}</UniqueIdentifier>
@@ -147,9 +138,6 @@
     </Filter>
     <Filter Include="script\animal">
       <UniqueIdentifier>{41d6d246-a158-4a12-97b1-ad71f41dfeea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="content\animal">
-      <UniqueIdentifier>{f5f27fb3-0362-4fff-acb2-7563f0587638}</UniqueIdentifier>
     </Filter>
     <Filter Include="scene\3.play\calico-desert\desert">
       <UniqueIdentifier>{4c4a5df3-3094-42a0-9092-6fc135e31166}</UniqueIdentifier>
@@ -184,9 +172,6 @@
     <Filter Include="scene\0.tool">
       <UniqueIdentifier>{9bc1ad3a-4bfe-4519-b5ec-e108250643b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="content\tile">
-      <UniqueIdentifier>{af67da6b-8c79-4533-b623-0c12257b23db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\3.play\pelican-town\stardrop-saloon">
       <UniqueIdentifier>{006e17f5-eaec-475a-9ac3-3bd8b80716bb}</UniqueIdentifier>
     </Filter>
@@ -214,6 +199,21 @@
     <Filter Include="scene\3.play\pelican-town\joja-mart">
       <UniqueIdentifier>{b87a6eca-ab29-4ff3-9d37-56c3384d77c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="character">
+      <UniqueIdentifier>{ad699d06-0ac1-4937-bdc9-c17d3562d692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="character\player">
+      <UniqueIdentifier>{e93e99cd-c5a8-48c8-ac9e-aa22d25f9bee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="character\animal">
+      <UniqueIdentifier>{f5f27fb3-0362-4fff-acb2-7563f0587638}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="character\tile">
+      <UniqueIdentifier>{af67da6b-8c79-4533-b623-0c12257b23db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\2.Intro">
+      <UniqueIdentifier>{1384eee6-4fde-40bb-a766-60f940567cc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBTitleScene.cpp">
@@ -226,7 +226,7 @@
       <Filter>scene\2.Intro</Filter>
     </ClCompile>
     <ClCompile Include="WBPlayer.cpp">
-      <Filter>content\player</Filter>
+      <Filter>character\player</Filter>
     </ClCompile>
     <ClCompile Include="WBPlayerScript.cpp">
       <Filter>script\player</Filter>
@@ -235,7 +235,7 @@
       <Filter>script\animal</Filter>
     </ClCompile>
     <ClCompile Include="WBCat.cpp">
-      <Filter>content\animal</Filter>
+      <Filter>character\animal</Filter>
     </ClCompile>
     <ClCompile Include="WBBusStopScene.cpp">
       <Filter>scene\3.play\bus-stop</Filter>
@@ -283,7 +283,7 @@
       <Filter>scene\0.tool</Filter>
     </ClCompile>
     <ClCompile Include="WBTile.cpp">
-      <Filter>content\tile</Filter>
+      <Filter>character\tile</Filter>
     </ClCompile>
     <ClCompile Include="WBStardropSaloonScene.cpp">
       <Filter>scene\3.play\pelican-town\stardrop-saloon</Filter>

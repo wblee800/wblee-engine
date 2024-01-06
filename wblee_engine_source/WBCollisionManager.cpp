@@ -90,18 +90,17 @@ namespace wb
 	// 두 충돌체가 충돌하는지 체크
 	void WBCollisionManager::ColliderCollision(WBCollider* left, WBCollider* right)
 	{
-		// 두 충돌체 번호로 가져온 ID 확인하여 CollisionID 세팅
+		// 두 충돌체 번호로 사용될 ID를 가져와서 CollisionID 세팅
 		CollisionID id = {};
 		id.left = left->GetID();
 		id.right = right->GetID();
 
 		// 이전 충돌 정보를 검색한다.
-		// 만약에 충돌정보가 없는 상태라면
-		// 충돌정보를 생성해준다.
-
+		// 만약에 충돌정보가 없는 상태라면,
 		auto iter = mCollisionMap.find(id.id);
 		if (iter == mCollisionMap.end())
 		{
+			// 충돌정보를 생성해준다.
 			mCollisionMap.insert(std::make_pair(id.id, false));
 			iter = mCollisionMap.find(id.id);
 		}
@@ -109,14 +108,15 @@ namespace wb
 		// 충돌 체크를 해준다
 		if (Intersect(left, right))
 		{
-			//최초 충돌할
+			// 최초 충돌(CollisionEnter)
 			if (iter->second == false)
 			{
 				left->OnCollisionEnter(right);
 				right->OnCollisionEnter(left);
 				iter->second = true;
 			}
-			else // 이미 충돌 중
+			// 이미 충돌 중(CollisionStay)이면,
+			else
 			{
 				left->OnCollisionStay(right);
 				right->OnCollisionStay(left);
@@ -124,7 +124,7 @@ namespace wb
 		}
 		else
 		{
-			//충돌을 하지 않은 상태
+			// 충돌을 하지 않고 있는 상태(CollisionExit)면,
 			if (iter->second == true)
 			{
 				left->OnCollisionExit(right);
@@ -133,5 +133,11 @@ namespace wb
 				iter->second = false;
 			}
 		}
+	}
+
+	// 충돌 체크 (AABB)
+	bool WBCollisionManager::Intersect(WBCollider* left, WBCollider* right)
+	{
+		return false;
 	}
 }

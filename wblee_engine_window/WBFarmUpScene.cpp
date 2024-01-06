@@ -17,6 +17,7 @@
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
+#include "..\\wblee_engine_source\\WBBoxCollider2D.h"
 
 namespace wb
 {
@@ -50,10 +51,11 @@ namespace wb
 		// Instantiate player
 		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
 		mPlayer->AddComponent<WBPlayerScript>();
+		WBBoxCollider2D* playerCollider = mPlayer->AddComponent<WBBoxCollider2D>();
+		playerCollider->SetSize(Vector2(32.0f, 32.0f));
+		playerCollider->SetOffset(Vector2(0.0f, 30.0f));
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
-
-		// renderer::mainCamera->SetTarget(mPlayer);
 
 		graphics::WBTexture* playerTexture = WBResources::Find<graphics::WBTexture>(L"Player");
 		graphics::WBTexture* playerMoveDownTexture = WBResources::Find<graphics::WBTexture>(L"Player_Move_Down");
@@ -198,8 +200,13 @@ namespace wb
 		mCat = object::Instantiate<WBCat>(enums::eLayerType::Animal);
 
 		mCat->AddComponent<WBCatScript>();
+		WBBoxCollider2D* catCollider = mCat->AddComponent<WBBoxCollider2D>();
+		catCollider->SetSize(Vector2(20.0f, 27.0f));
+		catCollider->SetOffset(Vector2(11.0f, 14.0f));
+
 		WBAnimator* catAnimator = mCat->AddComponent<WBAnimator>();
-		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"Cat");
+		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"CatAlpha");
+		mCat->GetComponent<WBTransform>()->SetScale(Vector2(1.3f, 1.3f));
 
 		// Cat move
 		catAnimator->CreateAnimation(L"CatMoveDown", catTexture,

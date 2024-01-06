@@ -3,6 +3,7 @@
 
 namespace wb
 {
+	// union(공용체) : 데이터를 나눠서 사용할 수 있게 해주는 문법
 	union CollisionID
 	{
 		struct
@@ -26,10 +27,12 @@ namespace wb
 
 		static void CollisionLayerCheck(enums::eLayerType left, enums::eLayerType right, bool enable);
 		static void LayerCollision(WBScene* scene, enums::eLayerType row, enums::eLayerType col);
-		static void ColliderCollision(WBCollider* left, WBCollider* right);
+		static void ColliderCollision(WBCollider* left, WBCollider* right);\
+		static bool Intersect(WBCollider* left, WBCollider* right);
 
 	private:
 		static std::bitset<(UINT)enums::eLayerType::Max> mCollisionLayerMatrix[(UINT)enums::eLayerType::Max];
+		// 누구와 충돌 중인지 체크
 		static std::unordered_map<UINT64, bool> mCollisionMap;
 	};
 }
