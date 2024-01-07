@@ -18,6 +18,7 @@
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
 #include "..\\wblee_engine_source\\WBBoxCollider2D.h"
+#include "..\\wblee_engine_source\\WBCollisionManager.h"
 
 namespace wb
 {
@@ -46,10 +47,11 @@ namespace wb
 		graphics::WBTexture* mapTexture = WBResources::Find<graphics::WBTexture>(L"Standard_Farm_Up");
 		mapSr->SetTexture(mapTexture);
 
-		// _______________________________________________________
+		// Check collision layers
+		WBCollisionManager::CollisionLayerCheck(enums::eLayerType::Player, enums::eLayerType::Animal, true);
 
 		// Instantiate player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player);
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(50.0f, 0.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 		WBBoxCollider2D* playerCollider = mPlayer->AddComponent<WBBoxCollider2D>();
 		playerCollider->SetSize(Vector2(32.0f, 32.0f));
