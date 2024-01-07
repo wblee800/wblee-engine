@@ -26,6 +26,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBEnum.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBFMOD.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBLayer.h" />
@@ -53,6 +54,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBEntity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBFMOD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBLayer.cpp" />

@@ -7,7 +7,9 @@
 
 namespace wb
 {
+	// bit 단위로 값을 저장하는 배열
 	std::bitset<(UINT)enums::eLayerType::Max> WBCollisionManager::mCollisionLayerMatrix[(UINT)enums::eLayerType::Max] = {};
+	// 누구와 충돌 중인지 체크
 	std::unordered_map<UINT64, bool> WBCollisionManager::mCollisionMap = {};
 
 	void WBCollisionManager::Initialize()
@@ -17,7 +19,7 @@ namespace wb
 
 	void WBCollisionManager::Update()
 	{
-		// 각각의 콜라이더들이 서로 충돌했는지 체크
+		// 어떤 레이어들이 서로 충돌하는지 체크
 		WBScene* scene = WBSceneManager::GetActiveScene();
 		for (UINT row = 0; row < (UINT)enums::eLayerType::Max; row++)
 		{
@@ -25,7 +27,7 @@ namespace wb
 			{
 				if (mCollisionLayerMatrix[row][col] == true)
 				{
-					LayerCollision(scene, (enums::eLayerType)row, (enums::eLayerType)col);
+					LayerCollision((enums::eLayerType)row, (enums::eLayerType)col);
 				}
 			}
 		}
@@ -39,12 +41,13 @@ namespace wb
 	{
 	}
 
-	// 어떤 레이어간에 충돌을 할 것인지 설정
+	// 어떤 레이어끼리 충돌할 것인지 설정한다.
 	void WBCollisionManager::CollisionLayerCheck(enums::eLayerType left, enums::eLayerType right, bool enable)
 	{
 		UINT row = 0;
 		UINT col = 0;
 
+		// a와 b가 충돌하나 b와 a가 충돌하나 같은 충돌이므로, 배열의 절반만 사용한다.
 		if (left <= right)
 		{
 			row = (UINT)left;
@@ -56,13 +59,13 @@ namespace wb
 			col = (UINT)left;
 		}
 
-		mCollisionLayerMatrix[row][col] = 1;
+		mCollisionLayerMatrix[row][col] = enable;
 	}
 
-	// 
-	void WBCollisionManager::LayerCollision(WBScene* scene, enums::eLayerType left, enums::eLayerType right)
+	// 충돌 설정한 layer의 game object들 중 충돌한 것이 있는지 판단한다.
+	void WBCollisionManager::LayerCollision(enums::eLayerType left, enums::eLayerType right)
 	{
-		// left right는 같은 오브젝트들을 가져온다.
+		// left와 right는 서로 같은 오브젝트들을 가져온다.
 		const std::vector<WBGameObject*>& lefts = WBSceneManager::GetGameObjects(left);
 		const std::vector<WBGameObject*>& rights = WBSceneManager::GetGameObjects(right);
 
@@ -82,7 +85,7 @@ namespace wb
 				WBCollider* rightCol = right->GetComponent<WBCollider>();
 				if (rightCol == nullptr)
 					continue;
-				// left와 right가 같은 경우는 같은 object이므로 비교할 필요가 없다.
+				// left = right => 똑같은 object들이므로 충돌 비교할 필요가 없다.
 				if (left == right)
 					continue;
 

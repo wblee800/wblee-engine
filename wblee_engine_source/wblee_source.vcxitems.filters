@@ -73,6 +73,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollisionManager.cpp">
       <Filter>component\collider</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBFMOD.cpp">
+      <Filter>resource\sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)common_include.h">
@@ -156,6 +159,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollisionManager.h">
       <Filter>component\collider</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBFMOD.h">
+      <Filter>resource\sound</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="frequently-used">
@@ -211,6 +217,9 @@
     </Filter>
     <Filter Include="component\collider">
       <UniqueIdentifier>{4e62b856-4c29-445a-bff9-1d0e683dde25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\sound">
+      <UniqueIdentifier>{7f05ab13-c5d8-4368-96a4-e8bc94701f38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

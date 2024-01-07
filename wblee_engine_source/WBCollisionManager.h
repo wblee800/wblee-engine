@@ -26,11 +26,12 @@ namespace wb
 		static void Render(HDC hdc);
 
 		static void CollisionLayerCheck(enums::eLayerType left, enums::eLayerType right, bool enable);
-		static void LayerCollision(WBScene* scene, enums::eLayerType row, enums::eLayerType col);
+		static void LayerCollision(enums::eLayerType row, enums::eLayerType col);
 		static void ColliderCollision(WBCollider* left, WBCollider* right);\
 		static bool Intersect(WBCollider* left, WBCollider* right);
 
 	private:
+		// bit 단위로 값을 저장하는 배열
 		static std::bitset<(UINT)enums::eLayerType::Max> mCollisionLayerMatrix[(UINT)enums::eLayerType::Max];
 		// 누구와 충돌 중인지 체크
 		static std::unordered_map<UINT64, bool> mCollisionMap;
