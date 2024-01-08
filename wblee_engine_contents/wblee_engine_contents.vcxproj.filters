@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{db79e7a5-e4d5-4a2b-a7ee-d492d42c2dee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content">
+      <UniqueIdentifier>{799472f5-604c-4825-bb4d-3a3cc036a889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content\player">
+      <UniqueIdentifier>{e0644ba6-ccba-47b1-9dfd-d066b0f7fa52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content\animal">
+      <UniqueIdentifier>{7a31abd4-ba15-4602-b38f-9aace1fbaea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script">
+      <UniqueIdentifier>{5c950f36-86bd-4eba-9d56-c8312243a8a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\cat">
+      <UniqueIdentifier>{9b125bec-c4a3-4f47-b60f-c4658abe4218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\player">
+      <UniqueIdentifier>{c96c1b11-e26c-4f7c-b1d7-f42a8dc02bd6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WBLoadResources.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBeachScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBlacksmithScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBusStopScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBCalicoDesertScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBCat.h">
+      <Filter>Source Files\content\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="WBCatScript.h">
+      <Filter>Source Files\script\cat</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmDownScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmhouseScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmUpScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBGateSewerScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBGeneralStoreOfPierreScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBIntroScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBJojaMartScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBLoadingTitleScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBLoadScenes.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPlayer.h">
+      <Filter>Source Files\content\player</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPlayerScript.h">
+      <Filter>Source Files\script\player</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPelicanTownScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBRanchOfMarnieScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBRestoredCommunityCenterScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSecretWoodsScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSewerScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBShopOfCarpenterScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSkullCavernEntranceScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSkullCavernScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBStardropSaloonScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTheaterBoxOfficeScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTheaterScreenScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTitleScene.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WBBeachScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBBlacksmithScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBBusStopScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBCalicoDesertScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBCat.cpp">
+      <Filter>Source Files\content\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="WBCatScript.cpp">
+      <Filter>Source Files\script\cat</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmDownScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmhouseScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmUpScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBGateSewerScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBGeneralStoreOfPierreScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBJojaMartScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBLoadingTitleScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPlayer.cpp">
+      <Filter>Source Files\content\player</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPlayerScript.cpp">
+      <Filter>Source Files\script\player</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPelicanTownScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBRanchOfMarnieScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBRestoredCommunityCenterScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSecretWoodsScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSewerScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBShopOfCarpenterScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSkullCavernEntranceScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSkullCavernScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBStardropSaloonScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTheaterBoxOfficeScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTheaterScreenScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTitleScene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

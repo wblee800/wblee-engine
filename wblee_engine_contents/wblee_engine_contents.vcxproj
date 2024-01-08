@@ -28,29 +28,27 @@
     <ClInclude Include="WBFarmDownScene.h" />
     <ClInclude Include="WBFarmhouseScene.h" />
     <ClInclude Include="WBFarmUpScene.h" />
+    <ClInclude Include="WBGateSewerScene.h" />
     <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
     <ClInclude Include="WBIntroScene.h" />
+    <ClInclude Include="WBJojaMartScene.h" />
     <ClInclude Include="WBLoadingTitleScene.h" />
     <ClInclude Include="WBLoadResources.h" />
     <ClInclude Include="WBLoadScenes.h" />
     <ClInclude Include="WBPelicanTownScene.h" />
     <ClInclude Include="WBPlayer.h" />
     <ClInclude Include="WBPlayerScript.h" />
-    <ClInclude Include="WBJojaMartScene.h" />
-    <ClInclude Include="WBGateSewerScene.h" />
     <ClInclude Include="WBRanchOfMarnieScene.h" />
     <ClInclude Include="WBRestoredCommunityCenterScene.h" />
     <ClInclude Include="WBSecretWoodsScene.h" />
     <ClInclude Include="WBSewerScene.h" />
     <ClInclude Include="WBShopOfCarpenterScene.h" />
-    <ClInclude Include="WBSkullCavernScene.h" />
     <ClInclude Include="WBSkullCavernEntranceScene.h" />
+    <ClInclude Include="WBSkullCavernScene.h" />
     <ClInclude Include="WBStardropSaloonScene.h" />
     <ClInclude Include="WBTheaterBoxOfficeScene.h" />
     <ClInclude Include="WBTheaterScreenScene.h" />
-    <ClInclude Include="WBTile.h" />
     <ClInclude Include="WBTitleScene.h" />
-    <ClInclude Include="WBToolScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBBeachScene.cpp" />
@@ -62,35 +60,32 @@
     <ClCompile Include="WBFarmDownScene.cpp" />
     <ClCompile Include="WBFarmhouseScene.cpp" />
     <ClCompile Include="WBFarmUpScene.cpp" />
+    <ClCompile Include="WBGateSewerScene.cpp" />
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
     <ClCompile Include="WBIntroScene.cpp" />
+    <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBLoadingTitleScene.cpp" />
     <ClCompile Include="WBPelicanTownScene.cpp" />
     <ClCompile Include="WBPlayer.cpp" />
     <ClCompile Include="WBPlayerScript.cpp" />
-    <ClCompile Include="WBJojaMartScene.cpp" />
-    <ClCompile Include="WBGateSewerScene.cpp" />
     <ClCompile Include="WBRanchOfMarnieScene.cpp" />
     <ClCompile Include="WBRestoredCommunityCenterScene.cpp" />
     <ClCompile Include="WBSecretWoodsScene.cpp" />
     <ClCompile Include="WBSewerScene.cpp" />
     <ClCompile Include="WBShopOfCarpenterScene.cpp" />
-    <ClCompile Include="WBSkullCavernScene.cpp" />
     <ClCompile Include="WBSkullCavernEntranceScene.cpp" />
+    <ClCompile Include="WBSkullCavernScene.cpp" />
     <ClCompile Include="WBStardropSaloonScene.cpp" />
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
     <ClCompile Include="WBTheaterScreenScene.cpp" />
-    <ClCompile Include="WBTile.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
-    <ClCompile Include="WBToolScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ac91ae52-6ed8-4b83-8b0e-a1df503589c0}</ProjectGuid>
-    <RootNamespace>wbleeenginewindow</RootNamespace>
+    <ProjectGuid>{202fef72-55fe-48c7-a2a0-61fa67800bb7}</ProjectGuid>
+    <RootNamespace>wbleeenginecontents</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>wblee_engine_contents</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -142,12 +137,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -157,12 +154,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -172,12 +171,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -187,12 +188,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>

@@ -12,6 +12,7 @@ namespace wb
 		: mState(WBCatScript::eState::SitDown)
 		, mAnimator(nullptr)
 		, mTime(0.0f)
+		, mDirection()
 	{
 	}
 	WBCatScript::~WBCatScript()

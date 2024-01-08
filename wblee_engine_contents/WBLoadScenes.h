@@ -19,7 +19,6 @@
 #include "WBBlacksmithScene.h"
 #include "WBRanchOfMarnieScene.h"
 #include "WBShopOfCarpenterScene.h"
-#include "WBToolScene.h"
 #include "WBStardropSaloonScene.h"
 #include "WBSecretWoodsScene.h"
 #include "WBFarmhouseScene.h"
@@ -31,9 +30,6 @@ namespace wb
 {
 	void LoadScenes()
 	{
-		// ----Tool Scene----
-		WBSceneManager::CreateScene<WBToolScene>(L"ToolScene");
-
 		// ----Loading Title Scene----
 		WBSceneManager::CreateScene<WBLoadingTitleScene>(L"LoadingTitleScene");
 
@@ -77,6 +73,6 @@ namespace wb
 		// ----Ending Scene----
 		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
 
-		WBSceneManager::LoadScene(L"FarmUpScene");
+		WBSceneManager::LoadScene(L"LoadingTitleScene");
 	}
 }
