@@ -19,6 +19,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioListener.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioSource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WBCollider.h" />
@@ -48,6 +51,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioListener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioSource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WBCollider.cpp" />

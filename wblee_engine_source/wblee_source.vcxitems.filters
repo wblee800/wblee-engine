@@ -74,7 +74,16 @@
       <Filter>component\collider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)WBFMOD.cpp">
-      <Filter>resource\sound</Filter>
+      <Filter>fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioClip.cpp">
+      <Filter>resource\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioListener.cpp">
+      <Filter>component\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WBAudioSource.cpp">
+      <Filter>component\audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +169,16 @@
       <Filter>component\collider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)WBFMOD.h">
-      <Filter>resource\sound</Filter>
+      <Filter>fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioClip.h">
+      <Filter>resource\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioSource.h">
+      <Filter>component\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WBAudioListener.h">
+      <Filter>component\audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -218,8 +236,14 @@
     <Filter Include="component\collider">
       <UniqueIdentifier>{4e62b856-4c29-445a-bff9-1d0e683dde25}</UniqueIdentifier>
     </Filter>
-    <Filter Include="resource\sound">
+    <Filter Include="fmod">
+      <UniqueIdentifier>{7e31716c-d9b2-4562-905a-edc16341c3cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\audio">
       <UniqueIdentifier>{7f05ab13-c5d8-4368-96a4-e8bc94701f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\audio">
+      <UniqueIdentifier>{3a9ddd6b-21b1-49b0-b772-748cbab34641}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
