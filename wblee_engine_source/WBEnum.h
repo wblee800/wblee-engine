@@ -17,6 +17,8 @@ namespace wb
 			Animator,
 			// camera
 			Camera,
+			AudioListener,
+			AudioSource,
 			End
 		};
 
