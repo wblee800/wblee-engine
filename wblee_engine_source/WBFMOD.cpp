@@ -33,10 +33,10 @@ namespace wb
 	void WBFMOD::Set3DListenerAttributes(const math::Vector2* pos)
 	{
 		//-1 ~ 1
-		FMOD_VECTOR fmodPos(0.0f, 0.0f, 0.3f);
-		FMOD_VECTOR fmodVel(0.0f, 0.0f, 0.0f);
-		FMOD_VECTOR fmodForward(0.0f, 0.0f, 1.0f);
-		FMOD_VECTOR fmodUp(0.0f, 1.0f, 0.0f);
+		FMOD_VECTOR fmodPos = { 0.0f, 0.0f, 0.0f };
+		FMOD_VECTOR fmodVel = { 0.0f, 0.0f, 0.0f };
+		FMOD_VECTOR fmodForward = { 0.0f, 0.0f, 0.0f };
+		FMOD_VECTOR fmodUp = { 0.0f, 0.0f, 0.0f };
 
 		mCoreSystem->set3DListenerAttributes(0, &fmodPos, &fmodVel, &fmodForward, &fmodUp);
 	}
