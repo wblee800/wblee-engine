@@ -31,8 +31,8 @@ namespace wb
 		createBuffer(width, height);
 		initializeEtc();
 
-		WBCollisionManager::Initialize();
 		WBSceneManager::Initialize();
+		WBCollisionManager::Initialize();
 	}
 
 	// Execute update and render function
@@ -49,14 +49,14 @@ namespace wb
 		WBInput::Update();
 		WBTime::Update();
 
-		WBCollisionManager::Update();
 		WBSceneManager::Update();
+		WBCollisionManager::Update();
 	}
 
 	void WBApplication::LateUpdate()
 	{
-		WBCollisionManager::LateUpdate();
 		WBSceneManager::LateUpdate();
+		WBCollisionManager::LateUpdate();
 	}
 
 	// Draw a updated logic
@@ -65,8 +65,8 @@ namespace wb
 		clearRenderTarget();
 
 		WBTime::Render(mBackHdc);
-		WBCollisionManager::Render(mBackHdc);
 		WBSceneManager::Render(mBackHdc);
+		WBCollisionManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}

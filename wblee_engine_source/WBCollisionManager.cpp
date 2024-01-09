@@ -4,6 +4,7 @@
 #include "WBCollider.h"
 #include "WBGameObject.h"
 #include "WBTransform.h"
+#include "WBRenderer.h"
 
 namespace wb
 {
@@ -65,7 +66,7 @@ namespace wb
 	// 충돌 설정한 layer의 game object들 중 충돌한 것이 있는지 판단한다.
 	void WBCollisionManager::LayerCollision(enums::eLayerType left, enums::eLayerType right)
 	{
-		// left와 right는 서로 같은 오브젝트들을 가져온다.
+		// left와 right의 layer가 같으면, 서로 같은 오브젝트들을 가져온다.
 		const std::vector<WBGameObject*>& lefts = WBSceneManager::GetGameObjects(left);
 		const std::vector<WBGameObject*>& rights = WBSceneManager::GetGameObjects(right);
 
@@ -154,6 +155,12 @@ namespace wb
 
 		Vector2 leftSize = left->GetSize() * 100.0f;
 		Vector2 rightSize = right->GetSize() * 100.0f;
+
+		if (renderer::mainCamera)
+		{
+			leftPos = renderer::mainCamera->CalculatePos(leftPos);
+			rightPos = renderer::mainCamera->CalculatePos(rightPos);
+		}
 
 		// fabs() : 부동 소수점 절댓값 연산
 		// AABB 충돌
