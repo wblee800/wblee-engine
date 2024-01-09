@@ -7,12 +7,9 @@
 #include "WBFarmUpScene.h"
 #include "WBFarmDownScene.h"
 #include "WBPelicanTownScene.h"
-#include "WBCalicoDesertScene.h"
 #include "WBGateSewerScene.h"
 #include "WBSewerScene.h"
 #include "WBBeachScene.h"
-#include "WBSkullCavernEntranceScene.h"
-#include "WBSkullCavernScene.h"
 #include "WBGeneralStoreOfPierreScene.h"
 #include "WBTheaterBoxOfficeScene.h"
 #include "WBTheaterScreenScene.h"
@@ -54,11 +51,6 @@ namespace wb
 
 		// Bus Stop
 		WBSceneManager::CreateScene<WBBusStopScene>(L"BusStopScene");
-
-		// Calico Desert
-		WBSceneManager::CreateScene<WBCalicoDesertScene>(L"CalicoDesertScene");
-		WBSceneManager::CreateScene<WBSkullCavernEntranceScene>(L"SkullCavernEntranceScene");
-		WBSceneManager::CreateScene<WBSkullCavernScene>(L"SkullCavernScene");
 
 		// Pelican Town
 		WBSceneManager::CreateScene<WBPelicanTownScene>(L"PelicanTownScene");

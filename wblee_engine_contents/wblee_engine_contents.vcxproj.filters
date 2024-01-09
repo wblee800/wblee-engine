@@ -24,58 +24,82 @@
     <Filter Include="Source Files\script">
       <UniqueIdentifier>{5c950f36-86bd-4eba-9d56-c8312243a8a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\script\cat">
-      <UniqueIdentifier>{9b125bec-c4a3-4f47-b60f-c4658abe4218}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\script\player">
       <UniqueIdentifier>{c96c1b11-e26c-4f7c-b1d7-f42a8dc02bd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content\animal\cat">
+      <UniqueIdentifier>{105d640d-f03e-4f12-98e1-7573aeacc089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\animal">
+      <UniqueIdentifier>{c667ac5d-46e6-4e1b-a5ff-84b484303603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\animal\cat">
+      <UniqueIdentifier>{9b125bec-c4a3-4f47-b60f-c4658abe4218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\2.intro">
+      <UniqueIdentifier>{e917f4cf-fd72-416b-9279-7b6d0873927a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play">
+      <UniqueIdentifier>{64b33332-18dc-40e5-9b3a-e8cd7444908a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\4.ending">
+      <UniqueIdentifier>{71c0fefb-c482-4440-ad38-b9da7a7e576f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\1.title">
+      <UniqueIdentifier>{7ab12a0e-1a29-436e-b781-da112d1d94e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm">
+      <UniqueIdentifier>{beb1b562-075a-4e00-b17b-6b2bb0fcfb5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\sewer">
+      <UniqueIdentifier>{b4ec524b-964b-4c67-9ddb-cd35f07ac9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town">
+      <UniqueIdentifier>{55387ae3-1263-4cc7-9618-98d78785898e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\bus-stop">
+      <UniqueIdentifier>{976ebae2-0c27-4a50-9c4b-efb37a81bc34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm\farmhouse">
+      <UniqueIdentifier>{39d6aaca-f216-444d-aa11-903cf4f5423a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm\ranch-of-marnie">
+      <UniqueIdentifier>{0af24d59-a7ce-47c0-9661-280d1d53fca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm\secret-woods">
+      <UniqueIdentifier>{8208b6f7-0ed2-4009-a2a3-adf113cda530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm\shop-of-carpenter">
+      <UniqueIdentifier>{bb4acc3a-3529-459d-b0f1-61a41cb26799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\farm\farm">
+      <UniqueIdentifier>{5dc4928f-be45-4419-b2f4-614dc65ad5e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\blacksmith">
+      <UniqueIdentifier>{f3165592-4c8e-4528-bcb3-45b119047c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\general-store-of-pierre">
+      <UniqueIdentifier>{32e5b381-0459-493b-9e42-23fa56d5ec50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\joja-mart">
+      <UniqueIdentifier>{2f91528c-fec8-4e34-8836-2fb020d9f2ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\pelican-town">
+      <UniqueIdentifier>{d9e9153a-1f4a-420f-89f1-31aa5ae6cd67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\restored-community-center">
+      <UniqueIdentifier>{82ef678c-1b84-4b29-8db6-05ea35d1f347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\3.play\pelican-town\stardrop-saloon">
+      <UniqueIdentifier>{903ea852-cbce-400a-a3e5-a04b10c23e99}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WBLoadResources.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="WBBeachScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBBlacksmithScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBBusStopScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBCalicoDesertScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBCat.h">
-      <Filter>Source Files\content\animal</Filter>
-    </ClInclude>
     <ClInclude Include="WBCatScript.h">
-      <Filter>Source Files\script\cat</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFarmDownScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFarmhouseScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFarmUpScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBGateSewerScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBGeneralStoreOfPierreScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBIntroScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBJojaMartScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBLoadingTitleScene.h">
-      <Filter>Source Files\scene</Filter>
+      <Filter>Source Files\script\animal\cat</Filter>
     </ClInclude>
     <ClInclude Include="WBLoadScenes.h">
       <Filter>Source Files\scene</Filter>
@@ -86,85 +110,76 @@
     <ClInclude Include="WBPlayerScript.h">
       <Filter>Source Files\script\player</Filter>
     </ClInclude>
-    <ClInclude Include="WBPelicanTownScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBRanchOfMarnieScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBRestoredCommunityCenterScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBSecretWoodsScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBSewerScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBShopOfCarpenterScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBSkullCavernEntranceScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBSkullCavernScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBStardropSaloonScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBTheaterBoxOfficeScene.h">
-      <Filter>Source Files\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WBTheaterScreenScene.h">
-      <Filter>Source Files\scene</Filter>
+    <ClInclude Include="WBCat.h">
+      <Filter>Source Files\content\animal\cat</Filter>
     </ClInclude>
     <ClInclude Include="WBTitleScene.h">
-      <Filter>Source Files\scene</Filter>
+      <Filter>Source Files\scene\1.title</Filter>
+    </ClInclude>
+    <ClInclude Include="WBIntroScene.h">
+      <Filter>Source Files\scene\2.intro</Filter>
+    </ClInclude>
+    <ClInclude Include="WBLoadingTitleScene.h">
+      <Filter>Source Files\scene\1.title</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSewerScene.h">
+      <Filter>Source Files\scene\3.play\sewer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBGateSewerScene.h">
+      <Filter>Source Files\scene\3.play\sewer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBeachScene.h">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTheaterScreenScene.h">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClInclude>
+    <ClInclude Include="WBTheaterBoxOfficeScene.h">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBusStopScene.h">
+      <Filter>Source Files\scene\3.play\bus-stop</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmhouseScene.h">
+      <Filter>Source Files\scene\3.play\farm\farmhouse</Filter>
+    </ClInclude>
+    <ClInclude Include="WBRanchOfMarnieScene.h">
+      <Filter>Source Files\scene\3.play\farm\ranch-of-marnie</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSecretWoodsScene.h">
+      <Filter>Source Files\scene\3.play\farm\secret-woods</Filter>
+    </ClInclude>
+    <ClInclude Include="WBShopOfCarpenterScene.h">
+      <Filter>Source Files\scene\3.play\farm\shop-of-carpenter</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmUpScene.h">
+      <Filter>Source Files\scene\3.play\farm\farm</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFarmDownScene.h">
+      <Filter>Source Files\scene\3.play\farm\farm</Filter>
+    </ClInclude>
+    <ClInclude Include="WBBlacksmithScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\blacksmith</Filter>
+    </ClInclude>
+    <ClInclude Include="WBGeneralStoreOfPierreScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\general-store-of-pierre</Filter>
+    </ClInclude>
+    <ClInclude Include="WBJojaMartScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\joja-mart</Filter>
+    </ClInclude>
+    <ClInclude Include="WBPelicanTownScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\pelican-town</Filter>
+    </ClInclude>
+    <ClInclude Include="WBRestoredCommunityCenterScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\restored-community-center</Filter>
+    </ClInclude>
+    <ClInclude Include="WBStardropSaloonScene.h">
+      <Filter>Source Files\scene\3.play\pelican-town\stardrop-saloon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WBBeachScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBBlacksmithScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBBusStopScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBCalicoDesertScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBCat.cpp">
-      <Filter>Source Files\content\animal</Filter>
-    </ClCompile>
     <ClCompile Include="WBCatScript.cpp">
-      <Filter>Source Files\script\cat</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFarmDownScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFarmhouseScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFarmUpScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBGateSewerScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBGeneralStoreOfPierreScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBIntroScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBJojaMartScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBLoadingTitleScene.cpp">
-      <Filter>Source Files\scene</Filter>
+      <Filter>Source Files\script\animal\cat</Filter>
     </ClCompile>
     <ClCompile Include="WBPlayer.cpp">
       <Filter>Source Files\content\player</Filter>
@@ -172,41 +187,71 @@
     <ClCompile Include="WBPlayerScript.cpp">
       <Filter>Source Files\script\player</Filter>
     </ClCompile>
-    <ClCompile Include="WBPelicanTownScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBRanchOfMarnieScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBRestoredCommunityCenterScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBSecretWoodsScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBSewerScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBShopOfCarpenterScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBSkullCavernEntranceScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBSkullCavernScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBStardropSaloonScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBTheaterBoxOfficeScene.cpp">
-      <Filter>Source Files\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="WBTheaterScreenScene.cpp">
-      <Filter>Source Files\scene</Filter>
+    <ClCompile Include="WBCat.cpp">
+      <Filter>Source Files\content\animal\cat</Filter>
     </ClCompile>
     <ClCompile Include="WBTitleScene.cpp">
-      <Filter>Source Files\scene</Filter>
+      <Filter>Source Files\scene\1.title</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroScene.cpp">
+      <Filter>Source Files\scene\2.intro</Filter>
+    </ClCompile>
+    <ClCompile Include="WBLoadingTitleScene.cpp">
+      <Filter>Source Files\scene\1.title</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSewerScene.cpp">
+      <Filter>Source Files\scene\3.play\sewer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBGateSewerScene.cpp">
+      <Filter>Source Files\scene\3.play\sewer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBBeachScene.cpp">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTheaterScreenScene.cpp">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClCompile>
+    <ClCompile Include="WBTheaterBoxOfficeScene.cpp">
+      <Filter>Source Files\scene\4.ending</Filter>
+    </ClCompile>
+    <ClCompile Include="WBBusStopScene.cpp">
+      <Filter>Source Files\scene\3.play\bus-stop</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmhouseScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\farmhouse</Filter>
+    </ClCompile>
+    <ClCompile Include="WBRanchOfMarnieScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\ranch-of-marnie</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSecretWoodsScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\secret-woods</Filter>
+    </ClCompile>
+    <ClCompile Include="WBShopOfCarpenterScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\shop-of-carpenter</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmDownScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\farm</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFarmUpScene.cpp">
+      <Filter>Source Files\scene\3.play\farm\farm</Filter>
+    </ClCompile>
+    <ClCompile Include="WBBlacksmithScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\blacksmith</Filter>
+    </ClCompile>
+    <ClCompile Include="WBGeneralStoreOfPierreScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\general-store-of-pierre</Filter>
+    </ClCompile>
+    <ClCompile Include="WBJojaMartScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\joja-mart</Filter>
+    </ClCompile>
+    <ClCompile Include="WBPelicanTownScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\pelican-town</Filter>
+    </ClCompile>
+    <ClCompile Include="WBRestoredCommunityCenterScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\restored-community-center</Filter>
+    </ClCompile>
+    <ClCompile Include="WBStardropSaloonScene.cpp">
+      <Filter>Source Files\scene\3.play\pelican-town\stardrop-saloon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

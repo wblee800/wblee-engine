@@ -22,7 +22,6 @@
     <ClInclude Include="WBBeachScene.h" />
     <ClInclude Include="WBBlacksmithScene.h" />
     <ClInclude Include="WBBusStopScene.h" />
-    <ClInclude Include="WBCalicoDesertScene.h" />
     <ClInclude Include="WBCat.h" />
     <ClInclude Include="WBCatScript.h" />
     <ClInclude Include="WBFarmDownScene.h" />
@@ -43,8 +42,6 @@
     <ClInclude Include="WBSecretWoodsScene.h" />
     <ClInclude Include="WBSewerScene.h" />
     <ClInclude Include="WBShopOfCarpenterScene.h" />
-    <ClInclude Include="WBSkullCavernEntranceScene.h" />
-    <ClInclude Include="WBSkullCavernScene.h" />
     <ClInclude Include="WBStardropSaloonScene.h" />
     <ClInclude Include="WBTheaterBoxOfficeScene.h" />
     <ClInclude Include="WBTheaterScreenScene.h" />
@@ -54,7 +51,6 @@
     <ClCompile Include="WBBeachScene.cpp" />
     <ClCompile Include="WBBlacksmithScene.cpp" />
     <ClCompile Include="WBBusStopScene.cpp" />
-    <ClCompile Include="WBCalicoDesertScene.cpp" />
     <ClCompile Include="WBCat.cpp" />
     <ClCompile Include="WBCatScript.cpp" />
     <ClCompile Include="WBFarmDownScene.cpp" />
@@ -73,8 +69,6 @@
     <ClCompile Include="WBSecretWoodsScene.cpp" />
     <ClCompile Include="WBSewerScene.cpp" />
     <ClCompile Include="WBShopOfCarpenterScene.cpp" />
-    <ClCompile Include="WBSkullCavernEntranceScene.cpp" />
-    <ClCompile Include="WBSkullCavernScene.cpp" />
     <ClCompile Include="WBStardropSaloonScene.cpp" />
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
     <ClCompile Include="WBTheaterScreenScene.cpp" />
