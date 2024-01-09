@@ -1,7 +1,6 @@
 #include "WBTitleScene.h"
 #include "..\wblee_engine_source\WBInput.h"
 #include "..\wblee_engine_source\WBSceneManager.h"
-
 #include "..\\wblee_engine_source\\WBGameObject.h"
 #include "WBPlayer.h"
 #include "..\\wblee_engine_source\\WBTransform.h"
@@ -115,7 +114,7 @@ namespace wb
 
 		if (WBInput::GetKeyDown(eKeyCode::N))
 		{
-			WBSceneManager::LoadScene(L"FarmUpScene");
+			WBSceneManager::LoadScene(L"ZuzuCityScene");
 		}
 	}
 

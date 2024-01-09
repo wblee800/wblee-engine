@@ -2,7 +2,7 @@
 #include "..\wblee_engine_source\WBSceneManager.h"
 #include "WBJojaMartScene.h"
 #include "WBTitleScene.h"
-#include "WBIntroScene.h"
+#include "WBZuzuCityScene.h"
 #include "WBBusStopScene.h"
 #include "WBFarmUpScene.h"
 #include "WBFarmDownScene.h"
@@ -20,7 +20,6 @@
 #include "WBSecretWoodsScene.h"
 #include "WBFarmhouseScene.h"
 #include "WBRestoredCommunityCenterScene.h"
-#include "WBIntroScene.h"
 #include "WBLoadingTitleScene.h"
 
 namespace wb
@@ -34,7 +33,7 @@ namespace wb
 		WBSceneManager::CreateScene<WBTitleScene>(L"TitleScene");
 
 		// ----Intro Scene----
-		WBSceneManager::CreateScene<WBIntroScene>(L"IntroScene");
+		WBSceneManager::CreateScene<WBZuzuCityScene>(L"ZuzuCityScene");
 
 		// ----Play Scene----
 		// Farm
@@ -65,6 +64,6 @@ namespace wb
 		// ----Ending Scene----
 		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
 
-		WBSceneManager::LoadScene(L"LoadingTitleScene");
+		WBSceneManager::LoadScene(L"FarmUpScene");
 	}
 }

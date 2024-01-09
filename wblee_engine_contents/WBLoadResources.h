@@ -26,8 +26,8 @@ namespace wb
 		WBResources::Load<graphics::WBTexture>(L"Title_Button_Back", L"..\\resources\\sprites\\miscellaneous\\Title_Button_Back.bmp");
 		WBResources::Load<graphics::WBTexture>(L"Title_Buttons_Back_On_Click", L"..\\resources\\sprites\\miscellaneous\\Title_Buttons_Back_On_Click.bmp");
 
-		// ----Tile Maps----
-		
+		// ----Intro----
+		WBResources::Load<graphics::WBTexture>(L"Zuzu_City", L"..\\resources\\sprites\\maps\\Zuzu_City.png");
 
 		// ----Maps----
 		// Farm

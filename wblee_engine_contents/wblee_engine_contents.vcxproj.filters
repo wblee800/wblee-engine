@@ -93,6 +93,21 @@
     <Filter Include="Source Files\scene\3.play\pelican-town\stardrop-saloon">
       <UniqueIdentifier>{903ea852-cbce-400a-a3e5-a04b10c23e99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\scene\2.intro\zuzu-city">
+      <UniqueIdentifier>{dabb8b02-c41d-4099-be3b-46871dd4bc9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\2.intro\theater-screen">
+      <UniqueIdentifier>{546e3a85-9ee7-4a9d-b276-4c459be0af6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\2.intro\joja-corporation">
+      <UniqueIdentifier>{898f9c60-e0c3-4b8e-b00a-f5bd078de49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\2.intro\bus">
+      <UniqueIdentifier>{798febba-5b67-49d1-8141-3331362534a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene\2.intro\stardew-valley">
+      <UniqueIdentifier>{5f2e818d-bbb1-4ebe-9fba-ac3ea5415509}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WBLoadResources.h">
@@ -115,9 +130,6 @@
     </ClInclude>
     <ClInclude Include="WBTitleScene.h">
       <Filter>Source Files\scene\1.title</Filter>
-    </ClInclude>
-    <ClInclude Include="WBIntroScene.h">
-      <Filter>Source Files\scene\2.intro</Filter>
     </ClInclude>
     <ClInclude Include="WBLoadingTitleScene.h">
       <Filter>Source Files\scene\1.title</Filter>
@@ -176,6 +188,21 @@
     <ClInclude Include="WBStardropSaloonScene.h">
       <Filter>Source Files\scene\3.play\pelican-town\stardrop-saloon</Filter>
     </ClInclude>
+    <ClInclude Include="WBIntroTheaterSreenScene.h">
+      <Filter>Source Files\scene\2.intro\theater-screen</Filter>
+    </ClInclude>
+    <ClInclude Include="WBZuzuCityScene.h">
+      <Filter>Source Files\scene\2.intro\zuzu-city</Filter>
+    </ClInclude>
+    <ClInclude Include="WBJojaCorporationScene.h">
+      <Filter>Source Files\scene\2.intro\joja-corporation</Filter>
+    </ClInclude>
+    <ClInclude Include="WBIntroBusScene.h">
+      <Filter>Source Files\scene\2.intro\bus</Filter>
+    </ClInclude>
+    <ClInclude Include="WBIntroStardewValleyScene.h">
+      <Filter>Source Files\scene\2.intro\stardew-valley</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBCatScript.cpp">
@@ -192,9 +219,6 @@
     </ClCompile>
     <ClCompile Include="WBTitleScene.cpp">
       <Filter>Source Files\scene\1.title</Filter>
-    </ClCompile>
-    <ClCompile Include="WBIntroScene.cpp">
-      <Filter>Source Files\scene\2.intro</Filter>
     </ClCompile>
     <ClCompile Include="WBLoadingTitleScene.cpp">
       <Filter>Source Files\scene\1.title</Filter>
@@ -252,6 +276,21 @@
     </ClCompile>
     <ClCompile Include="WBStardropSaloonScene.cpp">
       <Filter>Source Files\scene\3.play\pelican-town\stardrop-saloon</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroTheaterSreenScene.cpp">
+      <Filter>Source Files\scene\2.intro\theater-screen</Filter>
+    </ClCompile>
+    <ClCompile Include="WBZuzuCityScene.cpp">
+      <Filter>Source Files\scene\2.intro\zuzu-city</Filter>
+    </ClCompile>
+    <ClCompile Include="WBJojaCorporationScene.cpp">
+      <Filter>Source Files\scene\2.intro\joja-corporation</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroBusScene.cpp">
+      <Filter>Source Files\scene\2.intro\bus</Filter>
+    </ClCompile>
+    <ClCompile Include="WBIntroStardewValleyScene.cpp">
+      <Filter>Source Files\scene\2.intro\stardew-valley</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="WBBeachScene.h" />
     <ClInclude Include="WBBlacksmithScene.h" />
+    <ClInclude Include="WBIntroBusScene.h" />
     <ClInclude Include="WBBusStopScene.h" />
     <ClInclude Include="WBCat.h" />
     <ClInclude Include="WBCatScript.h" />
@@ -29,7 +30,9 @@
     <ClInclude Include="WBFarmUpScene.h" />
     <ClInclude Include="WBGateSewerScene.h" />
     <ClInclude Include="WBGeneralStoreOfPierreScene.h" />
-    <ClInclude Include="WBIntroScene.h" />
+    <ClInclude Include="WBIntroStardewValleyScene.h" />
+    <ClInclude Include="WBIntroTheaterSreenScene.h" />
+    <ClInclude Include="WBJojaCorporationScene.h" />
     <ClInclude Include="WBJojaMartScene.h" />
     <ClInclude Include="WBLoadingTitleScene.h" />
     <ClInclude Include="WBLoadResources.h" />
@@ -46,10 +49,12 @@
     <ClInclude Include="WBTheaterBoxOfficeScene.h" />
     <ClInclude Include="WBTheaterScreenScene.h" />
     <ClInclude Include="WBTitleScene.h" />
+    <ClInclude Include="WBZuzuCityScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBBeachScene.cpp" />
     <ClCompile Include="WBBlacksmithScene.cpp" />
+    <ClCompile Include="WBIntroBusScene.cpp" />
     <ClCompile Include="WBBusStopScene.cpp" />
     <ClCompile Include="WBCat.cpp" />
     <ClCompile Include="WBCatScript.cpp" />
@@ -58,7 +63,9 @@
     <ClCompile Include="WBFarmUpScene.cpp" />
     <ClCompile Include="WBGateSewerScene.cpp" />
     <ClCompile Include="WBGeneralStoreOfPierreScene.cpp" />
-    <ClCompile Include="WBIntroScene.cpp" />
+    <ClCompile Include="WBIntroStardewValleyScene.cpp" />
+    <ClCompile Include="WBIntroTheaterSreenScene.cpp" />
+    <ClCompile Include="WBJojaCorporationScene.cpp" />
     <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBLoadingTitleScene.cpp" />
     <ClCompile Include="WBPelicanTownScene.cpp" />
@@ -73,6 +80,7 @@
     <ClCompile Include="WBTheaterBoxOfficeScene.cpp" />
     <ClCompile Include="WBTheaterScreenScene.cpp" />
     <ClCompile Include="WBTitleScene.cpp" />
+    <ClCompile Include="WBZuzuCityScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

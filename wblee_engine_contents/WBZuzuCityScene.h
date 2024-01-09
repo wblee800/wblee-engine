@@ -3,18 +3,22 @@
 
 namespace wb
 {
-	class WBIntroScene : public WBScene
+	class WBGameObject;
+	class WBZuzuCityScene : public WBScene
 	{
 	public:
-		WBIntroScene();
-		~WBIntroScene();
+		WBZuzuCityScene();
+		~WBZuzuCityScene();
 
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-	private:
+		void OnEnter() override;
+		void OnExit() override;
 
+	private:
+		WBGameObject* mCamera;
 	};
 }
