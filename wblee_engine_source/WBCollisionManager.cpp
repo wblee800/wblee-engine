@@ -164,8 +164,8 @@ namespace wb
 
 		// fabs() : 부동 소수점 절댓값 연산
 		// AABB 충돌
-		if (fabs(leftPos.x - rightPos.x) < fabs(leftSize.x / 2.0f + rightSize.x / 2.0f)
-			|| fabs(leftPos.y - rightPos.y) < fabs(leftSize.y / 2.0f - rightSize.y / 2.0f))
+		if ((fabs(leftSize.x / 2.0f + rightSize.x / 2.0f) >= fabs(leftPos.x - rightPos.x))
+			&& (fabs(leftSize.y / 2.0f + rightSize.y / 2.0f) >= fabs(leftPos.y - rightPos.y)))
 		{
 			return true;
 		}

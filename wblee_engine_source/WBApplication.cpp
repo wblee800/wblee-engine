@@ -55,8 +55,8 @@ namespace wb
 
 	void WBApplication::LateUpdate()
 	{
-		WBSceneManager::LateUpdate();
 		WBCollisionManager::LateUpdate();
+		WBSceneManager::LateUpdate();
 	}
 
 	// Draw a updated logic
@@ -65,8 +65,8 @@ namespace wb
 		clearRenderTarget();
 
 		WBTime::Render(mBackHdc);
-		WBSceneManager::Render(mBackHdc);
 		WBCollisionManager::Render(mBackHdc);
+		WBSceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}

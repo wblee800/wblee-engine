@@ -43,11 +43,11 @@ namespace wb
 		HPEN greenPen = CreatePen(PS_SOLID, 2, RGB(0, 255, 0));
 		HPEN originalPen = (HPEN)SelectObject(hdc, greenPen);
 
-		Rectangle(hdc, 
-			pos.x + offset.x,
-			pos.y + offset.y, 
-			pos.x + offset.x + mSize.x,
-			pos.y + offset.y + mSize.y);
+		Rectangle(hdc,
+			pos.x + offset.x - ((100 * GetSize().x) / 2.0f),
+			pos.y + offset.y - ((100 * GetSize().y) / 2.0f),
+			pos.x + offset.x + ((100 * GetSize().x) / 2.0f),
+			pos.y + offset.y + ((100 * GetSize().y) / 2.0f));
 
 		SelectObject(hdc, originalBrush);
 		SelectObject(hdc, originalPen);

@@ -51,10 +51,12 @@ namespace wb
 		WBCollisionManager::CollisionLayerCheck(enums::eLayerType::Player, enums::eLayerType::Animal, true);
 
 		// Instantiate player
-		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(50.0f, 0.0f));
+		mPlayer = object::Instantiate<WBPlayer>(enums::eLayerType::Player, Vector2(400.0f, 0.0f));
 		mPlayer->AddComponent<WBPlayerScript>();
 		WBBoxCollider2D* playerCollider = mPlayer->AddComponent<WBBoxCollider2D>();
-		playerCollider->SetSize(Vector2(32.0f, 32.0f));
+		// Collision manager에서 box collider 2d가 아닌 부모 클래스인 collider의 size를 get하기 때문에,
+		// collision manager에서 box collider 2d로 형 변환하는 작업이 필요하다.
+		// playerCollider->SetSize(Vector2(32.0f, 32.0f));
 		playerCollider->SetOffset(Vector2(0.0f, 30.0f));
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
