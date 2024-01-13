@@ -1,5 +1,10 @@
 #pragma once
-class WBIntroTheaterSreenScene
-{
-};
+#include "WBScene.h"
 
+namespace wb
+{
+	class WBIntroTheaterSreenScene : public WBScene
+	{
+
+	};
+}

@@ -1,5 +1,10 @@
 #pragma once
-class WBJojaCorporationScene
-{
-};
+#include "WBScene.h"
 
+namespace wb
+{
+	class WBJojaCorporationScene : public WBScene
+	{
+
+	};
+}

@@ -1,6 +1,10 @@
 #pragma once
+#include "WBScene.h"
 
-class WBIntroBusScene
+namespace wb
 {
+	class WBIntroBusScene : public WBScene
+	{
 
-};
+	};
+}

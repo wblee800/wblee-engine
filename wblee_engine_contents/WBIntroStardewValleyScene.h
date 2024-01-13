@@ -1,5 +1,10 @@
 #pragma once
-class WBIntroStardewValleyScene
-{
-};
+#include "WBScene.h"
 
+namespace wb
+{
+	class WBIntroStardewValleyScene : public WBScene
+	{
+
+	};
+}
