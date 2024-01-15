@@ -141,6 +141,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	wb::LoadResources();
 	// Create scenes and initialize scenes
 	wb::LoadScenes();
+
+	srand(GetTickCount64());
 	
 	return TRUE;
 }

@@ -25,11 +25,15 @@ namespace wb
 		// 충돌체 사이즈 설정 및 가져오기
 		math::Vector2 GetSize() { return mSize; }
 		void SetSize(math::Vector2 size) { mSize = size; }
+		// 충돌 유형 설정 및 가져오기
+		enums::eColliderType GetColiiderType() { return mColliderType; }
+		void SetColiiderType(enums::eColliderType colliderType)	{ mColliderType = colliderType;	}
 
 	private:
 		static UINT32 CollisionID;
 		UINT32 mID;
 		math::Vector2 mOffset;
 		math::Vector2 mSize;
+		enums::eColliderType mColliderType;
 	};
 }

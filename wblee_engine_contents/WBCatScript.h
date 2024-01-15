@@ -5,6 +5,7 @@ namespace wb
 {
 	class WBAnimator;
 	class WBTransform;
+	class WBCollider;
 	class WBCatScript : public WBScript
 	{
 	public:
@@ -33,6 +34,10 @@ namespace wb
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
+		void OnCollisionEnter(WBCollider* other);
+		void OnCollisionStay(WBCollider* other);
+		void OnCollisionExit(WBCollider* other);
+
 	private:
 		void sitDown();
 		void move();
@@ -47,5 +52,6 @@ namespace wb
 		WBAnimator* mAnimator;
 		eDirection mDirection;
 		float mTime;
+		float mNextTime;
 	};
 }

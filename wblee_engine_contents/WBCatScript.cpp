@@ -5,6 +5,8 @@
 #include "WBGameObject.h"
 #include "WBAnimator.h"
 #include "WBObject.h"
+#include "..\wblee_engine_source\WBEnum.h"
+#include "..\wblee_engine_source\WBCollider.h"
 
 namespace wb
 {
@@ -13,16 +15,18 @@ namespace wb
 		, mAnimator(nullptr)
 		, mTime(0.0f)
 		, mDirection()
+		, mNextTime(0.0f)
 	{
 	}
+
 	WBCatScript::~WBCatScript()
 	{
 	}
+
 	void WBCatScript::Initialize()
 	{
-
-
 	}
+
 	void WBCatScript::Update()
 	{
 		if (mAnimator == nullptr)
@@ -46,48 +50,63 @@ namespace wb
 		default:
 			break;
 		}
-
 	}
+
 	void WBCatScript::LateUpdate()
 	{
 	}
+
 	void WBCatScript::Render(HDC hdc)
 	{
+	}
+
+	void WBCatScript::OnCollisionEnter(WBCollider* other)
+	{
+		enums::eColliderType type = other->GetColiiderType();
 	}
 
 	void WBCatScript::sitDown()
 	{
 		mTime += WBTime::DeltaTime();
 
-		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-		Vector2 pos = tr->GetPosition();
+		if (mTime > mNextTime)
+		{
+			mState = eState::Move;
+
+			int direction = rand() % 4;
+			mDirection = (eDirection)direction;
+			mNextTime = rand() % 3 + 2;
+			playMoveAnimationByDirection(mDirection);
+			mTime = 0.0f;
+		}
 	}
 
 	void WBCatScript::move()
 	{
 		mTime += WBTime::DeltaTime();
-		if (mTime > 2.0f)
+		if (mTime > mNextTime)
 		{
 			int isLayDown = rand() % 2;
+			mNextTime = rand() % 5 + 4;
+			
 			if (isLayDown)
 			{
 				mState = eState::LayDown;
-				mAnimator->PlayAnimation(L"LayDown", false);
+				mAnimator->PlayAnimation(L"CatLayDown", false);
 			}
 			else
 			{
 				mState = eState::SitDown;
-				mAnimator->PlayAnimation(L"SitDown", false);
+				mAnimator->PlayAnimation(L"CatSitDown", false);
 			}
-		}
 
-		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-		translate(tr);
+			WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+			translate(tr);
+		}
 	}
 
 	void WBCatScript::layDown()
 	{
-
 	}
 
 	void WBCatScript::sleep()
@@ -122,16 +141,16 @@ namespace wb
 		switch (mDirection)
 		{
 		case wb::WBCatScript::eDirection::Left:
-			pos.x -= 100.0f * WBTime::DeltaTime();
+			pos.x -= 500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Right:
-			pos.x += 100.0f * WBTime::DeltaTime();
+			pos.x += 500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Down:
-			pos.y += 100.0f * WBTime::DeltaTime();
+			pos.y += 500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Up:
-			pos.y -= 100.0f * WBTime::DeltaTime();
+			pos.y -= 500.0f * WBTime::DeltaTime();
 			break;
 		default:
 			assert(false);
