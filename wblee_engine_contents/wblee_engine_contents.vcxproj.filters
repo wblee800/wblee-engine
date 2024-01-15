@@ -293,4 +293,7 @@
       <Filter>Source Files\scene\2.intro\stardew-valley</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>
