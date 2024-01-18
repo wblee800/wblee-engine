@@ -1,427 +1,520 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Layer&#xD;&#xA;: Game Object들을 관리하는 클래스">
+    <Position X="7.107" Y="3.157" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Scene&#xD;&#xA;: Layer들을 관리하는 클래스">
+    <Position X="33.964" Y="3.123" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Component&#xD;&#xA;: Component들의 상위 클래스">
+    <Position X="79.94" Y="3.095" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Game Object&#xD;&#xA;: Component들을 관리하는 클래스">
+    <Position X="1.683" Y="3.501" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Enitity&#xD;&#xA;: 디버깅 시 객체들의 주소값대신 문자열로 된 이름으로 구분하기 위해 만든 클래스">
+    <Position X="47.437" Y="0.656" Height="1.022" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Resource&#xD;&#xA;: 게임에 사용되는 리소스들의 상위 클래스이자 추상 클래스">
+    <Position X="65.449" Y="2.931" Height="0.796" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Collider&#xD;&#xA;: Collider2D, Collider3D의 상위 클래스&#xD;&#xA;">
+    <Position X="71.699" Y="6.892" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Animator&#xD;&#xA;: Animation을 찾고, 플레이시키는 클래스">
+    <Position X="77.977" Y="6.835" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Audio Listener&#xD;&#xA;: 오디오 소스를 이용해 스피커 사운드를 재생하는 클래스">
+    <Position X="80.99" Y="6.795" Height="0.795" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Script&#xD;&#xA;: Script들의 상위 클래스">
+    <Position X="74.629" Y="6.798" Height="0.875" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Audio Source&#xD;&#xA;: 오디오 클립을 재생하는 클래스">
+    <Position X="83.384" Y="6.786" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Sprite Renderer&#xD;&#xA;: 이미지를 화면에 출력하는 클래스">
+    <Position X="85.902" Y="6.724" Height="0.964" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Transform&#xD;&#xA;: Transform(position, rotation, scale) 정보를 설정하고, 가져오는 클래스">
+    <Position X="88.311" Y="6.72" Height="0.964" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Camera&#xD;&#xA;: 플레이어를 중심으로 화면에 오브젝트들이 움직여야 하는 등의 경우를 위해 만든 클래스">
+    <Position X="90.522" Y="6.693" Height="0.97" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Application&#xD;&#xA;: 윈도우 설정을 담당하는 클래스&#xD;&#xA;&#xD;&#xA;● SceneManager, CollisionManager가 이곳에서 실행된다.&#xD;&#xA;● 렌더링 시 깜빡이는 버그를 해결하기 위해 더블 버퍼링 기법 적용했다.">
+    <Position X="93.488" Y="1.441" Height="1.937" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Collision Manager&#xD;&#xA;: 충돌 체크할 레이어 설정, 충돌 체크 등의 로직을 담당하는 클래스&#xD;&#xA;&#xD;&#xA;● 화면에 충돌체가 그려지고, 설정한 객체끼리 충돌했음에도 충돌이 다른 위치에서 일어난다면, &#xD;&#xA;이곳에서 AABB 충돌 로직을 체크해야 한다.">
+    <Position X="95.348" Y="1.441" Height="1.937" Width="1.7" />
+  </Comment>
+  <Comment CommentText="FMOD&#xD;&#xA;: 게임에서 사운드를 관리하는 API">
+    <Position X="97.242" Y="4.725" Height="1.945" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Input&#xD;&#xA;: 키보드, 마우스 등 디바이스의 입력을 담당하는 클래스&#xD;&#xA;&#xD;&#xA;● 어디서든 객체없이 바로 사용이 가능하도록 static 키워드를 사용했습니다.">
+    <Position X="93.479" Y="4.716" Height="2.126" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Resources&#xD;&#xA;: 리소스를 로드하거나, 로드한 리소스를 찾을 때 사용하는 클래스&#xD;&#xA;&#xD;&#xA;● 어떤 리소스(e.g. sound, texture etc.)를 사용할지 모르기 때문에 template 함수로 구현했습니다.">
+    <Position X="95.368" Y="4.717" Height="2.12" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Scene Manager&#xD;&#xA;: 전체 씬을 관리(씬을 생성하거나 로드)하는 클래스&#xD;&#xA;&#xD;&#xA;●  어디서든 객체없이 바로 사용이 가능하도록 static 키워드를 사용했습니다.">
+    <Position X="97.25" Y="1.422" Height="1.955" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Time&#xD;&#xA;: Delta Time을 구현한 클래스&#xD;&#xA;&#xD;&#xA;● 어디서든 객체없이 바로 사용이 가능하도록 static 키워드를 사용했습니다.">
+    <Position X="99.212" Y="1.441" Height="1.929" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Vector2&#xD;&#xA;: 2차원 상에서 x, y좌표를 한 번에 나타내기 위한 구조체&#xD;&#xA;&#xD;&#xA;● 제가 직접 만든 구조체이기 때문에 연산자를 그대로 사용하면 에러가 발생합니다. 따라서 연산자 오버로딩을 적용했습니다.">
+    <Position X="99.186" Y="4.698" Height="2.131" Width="1.782" />
+  </Comment>
+  <Comment CommentText="Enum&#xD;&#xA;: 레이어, 컴포넌트를 원하는 순서대로 업데이트하고, 화면에 그리기 위해 반복문을 사용합니다. &#xD;&#xA;따라서, 정수로 대응되는 Enum Class를 사용합니다.&#xD;&#xA;&#xD;&#xA;e.g. 배경 레이어 다음에 캐릭터를 그려 캐릭터가 배경 위에 그려지게 합니다.">
+    <Position X="101.5" Y="1.5" Height="2.035" Width="1.805" />
+  </Comment>
+  <Comment CommentText="고려한 사항&#xD;&#xA;&#xD;&#xA;● 순환 참조를 막기 위해 클래스의 헤더파일에서 상속 관계가 아닌 다른 클래스를 사용할 때에는 전방선언을 사용했습니다.(단, common_include.h는 다른 클래스를 참조하지 않기 때문에 예외적으로 include했습니다.)&#xD;&#xA;&#xD;&#xA;● 헤더파일마다 #pragma once로 헤더파일을 중복해서 include하는 일이 없도록 해 메모리 낭비를 방지했습니다.&#xD;&#xA;&#xD;&#xA;● 자주 사용하는 공통된 함수 등은 하나의 상위 클래스에 구현하고, 상속하여 사용해 가독성을 높였습니다.&#xD;&#xA;&#xD;&#xA;● 객체 포인터로 값 복사가 아니라 주소값을 메모리에 저장해 불필요한 메모리 할당을 방지했습니다.&#xD;&#xA;&#xD;&#xA;● 객체 포인터가 nullptr를 가리키지 않도록 에러 방지 코드를 추가했습니다.&#xD;&#xA;">
+    <Position X="0.5" Y="13.045" Height="2.414" Width="6.892" />
+  </Comment>
+  <Comment CommentText="Audio Clip&#xD;&#xA;: 오디오 소스파일을 저장하는 클래스">
+    <Position X="67.631" Y="6.904" Height="0.67" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Texture&#xD;&#xA;: 이미지를 로드하는 클래스">
+    <Position X="65.546" Y="6.902" Height="0.67" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Animation&#xD;&#xA;: 애니메이션을 만들고, 애니메이션을 렌더링하는 클래스">
+    <Position X="63.428" Y="6.893" Height="0.768" Width="1.7" />
+  </Comment>
+  <Comment CommentText="~~Scene&#xD;&#xA;: Gmae Object들이 존재하는 각각의 씬">
+    <Position X="35" Y="7" Height="0.687" Width="1.7" />
+  </Comment>
+  <Comment CommentText="각각의 Character Class">
+    <Position X="2.636" Y="7.365" Height="0.341" Width="1.7" />
+  </Comment>
+  <Comment CommentText="~~Script&#xD;&#xA;: 각각의 Character들의 Script 클래스&#xD;&#xA;&#xD;&#xA;● FSM 로직이 이곳에 작성된다.&#xD;&#xA;">
+    <Position X="75.596" Y="10.08" Height="1.104" Width="1.7" />
+  </Comment>
+  <Comment CommentText="BoxCollider2D&#xD;&#xA;: 2D 상에서 사각형 형태로 충돌을 처리하는 클래스&#xD;&#xA;&#xD;&#xA;● 화면에 충돌체가 그려지고, 설정한 객체끼리 충돌했음에도 충돌이 다른 위치에서 일어난다면, &#xD;&#xA;이곳의 Render()를 디버깅해야 한다.&#xD;&#xA;">
+    <Position X="70.689" Y="9.469" Height="1.851" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Renderer&#xD;&#xA;: Camera의 객체를 전역변수로 갖는 클래스&#xD;&#xA;&#xD;&#xA;● extern  키워드를 사용한다. ∵ 다른 파일에서 같은 이름이 Camera 객체가 Renderer의 Camera 객체라고 알려주기 위해서이다.">
+    <Position X="93.653" Y="9.787" Height="1.827" Width="1.7" />
+  </Comment>
   <Class Name="wb::WBGameObject" Collapsed="true">
-    <Position X="1.75" Y="3.5" Width="1.5" />
+    <Position X="1.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAFAACAAIAQAAEoAAJAAAAAAAAAAAABABAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBGameObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBZuzuCityScene" Collapsed="true">
-    <Position X="13.75" Y="3.25" Width="1.5" />
+    <Position X="13.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAAAAAQAAAAAAIAAAAAAUAAAAAJAAAAAAAAg=</HashCode>
       <FileName>WBZuzuCityScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBIntroTheaterSreenScene" Collapsed="true">
-    <Position X="22.75" Y="3.25" Width="1.5" />
+    <Position X="22.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WBIntroTheaterSreenScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBJojaCorporationScene" Collapsed="true">
-    <Position X="31.75" Y="3.25" Width="1.5" />
+    <Position X="31.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WBJojaCorporationScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBIntroBusScene" Collapsed="true">
-    <Position X="38.5" Y="3.25" Width="1.5" />
+    <Position X="38.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WBIntroBusScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBIntroStardewValleyScene" Collapsed="true">
-    <Position X="45.25" Y="3.25" Width="1.5" />
+    <Position X="45.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WBIntroStardewValleyScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBPlayer" Collapsed="true">
-    <Position X="2.75" Y="4.75" Width="1.5" />
+    <Position X="2.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAIAAQCAAAAAIAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>WBPlayer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBFarmhouseScene" Collapsed="true">
-    <Position X="56.5" Y="3.25" Width="1.5" />
+    <Position X="56.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAEAQEAAAAAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBFarmhouseScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBRanchOfMarnieScene" Collapsed="true">
-    <Position X="7" Y="3.25" Width="1.5" />
+    <Position X="7" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AASIAAACAAAAAQAAAAAAIAAAAAAQIAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBRanchOfMarnieScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBSecretWoodsScene" Collapsed="true">
-    <Position X="16" Y="3.25" Width="1.5" />
+    <Position X="16" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAAAIAAAAAAQACAAQJAAAAAAAAA=</HashCode>
       <FileName>WBSecretWoodsScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBShopOfCarpenterScene" Collapsed="true">
-    <Position X="25" Y="3.25" Width="1.5" />
+    <Position X="25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAACQAAEAAAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBShopOfCarpenterScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBCat" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAQAAAAAAIAAAAAAAAAAAABIAAAAABAA=</HashCode>
       <FileName>WBCat.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBFarmDownScene" Collapsed="true">
-    <Position X="40.75" Y="3.25" Width="1.5" />
+    <Position X="40.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAAIIEAAAAAQAAAAAJAAAAIAAAA=</HashCode>
       <FileName>WBFarmDownScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBFarmUpScene" Collapsed="true">
-    <Position X="47.5" Y="3.25" Width="1.5" />
+    <Position X="47.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAAAIEAAAAAQAAAAAJAAAAEAAAA=</HashCode>
       <FileName>WBFarmUpScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBGateSewerScene" Collapsed="true">
-    <Position X="52" Y="3.25" Width="1.5" />
+    <Position X="52" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAAAIAAAAAAQAAAAAJAAQAABAAA=</HashCode>
       <FileName>WBGateSewerScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBSewerScene" Collapsed="true">
-    <Position X="58.75" Y="3.25" Width="1.5" />
+    <Position X="58.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAgAIAAAAAAQAACAAJAAAAAAAAA=</HashCode>
       <FileName>WBSewerScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBBlacksmithScene" Collapsed="true">
-    <Position X="9.25" Y="3.25" Width="1.5" />
+    <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIgAACABAAAQAAAAAAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBBlacksmithScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBGeneralStoreOfPierreScene" Collapsed="true">
-    <Position X="18.25" Y="3.25" Width="1.5" />
+    <Position X="18.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAgAAQAAAAgAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBGeneralStoreOfPierreScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBJojaMartScene" Collapsed="true">
-    <Position X="27.25" Y="3.25" Width="1.5" />
+    <Position X="27.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAYAAAAAAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBJojaMartScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBPelicanTownScene" Collapsed="true">
-    <Position X="34" Y="3.25" Width="1.5" />
+    <Position X="34" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABQIAAACAAAAAQAAAAAAIAAAAAAQAAAACJAAAAAAAAA=</HashCode>
       <FileName>WBPelicanTownScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBRestoredCommunityCenterScene" Collapsed="true">
-    <Position X="43" Y="3.25" Width="1.5" />
+    <Position X="43" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAAAAAAIAAAAAAQAAAAAJwAAAAAAAA=</HashCode>
       <FileName>WBRestoredCommunityCenterScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBStardropSaloonScene" Collapsed="true">
-    <Position X="49.75" Y="3.25" Width="1.5" />
+    <Position X="49.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAACAAAAAQAEAAAAIAAAAAAQAAAAAJAAAAAAAEA=</HashCode>
       <FileName>WBStardropSaloonScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBBusStopScene" Collapsed="true">
-    <Position X="54.25" Y="3.25" Width="1.5" />
+    <Position X="54.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQICAACAAAAAQAAAAAAIAAAAAAQAAAAAJAAAAIAAAA=</HashCode>
       <FileName>WBBusStopScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBBeachScene" Collapsed="true">
-    <Position X="61" Y="3.25" Width="1.5" />
+    <Position X="61" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAICAAAAAQAABAAAIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBBeachScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBTheaterBoxOfficeScene" Collapsed="true">
-    <Position X="11.5" Y="3.25" Width="1.5" />
+    <Position X="11.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQMAAACAAAAAQAAAAAAIAAAAAAQCAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBTheaterBoxOfficeScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBTheaterScreenScene" Collapsed="true">
-    <Position X="20.5" Y="3.25" Width="1.5" />
+    <Position X="20.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAACAAAAAQAAAAAAIAAAAAAQAAAAAJAAAAABAEA=</HashCode>
       <FileName>WBTheaterScreenScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBLoadingTitleScene" Collapsed="true">
-    <Position X="29.5" Y="3.25" Width="1.5" />
+    <Position X="29.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAACAAAAAAQAAAAAAIACAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBLoadingTitleScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBTitleScene" Collapsed="true">
-    <Position X="36.25" Y="3.25" Width="1.5" />
+    <Position X="36.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAIAAAAAAQAAAAAQIAAAAAAQAAAAAJAAAAAAAAA=</HashCode>
       <FileName>WBTitleScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBAnimator" Collapsed="true">
-    <Position X="72.25" Y="3.25" Width="1.5" />
+    <Position X="78" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAQAACAAAIACAAABigAAAABAAAAAABAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBAnimator.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBPlayerScript" Collapsed="true">
-    <Position X="76.75" Y="4.75" Width="1.5" />
+    <Position X="76" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AARAAAAACAAAQQqAAAAIsAgAAQAEAiCAAxEAgEAAACA=</HashCode>
       <FileName>WBPlayerScript.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBTransform" Collapsed="true">
-    <Position X="85.75" Y="3.25" Width="1.5" />
+    <Position X="88.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACQAQAAABCCAAQAAAAAAIAAAAAAACggAIBAAAgAAAgA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBTransform.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBCatScript" Collapsed="true">
-    <Position X="79" Y="4.75" Width="1.5" />
+    <Position X="73.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQABAAgCAAAAwmAAAAAIAAAggAAACAAAhAAAAAABEA=</HashCode>
+      <HashCode>AAQABAAgCAAAAwmAAAAAIAAAggAAACAIAhAAAAAABEA=</HashCode>
       <FileName>WBCatScript.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBAnimation" Collapsed="true">
-    <Position X="63.25" Y="3.25" Width="1.5" />
+    <Position X="63.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQAgAAAAAAABAhAAAEABAAAgAAAkEAAgBIAAAEAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBAnimation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBScene" Collapsed="true">
-    <Position X="34" Y="1.75" Width="1.5" />
+    <Position X="34" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AARAAAAAAEAAAQAAAAAAIAAAAAAQAAAABJAAAAAEAEA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBScene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBApplication" Collapsed="true">
-    <Position X="92.75" Y="0.5" Width="1.5" />
+    <Position X="93.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQQQAASAAAABQFAQABgYQBACAAAAAgAABEAAEAAAII=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBApplication.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBAudioClip" Collapsed="true">
-    <Position X="67.75" Y="3.25" Width="1.5" />
+    <Position X="67.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACgAAAAAAAACAAEBAAAACAAAABAAAAoAAAQAIAIAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBAudioClip.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBAudioListener" Collapsed="true">
-    <Position X="74.5" Y="3.25" Width="1.5" />
+    <Position X="81" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAUAAAAAgIAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBAudioListener.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBAudioSource" Collapsed="true">
-    <Position X="81.25" Y="3.25" Width="1.5" />
+    <Position X="83.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAQACIAAAaAAAAAAIAAAABAAAAAAoBAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBAudioSource.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBBoxCollider2D" Collapsed="true">
-    <Position X="70" Y="4.75" Width="1.5" />
+    <Position X="71.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BIQAAAAAAAAAAQAAEAAIIAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBBoxCollider2D.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBCamera" Collapsed="true">
-    <Position X="90.25" Y="3.25" Width="1.5" />
+    <Position X="90.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAEAQAAAAAAIAAAQAEACAAAABAAAFAAACI=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBCamera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBCollider" Collapsed="true">
-    <Position X="70" Y="3.25" Width="1.5" />
+    <Position X="71.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAEAQAAAAAAQiAgEAIoAAAAAAAAAAMAJICAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBCollider.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBCollisionManager" Collapsed="true">
-    <Position X="94.5" Y="0.5" Width="1.5" />
+    <Position X="95.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAAAAgAAAAQAAAAAEJQAAAAAAACAAABAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBCollisionManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBComponent" Collapsed="true">
-    <Position X="80" Y="1.75" Width="1.5" />
+    <Position X="80" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQQAAAIAIAAAQAAgAAAIBAAAAAAAAEAABACAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBEntity" Collapsed="true">
-    <Position X="47.5" Y="0.5" Width="1.5" />
+    <Position X="47.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAIAAAAAAAAgAQAAABAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBEntity.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBFMOD" Collapsed="true">
-    <Position X="96.25" Y="0.5" Width="1.5" />
+    <Position X="97.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAIAAAAAAQAAAAAAAAAAgEAAAAAAAAAAEBAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBFMOD.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBInput" Collapsed="true">
-    <Position X="92.75" Y="1.5" Width="1.5" />
+    <Position X="93.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQQIAAAAAgAAQACiEAAAAwAKAAAAAJAAAAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBInput.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBLayer" Collapsed="true">
-    <Position X="4.75" Y="1.75" Width="1.5" />
+    <Position X="7" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AARAAAAAAIAAAYAAAAAAIAAAAAAAAIAAABAAAAAEAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBLayer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBResource" Collapsed="true">
-    <Position X="65.5" Y="1.75" Width="1.5" />
+    <Position X="65.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAIADAAAAACIAAAAAAAAAABAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBResource.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBResources" Collapsed="true">
-    <Position X="94.5" Y="1.5" Width="1.5" />
+    <Position X="95.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBResources.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBSceneManager" Collapsed="true">
-    <Position X="96.25" Y="1.5" Width="1.5" />
+    <Position X="97.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAQAAAAAQAAAABAKAAAAAAAAAgAABAAACAEAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBSceneManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBScript" Collapsed="true">
-    <Position X="77.75" Y="3.25" Width="1.5" />
+    <Position X="74.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAQAAAAAAAAAAQAAQAAAIAAAAAAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBScript.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::WBSpriteRenderer" Collapsed="true">
-    <Position X="83.5" Y="3.25" Width="1.5" />
+    <Position X="86" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AYQAAAAAAAAAAQBAQAAIIAAAACAAAAAAABAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBSpriteRenderer.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="wb::WBTilemapRenderer" Collapsed="true">
-    <Position X="88" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIQAAAAAAAAAAQBAAAAIIAAAACAAIAAAgBAAAAAAAIA=</HashCode>
-      <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBTilemapRenderer.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="wb::WBTime" Collapsed="true">
-    <Position X="92.75" Y="2.5" Width="1.5" />
+    <Position X="99.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAESABAAAAAAAAAAAAAAACABAAAAEAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBTime.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="wb::graphics::WBTexture" Collapsed="true">
-    <Position X="65.5" Y="3.25" Width="1.5" />
+    <Position X="65.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAgAAQAAAABAAAAAAAABBQABAEAAAACAAAAEQAAAM=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBTexture.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="wb::math::Vector2" Collapsed="true">
-    <Position X="92.75" Y="3.75" Width="1.5" />
+    <Position X="99.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAIAAAARAAAAAEAAAQAAGQAAAAAACADgAAAAAII=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBMath.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Enum Name="wb::eKeyState" Collapsed="true">
-    <Position X="96.25" Y="5" Width="1.5" />
+    <Position X="93.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBInput.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="wb::eKeyCode" Collapsed="true">
-    <Position X="94.5" Y="5" Width="1.5" />
+    <Position X="93.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABIGAAAQABABAgAAiAAAAAgEIgICAAgiAABA/v//YQE=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBInput.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="wb::enums::eComponentType" Collapsed="true">
-    <Position X="92.75" Y="5" Width="1.5" />
+    <Position X="103.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAICAAAAAAAAAAAAAAAAAAQQAAAAAAAQAAAAAAQgIAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBEnum.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="wb::enums::eLayerType" Collapsed="true">
-    <Position X="92.75" Y="5.75" Width="1.5" />
+    <Position X="103.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAABAAABQACEAAAAAAAAQAEAAAAAAAIgAgAQEAAQA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBEnum.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="wb::enums::eResourceType" Collapsed="true">
-    <Position X="94.5" Y="5.75" Width="1.5" />
+    <Position X="103.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAggAAAAAAAAAAAAAAAIIAAAAAAAA=</HashCode>
       <FileName>C:\Users\wonbi\source\repos\wblee800\wblee-engine\wblee_engine_source\WBEnum.h</FileName>

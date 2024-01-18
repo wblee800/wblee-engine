@@ -41,11 +41,6 @@ namespace wb
 			Max = 16,
 		};
 
-		enum class eColliderType
-		{
-
-		};
-
 		enum class eResourceType
 		{
 			Texture,

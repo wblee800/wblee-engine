@@ -1,7 +1,8 @@
 #include "WBComponent.h"
 
 wb::WBComponent::WBComponent(enums::eComponentType type)
-	:mType(type)
+	:mOwner{},
+	mType(type)
 {
 
 }

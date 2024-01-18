@@ -62,7 +62,7 @@ namespace wb
 
 	void WBCatScript::OnCollisionEnter(WBCollider* other)
 	{
-		enums::eColliderType type = other->GetColiiderType();
+		
 	}
 
 	void WBCatScript::sitDown()
@@ -141,16 +141,16 @@ namespace wb
 		switch (mDirection)
 		{
 		case wb::WBCatScript::eDirection::Left:
-			pos.x -= 500.0f * WBTime::DeltaTime();
+			pos.x -= 2500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Right:
-			pos.x += 500.0f * WBTime::DeltaTime();
+			pos.x += 2500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Down:
-			pos.y += 500.0f * WBTime::DeltaTime();
+			pos.y += 2500.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Up:
-			pos.y -= 500.0f * WBTime::DeltaTime();
+			pos.y -= 2500.0f * WBTime::DeltaTime();
 			break;
 		default:
 			assert(false);
