@@ -4,6 +4,7 @@
 namespace wb
 {
 	class WBPlayer;
+	class WBSewerMonster;
 	class WBSewerScene : public WBScene
 	{
 	public:
@@ -20,6 +21,7 @@ namespace wb
 
 	private:
 		WBPlayer* mPlayer;
+		WBSewerMonster* mSewerMonster;
 		WBGameObject* mCamera;
 	};
 }

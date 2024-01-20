@@ -12,11 +12,12 @@ namespace wb
 			Collider,
 			// logic
 			Script,
-			// draw
+			// drawing
 			SpriteRenderer,
 			Animator,
 			// camera
 			Camera,
+			// sound
 			AudioListener,
 			AudioSource,
 			End

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -43,6 +43,8 @@
     <ClInclude Include="WBRanchOfMarnieScene.h" />
     <ClInclude Include="WBRestoredCommunityCenterScene.h" />
     <ClInclude Include="WBSecretWoodsScene.h" />
+    <ClInclude Include="WBSewerMonster.h" />
+    <ClInclude Include="WBSewerMonsterScript.h" />
     <ClInclude Include="WBSewerScene.h" />
     <ClInclude Include="WBShopOfCarpenterScene.h" />
     <ClInclude Include="WBStardropSaloonScene.h" />
@@ -68,12 +70,14 @@
     <ClCompile Include="WBJojaCorporationScene.cpp" />
     <ClCompile Include="WBJojaMartScene.cpp" />
     <ClCompile Include="WBLoadingTitleScene.cpp" />
+    <ClCompile Include="WBSewerMonster.cpp" />
     <ClCompile Include="WBPelicanTownScene.cpp" />
     <ClCompile Include="WBPlayer.cpp" />
     <ClCompile Include="WBPlayerScript.cpp" />
     <ClCompile Include="WBRanchOfMarnieScene.cpp" />
     <ClCompile Include="WBRestoredCommunityCenterScene.cpp" />
     <ClCompile Include="WBSecretWoodsScene.cpp" />
+    <ClCompile Include="WBSewerMonsterScript.cpp" />
     <ClCompile Include="WBSewerScene.cpp" />
     <ClCompile Include="WBShopOfCarpenterScene.cpp" />
     <ClCompile Include="WBStardropSaloonScene.cpp" />

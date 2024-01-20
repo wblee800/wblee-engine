@@ -15,11 +15,14 @@
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
+#include "WBSewerMonster.h"
+#include "WBSewerMonsterScript.h"
 
 namespace wb
 {
 	WBSewerScene::WBSewerScene()
 		:mPlayer(nullptr),
+		mSewerMonster(nullptr),
 		mCamera(nullptr)
 	{
 	}
@@ -181,15 +184,38 @@ namespace wb
 		/*playerAnimator->CreateAnimation(L"PlayerRideAHorse", ,
 			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
-			// f5 : Player play a mini harp
-			/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
-				Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
+		// f5 : Player play a mini harp
+		/*playerAnimator->CreateAnimation(L"PlayerPlayAMiniHarp", ,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
-				// f6 : Player dozes off
-				/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
-					Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
+		// f6 : Player dozes off
+		/*playerAnimator->CreateAnimation(L"PlayerDozesOff", ,
+			Vector2(0.0f, 0.0f), Vector2(250.0f, 250.0f), Vector2(- 94.0f, -64.0f), 5, 0.1f*/
 
 		playerAnimator->PlayAnimation(L"PlayerIdleUp", false);
+
+		// Instantiate Sewer Monster
+		mSewerMonster = object::Instantiate<WBSewerMonster>(enums::eLayerType::Monster);
+		mSewerMonster->AddComponent<WBSewerMonsterScript>();
+
+		mSewerMonster->GetComponent<WBTransform>()->SetScale(Vector2(2.0f, 2.0f));
+		mSewerMonster->GetComponent<WBTransform>()->SetPosition(Vector2(194.0f, 2970.0f));
+
+		// Set textures of Sewer Monster
+		graphics::WBTexture* sewerMonsterTexture = WBResources::Find<graphics::WBTexture>(L"Sewer_Monster");
+		WBAnimator* sewerMonsterAnimator = mSewerMonster->AddComponent<WBAnimator>();
+
+		// Sewer Monster idle
+		sewerMonsterAnimator->CreateAnimation(L"SewerMonsterIdleRight", sewerMonsterTexture,
+			Vector2(0.0f, 0.0f), Vector2(18.0f, 31.0f), Vector2(-10.0f, -10.0f), 1, 0.1f);
+		sewerMonsterAnimator->CreateAnimation(L"SewerMonsterIdleLeft", sewerMonsterTexture,
+			Vector2(0.0f, 32.0f), Vector2(18.0f, 31.0f), Vector2(-10.0f, -10.0f), 1, 0.1f);
+		sewerMonsterAnimator->CreateAnimation(L"SewerMonsterIdleUp", sewerMonsterTexture,
+			Vector2(0.0f, 32.0f * 2), Vector2(18.0f, 31.0f), Vector2(-10.0f, -10.0f), 1, 0.1f);
+		sewerMonsterAnimator->CreateAnimation(L"SewerMonsterIdleDown", sewerMonsterTexture,
+			Vector2(0.0f, 32.0f * 3), Vector2(18.0f, 31.0f), Vector2(-10.0f, -10.0f), 1, 0.1f);
+
+		sewerMonsterAnimator->PlayAnimation(L"SewerMonsterIdleDown", false);
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();

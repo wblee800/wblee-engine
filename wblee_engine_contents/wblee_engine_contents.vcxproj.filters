@@ -108,6 +108,15 @@
     <Filter Include="Source Files\scene\2.intro\stardew-valley">
       <UniqueIdentifier>{5f2e818d-bbb1-4ebe-9fba-ac3ea5415509}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\content\monster">
+      <UniqueIdentifier>{ea2b0ff1-2387-492b-8ccc-2008c09e5423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\monster">
+      <UniqueIdentifier>{66bfd13b-7691-435e-9d20-a215a33fe918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\monster\sewer-monster">
+      <UniqueIdentifier>{abe10b9a-0902-48f4-9b67-d3f13f4f572d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WBLoadResources.h">
@@ -203,6 +212,12 @@
     <ClInclude Include="WBIntroStardewValleyScene.h">
       <Filter>Source Files\scene\2.intro\stardew-valley</Filter>
     </ClInclude>
+    <ClInclude Include="WBSewerMonster.h">
+      <Filter>Source Files\content\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="WBSewerMonsterScript.h">
+      <Filter>Source Files\script\monster\sewer-monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBCatScript.cpp">
@@ -291,6 +306,12 @@
     </ClCompile>
     <ClCompile Include="WBIntroStardewValleyScene.cpp">
       <Filter>Source Files\scene\2.intro\stardew-valley</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSewerMonster.cpp">
+      <Filter>Source Files\content\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="WBSewerMonsterScript.cpp">
+      <Filter>Source Files\script\monster\sewer-monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
