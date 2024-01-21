@@ -99,10 +99,10 @@ namespace wb
 				mState = eState::SitDown;
 				mAnimator->PlayAnimation(L"CatSitDown", false);
 			}
-
-			WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
-			translate(tr);
 		}
+
+		WBTransform* tr = GetOwner()->GetComponent<WBTransform>();
+		translate(tr);
 	}
 
 	void WBCatScript::layDown()
@@ -141,16 +141,16 @@ namespace wb
 		switch (mDirection)
 		{
 		case wb::WBCatScript::eDirection::Left:
-			pos.x -= 2500.0f * WBTime::DeltaTime();
+			pos.x -= 50.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Right:
-			pos.x += 2500.0f * WBTime::DeltaTime();
+			pos.x += 50.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Down:
-			pos.y += 2500.0f * WBTime::DeltaTime();
+			pos.y += 50.0f * WBTime::DeltaTime();
 			break;
 		case wb::WBCatScript::eDirection::Up:
-			pos.y -= 2500.0f * WBTime::DeltaTime();
+			pos.y -= 50.0f * WBTime::DeltaTime();
 			break;
 		default:
 			assert(false);
