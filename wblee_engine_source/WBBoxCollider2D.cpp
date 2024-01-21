@@ -43,6 +43,10 @@ namespace wb
 		HPEN greenPen = CreatePen(PS_SOLID, 2, RGB(0, 255, 0));
 		HPEN originalPen = (HPEN)SelectObject(hdc, greenPen);
 
+		/*
+		  기존 콜라이더 크기에 mSize를 곱해 특정 Scene에서
+		  SetSize()로 콜라이더의 크기를 조절할 수 있게 수정함.
+		*/
 		Rectangle(hdc,
 			pos.x + offset.x - ((mSize.x * GetSize().x) / 2.0f),
 			pos.y + offset.y - ((mSize.y * GetSize().y) / 2.0f),

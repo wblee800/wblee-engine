@@ -56,8 +56,8 @@ namespace wb
 		WBBoxCollider2D* playerCollider = mPlayer->AddComponent<WBBoxCollider2D>();
 		// Collision manager에서 box collider 2d가 아닌 부모 클래스인 collider의 size를 get하기 때문에,
 		// collision manager에서 box collider 2d로 형 변환하는 작업이 필요하다.
-		// playerCollider->SetSize(Vector2(32.0f, 32.0f));
-		playerCollider->SetOffset(Vector2(0.0f, 30.0f));
+		playerCollider->SetSize(Vector2(32.0f, 62.0f));
+		playerCollider->SetOffset(Vector2(15.0f, 30.0f));
 
 		mPlayer->GetComponent<WBTransform>()->SetScale(Vector2(0.5f, 0.5f));
 
@@ -205,8 +205,8 @@ namespace wb
 
 		mCat->AddComponent<WBCatScript>();
 		WBBoxCollider2D* catCollider = mCat->AddComponent<WBBoxCollider2D>();
-		catCollider->SetSize(Vector2(20.0f, 27.0f));
-		catCollider->SetOffset(Vector2(11.0f, 14.0f));
+		catCollider->SetSize(Vector2(25.0f, 25.0f));
+		catCollider->SetOffset(Vector2(20.0f, 30.0f));
 
 		WBAnimator* catAnimator = mCat->AddComponent<WBAnimator>();
 		graphics::WBTexture* catTexture = WBResources::Find<graphics::WBTexture>(L"CatAlpha");

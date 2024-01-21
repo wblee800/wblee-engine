@@ -51,6 +51,7 @@ namespace wb
 		WBBoxCollider2D* mPlayerBoxCollider2D = mPlayer->AddComponent<WBBoxCollider2D>();
 		
 		mPlayerBoxCollider2D->SetSize(Vector2(30.0f, 60.0f));
+		mPlayerBoxCollider2D->SetOffset(Vector2(15.0f, 30.0f));
 
 		WBTransform* mPlayerTr = mPlayer->GetComponent<WBTransform>();
 		mPlayerTr->SetScale(Vector2(0.5f, 0.5f));
