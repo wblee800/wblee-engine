@@ -7,7 +7,7 @@
 namespace wb
 {
 	WBBoxCollider2D::WBBoxCollider2D()
-		:mSize(math::Vector2::One)
+		:mSize(math::Vector2(10.0f, 10.0f))
 	{
 	}
 
@@ -44,10 +44,10 @@ namespace wb
 		HPEN originalPen = (HPEN)SelectObject(hdc, greenPen);
 
 		Rectangle(hdc,
-			pos.x + offset.x - ((100 * GetSize().x) / 2.0f),
-			pos.y + offset.y - ((100 * GetSize().y) / 2.0f),
-			pos.x + offset.x + ((100 * GetSize().x) / 2.0f),
-			pos.y + offset.y + ((100 * GetSize().y) / 2.0f));
+			pos.x + offset.x - ((mSize.x * GetSize().x) / 2.0f),
+			pos.y + offset.y - ((mSize.y * GetSize().y) / 2.0f),
+			pos.x + offset.x + ((mSize.x * GetSize().x) / 2.0f),
+			pos.y + offset.y + ((mSize.y * GetSize().y) / 2.0f));
 
 		SelectObject(hdc, originalBrush);
 		SelectObject(hdc, originalPen);

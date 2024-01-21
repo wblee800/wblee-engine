@@ -83,6 +83,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)External\Library\Fmod\Debug\fmodL.dll" "$(SolutionDir)\x64\Debug\"
+copy "$(SolutionDir)External\Library\Fmod\Debug\fmodstudioL.dll" "$(SolutionDir)\x64\Debug\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -99,6 +103,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)External\Library\Fmod\Release\fmod.dll" "$(SolutionDir)\x64\Release\"
+copy "$(SolutionDir)External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDir)\x64\Release\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -112,6 +120,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)External\Library\Fmod\Debug\fmodL.dll" "$(SolutionDir)\x64\Debug\"
+copy "$(SolutionDir)External\Library\Fmod\Debug\fmodstudioL.dll" "$(SolutionDir)\x64\Debug\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -128,6 +140,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)External\Library\Fmod\Release\fmod.dll" "$(SolutionDir)\x64\Release\"
+copy "$(SolutionDir)External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDir)\x64\Release\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="editor_window.h" />

@@ -15,6 +15,9 @@
 #include "..\\wblee_engine_source\\WBCamera.h"
 #include "..\\wblee_engine_source\\WBRenderer.h"
 #include "..\\wblee_engine_source\\WBAnimator.h"
+#include "..\\wblee_engine_source\\WBAudioSource.h"
+#include "..\\wblee_engine_source\\WBAudioClip.h"
+#include "..\\wblee_engine_source\\WBAudioListener.h"
 
 namespace wb
 {
@@ -33,6 +36,12 @@ namespace wb
 		mCamera = object::Instantiate<WBGameObject>(enums::eLayerType::None, Vector2(960.0f, 540.0f));
 		WBCamera* cameraComp = mCamera->AddComponent<WBCamera>();
 		renderer::mainCamera = cameraComp;
+
+		mCamera->AddComponent<WBAudioListener>();
+		WBAudioSource* cameraAudioSource = mCamera->AddComponent<WBAudioSource>();
+		WBAudioClip* audioClip = WBResources::Load<WBAudioClip>(L"BGM", L"..\\resources\\sounds\\environment\\spring_night.wav");
+		cameraAudioSource->SetClip(audioClip);
+		cameraAudioSource->Play();
 
 		// A emoji of a creator
 		WBGameObject* emojiOfCreator = object::Instantiate<WBGameObject>

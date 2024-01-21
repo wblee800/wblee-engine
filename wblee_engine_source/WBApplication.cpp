@@ -4,6 +4,7 @@
 #include "WBScene.h"
 #include "WBSceneManager.h"
 #include "WBCollisionManager.h"
+#include "WBFMOD.h"
 
 namespace wb
 {
@@ -31,6 +32,7 @@ namespace wb
 		createBuffer(width, height);
 		initializeEtc();
 
+		WBFMOD::Initialize();
 		WBSceneManager::Initialize();
 		WBCollisionManager::Initialize();
 	}
