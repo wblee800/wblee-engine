@@ -1,5 +1,5 @@
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Alt text](resources/readme_image/StardewValleyLogo.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Alt text](/resources/readme_img/StardewValleyLogo.png)
 
 <br>
 
@@ -20,7 +20,7 @@
 
 ## 🎮 콘텐츠 소개
 - ### 씬
-  ![Alt text](resources/readme_image/Scenes.png)
+  ![Alt text](/resources/readme_img/Scenes.png)
   <b>위 씬들을 모두 구현했습니다.<br>
   하지만, 개발 일정 문제로 농장, 집, 하수구 입구, 하수구, 조자마트 씬만을 사용했습니다.</b>
 
@@ -29,12 +29,12 @@
     - 특정 키 입력하면 이동 및 방향에 따른 애니메이션 구현
     - 특정 키 입력에 따라 장비 사용 및 장비 종류와 방향에 따른 애니메이션 구현
   - 고양이
-    - FSM을 이용한 AI 구현 ∴ 키 입력 없이도 고양이가 알아서 움직입니다.</b>
+    - FSM을 이용한 AI 구현 ∴ 키 입력 없이도 고양이가 알아서 움직입니다.
     
 - ### 사운드
   - 씬에 따른 사운드 구현
-
+</b>
 <br>
 
 ## 💻 엔진 구조 살펴보기
-![Alt text](resources/readme_image/ClassDiagram.png)
+![Alt text](/resources/readme_img/ClassDiagram.png)
