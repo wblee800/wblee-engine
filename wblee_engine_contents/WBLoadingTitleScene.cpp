@@ -41,7 +41,7 @@ namespace wb
 		WBAudioSource* cameraAudioSource = mCamera->AddComponent<WBAudioSource>();
 		WBAudioClip* audioClip = WBResources::Load<WBAudioClip>(L"BGM", L"..\\resources\\sounds\\environment\\spring_night.wav");
 		cameraAudioSource->SetClip(audioClip);
-		cameraAudioSource->Play();
+		// cameraAudioSource->Play();
 
 		// A emoji of a creator
 		WBGameObject* emojiOfCreator = object::Instantiate<WBGameObject>
@@ -78,8 +78,6 @@ namespace wb
 		graphics::WBTexture* nameOfModifierTex = WBResources::Find<graphics::WBTexture>(L"Name_Of_Modifier");
 		nameOfModifierSr->SetTexture(nameOfModifierTex);
 		nameOfModifierSr->SetSize(Vector2(3.0f, 3.0f));
-
-
 
 		// After creating a game object, call an Initialize() of WBLayer and WBGameObject
 		WBScene::Initialize();
