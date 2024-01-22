@@ -41,7 +41,7 @@ namespace wb
 		WBAudioSource* cameraAudioSource = mCamera->AddComponent<WBAudioSource>();
 		WBAudioClip* audioClip = WBResources::Load<WBAudioClip>(L"BGM", L"..\\resources\\sounds\\environment\\spring_night.wav");
 		cameraAudioSource->SetClip(audioClip);
-		// cameraAudioSource->Play();
+		cameraAudioSource->Play();
 
 		// A emoji of a creator
 		WBGameObject* emojiOfCreator = object::Instantiate<WBGameObject>

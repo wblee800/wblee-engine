@@ -64,6 +64,6 @@ namespace wb
 		// ----Ending Scene----
 		WBSceneManager::CreateScene<WBBeachScene>(L"BeachScene");
 
-		WBSceneManager::LoadScene(L"SewerScene");
+		WBSceneManager::LoadScene(L"LoadingTitleScene");
 	}
 }
