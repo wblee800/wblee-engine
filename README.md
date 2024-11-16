@@ -8,8 +8,8 @@
 >🚜 Inspired by the concept of MODs that allow gamers to modify existing games as they like, this project was developed by adapting an existing story.
 > 기존 게임을 게이머가 원하는 대로 수정할 수 있는 MOD가 있다는 점에서 착안해 기존 스토리를 각색하여 개발했습니다.
 >
->🪟 Using Windows API, the game engine and content were developed. The engine was modeled after Unity, with classes and functions structured similarly to Unity.
-> Windows API를 이용해 게임 엔진과 콘텐츠를 개발했고, 게임 엔진은 Unity를 모티브로 하여 클래스, 함수 등을 Unity와 유사하게 구성했습니다.
+>🪟 Using Windows API, the game engine and content were developed. The engine was modeled after Unity, with a Life Cycle structured similarly to Unity.
+> Windows API를 이용해 게임 엔진과 콘텐츠를 개발했고, 게임 엔진은 Unity를 모티브로 하여 생명주기를 Unity와 유사하게 구성했습니다.
 
 <br>
 
